@@ -34,8 +34,7 @@
             RightPanel = new Panel();
             txtPassword = new TextBox();
             txtCustomerID = new TextBox();
-            passLabel = new Label();
-            button2 = new Button();
+            registerSwap = new Button();
             panel1 = new Panel();
             divider1 = new Panel();
             password = new PictureBox();
@@ -43,7 +42,6 @@
             button1 = new Button();
             label2 = new Label();
             ExitButton = new Button();
-            CustomerIDLabel = new Label();
             LeftPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Logo).BeginInit();
             RightPanel.SuspendLayout();
@@ -85,11 +83,9 @@
             // 
             // RightPanel
             // 
-            RightPanel.Controls.Add(CustomerIDLabel);
             RightPanel.Controls.Add(txtPassword);
             RightPanel.Controls.Add(txtCustomerID);
-            RightPanel.Controls.Add(passLabel);
-            RightPanel.Controls.Add(button2);
+            RightPanel.Controls.Add(registerSwap);
             RightPanel.Controls.Add(panel1);
             RightPanel.Controls.Add(divider1);
             RightPanel.Controls.Add(password);
@@ -107,45 +103,39 @@
             // 
             txtPassword.BorderStyle = BorderStyle.None;
             txtPassword.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPassword.Location = new Point(86, 286);
-            txtPassword.MinimumSize = new Size(314, 30);
+            txtPassword.Location = new Point(86, 291);
+            txtPassword.MinimumSize = new Size(314, 25);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(314, 30);
+            txtPassword.PasswordChar = '*';
+            txtPassword.PlaceholderText = "Password";
+            txtPassword.Size = new Size(314, 25);
             txtPassword.TabIndex = 11;
+            txtPassword.UseSystemPasswordChar = true;
             // 
             // txtCustomerID
             // 
             txtCustomerID.BorderStyle = BorderStyle.None;
             txtCustomerID.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtCustomerID.Location = new Point(86, 187);
-            txtCustomerID.MinimumSize = new Size(314, 30);
+            txtCustomerID.Location = new Point(86, 192);
+            txtCustomerID.MinimumSize = new Size(314, 25);
             txtCustomerID.Name = "txtCustomerID";
-            txtCustomerID.Size = new Size(314, 30);
+            txtCustomerID.PlaceholderText = "Customer ID";
+            txtCustomerID.Size = new Size(314, 25);
             txtCustomerID.TabIndex = 10;
             // 
-            // passLabel
+            // registerSwap
             // 
-            passLabel.AutoSize = true;
-            passLabel.Font = new Font("Tw Cen MT", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            passLabel.ForeColor = Color.SteelBlue;
-            passLabel.Location = new Point(50, 260);
-            passLabel.Name = "passLabel";
-            passLabel.Size = new Size(74, 20);
-            passLabel.TabIndex = 9;
-            passLabel.Text = "Password";
-            // 
-            // button2
-            // 
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.SteelBlue;
-            button2.Location = new Point(178, 430);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 7;
-            button2.Text = "Register";
-            button2.UseVisualStyleBackColor = true;
+            registerSwap.FlatAppearance.BorderSize = 0;
+            registerSwap.FlatStyle = FlatStyle.Flat;
+            registerSwap.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            registerSwap.ForeColor = Color.SteelBlue;
+            registerSwap.Location = new Point(178, 430);
+            registerSwap.Name = "registerSwap";
+            registerSwap.Size = new Size(94, 29);
+            registerSwap.TabIndex = 7;
+            registerSwap.Text = "Register";
+            registerSwap.UseVisualStyleBackColor = true;
+            registerSwap.Click += registerSwap_Click;
             // 
             // panel1
             // 
@@ -221,17 +211,6 @@
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
             // 
-            // CustomerIDLabel
-            // 
-            CustomerIDLabel.AutoSize = true;
-            CustomerIDLabel.Font = new Font("Tw Cen MT", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CustomerIDLabel.ForeColor = Color.SteelBlue;
-            CustomerIDLabel.Location = new Point(50, 164);
-            CustomerIDLabel.Name = "CustomerIDLabel";
-            CustomerIDLabel.Size = new Size(91, 20);
-            CustomerIDLabel.TabIndex = 12;
-            CustomerIDLabel.Text = "Customer ID";
-            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -268,10 +247,8 @@
         private PictureBox userID;
         private Panel panel1;
         private Panel divider1;
-        private Button button2;
-        private Label passLabel;
+        private Button registerSwap;
         private TextBox txtCustomerID;
         private TextBox txtPassword;
-        private Label CustomerIDLabel;
     }
 }

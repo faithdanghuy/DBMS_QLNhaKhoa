@@ -21,5 +21,11 @@ namespace QLNhaKhoa
         {
             Application.Exit();
         }
+
+        private void registerSwap_Click(object sender, EventArgs e)
+        {
+            new Register().Show();
+            this.Hide();
+        }
     }
 }
