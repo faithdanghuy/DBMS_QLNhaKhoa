@@ -24,7 +24,7 @@ AS
     
     IF (@LOAIUSER IS NULL) BEGIN
         RAISERROR('INVALID MAUSER OR MATKHAU', 16, 1)
-        RETURN 1
+        RETURN -1
     END
 
     RETURN 0
