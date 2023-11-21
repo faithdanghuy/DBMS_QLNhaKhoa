@@ -1,3 +1,5 @@
+using QLNhaKhoa.Dentist_form;
+
 namespace QLNhaKhoa
 {
     internal static class Program

@@ -32,6 +32,7 @@ namespace QLNhaKhoa
         private void InitializeComponent()
         {
             LeftPanel = new Panel();
+            credit = new Label();
             Title = new Label();
             Logo = new PictureBox();
             RightPanel = new Panel();
@@ -67,6 +68,7 @@ namespace QLNhaKhoa
             // LeftPanel
             // 
             LeftPanel.BackColor = Color.SteelBlue;
+            LeftPanel.Controls.Add(credit);
             LeftPanel.Controls.Add(Title);
             LeftPanel.Controls.Add(Logo);
             LeftPanel.Dock = DockStyle.Left;
@@ -74,6 +76,17 @@ namespace QLNhaKhoa
             LeftPanel.Name = "LeftPanel";
             LeftPanel.Size = new Size(350, 550);
             LeftPanel.TabIndex = 0;
+            // 
+            // credit
+            // 
+            credit.AutoSize = true;
+            credit.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            credit.ForeColor = Color.White;
+            credit.Location = new Point(151, 527);
+            credit.Name = "credit";
+            credit.Size = new Size(199, 23);
+            credit.TabIndex = 2;
+            credit.Text = "Developed by Group 3";
             // 
             // Title
             // 
@@ -126,17 +139,20 @@ namespace QLNhaKhoa
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateTimePicker1.CustomFormat = "yyyy/MM/dd";
+            dateTimePicker1.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.Location = new Point(86, 168);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(314, 29);
+            dateTimePicker1.Size = new Size(314, 27);
             dateTimePicker1.TabIndex = 19;
             // 
             // txtPassword
             // 
             txtPassword.BorderStyle = BorderStyle.None;
-            txtPassword.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPassword.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtPassword.Location = new Point(86, 395);
+            txtPassword.MaxLength = 31;
             txtPassword.MinimumSize = new Size(314, 25);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
@@ -148,19 +164,20 @@ namespace QLNhaKhoa
             // txtPhone
             // 
             txtPhone.BorderStyle = BorderStyle.None;
-            txtPhone.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPhone.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtPhone.Location = new Point(86, 320);
+            txtPhone.MaxLength = 11;
             txtPhone.MinimumSize = new Size(314, 25);
             txtPhone.Name = "txtPhone";
             txtPhone.PlaceholderText = "Phone number";
             txtPhone.Size = new Size(314, 25);
             txtPhone.TabIndex = 17;
-            txtPhone.KeyPress += this.txtPhone_KeyPress;
+            txtPhone.KeyPress += txtPhone_KeyPress;
             // 
             // txtAddress
             // 
             txtAddress.BorderStyle = BorderStyle.None;
-            txtAddress.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtAddress.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtAddress.Location = new Point(86, 245);
             txtAddress.MinimumSize = new Size(314, 25);
             txtAddress.Name = "txtAddress";
@@ -171,7 +188,7 @@ namespace QLNhaKhoa
             // txtName
             // 
             txtName.BorderStyle = BorderStyle.None;
-            txtName.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtName.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtName.Location = new Point(86, 95);
             txtName.MinimumSize = new Size(314, 25);
             txtName.Name = "txtName";
@@ -371,5 +388,6 @@ namespace QLNhaKhoa
         private TextBox txtPhone;
         private TextBox txtPassword;
         private DateTimePicker dateTimePicker1;
+        private Label credit;
     }
 }

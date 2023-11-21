@@ -29,17 +29,18 @@
         private void InitializeComponent()
         {
             LeftPanel = new Panel();
+            credit = new Label();
             label1 = new Label();
             Logo = new PictureBox();
             RightPanel = new Panel();
             txtPassword = new TextBox();
-            txtCustomerID = new TextBox();
+            txtID = new TextBox();
             registerSwap = new Button();
             panel1 = new Panel();
             divider1 = new Panel();
             password = new PictureBox();
             userID = new PictureBox();
-            button1 = new Button();
+            loginButton = new Button();
             label2 = new Label();
             ExitButton = new Button();
             LeftPanel.SuspendLayout();
@@ -52,6 +53,7 @@
             // LeftPanel
             // 
             LeftPanel.BackColor = Color.SteelBlue;
+            LeftPanel.Controls.Add(credit);
             LeftPanel.Controls.Add(label1);
             LeftPanel.Controls.Add(Logo);
             LeftPanel.Dock = DockStyle.Left;
@@ -59,6 +61,17 @@
             LeftPanel.Name = "LeftPanel";
             LeftPanel.Size = new Size(350, 550);
             LeftPanel.TabIndex = 0;
+            // 
+            // credit
+            // 
+            credit.AutoSize = true;
+            credit.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            credit.ForeColor = Color.White;
+            credit.Location = new Point(151, 527);
+            credit.Name = "credit";
+            credit.Size = new Size(199, 23);
+            credit.TabIndex = 3;
+            credit.Text = "Developed by Group 3";
             // 
             // label1
             // 
@@ -84,13 +97,13 @@
             // RightPanel
             // 
             RightPanel.Controls.Add(txtPassword);
-            RightPanel.Controls.Add(txtCustomerID);
+            RightPanel.Controls.Add(txtID);
             RightPanel.Controls.Add(registerSwap);
             RightPanel.Controls.Add(panel1);
             RightPanel.Controls.Add(divider1);
             RightPanel.Controls.Add(password);
             RightPanel.Controls.Add(userID);
-            RightPanel.Controls.Add(button1);
+            RightPanel.Controls.Add(loginButton);
             RightPanel.Controls.Add(label2);
             RightPanel.Controls.Add(ExitButton);
             RightPanel.Dock = DockStyle.Fill;
@@ -102,8 +115,9 @@
             // txtPassword
             // 
             txtPassword.BorderStyle = BorderStyle.None;
-            txtPassword.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPassword.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtPassword.Location = new Point(86, 291);
+            txtPassword.MaxLength = 31;
             txtPassword.MinimumSize = new Size(314, 25);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
@@ -112,16 +126,17 @@
             txtPassword.TabIndex = 11;
             txtPassword.UseSystemPasswordChar = true;
             // 
-            // txtCustomerID
+            // txtID
             // 
-            txtCustomerID.BorderStyle = BorderStyle.None;
-            txtCustomerID.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtCustomerID.Location = new Point(86, 192);
-            txtCustomerID.MinimumSize = new Size(314, 25);
-            txtCustomerID.Name = "txtCustomerID";
-            txtCustomerID.PlaceholderText = "Customer ID";
-            txtCustomerID.Size = new Size(314, 25);
-            txtCustomerID.TabIndex = 10;
+            txtID.BorderStyle = BorderStyle.None;
+            txtID.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtID.Location = new Point(86, 192);
+            txtID.MaxLength = 5;
+            txtID.MinimumSize = new Size(314, 25);
+            txtID.Name = "txtID";
+            txtID.PlaceholderText = "Enter your ID";
+            txtID.Size = new Size(314, 25);
+            txtID.TabIndex = 10;
             // 
             // registerSwap
             // 
@@ -173,19 +188,20 @@
             userID.TabIndex = 3;
             userID.TabStop = false;
             // 
-            // button1
+            // loginButton
             // 
-            button1.BackColor = Color.SteelBlue;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Tw Cen MT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(50, 370);
-            button1.Name = "button1";
-            button1.Size = new Size(350, 50);
-            button1.TabIndex = 2;
-            button1.Text = "Log In";
-            button1.UseVisualStyleBackColor = false;
+            loginButton.BackColor = Color.SteelBlue;
+            loginButton.FlatAppearance.BorderSize = 0;
+            loginButton.FlatStyle = FlatStyle.Flat;
+            loginButton.Font = new Font("Tw Cen MT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            loginButton.ForeColor = Color.White;
+            loginButton.Location = new Point(50, 370);
+            loginButton.Name = "loginButton";
+            loginButton.Size = new Size(350, 50);
+            loginButton.TabIndex = 2;
+            loginButton.Text = "Log In";
+            loginButton.UseVisualStyleBackColor = false;
+            loginButton.Click += loginButton_Click;
             // 
             // label2
             // 
@@ -242,13 +258,14 @@
         private PictureBox Logo;
         private Label label1;
         private Label label2;
-        private Button button1;
+        private Button loginButton;
         private PictureBox password;
         private PictureBox userID;
         private Panel panel1;
         private Panel divider1;
         private Button registerSwap;
-        private TextBox txtCustomerID;
+        private TextBox txtID;
         private TextBox txtPassword;
+        private Label credit;
     }
 }
