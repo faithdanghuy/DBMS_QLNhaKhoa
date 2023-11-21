@@ -1,6 +1,6 @@
-﻿namespace QLNhaKhoa
+﻿namespace QLNhaKhoa.Admin_form
 {
-    partial class Customer_Main
+    partial class Admin_Main
     {
         /// <summary>
         /// Required designer variable.
@@ -29,36 +29,50 @@
         private void InitializeComponent()
         {
             LeftPanel = new Panel();
+            BillButton = new Button();
             credit = new Label();
             CustomerID = new Label();
             label5 = new Label();
             IDLabel = new Label();
             HomepageIcon = new PictureBox();
-            RecordButton = new Button();
-            AppointmentButton = new Button();
+            MedicationButton = new Button();
+            AccountMngrButton = new Button();
             AccountButton = new Button();
             mainPanel = new Panel();
-            ExitButton = new Button();
             LeftPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)HomepageIcon).BeginInit();
-            mainPanel.SuspendLayout();
             SuspendLayout();
             // 
             // LeftPanel
             // 
             LeftPanel.BackColor = Color.SteelBlue;
+            LeftPanel.Controls.Add(BillButton);
             LeftPanel.Controls.Add(credit);
             LeftPanel.Controls.Add(CustomerID);
             LeftPanel.Controls.Add(label5);
             LeftPanel.Controls.Add(IDLabel);
             LeftPanel.Controls.Add(HomepageIcon);
-            LeftPanel.Controls.Add(RecordButton);
-            LeftPanel.Controls.Add(AppointmentButton);
+            LeftPanel.Controls.Add(MedicationButton);
+            LeftPanel.Controls.Add(AccountMngrButton);
             LeftPanel.Controls.Add(AccountButton);
+            LeftPanel.Dock = DockStyle.Left;
             LeftPanel.Location = new Point(0, 0);
             LeftPanel.Name = "LeftPanel";
             LeftPanel.Size = new Size(300, 550);
-            LeftPanel.TabIndex = 1;
+            LeftPanel.TabIndex = 3;
+            // 
+            // BillButton
+            // 
+            BillButton.FlatAppearance.BorderSize = 0;
+            BillButton.FlatStyle = FlatStyle.Flat;
+            BillButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            BillButton.ForeColor = Color.White;
+            BillButton.Location = new Point(25, 425);
+            BillButton.Name = "BillButton";
+            BillButton.Size = new Size(250, 40);
+            BillButton.TabIndex = 9;
+            BillButton.Text = "Permissions";
+            BillButton.UseVisualStyleBackColor = true;
             // 
             // credit
             // 
@@ -76,7 +90,7 @@
             CustomerID.AutoSize = true;
             CustomerID.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             CustomerID.ForeColor = Color.White;
-            CustomerID.Location = new Point(106, 0);
+            CustomerID.Location = new Point(84, 0);
             CustomerID.Name = "CustomerID";
             CustomerID.Size = new Size(65, 23);
             CustomerID.TabIndex = 7;
@@ -87,11 +101,11 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(56, 155);
+            label5.Location = new Point(70, 155);
             label5.Name = "label5";
-            label5.Size = new Size(188, 28);
+            label5.Size = new Size(160, 28);
             label5.TabIndex = 6;
-            label5.Text = "<Customer Name>";
+            label5.Text = "<Admin Name>";
             label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // IDLabel
@@ -101,9 +115,9 @@
             IDLabel.ForeColor = Color.White;
             IDLabel.Location = new Point(0, 0);
             IDLabel.Name = "IDLabel";
-            IDLabel.Size = new Size(109, 23);
+            IDLabel.Size = new Size(85, 23);
             IDLabel.TabIndex = 5;
-            IDLabel.Text = "Customer ID:";
+            IDLabel.Text = "Admin ID:";
             // 
             // HomepageIcon
             // 
@@ -115,33 +129,31 @@
             HomepageIcon.TabIndex = 4;
             HomepageIcon.TabStop = false;
             // 
-            // RecordButton
+            // MedicationButton
             // 
-            RecordButton.FlatAppearance.BorderSize = 0;
-            RecordButton.FlatStyle = FlatStyle.Flat;
-            RecordButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            RecordButton.ForeColor = Color.White;
-            RecordButton.Location = new Point(25, 425);
-            RecordButton.Name = "RecordButton";
-            RecordButton.Size = new Size(250, 50);
-            RecordButton.TabIndex = 3;
-            RecordButton.Text = "Medical record";
-            RecordButton.UseVisualStyleBackColor = true;
-            RecordButton.Click += RecordButton_Click;
+            MedicationButton.FlatAppearance.BorderSize = 0;
+            MedicationButton.FlatStyle = FlatStyle.Flat;
+            MedicationButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            MedicationButton.ForeColor = Color.White;
+            MedicationButton.Location = new Point(25, 350);
+            MedicationButton.Name = "MedicationButton";
+            MedicationButton.Size = new Size(250, 40);
+            MedicationButton.TabIndex = 3;
+            MedicationButton.Text = "Medication";
+            MedicationButton.UseVisualStyleBackColor = true;
             // 
-            // AppointmentButton
+            // AccountMngrButton
             // 
-            AppointmentButton.FlatAppearance.BorderSize = 0;
-            AppointmentButton.FlatStyle = FlatStyle.Flat;
-            AppointmentButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            AppointmentButton.ForeColor = Color.White;
-            AppointmentButton.Location = new Point(25, 325);
-            AppointmentButton.Name = "AppointmentButton";
-            AppointmentButton.Size = new Size(250, 50);
-            AppointmentButton.TabIndex = 2;
-            AppointmentButton.Text = "Appointment";
-            AppointmentButton.UseVisualStyleBackColor = true;
-            AppointmentButton.Click += AppointmentButton_Click;
+            AccountMngrButton.FlatAppearance.BorderSize = 0;
+            AccountMngrButton.FlatStyle = FlatStyle.Flat;
+            AccountMngrButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AccountMngrButton.ForeColor = Color.White;
+            AccountMngrButton.Location = new Point(25, 275);
+            AccountMngrButton.Name = "AccountMngrButton";
+            AccountMngrButton.Size = new Size(250, 40);
+            AccountMngrButton.TabIndex = 2;
+            AccountMngrButton.Text = "Account Manager";
+            AccountMngrButton.UseVisualStyleBackColor = true;
             // 
             // AccountButton
             // 
@@ -149,9 +161,9 @@
             AccountButton.FlatStyle = FlatStyle.Flat;
             AccountButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             AccountButton.ForeColor = Color.White;
-            AccountButton.Location = new Point(25, 225);
+            AccountButton.Location = new Point(25, 200);
             AccountButton.Name = "AccountButton";
-            AccountButton.Size = new Size(250, 50);
+            AccountButton.Size = new Size(250, 40);
             AccountButton.TabIndex = 1;
             AccountButton.Text = "Account";
             AccountButton.UseVisualStyleBackColor = true;
@@ -159,58 +171,43 @@
             // 
             // mainPanel
             // 
-            mainPanel.Controls.Add(ExitButton);
-            mainPanel.Dock = DockStyle.Right;
+            mainPanel.BackColor = Color.White;
+            mainPanel.Dock = DockStyle.Fill;
             mainPanel.Location = new Point(300, 0);
             mainPanel.Name = "mainPanel";
             mainPanel.Size = new Size(600, 550);
-            mainPanel.TabIndex = 3;
+            mainPanel.TabIndex = 4;
             // 
-            // ExitButton
-            // 
-            ExitButton.FlatAppearance.BorderSize = 0;
-            ExitButton.FlatStyle = FlatStyle.Flat;
-            ExitButton.Font = new Font("VNI-Lithos", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ExitButton.Location = new Point(560, 0);
-            ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(40, 40);
-            ExitButton.TabIndex = 9;
-            ExitButton.Text = "X";
-            ExitButton.UseVisualStyleBackColor = true;
-            ExitButton.Click += ExitButton_Click;
-            // 
-            // Customer_Main
+            // Admin_Main
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
             ClientSize = new Size(900, 550);
             ControlBox = false;
-            Controls.Add(LeftPanel);
             Controls.Add(mainPanel);
+            Controls.Add(LeftPanel);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Customer_Main";
+            Name = "Admin_Main";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Customer_Main";
+            Text = "Admin_Main";
             LeftPanel.ResumeLayout(false);
             LeftPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)HomepageIcon).EndInit();
-            mainPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel LeftPanel;
+        private Button BillButton;
         private Label credit;
         private Label CustomerID;
         private Label label5;
         private Label IDLabel;
         private PictureBox HomepageIcon;
-        private Button RecordButton;
-        private Button AppointmentButton;
+        private Button MedicationButton;
+        private Button AccountMngrButton;
         private Button AccountButton;
         private Panel mainPanel;
-        private Button ExitButton;
     }
 }

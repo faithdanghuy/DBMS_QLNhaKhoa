@@ -9,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLNhaKhoa
+namespace QLNhaKhoa.Admin_form
 {
-    public partial class Customer_Main : Form
+    public partial class Admin_Main : Form
     {
-        public Customer_Main()
+        public Admin_Main()
         {
             InitializeComponent();
         }
@@ -33,21 +33,6 @@ namespace QLNhaKhoa
         private void AccountButton_Click(object sender, EventArgs e)
         {
             loadform(new Account());
-        }
-
-        private void AppointmentButton_Click(object sender, EventArgs e)
-        {
-            loadform(new Appointment());
-        }
-
-        private void RecordButton_Click(object sender, EventArgs e)
-        {
-            loadform(new Customer_Record());
-        }
-
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

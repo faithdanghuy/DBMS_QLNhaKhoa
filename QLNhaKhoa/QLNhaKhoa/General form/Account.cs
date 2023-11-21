@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLNhaKhoa
+namespace QLNhaKhoa.General_form
 {
-    public partial class Customer_Record : Form
+    public partial class Account : Form
     {
-        public Customer_Record()
+        public Account()
         {
             InitializeComponent();
         }

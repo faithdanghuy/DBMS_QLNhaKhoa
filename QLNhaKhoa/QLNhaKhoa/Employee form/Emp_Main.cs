@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLNhaKhoa
+namespace QLNhaKhoa.Employee_form
 {
-    public partial class Customer_Record : Form
+    public partial class Emp_Main : Form
     {
-        public Customer_Record()
+        public Emp_Main()
         {
             InitializeComponent();
-        }
-
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

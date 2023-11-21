@@ -1,6 +1,6 @@
 ﻿namespace QLNhaKhoa.Dentist_form
 {
-    partial class Dentist_Services
+    partial class Dentist_Bill
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            serviceTitle = new Label();
             ExitButton = new Button();
             button2 = new Button();
             makeAppointBtn = new Button();
@@ -40,7 +41,6 @@
             label1 = new Label();
             appointTime = new TextBox();
             appointmentData = new DataGridView();
-            serviceTitle = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)appointmentData).BeginInit();
@@ -59,7 +59,18 @@
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(600, 550);
-            panel1.TabIndex = 4;
+            panel1.TabIndex = 5;
+            // 
+            // serviceTitle
+            // 
+            serviceTitle.AutoSize = true;
+            serviceTitle.Font = new Font("Tw Cen MT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            serviceTitle.ForeColor = Color.SteelBlue;
+            serviceTitle.Location = new Point(221, 20);
+            serviceTitle.Name = "serviceTitle";
+            serviceTitle.Size = new Size(157, 35);
+            serviceTitle.TabIndex = 5;
+            serviceTitle.Text = "Medical Bill";
             // 
             // ExitButton
             // 
@@ -72,6 +83,7 @@
             ExitButton.TabIndex = 3;
             ExitButton.Text = "X";
             ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitButton_Click;
             // 
             // button2
             // 
@@ -131,7 +143,6 @@
             costBox.Name = "costBox";
             costBox.Size = new Size(243, 27);
             costBox.TabIndex = 7;
-            costBox.KeyPress += costBox_KeyPress;
             // 
             // label3
             // 
@@ -184,28 +195,16 @@
             appointmentData.Size = new Size(600, 250);
             appointmentData.TabIndex = 0;
             // 
-            // serviceTitle
-            // 
-            serviceTitle.AutoSize = true;
-            serviceTitle.Font = new Font("Tw Cen MT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            serviceTitle.ForeColor = Color.SteelBlue;
-            serviceTitle.Location = new Point(244, 20);
-            serviceTitle.Name = "serviceTitle";
-            serviceTitle.Size = new Size(112, 35);
-            serviceTitle.TabIndex = 5;
-            serviceTitle.Text = "Services";
-            // 
-            // Dentist_Services
+            // Dentist_Bill
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
             ClientSize = new Size(600, 550);
             ControlBox = false;
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Dentist_Services";
-            Text = "Dentist_Services";
+            Name = "Dentist_Bill";
+            Text = "Dentist_Bill";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
@@ -217,17 +216,17 @@
         #endregion
 
         private Panel panel1;
+        private Label serviceTitle;
         private Button ExitButton;
         private Button button2;
         private Button makeAppointBtn;
         private Panel panel2;
+        private TextBox sNameBox;
+        private TextBox costBox;
         private Label label3;
         private Label label2;
         private Label label1;
         private TextBox appointTime;
         private DataGridView appointmentData;
-        private TextBox costBox;
-        private TextBox sNameBox;
-        private Label serviceTitle;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace QLNhaKhoa.Dentist_form
 {
-    partial class Dentist_Services
+    partial class Dentist_Prescription
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            panel2 = new Panel();
+            serviceTitle = new Label();
             ExitButton = new Button();
             button2 = new Button();
             makeAppointBtn = new Button();
-            panel2 = new Panel();
+            panel3 = new Panel();
             sNameBox = new TextBox();
             costBox = new TextBox();
             label3 = new Label();
@@ -40,26 +42,44 @@
             label1 = new Label();
             appointTime = new TextBox();
             appointmentData = new DataGridView();
-            serviceTitle = new Label();
-            panel1.SuspendLayout();
             panel2.SuspendLayout();
+            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)appointmentData).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.White;
-            panel1.Controls.Add(serviceTitle);
-            panel1.Controls.Add(ExitButton);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(makeAppointBtn);
-            panel1.Controls.Add(panel2);
-            panel1.Controls.Add(appointmentData);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(600, 550);
-            panel1.TabIndex = 4;
+            panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.White;
+            panel2.Controls.Add(serviceTitle);
+            panel2.Controls.Add(ExitButton);
+            panel2.Controls.Add(button2);
+            panel2.Controls.Add(makeAppointBtn);
+            panel2.Controls.Add(panel3);
+            panel2.Controls.Add(appointmentData);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(600, 550);
+            panel2.TabIndex = 6;
+            // 
+            // serviceTitle
+            // 
+            serviceTitle.AutoSize = true;
+            serviceTitle.Font = new Font("Tw Cen MT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            serviceTitle.ForeColor = Color.SteelBlue;
+            serviceTitle.Location = new Point(223, 20);
+            serviceTitle.Name = "serviceTitle";
+            serviceTitle.Size = new Size(154, 35);
+            serviceTitle.TabIndex = 5;
+            serviceTitle.Text = "Prescription";
             // 
             // ExitButton
             // 
@@ -72,6 +92,7 @@
             ExitButton.TabIndex = 3;
             ExitButton.Text = "X";
             ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitButton_Click;
             // 
             // button2
             // 
@@ -84,7 +105,7 @@
             button2.Name = "button2";
             button2.Size = new Size(200, 40);
             button2.TabIndex = 4;
-            button2.Text = "Update service";
+            button2.Text = "Update prescription";
             button2.UseVisualStyleBackColor = false;
             // 
             // makeAppointBtn
@@ -98,23 +119,23 @@
             makeAppointBtn.Name = "makeAppointBtn";
             makeAppointBtn.Size = new Size(200, 40);
             makeAppointBtn.TabIndex = 1;
-            makeAppointBtn.Text = "Add new service";
+            makeAppointBtn.Text = "Add new prescription";
             makeAppointBtn.UseVisualStyleBackColor = false;
             // 
-            // panel2
+            // panel3
             // 
-            panel2.BackColor = Color.Transparent;
-            panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(sNameBox);
-            panel2.Controls.Add(costBox);
-            panel2.Controls.Add(label3);
-            panel2.Controls.Add(label2);
-            panel2.Controls.Add(label1);
-            panel2.Controls.Add(appointTime);
-            panel2.Location = new Point(25, 40);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(550, 200);
-            panel2.TabIndex = 3;
+            panel3.BackColor = Color.Transparent;
+            panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(sNameBox);
+            panel3.Controls.Add(costBox);
+            panel3.Controls.Add(label3);
+            panel3.Controls.Add(label2);
+            panel3.Controls.Add(label1);
+            panel3.Controls.Add(appointTime);
+            panel3.Location = new Point(25, 40);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(550, 200);
+            panel3.TabIndex = 3;
             // 
             // sNameBox
             // 
@@ -131,7 +152,6 @@
             costBox.Name = "costBox";
             costBox.Size = new Size(243, 27);
             costBox.TabIndex = 7;
-            costBox.KeyPress += costBox_KeyPress;
             // 
             // label3
             // 
@@ -140,9 +160,9 @@
             label3.ForeColor = Color.SteelBlue;
             label3.Location = new Point(257, 26);
             label3.Name = "label3";
-            label3.Size = new Size(44, 23);
+            label3.Size = new Size(73, 23);
             label3.TabIndex = 6;
-            label3.Text = "Cost";
+            label3.Text = "Quanity";
             // 
             // label2
             // 
@@ -151,9 +171,9 @@
             label2.ForeColor = Color.SteelBlue;
             label2.Location = new Point(50, 102);
             label2.Name = "label2";
-            label2.Size = new Size(121, 23);
+            label2.Size = new Size(150, 23);
             label2.TabIndex = 4;
-            label2.Text = "Service Name";
+            label2.Text = "Medication Name";
             // 
             // label1
             // 
@@ -162,9 +182,9 @@
             label1.ForeColor = Color.SteelBlue;
             label1.Location = new Point(50, 26);
             label1.Name = "label1";
-            label1.Size = new Size(90, 23);
+            label1.Size = new Size(119, 23);
             label1.TabIndex = 2;
-            label1.Text = "Service ID";
+            label1.Text = "Medication ID";
             // 
             // appointTime
             // 
@@ -184,32 +204,22 @@
             appointmentData.Size = new Size(600, 250);
             appointmentData.TabIndex = 0;
             // 
-            // serviceTitle
-            // 
-            serviceTitle.AutoSize = true;
-            serviceTitle.Font = new Font("Tw Cen MT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            serviceTitle.ForeColor = Color.SteelBlue;
-            serviceTitle.Location = new Point(244, 20);
-            serviceTitle.Name = "serviceTitle";
-            serviceTitle.Size = new Size(112, 35);
-            serviceTitle.TabIndex = 5;
-            serviceTitle.Text = "Services";
-            // 
-            // Dentist_Services
+            // Dentist_Prescription
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(600, 550);
             ControlBox = false;
+            Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Dentist_Services";
-            Text = "Dentist_Services";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            Name = "Dentist_Prescription";
+            Text = "Dentist_Precription";
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)appointmentData).EndInit();
             ResumeLayout(false);
         }
@@ -217,17 +227,18 @@
         #endregion
 
         private Panel panel1;
+        private Panel panel2;
+        private Label serviceTitle;
         private Button ExitButton;
         private Button button2;
         private Button makeAppointBtn;
-        private Panel panel2;
+        private Panel panel3;
+        private TextBox sNameBox;
+        private TextBox costBox;
         private Label label3;
         private Label label2;
         private Label label1;
         private TextBox appointTime;
         private DataGridView appointmentData;
-        private TextBox costBox;
-        private TextBox sNameBox;
-        private Label serviceTitle;
     }
 }

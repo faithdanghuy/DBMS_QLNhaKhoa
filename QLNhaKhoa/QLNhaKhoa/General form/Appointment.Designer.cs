@@ -1,6 +1,6 @@
-﻿namespace QLNhaKhoa
+﻿namespace QLNhaKhoa.General_form
 {
-    partial class Customer_Appointment
+    partial class Appointment
     {
         /// <summary>
         /// Required designer variable.
@@ -40,6 +40,7 @@
             label1 = new Label();
             appointTime = new TextBox();
             appointmentData = new DataGridView();
+            serviceTitle = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)appointmentData).BeginInit();
@@ -57,7 +58,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(600, 550);
-            panel1.TabIndex = 2;
+            panel1.TabIndex = 3;
             // 
             // ExitButton
             // 
@@ -186,36 +187,51 @@
             appointmentData.Size = new Size(600, 250);
             appointmentData.TabIndex = 0;
             // 
-            // Customer_Appointment
+            // serviceTitle
+            // 
+            serviceTitle.AutoSize = true;
+            serviceTitle.BackColor = Color.White;
+            serviceTitle.Font = new Font("Tw Cen MT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            serviceTitle.ForeColor = Color.SteelBlue;
+            serviceTitle.Location = new Point(217, 20);
+            serviceTitle.Name = "serviceTitle";
+            serviceTitle.Size = new Size(166, 35);
+            serviceTitle.TabIndex = 6;
+            serviceTitle.Text = "Appointment";
+            // 
+            // Appointment
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(600, 550);
             ControlBox = false;
+            Controls.Add(serviceTitle);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Customer_Appointment";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Customer_Appointment";
+            Name = "Appointment";
+            Text = "Appointment";
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)appointmentData).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
         private Panel panel1;
+        private Button ExitButton;
+        private Button button2;
         private Button makeAppointBtn;
-        private DataGridView appointmentData;
         private Panel panel2;
-        private TextBox appointTime;
-        private Label label1;
-        private ComboBox cboDentists;
         private Label label3;
         private DateTimePicker appointDate;
         private Label label2;
-        private Button button2;
-        private Button ExitButton;
+        private ComboBox cboDentists;
+        private Label label1;
+        private TextBox appointTime;
+        private DataGridView appointmentData;
+        private Label serviceTitle;
     }
 }

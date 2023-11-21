@@ -1,6 +1,6 @@
 ﻿namespace QLNhaKhoa.Dentist_form
 {
-    partial class Dentist_Application
+    partial class Dentist_Record
     {
         /// <summary>
         /// Required designer variable.
@@ -30,16 +30,15 @@
         {
             SuspendLayout();
             // 
-            // Dentist_Application
+            // Dentist_Record
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
             ClientSize = new Size(600, 550);
             ControlBox = false;
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Dentist_Application";
-            Text = "Dentist_Application";
+            Name = "Dentist_Record";
+            Text = "Dentist_Record";
             ResumeLayout(false);
         }
 

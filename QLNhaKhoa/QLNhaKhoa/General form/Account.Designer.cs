@@ -1,6 +1,6 @@
-﻿namespace QLNhaKhoa
+﻿namespace QLNhaKhoa.General_form
 {
-    partial class Customer_Account
+    partial class Account
     {
         /// <summary>
         /// Required designer variable.
@@ -38,8 +38,8 @@
             nameLabel = new Label();
             phoneBox = new TextBox();
             addressBox = new TextBox();
-            nameBox = new TextBox();
             ExitButton = new Button();
+            nameBox = new TextBox();
             RightPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -62,7 +62,7 @@
             RightPanel.Location = new Point(0, 0);
             RightPanel.Name = "RightPanel";
             RightPanel.Size = new Size(600, 550);
-            RightPanel.TabIndex = 1;
+            RightPanel.TabIndex = 2;
             // 
             // bdayBox
             // 
@@ -153,7 +153,6 @@
             phoneBox.PlaceholderText = "Phone";
             phoneBox.Size = new Size(200, 27);
             phoneBox.TabIndex = 6;
-            phoneBox.KeyPress += phoneBox_KeyPress;
             // 
             // addressBox
             // 
@@ -163,15 +162,6 @@
             addressBox.PlaceholderText = "Address";
             addressBox.Size = new Size(450, 27);
             addressBox.TabIndex = 3;
-            // 
-            // nameBox
-            // 
-            nameBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            nameBox.Location = new Point(75, 211);
-            nameBox.Name = "nameBox";
-            nameBox.PlaceholderText = "Name";
-            nameBox.Size = new Size(450, 27);
-            nameBox.TabIndex = 0;
             // 
             // ExitButton
             // 
@@ -186,7 +176,16 @@
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
             // 
-            // Customer_Account
+            // nameBox
+            // 
+            nameBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            nameBox.Location = new Point(75, 211);
+            nameBox.Name = "nameBox";
+            nameBox.PlaceholderText = "Name";
+            nameBox.Size = new Size(450, 27);
+            nameBox.TabIndex = 0;
+            // 
+            // Account
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -194,9 +193,8 @@
             ControlBox = false;
             Controls.Add(RightPanel);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Customer_Account";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Customer_Account";
+            Name = "Account";
+            Text = "Account";
             RightPanel.ResumeLayout(false);
             RightPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -204,17 +202,18 @@
         }
 
         #endregion
+
         private Panel RightPanel;
-        private TextBox nameBox;
-        private TextBox addressBox;
-        private Label nameLabel;
-        private TextBox phoneBox;
+        private DateTimePicker bdayBox;
+        private PictureBox pictureBox1;
+        private Label label2;
+        private Button button2;
         private Label label3;
         private Label label1;
-        private Button button2;
-        private Label label2;
-        private PictureBox pictureBox1;
-        private DateTimePicker bdayBox;
+        private Label nameLabel;
+        private TextBox phoneBox;
+        private TextBox addressBox;
         private Button ExitButton;
+        private TextBox nameBox;
     }
 }

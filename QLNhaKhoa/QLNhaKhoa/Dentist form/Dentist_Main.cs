@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLNhaKhoa.General_form;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,7 +32,37 @@ namespace QLNhaKhoa.Dentist_form
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();  
+            Application.Exit();
+        }
+
+        private void AccountButton_Click(object sender, EventArgs e)
+        {
+            loadform(new Account());
+        }
+
+        private void ServiceButton_Click(object sender, EventArgs e)
+        {
+            loadform(new Dentist_Services());
+        }
+
+        private void AppointmentButton_Click(object sender, EventArgs e)
+        {
+            loadform(new Appointment());
+        }
+
+        private void PrecriptionButton_Click(object sender, EventArgs e)
+        {
+            loadform(new Dentist_Prescription());
+        }
+
+        private void RecordButton_Click(object sender, EventArgs e)
+        {
+            loadform(new Dentist_Record());
+        }
+
+        private void BillButton_Click(object sender, EventArgs e)
+        {
+            loadform(new Dentist_Bill());
         }
     }
 }

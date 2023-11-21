@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             LeftPanel = new Panel();
+            ServiceButton = new Button();
+            PrecriptionButton = new Button();
+            BillButton = new Button();
             credit = new Label();
             CustomerID = new Label();
             label5 = new Label();
@@ -39,9 +42,6 @@
             AccountButton = new Button();
             mainPanel = new Panel();
             ExitButton = new Button();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
             LeftPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)HomepageIcon).BeginInit();
             mainPanel.SuspendLayout();
@@ -50,9 +50,9 @@
             // LeftPanel
             // 
             LeftPanel.BackColor = Color.SteelBlue;
-            LeftPanel.Controls.Add(button3);
-            LeftPanel.Controls.Add(button2);
-            LeftPanel.Controls.Add(button1);
+            LeftPanel.Controls.Add(ServiceButton);
+            LeftPanel.Controls.Add(PrecriptionButton);
+            LeftPanel.Controls.Add(BillButton);
             LeftPanel.Controls.Add(credit);
             LeftPanel.Controls.Add(CustomerID);
             LeftPanel.Controls.Add(label5);
@@ -66,6 +66,48 @@
             LeftPanel.Name = "LeftPanel";
             LeftPanel.Size = new Size(300, 550);
             LeftPanel.TabIndex = 2;
+            // 
+            // ServiceButton
+            // 
+            ServiceButton.FlatAppearance.BorderSize = 0;
+            ServiceButton.FlatStyle = FlatStyle.Flat;
+            ServiceButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ServiceButton.ForeColor = Color.White;
+            ServiceButton.Location = new Point(25, 425);
+            ServiceButton.Name = "ServiceButton";
+            ServiceButton.Size = new Size(250, 40);
+            ServiceButton.TabIndex = 11;
+            ServiceButton.Text = "Services";
+            ServiceButton.UseVisualStyleBackColor = true;
+            ServiceButton.Click += ServiceButton_Click;
+            // 
+            // PrecriptionButton
+            // 
+            PrecriptionButton.FlatAppearance.BorderSize = 0;
+            PrecriptionButton.FlatStyle = FlatStyle.Flat;
+            PrecriptionButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PrecriptionButton.ForeColor = Color.White;
+            PrecriptionButton.Location = new Point(25, 380);
+            PrecriptionButton.Name = "PrecriptionButton";
+            PrecriptionButton.Size = new Size(250, 40);
+            PrecriptionButton.TabIndex = 10;
+            PrecriptionButton.Text = "Prescription";
+            PrecriptionButton.UseVisualStyleBackColor = true;
+            PrecriptionButton.Click += PrecriptionButton_Click;
+            // 
+            // BillButton
+            // 
+            BillButton.FlatAppearance.BorderSize = 0;
+            BillButton.FlatStyle = FlatStyle.Flat;
+            BillButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            BillButton.ForeColor = Color.White;
+            BillButton.Location = new Point(25, 335);
+            BillButton.Name = "BillButton";
+            BillButton.Size = new Size(250, 40);
+            BillButton.TabIndex = 9;
+            BillButton.Text = "Medical bill";
+            BillButton.UseVisualStyleBackColor = true;
+            BillButton.Click += BillButton_Click;
             // 
             // credit
             // 
@@ -134,6 +176,7 @@
             RecordButton.TabIndex = 3;
             RecordButton.Text = "Patient record";
             RecordButton.UseVisualStyleBackColor = true;
+            RecordButton.Click += RecordButton_Click;
             // 
             // AppointmentButton
             // 
@@ -147,6 +190,7 @@
             AppointmentButton.TabIndex = 2;
             AppointmentButton.Text = "Appointment";
             AppointmentButton.UseVisualStyleBackColor = true;
+            AppointmentButton.Click += AppointmentButton_Click;
             // 
             // AccountButton
             // 
@@ -160,6 +204,7 @@
             AccountButton.TabIndex = 1;
             AccountButton.Text = "Account";
             AccountButton.UseVisualStyleBackColor = true;
+            AccountButton.Click += AccountButton_Click;
             // 
             // mainPanel
             // 
@@ -183,45 +228,6 @@
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
             // 
-            // button1
-            // 
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(25, 335);
-            button1.Name = "button1";
-            button1.Size = new Size(250, 40);
-            button1.TabIndex = 9;
-            button1.Text = "Medical bill";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(25, 380);
-            button2.Name = "button2";
-            button2.Size = new Size(250, 40);
-            button2.TabIndex = 10;
-            button2.Text = "Prescription";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(25, 425);
-            button3.Name = "button3";
-            button3.Size = new Size(250, 40);
-            button3.TabIndex = 11;
-            button3.Text = "Services";
-            button3.UseVisualStyleBackColor = true;
-            // 
             // Dentist_Main
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -233,6 +239,7 @@
             Controls.Add(LeftPanel);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Dentist_Main";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Dentist_Main";
             LeftPanel.ResumeLayout(false);
             LeftPanel.PerformLayout();
@@ -254,8 +261,8 @@
         private Button AccountButton;
         private Panel mainPanel;
         private Button ExitButton;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private Button ServiceButton;
+        private Button PrecriptionButton;
+        private Button BillButton;
     }
 }

@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLNhaKhoa
+namespace QLNhaKhoa.Dentist_form
 {
-    public partial class Customer_Record : Form
+    public partial class Dentist_Record : Form
     {
-        public Customer_Record()
+        public Dentist_Record()
         {
             InitializeComponent();
-        }
-
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }
