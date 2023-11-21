@@ -1,217 +1,43 @@
 USE [Nhom3 _QLNhaKhoa]
 GO
 
-INSERT INTO QUANTRIVIEN
-VALUES
-('NV001', N'Phan Minh Tường', N'144, Lê Hồng Phong, phường 9, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '08852348075', 2, 'tyahytanyfg'),
-('NV002', N'Bùi Hoàng Quỳnh', N'192, Nguyễn Thị Minh Khai, phường 10, thành phố Đà Lạt, tỉnh Lâm Đồng', '19614926640', 2, 'vvpeuufvxwl'),
-('NV003', N'Lý Anh Thư', N'328, Trần Hưng Đạo, phường 4, huyện Cái Bè, tỉnh Tiền Giang', '68053091695', 2, 'wrvvefmnxwh'),
-('NV004', N'Lý An Thư', N'25, Lê Hồng Phong, phường 6, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '08017907216', 2, 'ptmbicynjsm'),
-('NV005', N'Lý An Tiến', N'239, Nguyễn Thị Minh Khai, phường 5, quận 4, Thành phố Hồ Chí Minh', '27442545483', 2, 'pdojzmgwwql'),
-('NV006', N'Nguyễn An Khánh', N'141, Lê Hồng Phong, phường 8, quận 1, Thành phố Hồ Chí Minh', '61036434803', 2, 'gzearmiegcn'),
-('NV007', N'Hoàng Gia Linh', N'258, Nguyễn Thị Minh Khai, phường 1, quận 3, Thành phố Hồ Chí Minh', '05522056104', 2, 'llruoavknqo'),
-('NV008', N'Hoàng Thị Lộc', N'290, Lê Hồng Phong, phường 3, quận 5, Thành phố Hồ Chí Minh', '38382500327', 2, 'boquznbltsa'),
-('NV009', N'Phan Tấn Lộc', N'102, Nguyễn Văn Cừ, phường 6, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '54306800212', 2, 'guvqdqwvvcg'),
-('NV010', N'Vũ Thiên Mai', N'252, Nguyễn Văn Cừ, phường 5, huyện Cái Bè, tỉnh Tiền Giang', '20530720104', 2, 'qghygonrvps'),
-('NV011', N'Đặng Văn Tường', N'130, Trần Hưng Đạo, phường 1, quận 2, Thành phố Hồ Chí Minh', '11527754149', 2, 'ihqncytwzgj'),
-('NV012', N'Lý Anh Linh', N'494, Lê Hồng Phong, phường 9, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '05701728105', 2, 'yquvluojaim'),
-('NV013', N'Đỗ Tấn Tiến', N'380, Võ Thị Sáu, phường 6, quận 1, Thành phố Hồ Chí Minh', '93405971313', 2, 'ryqarfdsrta'),
-('NV014', N'Nguyễn Minh Khôi', N'377, Nguyễn Văn Cừ, phường 5, huyện Cái Bè, tỉnh Tiền Giang', '02193712559', 2, 'nidvimsmakj'),
-('NV015', N'Bùi Anh Khôi', N'245, Lê Hồng Phong, phường 3, quận 1, Thành phố Hồ Chí Minh', '19236561191', 2, 'jtrljogwypb'),
-('NV016', N'Đặng Anh Khánh', N'97, Nguyễn Văn Cừ, phường 4, huyện Cái Bè, tỉnh Tiền Giang', '54981361337', 2, 'ucxpnjlwuda'),
-('NV017', N'Trần Anh Quỳnh', N'206, Nguyễn Thị Minh Khai, phường 5, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '87883077743', 2, 'zptpnsqigfc'),
-('NV018', N'Phạm An Quỳnh', N'384, Lê Hồng Phong, phường 6, quận 5, Thành phố Hồ Chí Minh', '17084335590', 2, 'bmswrjxxkmj'),
-('NV019', N'Hồ Anh Khánh', N'68, Lê Hồng Phong, phường 4, quận 2, Thành phố Hồ Chí Minh', '97612076475', 2, 'tsgtbxdvztf'),
-('NV020', N'Vũ Thiên Khôi', N'363, Lê Hồng Phong, phường 10, quận 5, Thành phố Hồ Chí Minh', '00539853963', 2, 'lqbpwhtnmli'),
-('NV021', N'Lê Văn Phúc', N'454, Nguyễn Văn Cừ, phường 1, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '50358853029', 2, 'blnnjhfyvnd'),
-('NV022', N'Nguyễn Thị Tiến', N'499, Lê Hồng Phong, phường 8, quận 2, Thành phố Hồ Chí Minh', '07872497484', 2, 'ickcuqwghau'),
-('NV023', N'Đặng Anh Lộc', N'78, Lê Hồng Phong, phường 1, quận 1, Thành phố Hồ Chí Minh', '00323063978', 2, 'mcpcxisnvnt'),
-('NV024', N'Đặng An Linh', N'183, Lê Hồng Phong, phường 6, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '96131552671', 2, 'kfcvpedofic'),
-('NV025', N'Hoàng An Phúc', N'337, Lê Hồng Phong, phường 2, quận 5, Thành phố Hồ Chí Minh', '18025454918', 2, 'possfpmyslr'),
-('NV026', N'Lý Thị Khánh', N'118, Lê Hồng Phong, phường 10, quận 4, Thành phố Hồ Chí Minh', '13022501788', 2, 'vcdmtsuksci'),
-('NV027', N'Vũ Thị Quỳnh', N'379, Trần Hưng Đạo, phường 3, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '16394321966', 2, 'oewqehwtwhn'),
-('NV028', N'Trần Gia Mai', N'52, Nguyễn Thị Minh Khai, phường 7, quận 5, Thành phố Hồ Chí Minh', '46549266084', 2, 'ahspontoqrr'),
-('NV029', N'Phạm Gia Tường', N'280, Nguyễn Văn Cừ, phường 3, quận 5, Thành phố Hồ Chí Minh', '71772500684', 2, 'jjrhnrfppxp'),
-('NV030', N'Hoàng Thị Khôi', N'492, Nguyễn Thị Minh Khai, phường 7, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '51871444739', 2, 'preieyrroyc'),
-('NV031', N'Trần Hoàng Lộc', N'486, Lê Hồng Phong, phường 4, quận 3, Thành phố Hồ Chí Minh', '24056008730', 2, 'jhjkcpvynyt'),
-('NV032', N'Phạm Thiên Quỳnh', N'344, Lê Hồng Phong, phường 4, quận 5, Thành phố Hồ Chí Minh', '47664092116', 2, 'irfsjrdmavr'),
-('NV033', N'Phan Tấn Mai', N'349, Trần Hưng Đạo, phường 4, quận 4, Thành phố Hồ Chí Minh', '20911158618', 2, 'oheqykegolg'),
-('NV034', N'Lý An Lộc', N'48, Nguyễn Thị Minh Khai, phường 4, quận 5, Thành phố Hồ Chí Minh', '83502859447', 2, 'gxsmiscqrby'),
-('NV035', N'Hồ Gia Khôi', N'204, Võ Thị Sáu, phường 10, quận 3, Thành phố Hồ Chí Minh', '03973345640', 2, 'nxgmecghjov'),
-('NV036', N'Hoàng Hoàng Khôi', N'247, Nguyễn Thị Minh Khai, phường 4, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '55758667410', 2, 'mgbmyeofsid'),
-('NV037', N'Đỗ Hữu Tiến', N'401, Võ Thị Sáu, phường 8, quận 1, Thành phố Hồ Chí Minh', '57776909732', 2, 'fojvbomoqlh'),
-('NV038', N'Phạm Hoàng Khánh', N'239, Võ Thị Sáu, phường 10, thành phố Đà Lạt, tỉnh Lâm Đồng', '15108560234', 2, 'pzwirpoufof'),
-('NV039', N'Phan An Khôi', N'363, Lê Hồng Phong, phường 5, quận 4, Thành phố Hồ Chí Minh', '71590108439', 2, 'qvxlgljncvr'),
-('NV040', N'Đặng An Quỳnh', N'113, Võ Thị Sáu, phường 2, quận 5, Thành phố Hồ Chí Minh', '80565962315', 2, 'mqyhvlxfiyh'),
-('NV041', N'Đỗ Văn Tường', N'474, Nguyễn Thị Minh Khai, phường 9, quận 2, Thành phố Hồ Chí Minh', '15394053991', 2, 'byngoinrlzc'),
-('NV042', N'Phạm Tấn Linh', N'249, Võ Thị Sáu, phường 10, thành phố Đà Lạt, tỉnh Lâm Đồng', '62873997706', 2, 'bpdwnivfjxy'),
-('NV043', N'Hoàng An Tiến', N'366, Nguyễn Thị Minh Khai, phường 10, thành phố Đà Lạt, tỉnh Lâm Đồng', '87202929526', 2, 'ruwsifxoeoq'),
-('NV044', N'Phan An Khôi', N'492, Nguyễn Văn Cừ, phường 4, huyện Cái Bè, tỉnh Tiền Giang', '27944214252', 2, 'gcsxrdvwtmi'),
-('NV045', N'Nguyễn Thiên Khánh', N'130, Võ Thị Sáu, phường 5, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '33825286682', 2, 'buugxdnyiwj'),
-('NV046', N'Phan Văn Tường', N'320, Nguyễn Văn Cừ, phường 3, quận 5, Thành phố Hồ Chí Minh', '39124043279', 2, 'pjnrpzdtana'),
-('NV047', N'Nguyễn Thị Quỳnh', N'224, Trần Hưng Đạo, phường 2, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '20721166046', 2, 'qhtxohppwbz'),
-('NV048', N'Đặng Hữu Phúc', N'204, Nguyễn Văn Cừ, phường 5, thành phố Đà Lạt, tỉnh Lâm Đồng', '67350612752', 2, 'ompahapjhqu'),
-('NV049', N'Phan Hoàng Quỳnh', N'465, Trần Hưng Đạo, phường 2, quận 1, Thành phố Hồ Chí Minh', '77627930208', 2, 'ryubmipxlmc'),
-('NV050', N'Lê Văn Khôi', N'307, Lê Hồng Phong, phường 3, huyện Cái Bè, tỉnh Tiền Giang', '37144472466', 2, 'wbljvyazknn')
-GO
+--QTV: 1
+EXEC USP_NHANVIEN_INS
+ N'Trần Hoàng Thư', N'468, Lê Hồng Phong, phường 1, quận 2, Thành phố Hồ Chí Minh', '92717053370', 2, '123'
 
-INSERT INTO QUANTRIVIEN
-VALUES
-('NV051', N'Trần Anh Phúc', N'303, Võ Thị Sáu, phường 6, quận 5, Thành phố Hồ Chí Minh', '59105316297', 2, 'bwzrgsjgzqh'),
-('NV052', N'Phan Văn Khánh', N'67, Lý Thái Tổ, phường 2, quận 5, Thành phố Hồ Chí Minh', '63314924402', 2, 'vmgjwuafplw'),
-('NV053', N'Hồ Thiên Phúc', N'50, Nguyễn Văn Cừ, phường 3, huyện Cái Bè, tỉnh Tiền Giang', '96386126685', 2, 'nuqxofrfyeu'),
-('NV054', N'Trần Văn Tường', N'28, Lê Hồng Phong, phường 7, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '31773305036', 2, 'lovzkhbvoft'),
-('NV055', N'Phan An Tiến', N'406, Lê Hồng Phong, phường 6, quận 5, Thành phố Hồ Chí Minh', '57524552420', 2, 'icicjyahtxi'),
-('NV056', N'Trần An Mai', N'388, Nguyễn Thị Minh Khai, phường 3, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '55867132724', 2, 'mnrkpkkpjad'),
-('NV057', N'Trần Thị Khánh', N'120, Trần Hưng Đạo, phường 3, quận 5, Thành phố Hồ Chí Minh', '46051573146', 2, 'gouzqnkvgqo'),
-('NV058', N'Vũ Tấn Lộc', N'353, Trần Hưng Đạo, phường 3, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '54451391911', 2, 'dxoegetvmdx'),
-('NV059', N'Nguyễn Thiên Mai', N'158, Trần Hưng Đạo, phường 6, quận 4, Thành phố Hồ Chí Minh', '34371459107', 2, 'xixmjjwjqji'),
-('NV060', N'Vũ Thị Tiến', N'303, Trần Hưng Đạo, phường 7, huyện Cái Bè, tỉnh Tiền Giang', '25437804897', 2, 'xuigdbxuqap'),
-('NV061', N'Trần An Linh', N'470, Võ Thị Sáu, phường 7, quận 4, Thành phố Hồ Chí Minh', '65490778942', 2, 'wipqflgkgse'),
-('NV062', N'Vũ Gia Tường', N'294, Nguyễn Văn Cừ, phường 2, thành phố Đà Lạt, tỉnh Lâm Đồng', '10753380907', 2, 'zafkwyrtytg'),
-('NV063', N'Đỗ Văn Lộc', N'498, Nguyễn Văn Cừ, phường 9, quận 5, Thành phố Hồ Chí Minh', '72103111327', 2, 'ghqsxougaej'),
-('NV064', N'Bùi Thiên Quỳnh', N'239, Lê Hồng Phong, phường 3, quận 2, Thành phố Hồ Chí Minh', '95458686628', 2, 'gkqbjhfvrpr'),
-('NV065', N'Bùi Minh Mai', N'226, Nguyễn Thị Minh Khai, phường 3, huyện Cái Bè, tỉnh Tiền Giang', '42326933807', 2, 'qhszfqckqfb'),
-('NV066', N'Đỗ Thị Lộc', N'61, Nguyễn Văn Cừ, phường 3, quận 1, Thành phố Hồ Chí Minh', '12784066126', 2, 'hwzrymiafpi'),
-('NV067', N'Phan Minh Quỳnh', N'226, Trần Hưng Đạo, phường 5, quận 3, Thành phố Hồ Chí Minh', '47745641237', 2, 'syiykskhzkg'),
-('NV068', N'Bùi Anh Khánh', N'166, Nguyễn Văn Cừ, phường 1, quận 5, Thành phố Hồ Chí Minh', '00032711256', 2, 'eqcpeozxrcj'),
-('NV069', N'Hồ Minh Thư', N'443, Lê Hồng Phong, phường 6, quận 5, Thành phố Hồ Chí Minh', '03808835557', 2, 'mzgglmjiydm'),
-('NV070', N'Hoàng Thị Phúc', N'231, Lý Thái Tổ, phường 1, huyện Cái Bè, tỉnh Tiền Giang', '14665144152', 2, 'mlqrlofddub'),
-('NV071', N'Phạm Thiên Linh', N'388, Lê Hồng Phong, phường 10, huyện Cái Bè, tỉnh Tiền Giang', '01893476383', 2, 'zuveslyjelq'),
-('NV072', N'Đặng Anh Mai', N'491, Võ Thị Sáu, phường 7, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '83929364598', 2, 'rzigbmwxzim'),
-('NV073', N'Hoàng Anh Phúc', N'300, Nguyễn Thị Minh Khai, phường 10, huyện Cái Bè, tỉnh Tiền Giang', '48377654935', 2, 'gbtdbpiaxnh'),
-('NV074', N'Trần Thị Tường', N'200, Lý Thái Tổ, phường 5, quận 4, Thành phố Hồ Chí Minh', '05621748502', 2, 'vswmqosjxnh'),
-('NV075', N'Hồ Thiên Khánh', N'371, Nguyễn Văn Cừ, phường 5, thành phố Đà Lạt, tỉnh Lâm Đồng', '37719068847', 2, 'aaskhhiqdqe'),
-('NV076', N'Phạm Hữu Linh', N'481, Lý Thái Tổ, phường 1, huyện Cái Bè, tỉnh Tiền Giang', '67572573298', 2, 'jsowhwsrulq'),
-('NV077', N'Lê An Tường', N'352, Trần Hưng Đạo, phường 8, huyện Cái Bè, tỉnh Tiền Giang', '27531925875', 2, 'ztwewhuuaas'),
-('NV078', N'Đặng Minh Lộc', N'329, Lê Hồng Phong, phường 8, huyện Cái Bè, tỉnh Tiền Giang', '20237697816', 2, 'bqeoerjicot'),
-('NV079', N'Lê Gia Linh', N'301, Lý Thái Tổ, phường 3, quận 4, Thành phố Hồ Chí Minh', '36742872917', 2, 'qikwvavigbc'),
-('NV080', N'Lê Hoàng Khánh', N'109, Lê Hồng Phong, phường 7, thành phố Đà Lạt, tỉnh Lâm Đồng', '05465846142', 2, 'nxlghqhtnvb'),
-('NV081', N'Trần Gia Linh', N'423, Võ Thị Sáu, phường 4, quận 3, Thành phố Hồ Chí Minh', '87380229317', 2, 'ugvtwxjvvoz'),
-('NV082', N'Phan Tấn Tiến', N'231, Lê Hồng Phong, phường 5, quận 3, Thành phố Hồ Chí Minh', '70168922002', 2, 'oksvlgbbydt'),
-('NV083', N'Đặng Hữu Khôi', N'268, Lý Thái Tổ, phường 6, quận 2, Thành phố Hồ Chí Minh', '98731675613', 2, 'rjhajpdjbrp'),
-('NV084', N'Đỗ Gia Khôi', N'245, Nguyễn Thị Minh Khai, phường 9, quận 4, Thành phố Hồ Chí Minh', '73438554134', 2, 'fftdolzbewm'),
-('NV085', N'Đỗ Gia Tiến', N'52, Võ Thị Sáu, phường 3, quận 2, Thành phố Hồ Chí Minh', '65056981379', 2, 'yqpdogwdjjb'),
-('NV086', N'Đặng Minh Tường', N'169, Võ Thị Sáu, phường 9, quận 2, Thành phố Hồ Chí Minh', '04968739686', 2, 'ocjfhogrbcb'),
-('NV087', N'Đặng Thiên Khánh', N'393, Nguyễn Thị Minh Khai, phường 5, thành phố Đà Lạt, tỉnh Lâm Đồng', '24080706693', 2, 'qztjytakbhf'),
-('NV088', N'Hoàng Hoàng Mai', N'474, Lê Hồng Phong, phường 10, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '74659655301', 2, 'ofjyedwadzt'),
-('NV089', N'Lê Văn Phúc', N'4, Võ Thị Sáu, phường 9, huyện Cái Bè, tỉnh Tiền Giang', '86797961295', 2, 'tsqyxtyugnm'),
-('NV090', N'Bùi Tấn Quỳnh', N'500, Lý Thái Tổ, phường 3, quận 5, Thành phố Hồ Chí Minh', '62848896581', 2, 'ltsvahlnzlq'),
-('NV091', N'Phạm Anh Tiến', N'417, Nguyễn Thị Minh Khai, phường 9, quận 3, Thành phố Hồ Chí Minh', '43937108246', 2, 'utupojuaogn'),
-('NV092', N'Phạm Anh Khánh', N'24, Nguyễn Văn Cừ, phường 9, thành phố Đà Lạt, tỉnh Lâm Đồng', '44688236552', 2, 'yoyxncxriyj'),
-('NV093', N'Bùi Hoàng Khôi', N'483, Lý Thái Tổ, phường 3, quận 4, Thành phố Hồ Chí Minh', '64199951418', 2, 'bsziybxpseb'),
-('NV094', N'Đặng Thiên Tiến', N'223, Nguyễn Thị Minh Khai, phường 2, quận 3, Thành phố Hồ Chí Minh', '93942407185', 2, 'owrczacrann'),
-('NV095', N'Hoàng Hữu Mai', N'402, Trần Hưng Đạo, phường 10, quận 4, Thành phố Hồ Chí Minh', '28513024753', 2, 'wdrmysjosvm'),
-('NV096', N'Lê Hữu Khánh', N'112, Nguyễn Thị Minh Khai, phường 9, quận 4, Thành phố Hồ Chí Minh', '85920214475', 2, 'jlltyeakjcd'),
-('NV097', N'Nguyễn Gia Thư', N'349, Lý Thái Tổ, phường 2, quận 3, Thành phố Hồ Chí Minh', '24455274841', 2, 'owvgrzmxhxj'),
-('NV098', N'Đỗ Hoàng Mai', N'62, Lý Thái Tổ, phường 7, quận 3, Thành phố Hồ Chí Minh', '03251430014', 2, 'elpsqgoixqb'),
-('NV099', N'Hồ Thiên Mai', N'190, Trần Hưng Đạo, phường 4, quận 3, Thành phố Hồ Chí Minh', '23752878476', 2, 'sfugefzodlk'),
-('NV100', N'Bùi Gia Lộc', N'77, Lý Thái Tổ, phường 7, quận 2, Thành phố Hồ Chí Minh', '68146933237', 2, 'fkuyjdsrljz')
-GO
+--QTV: 2
+EXEC USP_NHANVIEN_INS
+ N'Phan Anh Lộc', N'219, Lý Thái Tổ, phường 3, quận 5, Thành phố Hồ Chí Minh', '66161087473', 2, '123'
 
-INSERT INTO QUANTRIVIEN
-VALUES
-('NV101', N'Đỗ Văn Khôi', N'111, Lê Hồng Phong, phường 3, quận 1, Thành phố Hồ Chí Minh', '80965837739', 2, 'ogpsslhwmil'),
-('NV102', N'Hồ Văn Khánh', N'144, Nguyễn Văn Cừ, phường 1, huyện Cái Bè, tỉnh Tiền Giang', '79304653678', 2, 'kfluvwyzwwb'),
-('NV103', N'Lê Hữu Phúc', N'320, Lý Thái Tổ, phường 8, quận 5, Thành phố Hồ Chí Minh', '55503098571', 2, 'mgrhijszlly'),
-('NV104', N'Hồ Hữu Lộc', N'17, Lý Thái Tổ, phường 1, quận 2, Thành phố Hồ Chí Minh', '73274228797', 2, 'yemrpkfpbky'),
-('NV105', N'Bùi Thị Tiến', N'238, Võ Thị Sáu, phường 10, quận 1, Thành phố Hồ Chí Minh', '42063359426', 2, 'fngamgsxaqy'),
-('NV106', N'Phạm Anh Khôi', N'335, Võ Thị Sáu, phường 2, quận 4, Thành phố Hồ Chí Minh', '43664145094', 2, 'tvzualnjlzk'),
-('NV107', N'Vũ An Linh', N'265, Trần Hưng Đạo, phường 6, quận 1, Thành phố Hồ Chí Minh', '29201677986', 2, 'udcydrenstf'),
-('NV108', N'Lê Anh Linh', N'4, Võ Thị Sáu, phường 6, huyện Cái Bè, tỉnh Tiền Giang', '69050757796', 2, 'vomuijfxlec'),
-('NV109', N'Phạm Thiên Lộc', N'286, Nguyễn Thị Minh Khai, phường 8, huyện Cái Bè, tỉnh Tiền Giang', '13704317766', 2, 'mhpyxhjxzpr'),
-('NV110', N'Phan Hoàng Khôi', N'190, Lê Hồng Phong, phường 8, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '95055772171', 2, 'lzokmxqdmta'),
-('NV111', N'Phạm Gia Thư', N'296, Lê Hồng Phong, phường 9, quận 4, Thành phố Hồ Chí Minh', '36009187522', 2, 'ukuokrrgfrj'),
-('NV112', N'Đỗ Anh Khôi', N'184, Nguyễn Thị Minh Khai, phường 8, quận 2, Thành phố Hồ Chí Minh', '72236930872', 2, 'buhqskcnous'),
-('NV113', N'Phan Thiên Mai', N'130, Nguyễn Văn Cừ, phường 2, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '15158210004', 2, 'addekwnavyh'),
-('NV114', N'Đỗ Minh Mai', N'227, Nguyễn Văn Cừ, phường 3, quận 3, Thành phố Hồ Chí Minh', '46135458491', 2, 'wvwtmzirhkp'),
-('NV115', N'Đỗ Hoàng Tường', N'334, Lý Thái Tổ, phường 6, quận 1, Thành phố Hồ Chí Minh', '85559128517', 2, 'nxzibvslvbf'),
-('NV116', N'Phạm Anh Phúc', N'250, Lý Thái Tổ, phường 9, quận 5, Thành phố Hồ Chí Minh', '26045195809', 2, 'irqjdjjgmcq'),
-('NV117', N'Phạm Minh Linh', N'51, Nguyễn Văn Cừ, phường 5, huyện Cái Bè, tỉnh Tiền Giang', '32062472323', 2, 'xuuznhherwz'),
-('NV118', N'Lê Hữu Tiến', N'424, Nguyễn Văn Cừ, phường 5, quận 2, Thành phố Hồ Chí Minh', '56240717896', 2, 'ogjxqsinxid'),
-('NV119', N'Đặng Anh Mai', N'230, Võ Thị Sáu, phường 10, quận 3, Thành phố Hồ Chí Minh', '97937495804', 2, 'jadfnjlxihg'),
-('NV120', N'Lý Anh Lộc', N'191, Trần Hưng Đạo, phường 2, quận 5, Thành phố Hồ Chí Minh', '48803302880', 2, 'pokmkwakwya'),
-('NV121', N'Đặng Thị Khôi', N'307, Nguyễn Văn Cừ, phường 8, quận 2, Thành phố Hồ Chí Minh', '34662537174', 2, 'gsdeffmwjsh'),
-('NV122', N'Trần Anh Tiến', N'320, Lê Hồng Phong, phường 7, thành phố Đà Lạt, tỉnh Lâm Đồng', '13177721188', 2, 'dvfobfitfuh'),
-('NV123', N'Phan Hoàng Lộc', N'247, Nguyễn Thị Minh Khai, phường 10, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '63981488754', 2, 'gkttegqunuy'),
-('NV124', N'Vũ Minh Quỳnh', N'77, Lý Thái Tổ, phường 9, quận 1, Thành phố Hồ Chí Minh', '80845578988', 2, 'xuwefizwaot'),
-('NV125', N'Bùi Minh Lộc', N'279, Lê Hồng Phong, phường 2, quận 2, Thành phố Hồ Chí Minh', '69259597345', 2, 'hvpdorlbjfy'),
-('NV126', N'Hoàng Tấn Thư', N'195, Lý Thái Tổ, phường 6, quận 1, Thành phố Hồ Chí Minh', '38600889221', 2, 'lszokddyuko'),
-('NV127', N'Lý Văn Khôi', N'211, Lý Thái Tổ, phường 6, quận 5, Thành phố Hồ Chí Minh', '73414382534', 2, 'sghanyczqlf'),
-('NV128', N'Đỗ Tấn Linh', N'204, Võ Thị Sáu, phường 9, quận 3, Thành phố Hồ Chí Minh', '07460508815', 2, 'mosaocwfpmq'),
-('NV129', N'Hồ Thiên Tường', N'142, Võ Thị Sáu, phường 6, quận 1, Thành phố Hồ Chí Minh', '32369248717', 2, 'vzjdjfbapud'),
-('NV130', N'Phan Hoàng Khánh', N'73, Nguyễn Văn Cừ, phường 6, quận 1, Thành phố Hồ Chí Minh', '43957214285', 2, 'nyufjffdsqr'),
-('NV131', N'Trần Anh Mai', N'391, Võ Thị Sáu, phường 6, quận 2, Thành phố Hồ Chí Minh', '46964007756', 2, 'ecrqxkdrjjb'),
-('NV132', N'Nguyễn Hoàng Lộc', N'51, Nguyễn Thị Minh Khai, phường 5, quận 1, Thành phố Hồ Chí Minh', '67329833632', 2, 'dakvyalurac'),
-('NV133', N'Phạm Hoàng Linh', N'70, Lý Thái Tổ, phường 10, huyện Cái Bè, tỉnh Tiền Giang', '27634997676', 2, 'mtxdrquiazc'),
-('NV134', N'Trần Gia Tường', N'171, Lý Thái Tổ, phường 3, thành phố Đà Lạt, tỉnh Lâm Đồng', '70318713702', 2, 'tlhnmvxdckx'),
-('NV135', N'Hoàng Văn Lộc', N'81, Lê Hồng Phong, phường 8, quận 4, Thành phố Hồ Chí Minh', '91825156079', 2, 'vmeqzefqsqi'),
-('NV136', N'Phan Minh Khôi', N'357, Nguyễn Văn Cừ, phường 2, quận 5, Thành phố Hồ Chí Minh', '44243167299', 2, 'uejmanerjgb'),
-('NV137', N'Nguyễn Thị Khôi', N'157, Nguyễn Thị Minh Khai, phường 10, quận 4, Thành phố Hồ Chí Minh', '62497573578', 2, 'frnpnqnmaiw'),
-('NV138', N'Lê Tấn Thư', N'368, Trần Hưng Đạo, phường 1, quận 4, Thành phố Hồ Chí Minh', '20971665923', 2, 'lrfgszozjuu'),
-('NV139', N'Phạm Hữu Phúc', N'215, Lý Thái Tổ, phường 8, thành phố Đà Lạt, tỉnh Lâm Đồng', '29219492933', 2, 'fstttlnisib'),
-('NV140', N'Phan Anh Lộc', N'407, Lý Thái Tổ, phường 3, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '38389393143', 2, 'lvvlkgflums'),
-('NV141', N'Đỗ Tấn Phúc', N'327, Nguyễn Văn Cừ, phường 5, quận 1, Thành phố Hồ Chí Minh', '21628420340', 2, 'zytmyzqmrya'),
-('NV142', N'Bùi Tấn Mai', N'35, Lê Hồng Phong, phường 3, quận 5, Thành phố Hồ Chí Minh', '72583315844', 2, 'hbqklgjmufb'),
-('NV143', N'Hoàng Minh Linh', N'194, Võ Thị Sáu, phường 1, thành phố Đà Lạt, tỉnh Lâm Đồng', '94821612846', 2, 'okjoxtyilxg'),
-('NV144', N'Đỗ Thiên Tường', N'318, Nguyễn Thị Minh Khai, phường 2, thành phố Đà Lạt, tỉnh Lâm Đồng', '90229305171', 2, 'uimaxdpjsvm'),
-('NV145', N'Lê Văn Quỳnh', N'24, Lý Thái Tổ, phường 4, huyện Cái Bè, tỉnh Tiền Giang', '58735007113', 2, 'rugvawonaln'),
-('NV146', N'Hoàng Thiên Mai', N'336, Lê Hồng Phong, phường 6, quận 3, Thành phố Hồ Chí Minh', '80718446153', 2, 'yflqfubgzlc'),
-('NV147', N'Bùi Hữu Khôi', N'367, Lý Thái Tổ, phường 2, quận 1, Thành phố Hồ Chí Minh', '29684868784', 2, 'rgmdasmtwls'),
-('NV148', N'Vũ An Quỳnh', N'467, Trần Hưng Đạo, phường 3, quận 3, Thành phố Hồ Chí Minh', '99587424312', 2, 'drfytuuyeuc'),
-('NV149', N'Hoàng Minh Quỳnh', N'24, Nguyễn Thị Minh Khai, phường 8, huyện Cái Bè, tỉnh Tiền Giang', '68060287694', 2, 'txysuemoqth'),
-('NV150', N'Trần Tấn Thư', N'217, Trần Hưng Đạo, phường 6, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '01395847845', 2, 'vcnuhtbxkkj')
-GO
+--QTV: 3
+EXEC USP_NHANVIEN_INS
+ N'Trần Hoàng Phúc', N'86, Lý Thái Tổ, phường 1, quận 5, Thành phố Hồ Chí Minh', '17676494850', 2, '123'
 
-INSERT INTO QUANTRIVIEN
-VALUES
-('NV151', N'Hồ Thiên Tiến', N'7, Lý Thái Tổ, phường 6, quận 2, Thành phố Hồ Chí Minh', '46207990207', 2, 'rxswgtxjnnw'),
-('NV152', N'Lê Văn Mai', N'223, Nguyễn Văn Cừ, phường 5, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '41365962569', 2, 'wrynlhcfvps'),
-('NV153', N'Đỗ An Tiến', N'7, Nguyễn Thị Minh Khai, phường 7, huyện Cái Bè, tỉnh Tiền Giang', '76934493323', 2, 'gjsrcbeoauv'),
-('NV154', N'Đỗ Hữu Tường', N'394, Lê Hồng Phong, phường 7, quận 1, Thành phố Hồ Chí Minh', '91384881915', 2, 'jebhoafdcmx'),
-('NV155', N'Phạm Tấn Phúc', N'323, Nguyễn Thị Minh Khai, phường 6, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '76632718391', 2, 'xiguvgondul'),
-('NV156', N'Nguyễn Hoàng Lộc', N'160, Trần Hưng Đạo, phường 6, huyện Cái Bè, tỉnh Tiền Giang', '18965107844', 2, 'xuqvuazzqae'),
-('NV157', N'Lê Hoàng Khôi', N'133, Nguyễn Văn Cừ, phường 4, quận 4, Thành phố Hồ Chí Minh', '14670650573', 2, 'tfkjbyvuywz'),
-('NV158', N'Phan Hữu Lộc', N'299, Lý Thái Tổ, phường 4, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '51034242742', 2, 'klueglkimjz'),
-('NV159', N'Hoàng Minh Mai', N'113, Lý Thái Tổ, phường 8, thành phố Đà Lạt, tỉnh Lâm Đồng', '27588344952', 2, 'lqgcfghmefx'),
-('NV160', N'Phan Gia Lộc', N'253, Võ Thị Sáu, phường 10, thành phố Đà Lạt, tỉnh Lâm Đồng', '19432013894', 2, 'itrvqededvn'),
-('NV161', N'Đỗ Anh Quỳnh', N'238, Nguyễn Văn Cừ, phường 7, huyện Cái Bè, tỉnh Tiền Giang', '69850404886', 2, 'cvduzaywzcu'),
-('NV162', N'Đặng Tấn Quỳnh', N'336, Nguyễn Thị Minh Khai, phường 10, quận 2, Thành phố Hồ Chí Minh', '84190092734', 2, 'upikthlchag'),
-('NV163', N'Đặng Gia Phúc', N'145, Trần Hưng Đạo, phường 2, quận 3, Thành phố Hồ Chí Minh', '65512564880', 2, 'kangbyycrdk'),
-('NV164', N'Phan An Linh', N'495, Nguyễn Văn Cừ, phường 7, quận 1, Thành phố Hồ Chí Minh', '31251604939', 2, 'ufbnozznrdx'),
-('NV165', N'Phan Tấn Khôi', N'434, Nguyễn Thị Minh Khai, phường 3, quận 2, Thành phố Hồ Chí Minh', '19964503672', 2, 'ykstdhiwiyg'),
-('NV166', N'Phạm An Mai', N'18, Nguyễn Thị Minh Khai, phường 5, quận 5, Thành phố Hồ Chí Minh', '38656570080', 2, 'lnmunzaeusm'),
-('NV167', N'Vũ Hữu Khôi', N'375, Nguyễn Văn Cừ, phường 4, quận 5, Thành phố Hồ Chí Minh', '45214186929', 2, 'rgiagcjesyy'),
-('NV168', N'Trần An Tiến', N'466, Nguyễn Văn Cừ, phường 7, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '26191963511', 2, 'mvejllszfdy'),
-('NV169', N'Hoàng Hoàng Khôi', N'364, Võ Thị Sáu, phường 5, quận 2, Thành phố Hồ Chí Minh', '16096029331', 2, 'syyyammmurj'),
-('NV170', N'Vũ Hoàng Quỳnh', N'190, Lý Thái Tổ, phường 9, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '90771433676', 2, 'msmplxvbeow'),
-('NV171', N'Lê Văn Khánh', N'322, Trần Hưng Đạo, phường 8, quận 1, Thành phố Hồ Chí Minh', '90723432757', 2, 'kbubprzrweu'),
-('NV172', N'Nguyễn Hoàng Khôi', N'2, Trần Hưng Đạo, phường 2, quận 3, Thành phố Hồ Chí Minh', '20881586286', 2, 'ekgcosbohax'),
-('NV173', N'Phạm Hoàng Quỳnh', N'80, Nguyễn Văn Cừ, phường 5, thành phố Đà Lạt, tỉnh Lâm Đồng', '91054167693', 2, 'waazvscjtvu'),
-('NV174', N'Đặng An Mai', N'217, Nguyễn Thị Minh Khai, phường 9, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '51987549213', 2, 'xgzzagspgiu'),
-('NV175', N'Lê Hữu Thư', N'337, Lý Thái Tổ, phường 10, quận 3, Thành phố Hồ Chí Minh', '00606204385', 2, 'sumgvwejzij'),
-('NV176', N'Phạm Thiên Mai', N'465, Lê Hồng Phong, phường 8, quận 4, Thành phố Hồ Chí Minh', '86370217629', 2, 'dmwwjzsmyxe'),
-('NV177', N'Hoàng Anh Tiến', N'102, Lê Hồng Phong, phường 9, quận 4, Thành phố Hồ Chí Minh', '98851947474', 2, 'vrtaauzmjwi'),
-('NV178', N'Lý Gia Lộc', N'329, Võ Thị Sáu, phường 5, thành phố Đà Lạt, tỉnh Lâm Đồng', '41404442865', 2, 'efootnffjaj'),
-('NV179', N'Phan Hữu Lộc', N'228, Lý Thái Tổ, phường 7, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '40638368713', 2, 'iyzcpeaitum'),
-('NV180', N'Đỗ Gia Linh', N'47, Võ Thị Sáu, phường 1, quận 1, Thành phố Hồ Chí Minh', '18740815127', 2, 'spwlgmjbvua'),
-('NV181', N'Đặng Thị Tiến', N'162, Nguyễn Văn Cừ, phường 10, quận 3, Thành phố Hồ Chí Minh', '65859708766', 2, 'ksnuydmxbso'),
-('NV182', N'Hồ Thị Tường', N'416, Lê Hồng Phong, phường 3, quận 3, Thành phố Hồ Chí Minh', '45913215309', 2, 'xbljcekgbcf'),
-('NV183', N'Nguyễn Hữu Mai', N'85, Lý Thái Tổ, phường 8, huyện Cái Bè, tỉnh Tiền Giang', '59985888056', 2, 'jzqlqgqljjj'),
-('NV184', N'Lê Anh Tiến', N'198, Nguyễn Văn Cừ, phường 9, quận 2, Thành phố Hồ Chí Minh', '60622036165', 2, 'shhhurdhopj'),
-('NV185', N'Đặng Tấn Tiến', N'63, Nguyễn Thị Minh Khai, phường 2, quận 3, Thành phố Hồ Chí Minh', '36745844560', 2, 'fxhbkasygze'),
-('NV186', N'Đỗ Minh Phúc', N'125, Lê Hồng Phong, phường 5, huyện Cái Bè, tỉnh Tiền Giang', '94312159951', 2, 'xwsberirhed'),
-('NV187', N'Trần Thị Linh', N'329, Trần Hưng Đạo, phường 9, quận 5, Thành phố Hồ Chí Minh', '60088135557', 2, 'uzpwpzwnpog'),
-('NV188', N'Phan Thiên Thư', N'137, Lý Thái Tổ, phường 8, quận 4, Thành phố Hồ Chí Minh', '33522882916', 2, 'wwflxedgiyv'),
-('NV189', N'Vũ Hữu Mai', N'53, Lê Hồng Phong, phường 3, quận 2, Thành phố Hồ Chí Minh', '13156663671', 2, 'mrhimvcluwz'),
-('NV190', N'Lý An Tiến', N'111, Trần Hưng Đạo, phường 3, quận 5, Thành phố Hồ Chí Minh', '72520820796', 2, 'ctlomtcxune'),
-('NV191', N'Hồ Hoàng Phúc', N'375, Nguyễn Văn Cừ, phường 2, huyện Cái Bè, tỉnh Tiền Giang', '99597411031', 2, 'puobngcaopp'),
-('NV192', N'Hoàng Anh Linh', N'480, Lý Thái Tổ, phường 2, quận 2, Thành phố Hồ Chí Minh', '17195566780', 2, 'niulvvlnjbb'),
-('NV193', N'Hồ Thị Quỳnh', N'427, Trần Hưng Đạo, phường 1, thành phố Đà Lạt, tỉnh Lâm Đồng', '31845128922', 2, 'pgguawlztwe'),
-('NV194', N'Đỗ Gia Khôi', N'365, Nguyễn Văn Cừ, phường 8, quận 5, Thành phố Hồ Chí Minh', '88314240287', 2, 'xgjyqcbhmmm'),
-('NV195', N'Lý Thiên Linh', N'4, Lý Thái Tổ, phường 2, quận 5, Thành phố Hồ Chí Minh', '35931373947', 2, 'bihzguxkvop'),
-('NV196', N'Trần Thị Tiến', N'191, Nguyễn Thị Minh Khai, phường 4, quận 2, Thành phố Hồ Chí Minh', '09400758487', 2, 'kugzquwfaoj'),
-('NV197', N'Bùi Minh Linh', N'64, Lý Thái Tổ, phường 7, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '56410942010', 2, 'lwkavnhlbvk'),
-('NV198', N'Trần Thị Quỳnh', N'432, Lê Hồng Phong, phường 5, quận 3, Thành phố Hồ Chí Minh', '58470092262', 2, 'ilzzsrltiky'),
-('NV199', N'Đỗ Văn Phúc', N'84, Nguyễn Văn Cừ, phường 5, quận 4, Thành phố Hồ Chí Minh', '45043570868', 2, 'ikhjonnkktk'),
-('NV200', N'Hồ An Mai', N'43, Lê Hồng Phong, phường 1, quận 3, Thành phố Hồ Chí Minh', '68447348726', 2, 'gmvbolibtkk')
+--QTV: 4
+EXEC USP_NHANVIEN_INS
+ N'Hồ Hoàng Quỳnh', N'317, Võ Thị Sáu, phường 3, quận 5, Thành phố Hồ Chí Minh', '16432595800', 2, '123'
+
+--QTV: 5
+EXEC USP_NHANVIEN_INS
+ N'Lý Thị Thư', N'432, Nguyễn Thị Minh Khai, phường 3, quận 3, Thành phố Hồ Chí Minh', '84521513201', 2, '123'
+
+--QTV: 6
+EXEC USP_NHANVIEN_INS
+ N'Hoàng Thị Lộc', N'423, Võ Thị Sáu, phường 4, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '55830790870', 2, '123'
+
+--QTV: 7
+EXEC USP_NHANVIEN_INS
+ N'Hồ Anh Quỳnh', N'102, Trần Hưng Đạo, phường 1, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '85457734749', 2, '123'
+
+--QTV: 8
+EXEC USP_NHANVIEN_INS
+ N'Đỗ Anh Linh', N'2, Lý Thái Tổ, phường 8, huyện Cái Bè, tỉnh Tiền Giang', '50170032582', 2, '123'
+
+--QTV: 9
+EXEC USP_NHANVIEN_INS
+ N'Hồ Văn Phúc', N'291, Lý Thái Tổ, phường 4, quận 3, Thành phố Hồ Chí Minh', '57628293724', 2, '123'
+
+--QTV: 10
+EXEC USP_NHANVIEN_INS
+ N'Lê Anh Lộc', N'117, Lê Hồng Phong, phường 10, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '01646770345', 2, '123'
+
