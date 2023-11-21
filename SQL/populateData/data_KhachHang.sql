@@ -1,217 +1,152 @@
-USE [Nhom3 _QLNhaKhoa]
+USE [Nhom3_QLNhaKhoa]
 GO
-
-INSERT INTO KHACHHANG
-VALUES
-('KH001', N'Nguyễn Thị Quỳnh', '1982/09/21', N'230, Nguyễn Văn Cừ, phường 7, quận 3, Thành phố Hồ Chí Minh', '73393069473', 'zfekzpqsuwx'),
-('KH002', N'Hoàng Minh Thư', '1980/01/27', N'263, Lê Hồng Phong, phường 4, quận 3, Thành phố Hồ Chí Minh', '73986846408', 'ewhvgnsnfkw'),
-('KH003', N'Bùi Thiên Linh', '1992/02/01', N'489, Võ Thị Sáu, phường 9, quận 2, Thành phố Hồ Chí Minh', '98451561937', 'zuqjdaibjci'),
-('KH004', N'Nguyễn Thị Khôi', '1987/08/30', N'314, Lý Thái Tổ, phường 7, quận 4, Thành phố Hồ Chí Minh', '04864170421', 'cywpdrzljuv'),
-('KH005', N'Phan Thị Tường', '1997/06/18', N'146, Nguyễn Văn Cừ, phường 2, thành phố Đà Lạt, tỉnh Lâm Đồng', '40139933767', 'fwcqonmdhei'),
-('KH006', N'Vũ Anh Lộc', '1988/08/04', N'360, Nguyễn Văn Cừ, phường 10, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '85946225649', 'zquhstdgcjt'),
-('KH007', N'Đặng Hữu Khánh', '1984/10/03', N'225, Võ Thị Sáu, phường 9, quận 1, Thành phố Hồ Chí Minh', '05250909998', 'pfosllfcudg'),
-('KH008', N'Bùi Minh Mai', '1996/04/17', N'140, Lý Thái Tổ, phường 4, huyện Cái Bè, tỉnh Tiền Giang', '73292447131', 'spfmaybxfln'),
-('KH009', N'Hoàng Anh Khánh', '1998/01/13', N'329, Nguyễn Văn Cừ, phường 9, quận 3, Thành phố Hồ Chí Minh', '09241572692', 'ivxndffvbgo'),
-('KH010', N'Hoàng An Quỳnh', '1994/02/19', N'14, Nguyễn Văn Cừ, phường 9, quận 5, Thành phố Hồ Chí Minh', '21036900800', 'jbiuwqduump'),
-('KH011', N'Hồ Thị Khôi', '1999/06/29', N'35, Nguyễn Thị Minh Khai, phường 1, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '42066377435', 'zhzhriopqvn'),
-('KH012', N'Trần Gia Thư', '1993/12/30', N'116, Trần Hưng Đạo, phường 6, quận 3, Thành phố Hồ Chí Minh', '35776636990', 'cczeanzzhdf'),
-('KH013', N'Nguyễn Minh Khánh', '1995/02/07', N'152, Võ Thị Sáu, phường 6, quận 2, Thành phố Hồ Chí Minh', '70693692711', 'gozuwjsghim'),
-('KH014', N'Lê Thị Phúc', '1995/04/15', N'331, Trần Hưng Đạo, phường 5, quận 1, Thành phố Hồ Chí Minh', '89726853523', 'yzvsvzyeenj'),
-('KH015', N'Vũ Hữu Phúc', '1996/12/03', N'203, Lý Thái Tổ, phường 4, huyện Cái Bè, tỉnh Tiền Giang', '52222632402', 'kpzbebusihi'),
-('KH016', N'Bùi Gia Tường', '2002/08/05', N'454, Nguyễn Văn Cừ, phường 5, quận 2, Thành phố Hồ Chí Minh', '34541439477', 'svabhsicjxx'),
-('KH017', N'Bùi Văn Phúc', '2000/05/16', N'165, Võ Thị Sáu, phường 8, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '96630313823', 'xxgccsxknzj'),
-('KH018', N'Đỗ Thiên Mai', '1981/01/05', N'181, Võ Thị Sáu, phường 3, quận 5, Thành phố Hồ Chí Minh', '22814192154', 'kstgpxcgxyf'),
-('KH019', N'Vũ Hữu Khánh', '1983/03/22', N'87, Nguyễn Thị Minh Khai, phường 7, quận 4, Thành phố Hồ Chí Minh', '54344194404', 'nlwwfpivmhr'),
-('KH020', N'Phan Tấn Thư', '2000/02/06', N'439, Trần Hưng Đạo, phường 7, thành phố Đà Lạt, tỉnh Lâm Đồng', '21827631207', 'qwxsvinsrkk'),
-('KH021', N'Hoàng Minh Khôi', '1996/11/27', N'276, Võ Thị Sáu, phường 5, quận 5, Thành phố Hồ Chí Minh', '28161840736', 'kphyibtsvoz'),
-('KH022', N'Đỗ Thị Khánh', '1997/01/01', N'10, Nguyễn Văn Cừ, phường 3, quận 1, Thành phố Hồ Chí Minh', '03861228655', 'qbraylzzyqw'),
-('KH023', N'Phan Thiên Khánh', '2001/12/06', N'354, Trần Hưng Đạo, phường 8, quận 5, Thành phố Hồ Chí Minh', '66032762460', 'etqnjdgxedp'),
-('KH024', N'Phan Hoàng Lộc', '1986/12/29', N'37, Võ Thị Sáu, phường 7, quận 2, Thành phố Hồ Chí Minh', '86295858845', 'elzedbssuxe'),
-('KH025', N'Đặng An Thư', '1981/12/10', N'195, Nguyễn Thị Minh Khai, phường 4, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '40020946473', 'epihzmvzihs'),
-('KH026', N'Trần Hoàng Linh', '1983/10/27', N'163, Lê Hồng Phong, phường 1, quận 2, Thành phố Hồ Chí Minh', '69032614116', 'jmpqypabfgp'),
-('KH027', N'Bùi Anh Tường', '1996/08/23', N'292, Lý Thái Tổ, phường 10, quận 2, Thành phố Hồ Chí Minh', '57849743493', 'rtdvpfxzqop'),
-('KH028', N'Lý Hoàng Quỳnh', '1989/11/10', N'5, Trần Hưng Đạo, phường 7, quận 2, Thành phố Hồ Chí Minh', '03045490462', 'oamrfsqsdvt'),
-('KH029', N'Phạm Thị Phúc', '1988/11/23', N'360, Lê Hồng Phong, phường 9, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '59454983173', 'xdmpmstohjz'),
-('KH030', N'Hồ Minh Thư', '1985/01/04', N'275, Trần Hưng Đạo, phường 5, quận 5, Thành phố Hồ Chí Minh', '39981119268', 'dchhmppvfwo'),
-('KH031', N'Đặng An Thư', '1986/05/29', N'496, Nguyễn Thị Minh Khai, phường 3, thành phố Đà Lạt, tỉnh Lâm Đồng', '43157960096', 'urdjothrajh'),
-('KH032', N'Vũ Thiên Quỳnh', '1980/06/01', N'106, Lê Hồng Phong, phường 2, quận 3, Thành phố Hồ Chí Minh', '32247821297', 'veeoyeunsxq'),
-('KH033', N'Hoàng Hữu Lộc', '2001/08/18', N'141, Lý Thái Tổ, phường 2, huyện Cái Bè, tỉnh Tiền Giang', '99104060326', 'egqluxlhnqd'),
-('KH034', N'Vũ Văn Tiến', '1985/06/23', N'294, Lý Thái Tổ, phường 9, thành phố Đà Lạt, tỉnh Lâm Đồng', '36821722815', 'mwqynwccvsj'),
-('KH035', N'Lê Gia Tiến', '1987/03/04', N'295, Lý Thái Tổ, phường 5, quận 1, Thành phố Hồ Chí Minh', '22761399854', 'dtllfshlpub'),
-('KH036', N'Đặng An Quỳnh', '1997/04/23', N'257, Trần Hưng Đạo, phường 9, thành phố Đà Lạt, tỉnh Lâm Đồng', '83627231051', 'daewkdwsymr'),
-('KH037', N'Hồ Hữu Tường', '1995/09/19', N'287, Trần Hưng Đạo, phường 10, huyện Cái Bè, tỉnh Tiền Giang', '42112200982', 'eknkvsxrhkv'),
-('KH038', N'Lý Thị Khôi', '1989/03/08', N'401, Nguyễn Thị Minh Khai, phường 7, thành phố Đà Lạt, tỉnh Lâm Đồng', '18863746071', 'rqyrukgptln'),
-('KH039', N'Hoàng Văn Tiến', '1994/11/07', N'93, Lê Hồng Phong, phường 8, quận 2, Thành phố Hồ Chí Minh', '63804671581', 'xafgkqoamha'),
-('KH040', N'Hoàng An Thư', '1992/12/03', N'302, Nguyễn Thị Minh Khai, phường 4, quận 2, Thành phố Hồ Chí Minh', '20194613694', 'fvjqgibxvhi'),
-('KH041', N'Đặng Văn Mai', '2001/08/11', N'459, Lê Hồng Phong, phường 3, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '47132092440', 'laqgmbtdvuz'),
-('KH042', N'Nguyễn Minh Mai', '1986/04/13', N'278, Nguyễn Văn Cừ, phường 1, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '36774327664', 'mzsfekuqitn'),
-('KH043', N'Bùi Minh Tường', '1993/12/13', N'138, Nguyễn Văn Cừ, phường 2, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '84698962252', 'dwmsxyfudst'),
-('KH044', N'Lý Minh Khánh', '1996/02/16', N'228, Nguyễn Thị Minh Khai, phường 9, quận 1, Thành phố Hồ Chí Minh', '26684896068', 'zbgqtuultdh'),
-('KH045', N'Đỗ Tấn Phúc', '1995/05/14', N'440, Trần Hưng Đạo, phường 3, quận 5, Thành phố Hồ Chí Minh', '13716359565', 'lawhpcrqoqg'),
-('KH046', N'Phạm Thị Mai', '1992/01/06', N'353, Nguyễn Văn Cừ, phường 2, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '55103293406', 'riouvfkmxrp'),
-('KH047', N'Đặng Thị Phúc', '1997/07/15', N'8, Nguyễn Thị Minh Khai, phường 10, quận 1, Thành phố Hồ Chí Minh', '21225540072', 'vnrbradvgkm'),
-('KH048', N'Phan Minh Khôi', '1980/11/29', N'36, Trần Hưng Đạo, phường 10, quận 2, Thành phố Hồ Chí Minh', '81745960307', 'hxrgxbvjceh'),
-('KH049', N'Nguyễn Văn Phúc', '1997/03/02', N'493, Nguyễn Văn Cừ, phường 7, quận 2, Thành phố Hồ Chí Minh', '52537919259', 'zglojhgnndn'),
-('KH050', N'Nguyễn Hữu Khôi', '1991/02/07', N'111, Nguyễn Văn Cừ, phường 9, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '82183061357', 'rzpxujdsoaf')
-GO
-
-INSERT INTO KHACHHANG
-VALUES
-('KH051', N'Đỗ Thiên Linh', '1990/05/09', N'229, Trần Hưng Đạo, phường 5, quận 1, Thành phố Hồ Chí Minh', '81592242234', 'flwapwlezod'),
-('KH052', N'Đặng An Quỳnh', '1989/03/15', N'28, Võ Thị Sáu, phường 5, quận 5, Thành phố Hồ Chí Minh', '65020474991', 'loiyaitebcb'),
-('KH053', N'Hồ An Khánh', '1987/09/20', N'464, Nguyễn Thị Minh Khai, phường 9, quận 3, Thành phố Hồ Chí Minh', '71109200405', 'czjmeikhrhm'),
-('KH054', N'Phạm Hoàng Tiến', '1987/08/20', N'267, Võ Thị Sáu, phường 4, quận 5, Thành phố Hồ Chí Minh', '69043648347', 'qeqilaspcuc'),
-('KH055', N'Bùi Hoàng Mai', '1995/07/01', N'388, Nguyễn Văn Cừ, phường 8, quận 1, Thành phố Hồ Chí Minh', '61205076283', 'sugcpcdkwqm'),
-('KH056', N'Trần Tấn Linh', '1991/05/25', N'315, Nguyễn Thị Minh Khai, phường 6, quận 2, Thành phố Hồ Chí Minh', '41015110515', 'hmkqittaawz'),
-('KH057', N'Hoàng Tấn Thư', '1997/06/26', N'424, Võ Thị Sáu, phường 10, quận 5, Thành phố Hồ Chí Minh', '33189262654', 'nrvixcwtqey'),
-('KH058', N'Nguyễn Hoàng Khánh', '1999/11/13', N'154, Lê Hồng Phong, phường 4, thành phố Đà Lạt, tỉnh Lâm Đồng', '42391629481', 'qokqjvveaah'),
-('KH059', N'Lê Anh Tiến', '1996/06/11', N'48, Nguyễn Thị Minh Khai, phường 6, quận 3, Thành phố Hồ Chí Minh', '98467694994', 'sdbaywoxydn'),
-('KH060', N'Vũ Gia Linh', '1983/10/10', N'489, Lý Thái Tổ, phường 9, huyện Cái Bè, tỉnh Tiền Giang', '75058361954', 'hqmyfxnlipp'),
-('KH061', N'Lê Hoàng Tiến', '1997/05/17', N'182, Trần Hưng Đạo, phường 5, quận 4, Thành phố Hồ Chí Minh', '93610835144', 'ojfduiszlci'),
-('KH062', N'Hoàng Tấn Khôi', '1997/07/23', N'57, Nguyễn Văn Cừ, phường 10, quận 3, Thành phố Hồ Chí Minh', '60811050284', 'qrzdfgyftno'),
-('KH063', N'Nguyễn Tấn Quỳnh', '1983/02/14', N'245, Nguyễn Thị Minh Khai, phường 3, quận 4, Thành phố Hồ Chí Minh', '56765290224', 'gxrkonpihqf'),
-('KH064', N'Nguyễn Tấn Khánh', '1998/07/09', N'7, Lê Hồng Phong, phường 8, quận 5, Thành phố Hồ Chí Minh', '18216907031', 'jswxlmeewag'),
-('KH065', N'Nguyễn Minh Thư', '1985/08/30', N'6, Trần Hưng Đạo, phường 5, quận 3, Thành phố Hồ Chí Minh', '26252336612', 'xfchqmhuyap'),
-('KH066', N'Vũ Minh Khánh', '1991/06/27', N'469, Trần Hưng Đạo, phường 10, thành phố Đà Lạt, tỉnh Lâm Đồng', '83432365494', 'umzrqmwyypm'),
-('KH067', N'Hoàng Gia Thư', '2001/02/05', N'303, Nguyễn Văn Cừ, phường 1, quận 2, Thành phố Hồ Chí Minh', '75258878693', 'hkimvpgvnyh'),
-('KH068', N'Phạm Anh Tường', '2002/05/09', N'57, Trần Hưng Đạo, phường 3, quận 1, Thành phố Hồ Chí Minh', '08330311133', 'qgvbvxxjejf'),
-('KH069', N'Đỗ Minh Phúc', '1984/10/13', N'401, Lý Thái Tổ, phường 10, quận 5, Thành phố Hồ Chí Minh', '71665059694', 'nzkpelsxunw'),
-('KH070', N'Hồ An Tường', '1985/07/18', N'195, Trần Hưng Đạo, phường 8, quận 5, Thành phố Hồ Chí Minh', '24575378487', 'lbvzfzusnwm'),
-('KH071', N'Hoàng Hữu Phúc', '1982/09/22', N'255, Võ Thị Sáu, phường 6, quận 5, Thành phố Hồ Chí Minh', '67924945973', 'nmurchvxfxu'),
-('KH072', N'Đặng Văn Lộc', '2001/10/31', N'184, Trần Hưng Đạo, phường 1, quận 5, Thành phố Hồ Chí Minh', '48898713754', 'xlgyzbbtvfh'),
-('KH073', N'Nguyễn Văn Linh', '1994/11/09', N'380, Nguyễn Văn Cừ, phường 9, quận 4, Thành phố Hồ Chí Minh', '50109576170', 'pfwhkfsceic'),
-('KH074', N'Phan Hoàng Khôi', '1989/10/08', N'248, Lê Hồng Phong, phường 7, huyện Cái Bè, tỉnh Tiền Giang', '48950876508', 'vawfhettzvq'),
-('KH075', N'Bùi Hữu Tường', '1999/07/31', N'220, Trần Hưng Đạo, phường 5, thành phố Đà Lạt, tỉnh Lâm Đồng', '34108474946', 'xoxnukweppy'),
-('KH076', N'Lê Hữu Quỳnh', '1990/12/28', N'15, Lý Thái Tổ, phường 10, huyện Cái Bè, tỉnh Tiền Giang', '72866293724', 'jbrdtsfyxlw'),
-('KH077', N'Đặng Thiên Quỳnh', '2002/04/09', N'493, Nguyễn Thị Minh Khai, phường 10, quận 3, Thành phố Hồ Chí Minh', '34059750374', 'vgkfpeblaxv'),
-('KH078', N'Phan Hữu Khôi', '1997/04/16', N'482, Trần Hưng Đạo, phường 10, quận 2, Thành phố Hồ Chí Minh', '94923370091', 'wxkebqbpwic'),
-('KH079', N'Đặng Minh Phúc', '1987/03/06', N'52, Nguyễn Văn Cừ, phường 6, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '08098059609', 'eoupizvngec'),
-('KH080', N'Hồ Thiên Khôi', '1992/08/06', N'370, Nguyễn Văn Cừ, phường 10, huyện Cái Bè, tỉnh Tiền Giang', '90247865421', 'ditpvftojss'),
-('KH081', N'Nguyễn Hoàng Thư', '1996/10/17', N'8, Võ Thị Sáu, phường 9, quận 1, Thành phố Hồ Chí Minh', '07136509320', 'wltecdsmnyk'),
-('KH082', N'Bùi Minh Phúc', '1984/01/30', N'208, Lý Thái Tổ, phường 5, quận 1, Thành phố Hồ Chí Minh', '30086915950', 'ijhmvihrwdd'),
-('KH083', N'Hoàng Anh Khôi', '1994/05/26', N'49, Trần Hưng Đạo, phường 2, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '37037644184', 'ijcyljrlvyi'),
-('KH084', N'Đặng Gia Tiến', '1991/03/04', N'439, Trần Hưng Đạo, phường 1, quận 5, Thành phố Hồ Chí Minh', '61348813431', 'tbvfmleoufy'),
-('KH085', N'Lê Thị Phúc', '1981/07/27', N'55, Nguyễn Văn Cừ, phường 5, quận 5, Thành phố Hồ Chí Minh', '94721669642', 'woubcqazqbp'),
-('KH086', N'Đỗ An Khôi', '1999/05/24', N'110, Võ Thị Sáu, phường 4, huyện Cái Bè, tỉnh Tiền Giang', '35395149586', 'uatgvlzezyw'),
-('KH087', N'Hoàng Hữu Khôi', '1985/12/17', N'227, Trần Hưng Đạo, phường 10, thành phố Đà Lạt, tỉnh Lâm Đồng', '50053415658', 'bihguxxsgvq'),
-('KH088', N'Phan Minh Khánh', '1983/10/10', N'88, Nguyễn Văn Cừ, phường 4, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '34980545636', 'fdeiskihdui'),
-('KH089', N'Phạm Minh Lộc', '1999/05/31', N'160, Nguyễn Thị Minh Khai, phường 8, thành phố Đà Lạt, tỉnh Lâm Đồng', '73009819920', 'uuulouokpdh'),
-('KH090', N'Lý Thị Linh', '1994/01/15', N'356, Lê Hồng Phong, phường 1, quận 1, Thành phố Hồ Chí Minh', '02376116465', 'opcmaiiajng'),
-('KH091', N'Phan An Phúc', '2002/03/21', N'228, Lê Hồng Phong, phường 9, quận 2, Thành phố Hồ Chí Minh', '67501762676', 'uhexraujoei'),
-('KH092', N'Bùi Gia Lộc', '1985/09/12', N'432, Võ Thị Sáu, phường 10, quận 2, Thành phố Hồ Chí Minh', '56225554058', 'lacnughnkii'),
-('KH093', N'Phan Văn Linh', '1980/03/15', N'205, Lê Hồng Phong, phường 10, quận 1, Thành phố Hồ Chí Minh', '13205447864', 'pnkhexcukpv'),
-('KH094', N'Bùi Hoàng Thư', '1982/09/02', N'92, Lý Thái Tổ, phường 4, quận 5, Thành phố Hồ Chí Minh', '92179069160', 'hnvrqjvhxze'),
-('KH095', N'Bùi Tấn Mai', '1993/04/30', N'61, Lê Hồng Phong, phường 9, quận 1, Thành phố Hồ Chí Minh', '05549453193', 'howpgpqtsao'),
-('KH096', N'Hoàng Minh Phúc', '1998/12/26', N'148, Trần Hưng Đạo, phường 2, quận 2, Thành phố Hồ Chí Minh', '03417899307', 'pgrmwbprefc'),
-('KH097', N'Vũ Thị Khôi', '1980/09/13', N'352, Lý Thái Tổ, phường 6, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '77229789927', 'wevoddkxizh'),
-('KH098', N'Lê Văn Tiến', '1989/12/17', N'59, Võ Thị Sáu, phường 9, thành phố Đà Lạt, tỉnh Lâm Đồng', '39117595546', 'srmkzpksang'),
-('KH099', N'Đặng Tấn Quỳnh', '2002/11/18', N'128, Nguyễn Văn Cừ, phường 4, thành phố Đà Lạt, tỉnh Lâm Đồng', '00632968046', 'asotskiexim'),
-('KH100', N'Phạm Thị Tường', '1988/01/03', N'41, Lý Thái Tổ, phường 5, quận 2, Thành phố Hồ Chí Minh', '75520418118', 'beoqzshradv')
-GO
-
-INSERT INTO KHACHHANG
-VALUES
-('KH101', N'Trần Gia Quỳnh', '1980/08/30', N'444, Võ Thị Sáu, phường 4, thành phố Đà Lạt, tỉnh Lâm Đồng', '80998867427', 'zhtkrehdoyj'),
-('KH102', N'Lê Văn Tường', '1985/08/11', N'385, Lê Hồng Phong, phường 4, thành phố Đà Lạt, tỉnh Lâm Đồng', '63921335618', 'jvakfpybhvr'),
-('KH103', N'Lý An Khánh', '1987/06/23', N'105, Trần Hưng Đạo, phường 3, quận 2, Thành phố Hồ Chí Minh', '17257968123', 'rnpwrdxgmyp'),
-('KH104', N'Đặng An Thư', '1997/02/20', N'194, Nguyễn Thị Minh Khai, phường 2, quận 1, Thành phố Hồ Chí Minh', '77987899592', 'ydhuhprvngq'),
-('KH105', N'Nguyễn Anh Tường', '1984/04/09', N'285, Nguyễn Văn Cừ, phường 2, quận 3, Thành phố Hồ Chí Minh', '00141186946', 'mmxwnukfqtv'),
-('KH106', N'Lý Thị Lộc', '2001/12/03', N'23, Nguyễn Thị Minh Khai, phường 4, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '18000395499', 'raotiysvwnm'),
-('KH107', N'Hồ Thị Linh', '1992/03/01', N'461, Lê Hồng Phong, phường 9, quận 5, Thành phố Hồ Chí Minh', '77838042259', 'ndhluwybjnv'),
-('KH108', N'Đặng Anh Thư', '1997/04/30', N'108, Võ Thị Sáu, phường 7, quận 2, Thành phố Hồ Chí Minh', '88917703979', 'sgrqlgohhhd'),
-('KH109', N'Đặng Thiên Lộc', '1987/12/25', N'184, Nguyễn Thị Minh Khai, phường 8, quận 3, Thành phố Hồ Chí Minh', '16825094464', 'oycflprjzgy'),
-('KH110', N'Trần Hữu Khánh', '2001/02/01', N'452, Lê Hồng Phong, phường 8, quận 2, Thành phố Hồ Chí Minh', '65061187221', 'moohxsrtjic'),
-('KH111', N'Vũ An Linh', '2000/01/07', N'31, Lý Thái Tổ, phường 10, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '48846817651', 'aazwkncfvhr'),
-('KH112', N'Nguyễn Minh Quỳnh', '1986/11/04', N'249, Trần Hưng Đạo, phường 1, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '58147075847', 'gyefcuxuloc'),
-('KH113', N'Đỗ Thiên Quỳnh', '1989/07/06', N'291, Nguyễn Thị Minh Khai, phường 5, quận 5, Thành phố Hồ Chí Minh', '74057372145', 'afgusyfvttc'),
-('KH114', N'Đặng An Linh', '1986/06/16', N'463, Nguyễn Thị Minh Khai, phường 6, quận 4, Thành phố Hồ Chí Minh', '42043455328', 'hvjavrkyhfy'),
-('KH115', N'Nguyễn Tấn Lộc', '1994/11/25', N'412, Võ Thị Sáu, phường 5, thành phố Đà Lạt, tỉnh Lâm Đồng', '14191577121', 'bjyaekgpzhp'),
-('KH116', N'Đặng Hoàng Linh', '1988/04/25', N'150, Võ Thị Sáu, phường 3, quận 3, Thành phố Hồ Chí Minh', '45604716129', 'hlgdmjgmkvv'),
-('KH117', N'Đặng Minh Lộc', '1991/10/05', N'214, Võ Thị Sáu, phường 7, thành phố Đà Lạt, tỉnh Lâm Đồng', '46390294767', 'xeubmjjwmls'),
-('KH118', N'Nguyễn Anh Mai', '1989/04/12', N'475, Lê Hồng Phong, phường 1, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '98601528760', 'bzqtbtbwafd'),
-('KH119', N'Hồ Thị Mai', '1999/05/19', N'477, Nguyễn Văn Cừ, phường 7, quận 5, Thành phố Hồ Chí Minh', '38651701736', 'bhjhkkzfnaj'),
-('KH120', N'Vũ Anh Khánh', '1987/03/27', N'44, Võ Thị Sáu, phường 5, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '49742878693', 'fogqtfldcjs'),
-('KH121', N'Lý Minh Tiến', '2002/07/06', N'107, Nguyễn Văn Cừ, phường 3, quận 1, Thành phố Hồ Chí Minh', '03146156662', 'qvsdgjoqkbe'),
-('KH122', N'Phạm Văn Quỳnh', '2001/11/27', N'16, Võ Thị Sáu, phường 3, quận 4, Thành phố Hồ Chí Minh', '94700599852', 'lpskjmgdudv'),
-('KH123', N'Hoàng Gia Tiến', '1980/08/31', N'432, Nguyễn Thị Minh Khai, phường 8, thành phố Đà Lạt, tỉnh Lâm Đồng', '83183314763', 'onpheehpnga'),
-('KH124', N'Đặng Hữu Khánh', '1993/05/31', N'308, Nguyễn Thị Minh Khai, phường 10, quận 4, Thành phố Hồ Chí Minh', '86756701348', 'ozwgfrpzupu'),
-('KH125', N'Lê Anh Linh', '1995/07/16', N'146, Lý Thái Tổ, phường 7, quận 3, Thành phố Hồ Chí Minh', '39582751219', 'vrmxmmodsdi'),
-('KH126', N'Nguyễn Thị Tiến', '1986/06/25', N'335, Lê Hồng Phong, phường 3, quận 4, Thành phố Hồ Chí Minh', '14043720424', 'mgarqqmuavk'),
-('KH127', N'Vũ Anh Lộc', '1988/09/16', N'269, Nguyễn Thị Minh Khai, phường 2, huyện Cái Bè, tỉnh Tiền Giang', '74326987516', 'ephpwpbvwrd'),
-('KH128', N'Bùi Gia Phúc', '2001/10/15', N'1, Nguyễn Thị Minh Khai, phường 5, huyện Cái Bè, tỉnh Tiền Giang', '24211033294', 'zqczbzdidnr'),
-('KH129', N'Vũ Văn Linh', '1993/06/11', N'107, Lê Hồng Phong, phường 7, quận 1, Thành phố Hồ Chí Minh', '73894515861', 'kjbbvggfrkt'),
-('KH130', N'Lê Anh Thư', '1990/04/22', N'414, Nguyễn Thị Minh Khai, phường 7, quận 4, Thành phố Hồ Chí Minh', '84249486590', 'wonephnvkzx'),
-('KH131', N'Đặng Minh Linh', '1986/02/05', N'319, Lê Hồng Phong, phường 10, thành phố Đà Lạt, tỉnh Lâm Đồng', '90253261010', 'umjvzkbcura'),
-('KH132', N'Đặng Thị Linh', '1989/03/08', N'386, Võ Thị Sáu, phường 7, quận 2, Thành phố Hồ Chí Minh', '52621364843', 'ywsalqfmprx'),
-('KH133', N'Hồ Hoàng Linh', '1989/07/14', N'202, Lê Hồng Phong, phường 1, quận 5, Thành phố Hồ Chí Minh', '06009546648', 'wrkbybkbavz'),
-('KH134', N'Lý Hoàng Khôi', '1994/07/12', N'11, Trần Hưng Đạo, phường 9, huyện Cái Bè, tỉnh Tiền Giang', '48030737443', 'nazucbylqoj'),
-('KH135', N'Hoàng Gia Linh', '1984/09/01', N'346, Nguyễn Văn Cừ, phường 10, quận 2, Thành phố Hồ Chí Minh', '46592332864', 'hsmtwdiesrk'),
-('KH136', N'Trần Anh Phúc', '1989/11/23', N'435, Võ Thị Sáu, phường 1, quận 1, Thành phố Hồ Chí Minh', '09101430760', 'kisktboxsya'),
-('KH137', N'Lê Gia Khôi', '1994/01/21', N'178, Lê Hồng Phong, phường 7, quận 2, Thành phố Hồ Chí Minh', '23976562351', 'ufprdaekyhc'),
-('KH138', N'Hoàng Văn Quỳnh', '1981/03/02', N'178, Nguyễn Văn Cừ, phường 1, quận 3, Thành phố Hồ Chí Minh', '13804494293', 'bklgrlldmna'),
-('KH139', N'Hoàng Anh Tiến', '2001/08/11', N'434, Trần Hưng Đạo, phường 3, thành phố Đà Lạt, tỉnh Lâm Đồng', '17403398508', 'fwzyqldmazn'),
-('KH140', N'Vũ Minh Mai', '1980/02/28', N'76, Lê Hồng Phong, phường 6, quận 3, Thành phố Hồ Chí Minh', '85043330708', 'vojtbmimaiw'),
-('KH141', N'Bùi Văn Phúc', '1984/07/05', N'367, Lê Hồng Phong, phường 2, huyện Cái Bè, tỉnh Tiền Giang', '12117063401', 'dvqmhegyvhq'),
-('KH142', N'Hoàng Anh Lộc', '1989/08/06', N'99, Lý Thái Tổ, phường 10, quận 2, Thành phố Hồ Chí Minh', '99261320371', 'zahyyizfbrp'),
-('KH143', N'Phan Thị Quỳnh', '1993/05/09', N'173, Nguyễn Văn Cừ, phường 8, quận 1, Thành phố Hồ Chí Minh', '80576155162', 'ocyzawcjibg'),
-('KH144', N'Lý Hữu Thư', '1981/01/07', N'425, Võ Thị Sáu, phường 3, thành phố Đà Lạt, tỉnh Lâm Đồng', '07652668943', 'wmhrgkrrasw'),
-('KH145', N'Lý Thiên Khôi', '1983/12/07', N'217, Võ Thị Sáu, phường 4, quận 5, Thành phố Hồ Chí Minh', '64898178844', 'jylpwoqdbmt'),
-('KH146', N'Đặng An Tường', '2002/10/28', N'71, Nguyễn Văn Cừ, phường 8, huyện Cái Bè, tỉnh Tiền Giang', '11816886769', 'jifcaxczvno'),
-('KH147', N'Đỗ An Tiến', '1988/12/09', N'411, Lý Thái Tổ, phường 1, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '93506813066', 'xihjxnsmahs'),
-('KH148', N'Nguyễn An Linh', '1991/01/26', N'175, Nguyễn Thị Minh Khai, phường 5, huyện Cái Bè, tỉnh Tiền Giang', '86222758336', 'onjkqdpzopk'),
-('KH149', N'Bùi Gia Khôi', '1993/12/12', N'447, Nguyễn Thị Minh Khai, phường 8, quận 2, Thành phố Hồ Chí Minh', '30619972101', 'qoirmhfitzt'),
-('KH150', N'Lý Gia Tiến', '1988/01/01', N'243, Lê Hồng Phong, phường 8, quận 3, Thành phố Hồ Chí Minh', '85582939762', 'ycrknxitxnn')
-GO
-
-INSERT INTO KHACHHANG
-VALUES
-('KH151', N'Nguyễn Văn Mai', '1983/04/16', N'177, Lý Thái Tổ, phường 4, quận 4, Thành phố Hồ Chí Minh', '92409556467', 'wbcwpzfbmqo'),
-('KH152', N'Phan Thiên Lộc', '1981/02/15', N'303, Nguyễn Văn Cừ, phường 10, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '68403949913', 'btlqmdzfgvk'),
-('KH153', N'Vũ Thị Khôi', '1983/09/06', N'476, Nguyễn Thị Minh Khai, phường 8, huyện Cái Bè, tỉnh Tiền Giang', '99009775574', 'qherbttstbn'),
-('KH154', N'Đặng Hữu Lộc', '2000/04/05', N'241, Trần Hưng Đạo, phường 7, quận 2, Thành phố Hồ Chí Minh', '25626343990', 'qfndlpxqacg'),
-('KH155', N'Bùi Hữu Linh', '1994/09/30', N'197, Nguyễn Văn Cừ, phường 2, quận 5, Thành phố Hồ Chí Minh', '86497467394', 'ijtqtezorwx'),
-('KH156', N'Nguyễn Anh Mai', '1994/07/24', N'317, Lê Hồng Phong, phường 3, quận 5, Thành phố Hồ Chí Minh', '97374674474', 'phqvuwphhka'),
-('KH157', N'Đỗ Thị Mai', '1991/07/07', N'98, Lý Thái Tổ, phường 9, quận 3, Thành phố Hồ Chí Minh', '65916316016', 'nbxskyxlvfo'),
-('KH158', N'Lê Hoàng Mai', '1991/08/31', N'442, Lý Thái Tổ, phường 7, quận 5, Thành phố Hồ Chí Minh', '33533973860', 'tmxkidtzvrg'),
-('KH159', N'Phan Hữu Lộc', '1992/06/21', N'201, Võ Thị Sáu, phường 6, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '95588067805', 'cvlanvymzji'),
-('KH160', N'Phan Thị Tiến', '1984/05/08', N'439, Nguyễn Thị Minh Khai, phường 2, quận 4, Thành phố Hồ Chí Minh', '07523283418', 'soikvtyeolw'),
-('KH161', N'Trần Hữu Tường', '1992/02/14', N'94, Lê Hồng Phong, phường 5, quận 5, Thành phố Hồ Chí Minh', '18044555999', 'xmfyrvtrhxu'),
-('KH162', N'Hồ Văn Khôi', '2002/07/03', N'52, Nguyễn Thị Minh Khai, phường 3, huyện Cái Bè, tỉnh Tiền Giang', '02329043221', 'vyoqivjlphf'),
-('KH163', N'Vũ Hoàng Tiến', '2002/05/26', N'81, Võ Thị Sáu, phường 10, quận 2, Thành phố Hồ Chí Minh', '19965121559', 'quofmtmoaah'),
-('KH164', N'Đặng Tấn Lộc', '2001/04/16', N'361, Lê Hồng Phong, phường 1, quận 2, Thành phố Hồ Chí Minh', '25748353981', 'uhngoxwfuos'),
-('KH165', N'Vũ Thiên Linh', '1993/11/19', N'29, Nguyễn Văn Cừ, phường 3, huyện Cái Bè, tỉnh Tiền Giang', '87056663565', 'gtcfeqzjxzm'),
-('KH166', N'Lý Anh Thư', '1989/08/04', N'26, Lê Hồng Phong, phường 6, quận 4, Thành phố Hồ Chí Minh', '85341142364', 'gunilztnoyf'),
-('KH167', N'Nguyễn Tấn Linh', '2001/02/08', N'478, Lý Thái Tổ, phường 5, quận 2, Thành phố Hồ Chí Minh', '39499748994', 'vgknlidebjm'),
-('KH168', N'Vũ Gia Tiến', '1994/12/21', N'117, Nguyễn Văn Cừ, phường 2, thành phố Đà Lạt, tỉnh Lâm Đồng', '15085970391', 'aeutrsmoomg'),
-('KH169', N'Vũ Tấn Lộc', '1983/11/04', N'64, Lý Thái Tổ, phường 8, quận 1, Thành phố Hồ Chí Minh', '77175669557', 'jshkhrvwodu'),
-('KH170', N'Bùi Hữu Mai', '1999/01/20', N'365, Trần Hưng Đạo, phường 1, quận 2, Thành phố Hồ Chí Minh', '10322952471', 'udrjhxkwzbn'),
-('KH171', N'Bùi An Tiến', '2002/12/16', N'28, Nguyễn Văn Cừ, phường 3, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '32818206477', 'gwwwdsnwzfb'),
-('KH172', N'Nguyễn An Khôi', '1995/04/23', N'190, Lê Hồng Phong, phường 7, quận 3, Thành phố Hồ Chí Minh', '90062673875', 'viztjbtickv'),
-('KH173', N'Nguyễn Minh Mai', '2001/07/01', N'190, Nguyễn Thị Minh Khai, phường 6, quận 1, Thành phố Hồ Chí Minh', '24742477176', 'vkbsodxxshs'),
-('KH174', N'Phan Anh Phúc', '1992/04/07', N'363, Lý Thái Tổ, phường 4, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '81955392737', 'dmtixkkdxof'),
-('KH175', N'Hoàng Thị Lộc', '2001/12/20', N'288, Nguyễn Văn Cừ, phường 4, quận 4, Thành phố Hồ Chí Minh', '98639213992', 'igiudqpyanw'),
-('KH176', N'Vũ Thiên Phúc', '1996/02/24', N'325, Trần Hưng Đạo, phường 8, quận 3, Thành phố Hồ Chí Minh', '25080126175', 'bjhnxctecna'),
-('KH177', N'Hoàng Tấn Linh', '1990/12/12', N'203, Trần Hưng Đạo, phường 2, quận 4, Thành phố Hồ Chí Minh', '51089107207', 'rdmzldavgex'),
-('KH178', N'Phan Minh Linh', '2001/04/05', N'240, Nguyễn Văn Cừ, phường 2, quận 5, Thành phố Hồ Chí Minh', '65151000811', 'hbcpagrosdi'),
-('KH179', N'Đặng Tấn Thư', '1984/07/04', N'392, Lý Thái Tổ, phường 6, thành phố Đà Lạt, tỉnh Lâm Đồng', '63270401649', 'zugffzmgftg'),
-('KH180', N'Hoàng Minh Tường', '1981/12/18', N'469, Lý Thái Tổ, phường 10, quận 4, Thành phố Hồ Chí Minh', '99330951456', 'fzksrbjblqt'),
-('KH181', N'Lý Gia Phúc', '1996/04/28', N'18, Lý Thái Tổ, phường 4, quận 4, Thành phố Hồ Chí Minh', '85455134127', 'ejiqtscqoyn'),
-('KH182', N'Lý Anh Phúc', '1986/02/01', N'254, Trần Hưng Đạo, phường 10, quận 3, Thành phố Hồ Chí Minh', '85053921744', 'dgmtzickfhw'),
-('KH183', N'Đỗ Anh Thư', '1993/09/30', N'183, Lê Hồng Phong, phường 6, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '55023706531', 'yotvxwjzqkp'),
-('KH184', N'Hoàng Tấn Khôi', '1990/12/09', N'318, Nguyễn Thị Minh Khai, phường 8, quận 4, Thành phố Hồ Chí Minh', '05466758802', 'neguqrqxcjn'),
-('KH185', N'Bùi Văn Thư', '1993/05/10', N'371, Trần Hưng Đạo, phường 3, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '91780582445', 'netyafjgoff'),
-('KH186', N'Nguyễn Minh Mai', '1992/03/31', N'151, Lý Thái Tổ, phường 3, quận 5, Thành phố Hồ Chí Minh', '03522098213', 'fraffyeljhr'),
-('KH187', N'Lý Tấn Thư', '1994/09/19', N'229, Nguyễn Văn Cừ, phường 6, quận 2, Thành phố Hồ Chí Minh', '82306970345', 'xapqyxqueea'),
-('KH188', N'Vũ Thị Quỳnh', '1991/11/21', N'90, Nguyễn Thị Minh Khai, phường 10, thành phố Đà Lạt, tỉnh Lâm Đồng', '65261867406', 'fmgzbtifape'),
-('KH189', N'Lê Thị Phúc', '1998/09/29', N'26, Võ Thị Sáu, phường 9, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '35865968105', 'ylvikvondtn'),
-('KH190', N'Trần Hữu Linh', '1992/03/02', N'48, Võ Thị Sáu, phường 6, huyện Cái Bè, tỉnh Tiền Giang', '13164871703', 'pwnssgtrsoe'),
-('KH191', N'Nguyễn Gia Khánh', '1996/04/18', N'459, Nguyễn Văn Cừ, phường 1, quận 4, Thành phố Hồ Chí Minh', '40498338361', 'behqmvikbuc'),
-('KH192', N'Lê An Thư', '1986/06/22', N'338, Nguyễn Thị Minh Khai, phường 9, quận 3, Thành phố Hồ Chí Minh', '71344488241', 'dmzlxomgzwr'),
-('KH193', N'Lê Thiên Phúc', '2001/04/22', N'311, Lý Thái Tổ, phường 7, quận 4, Thành phố Hồ Chí Minh', '82090158638', 'vkpesfazfti'),
-('KH194', N'Phan Văn Mai', '1985/09/21', N'368, Võ Thị Sáu, phường 8, quận 3, Thành phố Hồ Chí Minh', '47999360190', 'nynfnhrqkfg'),
-('KH195', N'Vũ Hữu Mai', '2001/02/08', N'379, Nguyễn Thị Minh Khai, phường 4, quận 5, Thành phố Hồ Chí Minh', '28632292636', 'rsnvuypogjs'),
-('KH196', N'Lê Minh Khôi', '2000/05/20', N'354, Lê Hồng Phong, phường 10, quận 3, Thành phố Hồ Chí Minh', '36505855604', 'mmyjvsiwyfi'),
-('KH197', N'Bùi Thị Phúc', '1980/02/08', N'283, Nguyễn Văn Cừ, phường 9, quận 2, Thành phố Hồ Chí Minh', '49346729842', 'tmmubcpbzgq'),
-('KH198', N'Lê Thị Lộc', '1993/01/18', N'389, Võ Thị Sáu, phường 3, huyện Cái Bè, tỉnh Tiền Giang', '56503621162', 'sgufvzmzojj'),
-('KH199', N'Lý Hữu Tiến', '1988/10/02', N'162, Nguyễn Thị Minh Khai, phường 6, quận 3, Thành phố Hồ Chí Minh', '02635615313', 'rwcyhxiigrn'),
-('KH200', N'Phan Gia Khánh', '1990/03/02', N'397, Lý Thái Tổ, phường 3, huyện Cái Bè, tỉnh Tiền Giang', '55594497122', 'qnxidxunddp')
+--KH: 1
+EXEC USP_KHACHHANG_INS
+ N'Lý Hoàng Tiến', '1995/10/17', N'19, Võ Thị Sáu, phường 2, thành phố Đà Lạt, tỉnh Lâm Đồng', '10544634777', '123'
+--KH: 2
+EXEC USP_KHACHHANG_INS
+ N'Hồ Tấn Khôi', '2001/05/05', N'129, Nguyễn Văn Cừ, phường 6, quận 2, Thành phố Hồ Chí Minh', '74538719856', '123'
+--KH: 3
+EXEC USP_KHACHHANG_INS
+ N'Đỗ Anh Quỳnh', '1988/11/14', N'57, Nguyễn Văn Cừ, phường 8, quận 4, Thành phố Hồ Chí Minh', '64454260094', '123'
+--KH: 4
+EXEC USP_KHACHHANG_INS
+ N'Lê Hoàng Linh', '1995/10/14', N'310, Lý Thái Tổ, phường 1, quận 3, Thành phố Hồ Chí Minh', '41734510942', '123'
+--KH: 5
+EXEC USP_KHACHHANG_INS
+ N'Bùi Hữu Quỳnh', '1998/12/10', N'408, Nguyễn Thị Minh Khai, phường 3, quận 1, Thành phố Hồ Chí Minh', '90865834129', '123'
+--KH: 6
+EXEC USP_KHACHHANG_INS
+ N'Lý Hữu Lộc', '1988/07/28', N'224, Lý Thái Tổ, phường 7, quận 1, Thành phố Hồ Chí Minh', '42609543818', '123'
+--KH: 7
+EXEC USP_KHACHHANG_INS
+ N'Phạm Anh Quỳnh', '1990/10/14', N'102, Lý Thái Tổ, phường 5, quận 2, Thành phố Hồ Chí Minh', '59814731438', '123'
+--KH: 8
+EXEC USP_KHACHHANG_INS
+ N'Trần Thị Khôi', '2001/02/26', N'15, Lê Hồng Phong, phường 1, quận 5, Thành phố Hồ Chí Minh', '33758422793', '123'
+--KH: 9
+EXEC USP_KHACHHANG_INS
+ N'Phan Minh Mai', '1993/03/30', N'334, Nguyễn Thị Minh Khai, phường 3, huyện Cái Bè, tỉnh Tiền Giang', '29345410252', '123'
+--KH: 10
+EXEC USP_KHACHHANG_INS
+ N'Trần Minh Khôi', '1985/11/02', N'469, Trần Hưng Đạo, phường 1, huyện Cái Bè, tỉnh Tiền Giang', '70679335825', '123'
+--KH: 11
+EXEC USP_KHACHHANG_INS
+ N'Phạm Hoàng Linh', '1984/11/28', N'124, Lý Thái Tổ, phường 1, quận 5, Thành phố Hồ Chí Minh', '84290638536', '123'
+--KH: 12
+EXEC USP_KHACHHANG_INS
+ N'Hoàng Gia Tiến', '1983/11/27', N'426, Nguyễn Văn Cừ, phường 2, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '52551502463', '123'
+--KH: 13
+EXEC USP_KHACHHANG_INS
+ N'Đặng Gia Tiến', '1983/01/01', N'77, Nguyễn Thị Minh Khai, phường 10, quận 3, Thành phố Hồ Chí Minh', '80231002517', '123'
+--KH: 14
+EXEC USP_KHACHHANG_INS
+ N'Hồ Văn Tiến', '2001/09/25', N'213, Trần Hưng Đạo, phường 10, quận 1, Thành phố Hồ Chí Minh', '10428746368', '123'
+--KH: 15
+EXEC USP_KHACHHANG_INS
+ N'Phan Hữu Lộc', '1988/05/02', N'187, Lý Thái Tổ, phường 4, quận 5, Thành phố Hồ Chí Minh', '27651069300', '123'
+--KH: 16
+EXEC USP_KHACHHANG_INS
+ N'Phan Hữu Linh', '1989/02/11', N'500, Võ Thị Sáu, phường 10, thành phố Đà Lạt, tỉnh Lâm Đồng', '52181102620', '123'
+--KH: 17
+EXEC USP_KHACHHANG_INS
+ N'Lê Gia Thư', '1983/08/15', N'127, Lý Thái Tổ, phường 8, quận 1, Thành phố Hồ Chí Minh', '40299249294', '123'
+--KH: 18
+EXEC USP_KHACHHANG_INS
+ N'Lý Minh Tiến', '1994/08/28', N'153, Trần Hưng Đạo, phường 9, quận 4, Thành phố Hồ Chí Minh', '05515992532', '123'
+--KH: 19
+EXEC USP_KHACHHANG_INS
+ N'Nguyễn Hoàng Quỳnh', '1993/04/06', N'37, Lê Hồng Phong, phường 9, quận 2, Thành phố Hồ Chí Minh', '50316181172', '123'
+--KH: 20
+EXEC USP_KHACHHANG_INS
+ N'Vũ Tấn Mai', '1994/08/15', N'243, Nguyễn Văn Cừ, phường 2, huyện Cái Bè, tỉnh Tiền Giang', '08508025304', '123'
+--KH: 21
+EXEC USP_KHACHHANG_INS
+ N'Lý Hoàng Tiến', '1980/08/20', N'254, Nguyễn Thị Minh Khai, phường 1, quận 3, Thành phố Hồ Chí Minh', '65661919351', '123'
+--KH: 22
+EXEC USP_KHACHHANG_INS
+ N'Đặng Thiên Lộc', '1984/01/27', N'445, Lý Thái Tổ, phường 3, quận 1, Thành phố Hồ Chí Minh', '86775577907', '123'
+--KH: 23
+EXEC USP_KHACHHANG_INS
+ N'Nguyễn Anh Khôi', '1980/06/29', N'173, Nguyễn Văn Cừ, phường 10, huyện Cái Bè, tỉnh Tiền Giang', '18697275736', '123'
+--KH: 24
+EXEC USP_KHACHHANG_INS
+ N'Bùi Anh Khôi', '1992/06/28', N'136, Nguyễn Thị Minh Khai, phường 10, huyện Cái Bè, tỉnh Tiền Giang', '51827802892', '123'
+--KH: 25
+EXEC USP_KHACHHANG_INS
+ N'Lý Hoàng Phúc', '1993/01/16', N'178, Nguyễn Văn Cừ, phường 7, quận 4, Thành phố Hồ Chí Minh', '82185035751', '123'
+--KH: 26
+EXEC USP_KHACHHANG_INS
+ N'Lý Thiên Tường', '1985/12/21', N'319, Nguyễn Văn Cừ, phường 3, quận 2, Thành phố Hồ Chí Minh', '29267401977', '123'
+--KH: 27
+EXEC USP_KHACHHANG_INS
+ N'Phạm Thiên Phúc', '1985/01/12', N'475, Lý Thái Tổ, phường 6, huyện Cái Bè, tỉnh Tiền Giang', '20164808710', '123'
+--KH: 28
+EXEC USP_KHACHHANG_INS
+ N'Lê Anh Lộc', '1995/12/04', N'432, Nguyễn Văn Cừ, phường 6, quận 4, Thành phố Hồ Chí Minh', '55063147629', '123'
+--KH: 29
+EXEC USP_KHACHHANG_INS
+ N'Hoàng Minh Tường', '1999/03/23', N'192, Lý Thái Tổ, phường 4, quận 3, Thành phố Hồ Chí Minh', '71413462351', '123'
+--KH: 30
+EXEC USP_KHACHHANG_INS
+ N'Hồ Gia Quỳnh', '1996/11/09', N'461, Trần Hưng Đạo, phường 3, quận 4, Thành phố Hồ Chí Minh', '34764453583', '123'
+--KH: 31
+EXEC USP_KHACHHANG_INS
+ N'Hoàng Anh Tường', '1997/06/04', N'274, Võ Thị Sáu, phường 10, quận 5, Thành phố Hồ Chí Minh', '98228383730', '123'
+--KH: 32
+EXEC USP_KHACHHANG_INS
+ N'Phan Anh Quỳnh', '2002/11/13', N'185, Võ Thị Sáu, phường 1, quận 2, Thành phố Hồ Chí Minh', '52845717210', '123'
+--KH: 33
+EXEC USP_KHACHHANG_INS
+ N'Đặng An Phúc', '1989/11/19', N'336, Nguyễn Thị Minh Khai, phường 1, huyện Cái Bè, tỉnh Tiền Giang', '87174650598', '123'
+--KH: 34
+EXEC USP_KHACHHANG_INS
+ N'Lý Thiên Thư', '1983/01/23', N'298, Lê Hồng Phong, phường 8, quận 5, Thành phố Hồ Chí Minh', '26575388576', '123'
+--KH: 35
+EXEC USP_KHACHHANG_INS
+ N'Đỗ Minh Linh', '1989/05/21', N'143, Võ Thị Sáu, phường 1, quận 1, Thành phố Hồ Chí Minh', '03746528812', '123'
+--KH: 36
+EXEC USP_KHACHHANG_INS
+ N'Phạm Tấn Linh', '1981/01/21', N'9, Võ Thị Sáu, phường 2, huyện Cái Bè, tỉnh Tiền Giang', '47585671989', '123'
+--KH: 37
+EXEC USP_KHACHHANG_INS
+ N'Bùi An Tiến', '1999/06/30', N'499, Lý Thái Tổ, phường 7, huyện Cái Bè, tỉnh Tiền Giang', '99842060067', '123'
+--KH: 38
+EXEC USP_KHACHHANG_INS
+ N'Đặng An Phúc', '1990/03/22', N'360, Võ Thị Sáu, phường 4, thành phố Đà Lạt, tỉnh Lâm Đồng', '20300443632', '123'
+--KH: 39
+EXEC USP_KHACHHANG_INS
+ N'Hồ Gia Khôi', '1981/05/25', N'359, Lê Hồng Phong, phường 2, quận 1, Thành phố Hồ Chí Minh', '48104742971', '123'
+--KH: 40
+EXEC USP_KHACHHANG_INS
+ N'Phan Gia Quỳnh', '1982/08/17', N'59, Trần Hưng Đạo, phường 4, quận 1, Thành phố Hồ Chí Minh', '45420291505', '123'
+--KH: 41
+EXEC USP_KHACHHANG_INS
+ N'Vũ Anh Khánh', '1985/11/21', N'146, Trần Hưng Đạo, phường 7, quận 2, Thành phố Hồ Chí Minh', '32497458099', '123'
+--KH: 42
+EXEC USP_KHACHHANG_INS
+ N'Nguyễn Tấn Mai', '2002/01/15', N'130, Trần Hưng Đạo, phường 4, quận 3, Thành phố Hồ Chí Minh', '84606605071', '123'
+--KH: 43
+EXEC USP_KHACHHANG_INS
+ N'Bùi Tấn Khánh', '1999/11/04', N'479, Nguyễn Thị Minh Khai, phường 5, huyện Cái Bè, tỉnh Tiền Giang', '24504901497', '123'
+--KH: 44
+EXEC USP_KHACHHANG_INS
+ N'Lê Tấn Thư', '1996/08/02', N'199, Nguyễn Văn Cừ, phường 4, quận 2, Thành phố Hồ Chí Minh', '21350963888', '123'
+--KH: 45
+EXEC USP_KHACHHANG_INS
+ N'Vũ Minh Lộc', '1990/02/13', N'93, Nguyễn Thị Minh Khai, phường 10, quận 5, Thành phố Hồ Chí Minh', '98161342732', '123'
+--KH: 46
+EXEC USP_KHACHHANG_INS
+ N'Đặng Hữu Thư', '1998/05/30', N'210, Trần Hưng Đạo, phường 1, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '63266616959', '123'
+--KH: 47
+EXEC USP_KHACHHANG_INS
+ N'Hoàng Hữu Quỳnh', '1983/06/29', N'44, Võ Thị Sáu, phường 4, quận 2, Thành phố Hồ Chí Minh', '73467813469', '123'
+--KH: 48
+EXEC USP_KHACHHANG_INS
+ N'Bùi Văn Lộc', '1981/06/03', N'98, Võ Thị Sáu, phường 9, quận 4, Thành phố Hồ Chí Minh', '49585967407', '123'
+--KH: 49
+EXEC USP_KHACHHANG_INS
+ N'Phạm Tấn Tường', '1998/01/31', N'55, Trần Hưng Đạo, phường 1, quận 2, Thành phố Hồ Chí Minh', '57504568156', '123'
+--KH: 50
+EXEC USP_KHACHHANG_INS
+ N'Lý An Quỳnh', '1982/01/15', N'310, Lê Hồng Phong, phường 4, thành phố Bà Rịa, tỉnh Bà Rịa - Vũng Tàu', '56797795841', '123'

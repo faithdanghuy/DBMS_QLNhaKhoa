@@ -1,4 +1,4 @@
-USE [Nhom3 _QLNhaKhoa]
+USE [Nhom3_QLNhaKhoa]
 GO
 
 --NS: 1
