@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLNhaKhoa
+namespace QLNhaKhoa.Dentist_form
 {
-    public partial class Customer_Appointment : Form
+    public partial class Dentist_Application : Form
     {
-        public Customer_Appointment()
+        public Dentist_Application()
         {
             InitializeComponent();
         }

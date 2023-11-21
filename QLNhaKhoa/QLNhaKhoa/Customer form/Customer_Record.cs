@@ -21,5 +21,22 @@ namespace QLNhaKhoa
         {
             Application.Exit();
         }
+
+        private void AccountButton_Click(object sender, EventArgs e)
+        {
+            new Customer_Account().Show();
+            this.Hide();
+        }
+
+        private void AppointmentButton_Click(object sender, EventArgs e)
+        {
+            new Customer_Appointment().Show();
+            this.Hide();
+        }
+
+        private void RecordButton_Click(object sender, EventArgs e)
+        {
+            this.Show();
+        }
     }
 }

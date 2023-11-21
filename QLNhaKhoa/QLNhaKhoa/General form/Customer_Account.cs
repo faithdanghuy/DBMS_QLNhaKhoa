@@ -28,10 +28,27 @@ namespace QLNhaKhoa
             {
                 e.Handled = true;
             }
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            if ((e.KeyChar == '.') && (((TextBox)sender).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
             }
+        }
+
+        private void AppointmentButton_Click(object sender, EventArgs e)
+        {
+            new Customer_Appointment().Show();
+            this.Hide();
+        }
+
+        private void RecordButton_Click(object sender, EventArgs e)
+        {
+            new Customer_Record().Show();
+            this.Hide();
+        }
+
+        private void AccountButton_Click(object sender, EventArgs e)
+        {
+            this.Show();
         }
     }
 }

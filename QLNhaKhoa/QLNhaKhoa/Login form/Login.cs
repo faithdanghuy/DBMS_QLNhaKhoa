@@ -27,7 +27,5 @@ namespace QLNhaKhoa
             new Register().Show();
             this.Hide();
         }
-
-
     }
 }
