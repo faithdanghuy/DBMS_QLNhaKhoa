@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             LeftPanel = new Panel();
+            credit = new Label();
             label1 = new Label();
             Logo = new PictureBox();
             RightPanel = new Panel();
@@ -52,6 +53,7 @@
             // LeftPanel
             // 
             LeftPanel.BackColor = Color.SteelBlue;
+            LeftPanel.Controls.Add(credit);
             LeftPanel.Controls.Add(label1);
             LeftPanel.Controls.Add(Logo);
             LeftPanel.Dock = DockStyle.Left;
@@ -59,6 +61,17 @@
             LeftPanel.Name = "LeftPanel";
             LeftPanel.Size = new Size(350, 550);
             LeftPanel.TabIndex = 0;
+            // 
+            // credit
+            // 
+            credit.AutoSize = true;
+            credit.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            credit.ForeColor = Color.White;
+            credit.Location = new Point(151, 527);
+            credit.Name = "credit";
+            credit.Size = new Size(199, 23);
+            credit.TabIndex = 3;
+            credit.Text = "Developed by Group 3";
             // 
             // label1
             // 
@@ -102,8 +115,9 @@
             // txtPassword
             // 
             txtPassword.BorderStyle = BorderStyle.None;
-            txtPassword.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPassword.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtPassword.Location = new Point(86, 291);
+            txtPassword.MaxLength = 31;
             txtPassword.MinimumSize = new Size(314, 25);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
@@ -115,11 +129,12 @@
             // txtCustomerID
             // 
             txtCustomerID.BorderStyle = BorderStyle.None;
-            txtCustomerID.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtCustomerID.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtCustomerID.Location = new Point(86, 192);
+            txtCustomerID.MaxLength = 5;
             txtCustomerID.MinimumSize = new Size(314, 25);
             txtCustomerID.Name = "txtCustomerID";
-            txtCustomerID.PlaceholderText = "Customer ID";
+            txtCustomerID.PlaceholderText = "Enter your ID";
             txtCustomerID.Size = new Size(314, 25);
             txtCustomerID.TabIndex = 10;
             // 
@@ -250,5 +265,6 @@
         private Button registerSwap;
         private TextBox txtCustomerID;
         private TextBox txtPassword;
+        private Label credit;
     }
 }

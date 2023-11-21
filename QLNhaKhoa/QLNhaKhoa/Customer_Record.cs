@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QLNhaKhoa
 {
-    public partial class Login : Form
+    public partial class Customer_Record : Form
     {
-        public Login()
+        public Customer_Record()
         {
             InitializeComponent();
         }
@@ -21,13 +21,5 @@ namespace QLNhaKhoa
         {
             Application.Exit();
         }
-
-        private void registerSwap_Click(object sender, EventArgs e)
-        {
-            new Register().Show();
-            this.Hide();
-        }
-
-
     }
 }
