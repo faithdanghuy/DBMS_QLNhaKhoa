@@ -89,7 +89,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.SteelBlue;
-            label7.Location = new Point(350, 335);
+            label7.Location = new Point(375, 335);
             label7.Name = "label7";
             label7.Size = new Size(123, 23);
             label7.TabIndex = 20;
@@ -97,11 +97,12 @@
             // 
             // phoneBox
             // 
+            phoneBox.Enabled = false;
             phoneBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            phoneBox.Location = new Point(350, 360);
+            phoneBox.Location = new Point(350, 361);
             phoneBox.Name = "phoneBox";
             phoneBox.PlaceholderText = "Phone";
-            phoneBox.Size = new Size(175, 27);
+            phoneBox.Size = new Size(200, 27);
             phoneBox.TabIndex = 19;
             // 
             // label6
@@ -109,7 +110,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.SteelBlue;
-            label6.Location = new Point(75, 410);
+            label6.Location = new Point(50, 409);
             label6.Name = "label6";
             label6.Size = new Size(75, 23);
             label6.TabIndex = 18;
@@ -117,11 +118,12 @@
             // 
             // addressBox
             // 
+            addressBox.Enabled = false;
             addressBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            addressBox.Location = new Point(75, 435);
+            addressBox.Location = new Point(50, 435);
             addressBox.Name = "addressBox";
             addressBox.PlaceholderText = "Address";
-            addressBox.Size = new Size(450, 27);
+            addressBox.Size = new Size(500, 27);
             addressBox.TabIndex = 17;
             // 
             // label4
@@ -137,19 +139,21 @@
             // 
             // customerNameBox
             // 
+            customerNameBox.Enabled = false;
             customerNameBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             customerNameBox.Location = new Point(225, 285);
             customerNameBox.Name = "customerNameBox";
             customerNameBox.PlaceholderText = "Name";
-            customerNameBox.Size = new Size(300, 27);
+            customerNameBox.Size = new Size(325, 27);
             customerNameBox.TabIndex = 15;
             // 
             // bdayBox
             // 
             bdayBox.CustomFormat = "yyyy/MM/dd";
+            bdayBox.Enabled = false;
             bdayBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             bdayBox.Format = DateTimePickerFormat.Custom;
-            bdayBox.Location = new Point(75, 360);
+            bdayBox.Location = new Point(50, 361);
             bdayBox.MaxDate = new DateTime(2100, 12, 31, 0, 0, 0, 0);
             bdayBox.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             bdayBox.Name = "bdayBox";
@@ -162,7 +166,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.SteelBlue;
-            label2.Location = new Point(75, 260);
+            label2.Location = new Point(50, 259);
             label2.Name = "label2";
             label2.Size = new Size(105, 23);
             label2.TabIndex = 12;
@@ -173,7 +177,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.SteelBlue;
-            label3.Location = new Point(75, 335);
+            label3.Location = new Point(50, 335);
             label3.Name = "label3";
             label3.Size = new Size(113, 23);
             label3.TabIndex = 10;
@@ -195,7 +199,7 @@
             nameLabel.AutoSize = true;
             nameLabel.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             nameLabel.ForeColor = Color.SteelBlue;
-            nameLabel.Location = new Point(75, 184);
+            nameLabel.Location = new Point(41, 184);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new Size(84, 23);
             nameLabel.TabIndex = 7;
@@ -203,8 +207,9 @@
             // 
             // customerIDBox
             // 
+            customerIDBox.Enabled = false;
             customerIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customerIDBox.Location = new Point(75, 285);
+            customerIDBox.Location = new Point(50, 285);
             customerIDBox.Name = "customerIDBox";
             customerIDBox.PlaceholderText = "ID";
             customerIDBox.Size = new Size(100, 27);
@@ -212,11 +217,12 @@
             // 
             // dentistNameBox
             // 
+            dentistNameBox.Enabled = false;
             dentistNameBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dentistNameBox.Location = new Point(225, 210);
             dentistNameBox.Name = "dentistNameBox";
             dentistNameBox.PlaceholderText = "Name";
-            dentistNameBox.Size = new Size(300, 27);
+            dentistNameBox.Size = new Size(325, 27);
             dentistNameBox.TabIndex = 3;
             // 
             // ExitButton
@@ -234,8 +240,9 @@
             // 
             // dentistIDBox
             // 
+            dentistIDBox.Enabled = false;
             dentistIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dentistIDBox.Location = new Point(75, 210);
+            dentistIDBox.Location = new Point(50, 210);
             dentistIDBox.Name = "dentistIDBox";
             dentistIDBox.PlaceholderText = "ID";
             dentistIDBox.Size = new Size(100, 27);

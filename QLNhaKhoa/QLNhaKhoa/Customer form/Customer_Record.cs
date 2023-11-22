@@ -12,6 +12,7 @@ namespace QLNhaKhoa
 {
     public partial class Customer_Record : Form
     {
+        public string CurrentUser { get; set; } = string.Empty;
         public Customer_Record()
         {
             InitializeComponent();

@@ -13,6 +13,7 @@ namespace QLNhaKhoa.Dentist_form
 {
     public partial class Dentist_Main : Form
     {
+        public string CurrentDentist { get; set; } = string.Empty;
         public Dentist_Main()
         {
             InitializeComponent();

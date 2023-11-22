@@ -47,6 +47,7 @@
             // RightPanel
             // 
             RightPanel.BackColor = Color.White;
+            RightPanel.CausesValidation = false;
             RightPanel.Controls.Add(bdayBox);
             RightPanel.Controls.Add(pictureBox1);
             RightPanel.Controls.Add(label2);
@@ -69,7 +70,7 @@
             bdayBox.CustomFormat = "yyyy/MM/dd";
             bdayBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             bdayBox.Format = DateTimePickerFormat.Custom;
-            bdayBox.Location = new Point(325, 301);
+            bdayBox.Location = new Point(350, 301);
             bdayBox.MaxDate = new DateTime(2100, 12, 31, 0, 0, 0, 0);
             bdayBox.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             bdayBox.Name = "bdayBox";
@@ -92,7 +93,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.SteelBlue;
-            label2.Location = new Point(75, 275);
+            label2.Location = new Point(50, 275);
             label2.Name = "label2";
             label2.Size = new Size(123, 23);
             label2.TabIndex = 12;
@@ -117,7 +118,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.SteelBlue;
-            label3.Location = new Point(75, 365);
+            label3.Location = new Point(50, 365);
             label3.Name = "label3";
             label3.Size = new Size(75, 23);
             label3.TabIndex = 10;
@@ -128,7 +129,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.SteelBlue;
-            label1.Location = new Point(325, 275);
+            label1.Location = new Point(350, 275);
             label1.Name = "label1";
             label1.Size = new Size(113, 23);
             label1.TabIndex = 8;
@@ -139,7 +140,7 @@
             nameLabel.AutoSize = true;
             nameLabel.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             nameLabel.ForeColor = Color.SteelBlue;
-            nameLabel.Location = new Point(75, 185);
+            nameLabel.Location = new Point(50, 185);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new Size(57, 23);
             nameLabel.TabIndex = 7;
@@ -148,7 +149,7 @@
             // phoneBox
             // 
             phoneBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            phoneBox.Location = new Point(75, 301);
+            phoneBox.Location = new Point(50, 301);
             phoneBox.Name = "phoneBox";
             phoneBox.PlaceholderText = "Phone";
             phoneBox.Size = new Size(200, 27);
@@ -157,10 +158,10 @@
             // addressBox
             // 
             addressBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            addressBox.Location = new Point(75, 391);
+            addressBox.Location = new Point(50, 391);
             addressBox.Name = "addressBox";
             addressBox.PlaceholderText = "Address";
-            addressBox.Size = new Size(450, 27);
+            addressBox.Size = new Size(500, 27);
             addressBox.TabIndex = 3;
             // 
             // ExitButton
@@ -179,10 +180,10 @@
             // nameBox
             // 
             nameBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            nameBox.Location = new Point(75, 211);
+            nameBox.Location = new Point(50, 211);
             nameBox.Name = "nameBox";
             nameBox.PlaceholderText = "Name";
-            nameBox.Size = new Size(450, 27);
+            nameBox.Size = new Size(500, 27);
             nameBox.TabIndex = 0;
             // 
             // Account
@@ -195,6 +196,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Account";
             Text = "Account";
+            Load += Account_Load;
             RightPanel.ResumeLayout(false);
             RightPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

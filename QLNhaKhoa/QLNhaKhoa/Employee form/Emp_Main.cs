@@ -12,6 +12,7 @@ namespace QLNhaKhoa.Employee_form
 {
     public partial class Emp_Main : Form
     {
+        public string CurrentEmp { get; set; } = string.Empty;
         public Emp_Main()
         {
             InitializeComponent();

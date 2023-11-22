@@ -125,6 +125,7 @@
             txtPassword.Size = new Size(314, 25);
             txtPassword.TabIndex = 11;
             txtPassword.UseSystemPasswordChar = true;
+            txtPassword.KeyDown += txtPassword_KeyDown;
             // 
             // txtID
             // 
@@ -137,6 +138,7 @@
             txtID.PlaceholderText = "Enter your ID";
             txtID.Size = new Size(314, 25);
             txtID.TabIndex = 10;
+            txtID.KeyDown += txtID_KeyDown;
             // 
             // registerSwap
             // 
@@ -237,6 +239,7 @@
             Controls.Add(RightPanel);
             Controls.Add(LeftPanel);
             FormBorderStyle = FormBorderStyle.None;
+            KeyPreview = true;
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";

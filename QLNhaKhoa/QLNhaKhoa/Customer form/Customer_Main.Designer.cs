@@ -31,7 +31,7 @@
             LeftPanel = new Panel();
             credit = new Label();
             CustomerID = new Label();
-            label5 = new Label();
+            CustomerName = new Label();
             IDLabel = new Label();
             HomepageIcon = new PictureBox();
             RecordButton = new Button();
@@ -49,7 +49,7 @@
             LeftPanel.BackColor = Color.SteelBlue;
             LeftPanel.Controls.Add(credit);
             LeftPanel.Controls.Add(CustomerID);
-            LeftPanel.Controls.Add(label5);
+            LeftPanel.Controls.Add(CustomerName);
             LeftPanel.Controls.Add(IDLabel);
             LeftPanel.Controls.Add(HomepageIcon);
             LeftPanel.Controls.Add(RecordButton);
@@ -82,17 +82,16 @@
             CustomerID.TabIndex = 7;
             CustomerID.Text = "AB123";
             // 
-            // label5
+            // CustomerName
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(56, 155);
-            label5.Name = "label5";
-            label5.Size = new Size(188, 28);
-            label5.TabIndex = 6;
-            label5.Text = "<Customer Name>";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
+            CustomerName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CustomerName.ForeColor = Color.White;
+            CustomerName.Location = new Point(56, 155);
+            CustomerName.Name = "CustomerName";
+            CustomerName.Size = new Size(188, 28);
+            CustomerName.TabIndex = 6;
+            CustomerName.Text = "<Customer Name>";
+            CustomerName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // IDLabel
             // 
@@ -192,6 +191,7 @@
             Name = "Customer_Main";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Customer_Main";
+            Load += Customer_Main_Load;
             LeftPanel.ResumeLayout(false);
             LeftPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)HomepageIcon).EndInit();
@@ -204,7 +204,7 @@
         private Panel LeftPanel;
         private Label credit;
         private Label CustomerID;
-        private Label label5;
+        private Label CustomerName;
         private Label IDLabel;
         private PictureBox HomepageIcon;
         private Button RecordButton;

@@ -13,6 +13,7 @@ namespace QLNhaKhoa.Admin_form
 {
     public partial class Admin_Main : Form
     {
+        public string CurrentAdmin { get; set; } = string.Empty;
         public Admin_Main()
         {
             InitializeComponent();
