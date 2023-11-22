@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer_Record));
             RightPanel = new Panel();
+            addressBox = new Label();
+            phoneBox = new Label();
+            bdayBox = new Label();
+            customerNameBox = new Label();
+            dentistNameBox = new Label();
+            customerIDBox = new Label();
+            dentistIDBox = new Label();
             pictureBox1 = new PictureBox();
             label7 = new Label();
-            phoneBox = new TextBox();
             label6 = new Label();
-            addressBox = new TextBox();
             label4 = new Label();
-            customerNameBox = new TextBox();
-            bdayBox = new DateTimePicker();
             label2 = new Label();
             label3 = new Label();
             label1 = new Label();
             nameLabel = new Label();
-            customerIDBox = new TextBox();
-            dentistNameBox = new TextBox();
             ExitButton = new Button();
-            dentistIDBox = new TextBox();
             RightPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -52,27 +53,104 @@
             // RightPanel
             // 
             RightPanel.BackColor = Color.White;
+            RightPanel.Controls.Add(addressBox);
+            RightPanel.Controls.Add(phoneBox);
+            RightPanel.Controls.Add(bdayBox);
+            RightPanel.Controls.Add(customerNameBox);
+            RightPanel.Controls.Add(dentistNameBox);
+            RightPanel.Controls.Add(customerIDBox);
+            RightPanel.Controls.Add(dentistIDBox);
             RightPanel.Controls.Add(pictureBox1);
             RightPanel.Controls.Add(label7);
-            RightPanel.Controls.Add(phoneBox);
             RightPanel.Controls.Add(label6);
-            RightPanel.Controls.Add(addressBox);
             RightPanel.Controls.Add(label4);
-            RightPanel.Controls.Add(customerNameBox);
-            RightPanel.Controls.Add(bdayBox);
             RightPanel.Controls.Add(label2);
             RightPanel.Controls.Add(label3);
             RightPanel.Controls.Add(label1);
             RightPanel.Controls.Add(nameLabel);
-            RightPanel.Controls.Add(customerIDBox);
-            RightPanel.Controls.Add(dentistNameBox);
             RightPanel.Controls.Add(ExitButton);
-            RightPanel.Controls.Add(dentistIDBox);
             RightPanel.Dock = DockStyle.Fill;
             RightPanel.Location = new Point(0, 0);
             RightPanel.Name = "RightPanel";
             RightPanel.Size = new Size(600, 550);
             RightPanel.TabIndex = 3;
+            // 
+            // addressBox
+            // 
+            addressBox.AutoSize = true;
+            addressBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            addressBox.ForeColor = Color.Black;
+            addressBox.Location = new Point(50, 407);
+            addressBox.Name = "addressBox";
+            addressBox.Size = new Size(69, 19);
+            addressBox.TabIndex = 28;
+            addressBox.Text = "Address";
+            // 
+            // phoneBox
+            // 
+            phoneBox.AutoSize = true;
+            phoneBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            phoneBox.ForeColor = Color.Black;
+            phoneBox.Location = new Point(368, 318);
+            phoneBox.Name = "phoneBox";
+            phoneBox.Size = new Size(116, 19);
+            phoneBox.TabIndex = 27;
+            phoneBox.Text = "Phone number";
+            // 
+            // bdayBox
+            // 
+            bdayBox.AutoSize = true;
+            bdayBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bdayBox.ForeColor = Color.Black;
+            bdayBox.Location = new Point(173, 318);
+            bdayBox.Name = "bdayBox";
+            bdayBox.Size = new Size(70, 19);
+            bdayBox.TabIndex = 26;
+            bdayBox.Text = "Birthday";
+            // 
+            // customerNameBox
+            // 
+            customerNameBox.AutoSize = true;
+            customerNameBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customerNameBox.ForeColor = Color.Black;
+            customerNameBox.Location = new Point(342, 253);
+            customerNameBox.Name = "customerNameBox";
+            customerNameBox.Size = new Size(51, 19);
+            customerNameBox.TabIndex = 25;
+            customerNameBox.Text = "Name";
+            // 
+            // dentistNameBox
+            // 
+            dentistNameBox.AutoSize = true;
+            dentistNameBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dentistNameBox.ForeColor = Color.Black;
+            dentistNameBox.Location = new Point(342, 188);
+            dentistNameBox.Name = "dentistNameBox";
+            dentistNameBox.Size = new Size(51, 19);
+            dentistNameBox.TabIndex = 24;
+            dentistNameBox.Text = "Name";
+            // 
+            // customerIDBox
+            // 
+            customerIDBox.AutoSize = true;
+            customerIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customerIDBox.ForeColor = Color.Black;
+            customerIDBox.Location = new Point(165, 253);
+            customerIDBox.Name = "customerIDBox";
+            customerIDBox.Size = new Size(26, 19);
+            customerIDBox.TabIndex = 23;
+            customerIDBox.Text = "ID";
+            // 
+            // dentistIDBox
+            // 
+            dentistIDBox.AutoSize = true;
+            dentistIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dentistIDBox.ForeColor = Color.Black;
+            dentistIDBox.Location = new Point(144, 188);
+            dentistIDBox.Name = "dentistIDBox";
+            dentistIDBox.Size = new Size(26, 19);
+            dentistIDBox.TabIndex = 22;
+            dentistIDBox.Text = "ID";
             // 
             // pictureBox1
             // 
@@ -89,141 +167,77 @@
             label7.AutoSize = true;
             label7.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.SteelBlue;
-            label7.Location = new Point(375, 335);
+            label7.Location = new Point(300, 315);
             label7.Name = "label7";
-            label7.Size = new Size(123, 23);
+            label7.Size = new Size(62, 23);
             label7.TabIndex = 20;
-            label7.Text = "Phone number";
-            // 
-            // phoneBox
-            // 
-            phoneBox.Enabled = false;
-            phoneBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            phoneBox.Location = new Point(350, 361);
-            phoneBox.Name = "phoneBox";
-            phoneBox.PlaceholderText = "Phone";
-            phoneBox.Size = new Size(200, 27);
-            phoneBox.TabIndex = 19;
+            label7.Text = "Phone:";
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.SteelBlue;
-            label6.Location = new Point(50, 409);
+            label6.Location = new Point(50, 380);
             label6.Name = "label6";
-            label6.Size = new Size(75, 23);
+            label6.Size = new Size(79, 23);
             label6.TabIndex = 18;
-            label6.Text = "Address";
-            // 
-            // addressBox
-            // 
-            addressBox.Enabled = false;
-            addressBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            addressBox.Location = new Point(50, 435);
-            addressBox.Name = "addressBox";
-            addressBox.PlaceholderText = "Address";
-            addressBox.Size = new Size(500, 27);
-            addressBox.TabIndex = 17;
+            label6.Text = "Address:";
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.SteelBlue;
-            label4.Location = new Point(225, 259);
+            label4.Location = new Point(275, 250);
             label4.Name = "label4";
-            label4.Size = new Size(136, 23);
+            label4.Size = new Size(61, 23);
             label4.TabIndex = 16;
-            label4.Text = "Customer Name";
-            // 
-            // customerNameBox
-            // 
-            customerNameBox.Enabled = false;
-            customerNameBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customerNameBox.Location = new Point(225, 285);
-            customerNameBox.Name = "customerNameBox";
-            customerNameBox.PlaceholderText = "Name";
-            customerNameBox.Size = new Size(325, 27);
-            customerNameBox.TabIndex = 15;
-            // 
-            // bdayBox
-            // 
-            bdayBox.CustomFormat = "yyyy/MM/dd";
-            bdayBox.Enabled = false;
-            bdayBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            bdayBox.Format = DateTimePickerFormat.Custom;
-            bdayBox.Location = new Point(50, 361);
-            bdayBox.MaxDate = new DateTime(2100, 12, 31, 0, 0, 0, 0);
-            bdayBox.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
-            bdayBox.Name = "bdayBox";
-            bdayBox.Size = new Size(200, 27);
-            bdayBox.TabIndex = 14;
-            bdayBox.Value = new DateTime(2023, 11, 21, 15, 13, 46, 0);
+            label4.Text = "Name:";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.SteelBlue;
-            label2.Location = new Point(50, 259);
+            label2.Location = new Point(50, 250);
             label2.Name = "label2";
-            label2.Size = new Size(105, 23);
+            label2.Size = new Size(109, 23);
             label2.TabIndex = 12;
-            label2.Text = "Customer ID";
+            label2.Text = "Customer ID:";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.SteelBlue;
-            label3.Location = new Point(50, 335);
+            label3.Location = new Point(50, 315);
             label3.Name = "label3";
-            label3.Size = new Size(113, 23);
+            label3.Size = new Size(117, 23);
             label3.TabIndex = 10;
-            label3.Text = "Date of birth";
+            label3.Text = "Date of birth:";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.SteelBlue;
-            label1.Location = new Point(225, 184);
+            label1.Location = new Point(275, 185);
             label1.Name = "label1";
-            label1.Size = new Size(115, 23);
+            label1.Size = new Size(61, 23);
             label1.TabIndex = 8;
-            label1.Text = "Dentist Name";
+            label1.Text = "Name:";
             // 
             // nameLabel
             // 
             nameLabel.AutoSize = true;
             nameLabel.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             nameLabel.ForeColor = Color.SteelBlue;
-            nameLabel.Location = new Point(41, 184);
+            nameLabel.Location = new Point(50, 185);
             nameLabel.Name = "nameLabel";
-            nameLabel.Size = new Size(84, 23);
+            nameLabel.Size = new Size(88, 23);
             nameLabel.TabIndex = 7;
-            nameLabel.Text = "Dentist ID";
-            // 
-            // customerIDBox
-            // 
-            customerIDBox.Enabled = false;
-            customerIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customerIDBox.Location = new Point(50, 285);
-            customerIDBox.Name = "customerIDBox";
-            customerIDBox.PlaceholderText = "ID";
-            customerIDBox.Size = new Size(100, 27);
-            customerIDBox.TabIndex = 6;
-            // 
-            // dentistNameBox
-            // 
-            dentistNameBox.Enabled = false;
-            dentistNameBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dentistNameBox.Location = new Point(225, 210);
-            dentistNameBox.Name = "dentistNameBox";
-            dentistNameBox.PlaceholderText = "Name";
-            dentistNameBox.Size = new Size(325, 27);
-            dentistNameBox.TabIndex = 3;
+            nameLabel.Text = "Dentist ID:";
             // 
             // ExitButton
             // 
@@ -238,16 +252,6 @@
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
             // 
-            // dentistIDBox
-            // 
-            dentistIDBox.Enabled = false;
-            dentistIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dentistIDBox.Location = new Point(50, 210);
-            dentistIDBox.Name = "dentistIDBox";
-            dentistIDBox.PlaceholderText = "ID";
-            dentistIDBox.Size = new Size(100, 27);
-            dentistIDBox.TabIndex = 0;
-            // 
             // Customer_Record
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -256,9 +260,11 @@
             ControlBox = false;
             Controls.Add(RightPanel);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Customer_Record";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Customer_Record";
+            Load += Customer_Record_Load;
             RightPanel.ResumeLayout(false);
             RightPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -271,17 +277,17 @@
         private Label label3;
         private Label label1;
         private Label nameLabel;
-        private TextBox customerIDBox;
-        private TextBox dentistNameBox;
         private Button ExitButton;
-        private TextBox dentistIDBox;
-        private DateTimePicker bdayBox;
         private Label label4;
-        private TextBox customerNameBox;
         private Label label6;
-        private TextBox addressBox;
         private Label label7;
-        private TextBox phoneBox;
         private PictureBox pictureBox1;
+        private Label dentistIDBox;
+        private Label customerIDBox;
+        private Label customerNameBox;
+        private Label dentistNameBox;
+        private Label bdayBox;
+        private Label addressBox;
+        private Label phoneBox;
     }
 }

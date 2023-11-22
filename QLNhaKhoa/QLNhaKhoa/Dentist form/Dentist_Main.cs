@@ -14,6 +14,7 @@ namespace QLNhaKhoa.Dentist_form
     public partial class Dentist_Main : Form
     {
         public string CurrentDentist { get; set; } = string.Empty;
+        public string CurrentPass { get; set; } = string.Empty;
         public Dentist_Main()
         {
             InitializeComponent();
@@ -38,7 +39,7 @@ namespace QLNhaKhoa.Dentist_form
 
         private void AccountButton_Click(object sender, EventArgs e)
         {
-            loadform(new Account());
+            loadform(new Dentist_Account());
         }
 
         private void ServiceButton_Click(object sender, EventArgs e)
@@ -48,7 +49,7 @@ namespace QLNhaKhoa.Dentist_form
 
         private void AppointmentButton_Click(object sender, EventArgs e)
         {
-            loadform(new Appointment());
+            loadform(new Dentist_Appointment());
         }
 
         private void PrecriptionButton_Click(object sender, EventArgs e)

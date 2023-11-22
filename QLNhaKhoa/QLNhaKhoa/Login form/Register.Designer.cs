@@ -31,6 +31,7 @@ namespace QLNhaKhoa
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             LeftPanel = new Panel();
             credit = new Label();
             Title = new Label();
@@ -348,6 +349,7 @@ namespace QLNhaKhoa
             Controls.Add(RightPanel);
             Controls.Add(LeftPanel);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Register";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Regiser";

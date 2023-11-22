@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dentist_Main));
             LeftPanel = new Panel();
             ServiceButton = new Button();
             PrecriptionButton = new Button();
             BillButton = new Button();
             credit = new Label();
             CustomerID = new Label();
-            label5 = new Label();
+            dentistName = new Label();
             IDLabel = new Label();
             HomepageIcon = new PictureBox();
             RecordButton = new Button();
@@ -55,7 +56,7 @@
             LeftPanel.Controls.Add(BillButton);
             LeftPanel.Controls.Add(credit);
             LeftPanel.Controls.Add(CustomerID);
-            LeftPanel.Controls.Add(label5);
+            LeftPanel.Controls.Add(dentistName);
             LeftPanel.Controls.Add(IDLabel);
             LeftPanel.Controls.Add(HomepageIcon);
             LeftPanel.Controls.Add(RecordButton);
@@ -64,7 +65,7 @@
             LeftPanel.Dock = DockStyle.Left;
             LeftPanel.Location = new Point(0, 0);
             LeftPanel.Name = "LeftPanel";
-            LeftPanel.Size = new Size(300, 550);
+            LeftPanel.Size = new Size(300, 700);
             LeftPanel.TabIndex = 2;
             // 
             // ServiceButton
@@ -73,7 +74,7 @@
             ServiceButton.FlatStyle = FlatStyle.Flat;
             ServiceButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ServiceButton.ForeColor = Color.White;
-            ServiceButton.Location = new Point(25, 425);
+            ServiceButton.Location = new Point(25, 480);
             ServiceButton.Name = "ServiceButton";
             ServiceButton.Size = new Size(250, 40);
             ServiceButton.TabIndex = 11;
@@ -87,7 +88,7 @@
             PrecriptionButton.FlatStyle = FlatStyle.Flat;
             PrecriptionButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             PrecriptionButton.ForeColor = Color.White;
-            PrecriptionButton.Location = new Point(25, 380);
+            PrecriptionButton.Location = new Point(25, 435);
             PrecriptionButton.Name = "PrecriptionButton";
             PrecriptionButton.Size = new Size(250, 40);
             PrecriptionButton.TabIndex = 10;
@@ -101,7 +102,7 @@
             BillButton.FlatStyle = FlatStyle.Flat;
             BillButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             BillButton.ForeColor = Color.White;
-            BillButton.Location = new Point(25, 335);
+            BillButton.Location = new Point(25, 390);
             BillButton.Name = "BillButton";
             BillButton.Size = new Size(250, 40);
             BillButton.TabIndex = 9;
@@ -114,7 +115,7 @@
             credit.AutoSize = true;
             credit.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             credit.ForeColor = Color.White;
-            credit.Location = new Point(101, 527);
+            credit.Location = new Point(101, 677);
             credit.Name = "credit";
             credit.Size = new Size(199, 23);
             credit.TabIndex = 8;
@@ -131,17 +132,17 @@
             CustomerID.TabIndex = 7;
             CustomerID.Text = "AB123";
             // 
-            // label5
+            // dentistName
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(67, 155);
-            label5.Name = "label5";
-            label5.Size = new Size(165, 28);
-            label5.TabIndex = 6;
-            label5.Text = "<Dentist Name>";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
+            dentistName.AutoSize = true;
+            dentistName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dentistName.ForeColor = Color.White;
+            dentistName.Location = new Point(67, 200);
+            dentistName.Name = "dentistName";
+            dentistName.Size = new Size(165, 28);
+            dentistName.TabIndex = 6;
+            dentistName.Text = "<Dentist Name>";
+            dentistName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // IDLabel
             // 
@@ -157,7 +158,7 @@
             // HomepageIcon
             // 
             HomepageIcon.Image = Properties.Resources.account1;
-            HomepageIcon.Location = new Point(100, 45);
+            HomepageIcon.Location = new Point(100, 100);
             HomepageIcon.Name = "HomepageIcon";
             HomepageIcon.Size = new Size(100, 100);
             HomepageIcon.SizeMode = PictureBoxSizeMode.Zoom;
@@ -170,7 +171,7 @@
             RecordButton.FlatStyle = FlatStyle.Flat;
             RecordButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             RecordButton.ForeColor = Color.White;
-            RecordButton.Location = new Point(25, 290);
+            RecordButton.Location = new Point(25, 345);
             RecordButton.Name = "RecordButton";
             RecordButton.Size = new Size(250, 40);
             RecordButton.TabIndex = 3;
@@ -184,7 +185,7 @@
             AppointmentButton.FlatStyle = FlatStyle.Flat;
             AppointmentButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             AppointmentButton.ForeColor = Color.White;
-            AppointmentButton.Location = new Point(25, 245);
+            AppointmentButton.Location = new Point(25, 300);
             AppointmentButton.Name = "AppointmentButton";
             AppointmentButton.Size = new Size(250, 40);
             AppointmentButton.TabIndex = 2;
@@ -198,7 +199,7 @@
             AccountButton.FlatStyle = FlatStyle.Flat;
             AccountButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             AccountButton.ForeColor = Color.White;
-            AccountButton.Location = new Point(25, 200);
+            AccountButton.Location = new Point(25, 255);
             AccountButton.Name = "AccountButton";
             AccountButton.Size = new Size(250, 40);
             AccountButton.TabIndex = 1;
@@ -212,7 +213,7 @@
             mainPanel.Dock = DockStyle.Fill;
             mainPanel.Location = new Point(300, 0);
             mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(600, 550);
+            mainPanel.Size = new Size(900, 700);
             mainPanel.TabIndex = 3;
             // 
             // ExitButton
@@ -220,24 +221,24 @@
             ExitButton.FlatAppearance.BorderSize = 0;
             ExitButton.FlatStyle = FlatStyle.Flat;
             ExitButton.Font = new Font("VNI-Lithos", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ExitButton.Location = new Point(560, 0);
+            ExitButton.Location = new Point(860, 0);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(40, 40);
-            ExitButton.TabIndex = 10;
+            ExitButton.TabIndex = 2;
             ExitButton.Text = "X";
             ExitButton.UseVisualStyleBackColor = true;
-            ExitButton.Click += ExitButton_Click;
             // 
             // Dentist_Main
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(900, 550);
+            ClientSize = new Size(1200, 700);
             ControlBox = false;
             Controls.Add(mainPanel);
             Controls.Add(LeftPanel);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Dentist_Main";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Dentist_Main";
@@ -253,16 +254,16 @@
         private Panel LeftPanel;
         private Label credit;
         private Label CustomerID;
-        private Label label5;
+        private Label dentistName;
         private Label IDLabel;
         private PictureBox HomepageIcon;
         private Button RecordButton;
         private Button AppointmentButton;
         private Button AccountButton;
-        private Panel mainPanel;
-        private Button ExitButton;
         private Button ServiceButton;
         private Button PrecriptionButton;
         private Button BillButton;
+        private Panel mainPanel;
+        private Button ExitButton;
     }
 }

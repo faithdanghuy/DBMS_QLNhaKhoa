@@ -1,6 +1,6 @@
 ﻿namespace QLNhaKhoa.Dentist_form
 {
-    partial class Dentist_Record
+    partial class Dentist_Appointment
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dentist_Appointment));
+            panel3 = new Panel();
             addRecordBtn = new Button();
             updateRecordBtn = new Button();
             label1 = new Label();
-            panel2 = new Panel();
+            panel4 = new Panel();
             textBox1 = new TextBox();
             recordData = new DataGridView();
             ExitButton = new Button();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
+            panel3.SuspendLayout();
+            panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)recordData).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // panel3
             // 
-            panel1.BackColor = Color.White;
-            panel1.Controls.Add(addRecordBtn);
-            panel1.Controls.Add(updateRecordBtn);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(panel2);
-            panel1.Controls.Add(recordData);
-            panel1.Controls.Add(ExitButton);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(900, 700);
-            panel1.TabIndex = 0;
+            panel3.BackColor = Color.White;
+            panel3.Controls.Add(addRecordBtn);
+            panel3.Controls.Add(updateRecordBtn);
+            panel3.Controls.Add(label1);
+            panel3.Controls.Add(panel4);
+            panel3.Controls.Add(recordData);
+            panel3.Controls.Add(ExitButton);
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(0, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(900, 700);
+            panel3.TabIndex = 9;
             // 
             // addRecordBtn
             // 
@@ -63,11 +64,11 @@
             addRecordBtn.FlatStyle = FlatStyle.Flat;
             addRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             addRecordBtn.ForeColor = Color.White;
-            addRecordBtn.Location = new Point(206, 398);
+            addRecordBtn.Location = new Point(238, 398);
             addRecordBtn.Name = "addRecordBtn";
-            addRecordBtn.Size = new Size(150, 40);
+            addRecordBtn.Size = new Size(200, 40);
             addRecordBtn.TabIndex = 4;
-            addRecordBtn.Text = "Add record";
+            addRecordBtn.Text = "Make an appointment";
             addRecordBtn.UseVisualStyleBackColor = false;
             // 
             // updateRecordBtn
@@ -79,9 +80,9 @@
             updateRecordBtn.ForeColor = Color.White;
             updateRecordBtn.Location = new Point(50, 398);
             updateRecordBtn.Name = "updateRecordBtn";
-            updateRecordBtn.Size = new Size(150, 40);
+            updateRecordBtn.Size = new Size(182, 40);
             updateRecordBtn.TabIndex = 3;
-            updateRecordBtn.Text = "Update record";
+            updateRecordBtn.Text = "Update appointment";
             updateRecordBtn.UseVisualStyleBackColor = false;
             // 
             // label1
@@ -89,20 +90,20 @@
             label1.AutoSize = true;
             label1.Font = new Font("Tw Cen MT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.SteelBlue;
-            label1.Location = new Point(289, 20);
+            label1.Location = new Point(367, 20);
             label1.Name = "label1";
-            label1.Size = new Size(322, 35);
+            label1.Size = new Size(166, 35);
             label1.TabIndex = 0;
-            label1.Text = "Customer Medical Record";
+            label1.Text = "Appointment";
             // 
-            // panel2
+            // panel4
             // 
-            panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(textBox1);
-            panel2.Location = new Point(50, 35);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(800, 350);
-            panel2.TabIndex = 0;
+            panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(textBox1);
+            panel4.Location = new Point(50, 35);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(800, 350);
+            panel4.TabIndex = 0;
             // 
             // textBox1
             // 
@@ -133,35 +134,35 @@
             ExitButton.TabIndex = 1;
             ExitButton.Text = "X";
             ExitButton.UseVisualStyleBackColor = true;
-            ExitButton.Click += ExitButton_Click;
             // 
-            // Dentist_Record
+            // Dentist_Appointment
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(900, 700);
             ControlBox = false;
-            Controls.Add(panel1);
+            Controls.Add(panel3);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Dentist_Record";
-            Text = "Dentist_Record";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "Dentist_Appointment";
+            Text = "Dentist_Appointment";
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)recordData).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
-        private Button ExitButton;
-        private DataGridView recordData;
-        private Panel panel2;
-        private Label label1;
-        private Button updateRecordBtn;
+        private Panel panel3;
         private Button addRecordBtn;
+        private Button updateRecordBtn;
+        private Label label1;
+        private Panel panel4;
         private TextBox textBox1;
+        private DataGridView recordData;
+        private Button ExitButton;
     }
 }
