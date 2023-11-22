@@ -6,6 +6,7 @@ namespace QLNhaKhoa
     public partial class Customer_Main : Form
     {
         public string CurrentUser { get; set; } = string.Empty;
+        public string CurrentPass { get; set; } = string.Empty;
         public Customer_Main()
         {
             InitializeComponent();
@@ -27,6 +28,7 @@ namespace QLNhaKhoa
         {
             Account f = new Account();
             f.CurrentUser = CurrentUser;
+            f.CurrentPass = CurrentPass;
             loadform(f);
         }
 

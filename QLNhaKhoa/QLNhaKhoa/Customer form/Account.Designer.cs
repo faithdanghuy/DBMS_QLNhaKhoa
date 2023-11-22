@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Account));
             RightPanel = new Panel();
             bdayBox = new DateTimePicker();
             pictureBox1 = new PictureBox();
             label2 = new Label();
-            button2 = new Button();
+            updateButton = new Button();
             label3 = new Label();
             label1 = new Label();
             nameLabel = new Label();
@@ -51,7 +52,7 @@
             RightPanel.Controls.Add(bdayBox);
             RightPanel.Controls.Add(pictureBox1);
             RightPanel.Controls.Add(label2);
-            RightPanel.Controls.Add(button2);
+            RightPanel.Controls.Add(updateButton);
             RightPanel.Controls.Add(label3);
             RightPanel.Controls.Add(label1);
             RightPanel.Controls.Add(nameLabel);
@@ -99,19 +100,20 @@
             label2.TabIndex = 12;
             label2.Text = "Phone number";
             // 
-            // button2
+            // updateButton
             // 
-            button2.BackColor = Color.SteelBlue;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Tw Cen MT", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(250, 450);
-            button2.Name = "button2";
-            button2.Size = new Size(100, 40);
-            button2.TabIndex = 11;
-            button2.Text = "Update";
-            button2.UseVisualStyleBackColor = false;
+            updateButton.BackColor = Color.SteelBlue;
+            updateButton.FlatAppearance.BorderSize = 0;
+            updateButton.FlatStyle = FlatStyle.Flat;
+            updateButton.Font = new Font("Tw Cen MT", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            updateButton.ForeColor = Color.White;
+            updateButton.Location = new Point(250, 450);
+            updateButton.Name = "updateButton";
+            updateButton.Size = new Size(100, 40);
+            updateButton.TabIndex = 11;
+            updateButton.Text = "Update";
+            updateButton.UseVisualStyleBackColor = false;
+            updateButton.Click += updateButton_Click;
             // 
             // label3
             // 
@@ -179,6 +181,7 @@
             // 
             // nameBox
             // 
+            nameBox.Enabled = false;
             nameBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             nameBox.Location = new Point(50, 211);
             nameBox.Name = "nameBox";
@@ -194,6 +197,7 @@
             ControlBox = false;
             Controls.Add(RightPanel);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Account";
             Text = "Account";
             Load += Account_Load;
@@ -209,7 +213,7 @@
         private DateTimePicker bdayBox;
         private PictureBox pictureBox1;
         private Label label2;
-        private Button button2;
+        private Button updateButton;
         private Label label3;
         private Label label1;
         private Label nameLabel;

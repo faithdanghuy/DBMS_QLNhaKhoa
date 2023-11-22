@@ -16,17 +16,27 @@ namespace QLNhaKhoa.General_form
         {
             Application.Exit();
         }
-
-        private void Appointment_Load(object sender, EventArgs e)
+        DataSet getData(string query)
         {
-            SqlConnection sqlCon = new SqlConnection("Data Source=HUY;Initial Catalog=Nhom3_QLNhaKhoa;Integrated Security=True;TrustServerCertificate=True");
+            SqlConnection sqlCon = new SqlConnection(ConnectionString.strCon);
             sqlCon.Open();
             DataSet dt = new DataSet();
-            SqlDataAdapter ap = new SqlDataAdapter("select * from LICHHEN where MAKHACHHANG='" + CurrentUser + "'", sqlCon);
+            SqlDataAdapter ap = new SqlDataAdapter(query, sqlCon);
             ap.Fill(dt);
             sqlCon.Close();
+            return dt;
+        }
+        private void Appointment_Load(object sender, EventArgs e)
+        {
+            string appointment_query = "select * from LICHHEN where MAKHACHHANG='" + CurrentUser + "'";
+            string dentist_query = "select HOTEN, MANHANVIEN from NHANVIEN where LOAINHANVIEN = 1";
 
-            appointmentData.DataSource = dt;
+            appointmentData.DataSource = getData(appointment_query).Tables[0];
+            appointmentData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+            cboDentists.DataSource = getData(dentist_query).Tables[0];
+            cboDentists.DisplayMember = "HOTEN";
+            cboDentists.ValueMember = "MANHANVIEN";
         }
     }
 }

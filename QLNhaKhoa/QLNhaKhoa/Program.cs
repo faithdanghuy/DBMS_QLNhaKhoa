@@ -15,7 +15,7 @@ namespace QLNhaKhoa
             // see https://aka.ms/applicationconfiguration.
             SqlConnection sqlCon = new SqlConnection("Data Source=HUY;Initial Catalog=Nhom3_QLNhaKhoa;Integrated Security=True;TrustServerCertificate=True");
             ApplicationConfiguration.Initialize();
-            Application.Run(new Login());
+            Application.Run(new Dentist_Main());
         }
     }
 }

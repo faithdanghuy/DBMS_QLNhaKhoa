@@ -101,7 +101,8 @@ namespace QLNhaKhoa
 
                     SqlConnection sqlCon = new SqlConnection(ConnectionString.strCon);
                     sqlCon.Open();
-                    SqlCommand cmd = new SqlCommand("select * from KHACHHANG where MAKHACHHANG = @username and MATKHAU = @password", sqlCon);
+                    SqlCommand cmd = new SqlCommand("select MAKHACHHANG,MATKHAU from KHACHHANG where MAKHACHHANG = @username and MATKHAU = @password", sqlCon);
+                    SqlCommand cmd2 = new SqlCommand("select MANHANVIEN,MATKHAU from NHANVIEN where MANHANVIEN = @username and MATKHAU = @password", sqlCon);
                     cmd.Parameters.AddWithValue("@username", txtID.Text);
                     cmd.Parameters.AddWithValue("@password", txtPassword.Text);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -111,6 +112,7 @@ namespace QLNhaKhoa
                     {
                         Customer_Main f = new Customer_Main();
                         f.CurrentUser = txtID.Text;
+                        f.CurrentPass = txtPassword.Text;
                         f.Show();
                         this.Hide();
                         sqlCon.Close();
