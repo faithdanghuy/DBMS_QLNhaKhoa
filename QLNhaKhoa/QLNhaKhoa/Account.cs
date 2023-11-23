@@ -1,7 +1,15 @@
-﻿using System.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace QLNhaKhoa.General_form
+namespace QLNhaKhoa
 {
     public partial class Account : Form
     {
@@ -18,7 +26,7 @@ namespace QLNhaKhoa.General_form
         }
         public void updateProfile()
         {
-            SqlConnection sqlCon = new SqlConnection(ConnectionString.strCon);
+            SqlConnection sqlCon = new SqlConnection(Helper.strCon);
             sqlCon.Open();
             SqlCommand cmd = new SqlCommand("USP_KHACHHANG_UPD", sqlCon);
             cmd.Parameters.AddWithValue("@MAKHACHHANG", CurrentUser);
@@ -33,9 +41,13 @@ namespace QLNhaKhoa.General_form
                 MessageBox.Show("Cập nhật dữ liệu thành công!");
             }
         }
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            updateProfile();
+        }
         private void Account_Load(object sender, EventArgs e)
         {
-            SqlConnection sqlCon = new SqlConnection(ConnectionString.strCon);
+            SqlConnection sqlCon = new SqlConnection(Helper.strCon);
             sqlCon.Open();
             SqlCommand cmd = new SqlCommand("select HOTEN,NGAYSINH,DIACHI,SODT from KHACHHANG where MAKHACHHANG='" + CurrentUser + "'", sqlCon);
             using (SqlDataReader reader = cmd.ExecuteReader())
@@ -53,11 +65,6 @@ namespace QLNhaKhoa.General_form
                     MessageBox.Show("Không có dữ liệu!");
                 }
             }
-        }
-
-        private void updateButton_Click(object sender, EventArgs e)
-        {
-            updateProfile();
         }
     }
 }

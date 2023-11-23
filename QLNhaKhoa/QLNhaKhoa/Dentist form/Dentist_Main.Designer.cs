@@ -106,7 +106,7 @@
             BillButton.Name = "BillButton";
             BillButton.Size = new Size(250, 40);
             BillButton.TabIndex = 9;
-            BillButton.Text = "Medical bill";
+            BillButton.Text = "Medical ceritificate";
             BillButton.UseVisualStyleBackColor = true;
             BillButton.Click += BillButton_Click;
             // 
@@ -227,6 +227,7 @@
             ExitButton.TabIndex = 2;
             ExitButton.Text = "X";
             ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitButton_Click_1;
             // 
             // Dentist_Main
             // 

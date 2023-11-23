@@ -10,12 +10,13 @@ using System.Windows.Forms;
 
 namespace QLNhaKhoa.Dentist_form
 {
-    public partial class Dentist_Appointment : Form
+    public partial class Dentist_Certificate : Form
     {
-        public Dentist_Appointment()
+        public Dentist_Certificate()
         {
             InitializeComponent();
         }
+
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();

@@ -30,11 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dentist_Appointment));
             panel3 = new Panel();
+            button1 = new Button();
             addRecordBtn = new Button();
             updateRecordBtn = new Button();
             label1 = new Label();
             panel4 = new Panel();
-            textBox1 = new TextBox();
+            label3 = new Label();
+            label2 = new Label();
+            dateBox = new DateTimePicker();
+            timeBox = new TextBox();
             recordData = new DataGridView();
             ExitButton = new Button();
             panel3.SuspendLayout();
@@ -45,6 +49,7 @@
             // panel3
             // 
             panel3.BackColor = Color.White;
+            panel3.Controls.Add(button1);
             panel3.Controls.Add(addRecordBtn);
             panel3.Controls.Add(updateRecordBtn);
             panel3.Controls.Add(label1);
@@ -57,6 +62,20 @@
             panel3.Size = new Size(900, 700);
             panel3.TabIndex = 9;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.SteelBlue;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(382, 298);
+            button1.Name = "button1";
+            button1.Size = new Size(120, 40);
+            button1.TabIndex = 5;
+            button1.Text = "Update";
+            button1.UseVisualStyleBackColor = false;
+            // 
             // addRecordBtn
             // 
             addRecordBtn.BackColor = Color.SteelBlue;
@@ -64,11 +83,11 @@
             addRecordBtn.FlatStyle = FlatStyle.Flat;
             addRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             addRecordBtn.ForeColor = Color.White;
-            addRecordBtn.Location = new Point(238, 398);
+            addRecordBtn.Location = new Point(256, 298);
             addRecordBtn.Name = "addRecordBtn";
-            addRecordBtn.Size = new Size(200, 40);
+            addRecordBtn.Size = new Size(120, 40);
             addRecordBtn.TabIndex = 4;
-            addRecordBtn.Text = "Make an appointment";
+            addRecordBtn.Text = "Delete";
             addRecordBtn.UseVisualStyleBackColor = false;
             // 
             // updateRecordBtn
@@ -78,11 +97,11 @@
             updateRecordBtn.FlatStyle = FlatStyle.Flat;
             updateRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             updateRecordBtn.ForeColor = Color.White;
-            updateRecordBtn.Location = new Point(50, 398);
+            updateRecordBtn.Location = new Point(50, 298);
             updateRecordBtn.Name = "updateRecordBtn";
-            updateRecordBtn.Size = new Size(182, 40);
+            updateRecordBtn.Size = new Size(200, 40);
             updateRecordBtn.TabIndex = 3;
-            updateRecordBtn.Text = "Update appointment";
+            updateRecordBtn.Text = "Make an appointment";
             updateRecordBtn.UseVisualStyleBackColor = false;
             // 
             // label1
@@ -99,28 +118,65 @@
             // panel4
             // 
             panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(textBox1);
+            panel4.Controls.Add(label3);
+            panel4.Controls.Add(label2);
+            panel4.Controls.Add(dateBox);
+            panel4.Controls.Add(timeBox);
             panel4.Location = new Point(50, 35);
             panel4.Name = "panel4";
-            panel4.Size = new Size(800, 350);
+            panel4.Size = new Size(800, 250);
             panel4.TabIndex = 0;
             // 
-            // textBox1
+            // label3
             // 
-            textBox1.Location = new Point(216, 98);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 0;
+            label3.AutoSize = true;
+            label3.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.SteelBlue;
+            label3.Location = new Point(450, 86);
+            label3.Name = "label3";
+            label3.Size = new Size(48, 23);
+            label3.TabIndex = 4;
+            label3.Text = "Date";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.SteelBlue;
+            label2.Location = new Point(100, 86);
+            label2.Name = "label2";
+            label2.Size = new Size(46, 23);
+            label2.TabIndex = 3;
+            label2.Text = "Time";
+            // 
+            // dateBox
+            // 
+            dateBox.CustomFormat = "dd/MM/yyyy";
+            dateBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateBox.Format = DateTimePickerFormat.Custom;
+            dateBox.Location = new Point(450, 112);
+            dateBox.Name = "dateBox";
+            dateBox.Size = new Size(250, 27);
+            dateBox.TabIndex = 2;
+            // 
+            // timeBox
+            // 
+            timeBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            timeBox.Location = new Point(100, 112);
+            timeBox.Name = "timeBox";
+            timeBox.PlaceholderText = "Example: 8h30";
+            timeBox.Size = new Size(250, 27);
+            timeBox.TabIndex = 0;
             // 
             // recordData
             // 
             recordData.BorderStyle = BorderStyle.None;
             recordData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             recordData.Dock = DockStyle.Bottom;
-            recordData.Location = new Point(0, 450);
+            recordData.Location = new Point(0, 350);
             recordData.Name = "recordData";
             recordData.RowHeadersWidth = 51;
-            recordData.Size = new Size(900, 250);
+            recordData.Size = new Size(900, 350);
             recordData.TabIndex = 2;
             // 
             // ExitButton
@@ -134,6 +190,7 @@
             ExitButton.TabIndex = 1;
             ExitButton.Text = "X";
             ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitButton_Click;
             // 
             // Dentist_Appointment
             // 
@@ -161,8 +218,12 @@
         private Button updateRecordBtn;
         private Label label1;
         private Panel panel4;
-        private TextBox textBox1;
+        private TextBox timeBox;
         private DataGridView recordData;
         private Button ExitButton;
+        private DateTimePicker dateBox;
+        private Label label2;
+        private Label label3;
+        private Button button1;
     }
 }

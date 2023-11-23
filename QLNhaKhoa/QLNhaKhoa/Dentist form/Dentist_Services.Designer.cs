@@ -29,32 +29,53 @@
         private void InitializeComponent()
         {
             panel3 = new Panel();
+            button1 = new Button();
             addRecordBtn = new Button();
             updateRecordBtn = new Button();
             label1 = new Label();
             panel4 = new Panel();
-            textBox1 = new TextBox();
-            recordData = new DataGridView();
+            cboService = new ComboBox();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            priceBox = new TextBox();
+            servicesIDBox = new TextBox();
+            serviceData = new DataGridView();
             ExitButton = new Button();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)recordData).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)serviceData).BeginInit();
             SuspendLayout();
             // 
             // panel3
             // 
             panel3.BackColor = Color.White;
+            panel3.Controls.Add(button1);
             panel3.Controls.Add(addRecordBtn);
             panel3.Controls.Add(updateRecordBtn);
             panel3.Controls.Add(label1);
             panel3.Controls.Add(panel4);
-            panel3.Controls.Add(recordData);
+            panel3.Controls.Add(serviceData);
             panel3.Controls.Add(ExitButton);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
             panel3.Size = new Size(900, 700);
             panel3.TabIndex = 8;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.SteelBlue;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(382, 298);
+            button1.Name = "button1";
+            button1.Size = new Size(160, 40);
+            button1.TabIndex = 5;
+            button1.Text = "Update service";
+            button1.UseVisualStyleBackColor = false;
             // 
             // addRecordBtn
             // 
@@ -63,11 +84,11 @@
             addRecordBtn.FlatStyle = FlatStyle.Flat;
             addRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             addRecordBtn.ForeColor = Color.White;
-            addRecordBtn.Location = new Point(238, 398);
+            addRecordBtn.Location = new Point(216, 298);
             addRecordBtn.Name = "addRecordBtn";
-            addRecordBtn.Size = new Size(176, 40);
+            addRecordBtn.Size = new Size(160, 40);
             addRecordBtn.TabIndex = 4;
-            addRecordBtn.Text = "Add prescription";
+            addRecordBtn.Text = "Delete service";
             addRecordBtn.UseVisualStyleBackColor = false;
             // 
             // updateRecordBtn
@@ -77,11 +98,11 @@
             updateRecordBtn.FlatStyle = FlatStyle.Flat;
             updateRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             updateRecordBtn.ForeColor = Color.White;
-            updateRecordBtn.Location = new Point(50, 398);
+            updateRecordBtn.Location = new Point(50, 298);
             updateRecordBtn.Name = "updateRecordBtn";
-            updateRecordBtn.Size = new Size(182, 40);
+            updateRecordBtn.Size = new Size(160, 40);
             updateRecordBtn.TabIndex = 3;
-            updateRecordBtn.Text = "Update prescription";
+            updateRecordBtn.Text = "Add service";
             updateRecordBtn.UseVisualStyleBackColor = false;
             // 
             // label1
@@ -98,29 +119,89 @@
             // panel4
             // 
             panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(textBox1);
+            panel4.Controls.Add(cboService);
+            panel4.Controls.Add(label4);
+            panel4.Controls.Add(label3);
+            panel4.Controls.Add(label2);
+            panel4.Controls.Add(priceBox);
+            panel4.Controls.Add(servicesIDBox);
             panel4.Location = new Point(50, 35);
             panel4.Name = "panel4";
-            panel4.Size = new Size(800, 350);
+            panel4.Size = new Size(800, 250);
             panel4.TabIndex = 0;
             // 
-            // textBox1
+            // cboService
             // 
-            textBox1.Location = new Point(216, 98);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 0;
+            cboService.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboService.FormattingEnabled = true;
+            cboService.Location = new Point(100, 180);
+            cboService.Name = "cboService";
+            cboService.Size = new Size(600, 27);
+            cboService.TabIndex = 6;
             // 
-            // recordData
+            // label4
             // 
-            recordData.BorderStyle = BorderStyle.None;
-            recordData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            recordData.Dock = DockStyle.Bottom;
-            recordData.Location = new Point(0, 450);
-            recordData.Name = "recordData";
-            recordData.RowHeadersWidth = 51;
-            recordData.Size = new Size(900, 250);
-            recordData.TabIndex = 2;
+            label4.AutoSize = true;
+            label4.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.SteelBlue;
+            label4.Location = new Point(100, 154);
+            label4.Name = "label4";
+            label4.Size = new Size(121, 23);
+            label4.TabIndex = 5;
+            label4.Text = "Service Name";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.SteelBlue;
+            label3.Location = new Point(450, 54);
+            label3.Name = "label3";
+            label3.Size = new Size(49, 23);
+            label3.TabIndex = 4;
+            label3.Text = "Price";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.SteelBlue;
+            label2.Location = new Point(100, 54);
+            label2.Name = "label2";
+            label2.Size = new Size(90, 23);
+            label2.TabIndex = 3;
+            label2.Text = "Service ID";
+            // 
+            // priceBox
+            // 
+            priceBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            priceBox.Location = new Point(450, 80);
+            priceBox.Name = "priceBox";
+            priceBox.PlaceholderText = "Price";
+            priceBox.Size = new Size(250, 27);
+            priceBox.TabIndex = 1;
+            // 
+            // servicesIDBox
+            // 
+            servicesIDBox.Enabled = false;
+            servicesIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            servicesIDBox.Location = new Point(100, 80);
+            servicesIDBox.MaxLength = 5;
+            servicesIDBox.Name = "servicesIDBox";
+            servicesIDBox.PlaceholderText = "Service ID";
+            servicesIDBox.Size = new Size(250, 27);
+            servicesIDBox.TabIndex = 0;
+            // 
+            // serviceData
+            // 
+            serviceData.BorderStyle = BorderStyle.None;
+            serviceData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            serviceData.Dock = DockStyle.Bottom;
+            serviceData.Location = new Point(0, 350);
+            serviceData.Name = "serviceData";
+            serviceData.RowHeadersWidth = 51;
+            serviceData.Size = new Size(900, 350);
+            serviceData.TabIndex = 2;
             // 
             // ExitButton
             // 
@@ -146,11 +227,12 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Dentist_Services";
             Text = "Dentist_Services";
+            Load += Dentist_Services_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)recordData).EndInit();
+            ((System.ComponentModel.ISupportInitialize)serviceData).EndInit();
             ResumeLayout(false);
         }
 
@@ -161,8 +243,14 @@
         private Button updateRecordBtn;
         private Label label1;
         private Panel panel4;
-        private TextBox textBox1;
-        private DataGridView recordData;
+        private TextBox servicesIDBox;
+        private DataGridView serviceData;
         private Button ExitButton;
+        private TextBox priceBox;
+        private Label label4;
+        private Label label3;
+        private Label label2;
+        private Button button1;
+        private ComboBox cboService;
     }
 }

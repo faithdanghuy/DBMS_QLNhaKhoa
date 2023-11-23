@@ -1,6 +1,6 @@
 ﻿namespace QLNhaKhoa.Dentist_form
 {
-    partial class Dentist_Bill
+    partial class Dentist_Certificate
     {
         /// <summary>
         /// Required designer variable.
@@ -35,6 +35,11 @@
             appointmentData = new DataGridView();
             label1 = new Label();
             panel2 = new Panel();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            dateTimePicker1 = new DateTimePicker();
+            textBox2 = new TextBox();
             textBox1 = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)appointmentData).BeginInit();
@@ -61,11 +66,11 @@
             addRecordBtn.FlatStyle = FlatStyle.Flat;
             addRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             addRecordBtn.ForeColor = Color.White;
-            addRecordBtn.Location = new Point(206, 398);
+            addRecordBtn.Location = new Point(156, 298);
             addRecordBtn.Name = "addRecordBtn";
             addRecordBtn.Size = new Size(150, 40);
             addRecordBtn.TabIndex = 10;
-            addRecordBtn.Text = "Add record";
+            addRecordBtn.Text = "Update bill";
             addRecordBtn.UseVisualStyleBackColor = false;
             // 
             // ExitButton
@@ -88,11 +93,11 @@
             updateRecordBtn.FlatStyle = FlatStyle.Flat;
             updateRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             updateRecordBtn.ForeColor = Color.White;
-            updateRecordBtn.Location = new Point(50, 398);
+            updateRecordBtn.Location = new Point(50, 298);
             updateRecordBtn.Name = "updateRecordBtn";
-            updateRecordBtn.Size = new Size(150, 40);
+            updateRecordBtn.Size = new Size(100, 40);
             updateRecordBtn.TabIndex = 9;
-            updateRecordBtn.Text = "Update record";
+            updateRecordBtn.Text = "Add bill";
             updateRecordBtn.UseVisualStyleBackColor = false;
             // 
             // appointmentData
@@ -100,10 +105,10 @@
             appointmentData.BorderStyle = BorderStyle.None;
             appointmentData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             appointmentData.Dock = DockStyle.Bottom;
-            appointmentData.Location = new Point(0, 450);
+            appointmentData.Location = new Point(0, 350);
             appointmentData.Name = "appointmentData";
             appointmentData.RowHeadersWidth = 51;
-            appointmentData.Size = new Size(900, 250);
+            appointmentData.Size = new Size(900, 350);
             appointmentData.TabIndex = 0;
             // 
             // label1
@@ -112,30 +117,90 @@
             label1.BackColor = Color.White;
             label1.Font = new Font("Tw Cen MT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.SteelBlue;
-            label1.Location = new Point(366, 20);
+            label1.Location = new Point(326, 20);
             label1.Name = "label1";
-            label1.Size = new Size(168, 35);
+            label1.Size = new Size(248, 35);
             label1.TabIndex = 6;
-            label1.Text = "Customer Bill";
+            label1.Text = "Medical Certificate";
             // 
             // panel2
             // 
             panel2.BackColor = Color.White;
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(label4);
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(label2);
+            panel2.Controls.Add(dateTimePicker1);
+            panel2.Controls.Add(textBox2);
             panel2.Controls.Add(textBox1);
             panel2.Location = new Point(50, 35);
             panel2.Name = "panel2";
-            panel2.Size = new Size(800, 350);
+            panel2.Size = new Size(800, 250);
             panel2.TabIndex = 7;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.SteelBlue;
+            label4.Location = new Point(100, 154);
+            label4.Name = "label4";
+            label4.Size = new Size(173, 23);
+            label4.TabIndex = 5;
+            label4.Text = "Date of examination";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.SteelBlue;
+            label3.Location = new Point(450, 154);
+            label3.Name = "label3";
+            label3.Size = new Size(167, 23);
+            label3.TabIndex = 4;
+            label3.Text = "Customer Record ID";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.SteelBlue;
+            label2.Location = new Point(275, 54);
+            label2.Name = "label2";
+            label2.Size = new Size(115, 23);
+            label2.TabIndex = 3;
+            label2.Text = "Certificate ID";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            dateTimePicker1.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.Location = new Point(100, 180);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(250, 27);
+            dateTimePicker1.TabIndex = 2;
+            // 
+            // textBox2
+            // 
+            textBox2.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox2.Location = new Point(450, 180);
+            textBox2.Name = "textBox2";
+            textBox2.PlaceholderText = "Customer Record ID";
+            textBox2.Size = new Size(250, 27);
+            textBox2.TabIndex = 1;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(216, 98);
+            textBox1.Enabled = false;
+            textBox1.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(275, 80);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
+            textBox1.PlaceholderText = "Certificate ID";
+            textBox1.Size = new Size(250, 27);
             textBox1.TabIndex = 0;
             // 
-            // Dentist_Bill
+            // Dentist_Certificate
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -145,7 +210,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Dentist_Bill";
+            Name = "Dentist_Certificate";
             Text = "Dentist_Bill";
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)appointmentData).EndInit();
@@ -165,5 +230,10 @@
         private Label label1;
         private Panel panel2;
         private TextBox textBox1;
+        private TextBox textBox2;
+        private DateTimePicker dateTimePicker1;
+        private Label label3;
+        private Label label2;
+        private Label label4;
     }
 }

@@ -99,7 +99,7 @@ namespace QLNhaKhoa
                         }
                     }*/
 
-                    SqlConnection sqlCon = new SqlConnection(ConnectionString.strCon);
+                    SqlConnection sqlCon = new SqlConnection(Helper.strCon);
                     sqlCon.Open();
                     SqlCommand cmd = new SqlCommand("select MAKHACHHANG,MATKHAU from KHACHHANG where MAKHACHHANG = @username and MATKHAU = @password", sqlCon);
                     SqlCommand cmd2 = new SqlCommand("select MANHANVIEN,MATKHAU from NHANVIEN where MANHANVIEN = @username and MATKHAU = @password", sqlCon);

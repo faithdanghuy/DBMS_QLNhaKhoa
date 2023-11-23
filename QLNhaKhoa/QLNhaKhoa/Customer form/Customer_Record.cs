@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 
 namespace QLNhaKhoa
 {
@@ -26,7 +17,7 @@ namespace QLNhaKhoa
 
         private void Customer_Record_Load(object sender, EventArgs e)
         {
-            SqlConnection sqlCon = new SqlConnection(ConnectionString.strCon);
+            SqlConnection sqlCon = new SqlConnection(Helper.strCon);
             sqlCon.Open();
             SqlCommand cmd = new SqlCommand("SELECT KH.HOTEN, KH.NGAYSINH, KH.DIACHI, KH.SODT, NV.MANHANVIEN, NV.HOTEN AS TENNHASI FROM KHACHHANG KH JOIN HOSOBENHAN HSBA ON KH.MAKHACHHANG = HSBA.MAKHACHHANG\r\nJOIN NHANVIEN NV ON HSBA.MANHASI = NV.MANHANVIEN WHERE NV.LOAINHANVIEN = 1 AND KH.MAKHACHHANG = '" + CurrentUser + "'", sqlCon);
             using (SqlDataReader reader = cmd.ExecuteReader())

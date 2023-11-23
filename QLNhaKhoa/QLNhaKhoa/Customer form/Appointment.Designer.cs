@@ -57,7 +57,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(600, 550);
+            panel1.Size = new Size(900, 700);
             panel1.TabIndex = 3;
             // 
             // ExitButton
@@ -65,7 +65,7 @@
             ExitButton.FlatAppearance.BorderSize = 0;
             ExitButton.FlatStyle = FlatStyle.Flat;
             ExitButton.Font = new Font("VNI-Lithos", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ExitButton.Location = new Point(560, 0);
+            ExitButton.Location = new Point(860, 0);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(40, 40);
             ExitButton.TabIndex = 3;
@@ -80,7 +80,7 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(76, 252);
+            button2.Location = new Point(50, 300);
             button2.Name = "button2";
             button2.Size = new Size(200, 40);
             button2.TabIndex = 4;
@@ -94,7 +94,7 @@
             makeAppointBtn.FlatStyle = FlatStyle.Flat;
             makeAppointBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             makeAppointBtn.ForeColor = Color.White;
-            makeAppointBtn.Location = new Point(326, 252);
+            makeAppointBtn.Location = new Point(256, 300);
             makeAppointBtn.Name = "makeAppointBtn";
             makeAppointBtn.Size = new Size(200, 40);
             makeAppointBtn.TabIndex = 1;
@@ -111,9 +111,9 @@
             panel2.Controls.Add(cboDentists);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(appointTime);
-            panel2.Location = new Point(25, 40);
+            panel2.Location = new Point(50, 40);
             panel2.Name = "panel2";
-            panel2.Size = new Size(550, 200);
+            panel2.Size = new Size(800, 250);
             panel2.TabIndex = 3;
             // 
             // label3
@@ -121,7 +121,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.SteelBlue;
-            label3.Location = new Point(257, 26);
+            label3.Location = new Point(400, 36);
             label3.Name = "label3";
             label3.Size = new Size(48, 23);
             label3.TabIndex = 6;
@@ -132,9 +132,9 @@
             appointDate.CustomFormat = "yyyy/MM/dd";
             appointDate.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             appointDate.Format = DateTimePickerFormat.Custom;
-            appointDate.Location = new Point(257, 52);
+            appointDate.Location = new Point(400, 62);
             appointDate.Name = "appointDate";
-            appointDate.Size = new Size(243, 27);
+            appointDate.Size = new Size(250, 27);
             appointDate.TabIndex = 5;
             // 
             // label2
@@ -142,7 +142,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.SteelBlue;
-            label2.Location = new Point(50, 102);
+            label2.Location = new Point(150, 142);
             label2.Name = "label2";
             label2.Size = new Size(62, 23);
             label2.TabIndex = 4;
@@ -152,10 +152,10 @@
             // 
             cboDentists.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cboDentists.FormattingEnabled = true;
-            cboDentists.Location = new Point(50, 128);
+            cboDentists.Location = new Point(150, 168);
             cboDentists.MinimumSize = new Size(450, 0);
             cboDentists.Name = "cboDentists";
-            cboDentists.Size = new Size(450, 27);
+            cboDentists.Size = new Size(500, 27);
             cboDentists.TabIndex = 3;
             // 
             // label1
@@ -163,7 +163,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.SteelBlue;
-            label1.Location = new Point(50, 26);
+            label1.Location = new Point(150, 36);
             label1.Name = "label1";
             label1.Size = new Size(132, 23);
             label1.TabIndex = 2;
@@ -172,19 +172,21 @@
             // appointTime
             // 
             appointTime.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            appointTime.Location = new Point(50, 52);
+            appointTime.Location = new Point(150, 62);
             appointTime.Name = "appointTime";
-            appointTime.Size = new Size(150, 27);
+            appointTime.PlaceholderText = "example: 8h30";
+            appointTime.Size = new Size(200, 27);
             appointTime.TabIndex = 0;
             // 
             // appointmentData
             // 
             appointmentData.BorderStyle = BorderStyle.None;
             appointmentData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            appointmentData.Location = new Point(0, 300);
+            appointmentData.Dock = DockStyle.Bottom;
+            appointmentData.Location = new Point(0, 350);
             appointmentData.Name = "appointmentData";
             appointmentData.RowHeadersWidth = 51;
-            appointmentData.Size = new Size(600, 250);
+            appointmentData.Size = new Size(900, 350);
             appointmentData.TabIndex = 0;
             // 
             // serviceTitle
@@ -193,7 +195,7 @@
             serviceTitle.BackColor = Color.White;
             serviceTitle.Font = new Font("Tw Cen MT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             serviceTitle.ForeColor = Color.SteelBlue;
-            serviceTitle.Location = new Point(217, 20);
+            serviceTitle.Location = new Point(367, 20);
             serviceTitle.Name = "serviceTitle";
             serviceTitle.Size = new Size(166, 35);
             serviceTitle.TabIndex = 6;
@@ -203,7 +205,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(600, 550);
+            ClientSize = new Size(900, 700);
             ControlBox = false;
             Controls.Add(serviceTitle);
             Controls.Add(panel1);

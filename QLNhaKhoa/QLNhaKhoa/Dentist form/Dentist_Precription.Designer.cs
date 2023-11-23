@@ -35,9 +35,17 @@
             updateRecordBtn = new Button();
             label1 = new Label();
             panel4 = new Panel();
-            textBox1 = new TextBox();
+            recordIDBox = new TextBox();
             recordData = new DataGridView();
             ExitButton = new Button();
+            button1 = new Button();
+            billIDBox = new TextBox();
+            medicationIDBox = new TextBox();
+            quantityBox = new TextBox();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)recordData).BeginInit();
@@ -63,6 +71,7 @@
             // panel3
             // 
             panel3.BackColor = Color.White;
+            panel3.Controls.Add(button1);
             panel3.Controls.Add(addRecordBtn);
             panel3.Controls.Add(updateRecordBtn);
             panel3.Controls.Add(label1);
@@ -82,11 +91,11 @@
             addRecordBtn.FlatStyle = FlatStyle.Flat;
             addRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             addRecordBtn.ForeColor = Color.White;
-            addRecordBtn.Location = new Point(238, 398);
+            addRecordBtn.Location = new Point(234, 298);
             addRecordBtn.Name = "addRecordBtn";
-            addRecordBtn.Size = new Size(176, 40);
+            addRecordBtn.Size = new Size(180, 40);
             addRecordBtn.TabIndex = 4;
-            addRecordBtn.Text = "Add prescription";
+            addRecordBtn.Text = "Delete prescription";
             addRecordBtn.UseVisualStyleBackColor = false;
             // 
             // updateRecordBtn
@@ -96,11 +105,11 @@
             updateRecordBtn.FlatStyle = FlatStyle.Flat;
             updateRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             updateRecordBtn.ForeColor = Color.White;
-            updateRecordBtn.Location = new Point(50, 398);
+            updateRecordBtn.Location = new Point(50, 298);
             updateRecordBtn.Name = "updateRecordBtn";
-            updateRecordBtn.Size = new Size(182, 40);
+            updateRecordBtn.Size = new Size(180, 40);
             updateRecordBtn.TabIndex = 3;
-            updateRecordBtn.Text = "Update prescription";
+            updateRecordBtn.Text = "Add prescription";
             updateRecordBtn.UseVisualStyleBackColor = false;
             // 
             // label1
@@ -117,28 +126,35 @@
             // panel4
             // 
             panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(textBox1);
+            panel4.Controls.Add(label5);
+            panel4.Controls.Add(label4);
+            panel4.Controls.Add(label3);
+            panel4.Controls.Add(label2);
+            panel4.Controls.Add(quantityBox);
+            panel4.Controls.Add(medicationIDBox);
+            panel4.Controls.Add(billIDBox);
+            panel4.Controls.Add(recordIDBox);
             panel4.Location = new Point(50, 35);
             panel4.Name = "panel4";
-            panel4.Size = new Size(800, 350);
+            panel4.Size = new Size(800, 250);
             panel4.TabIndex = 0;
             // 
-            // textBox1
+            // recordIDBox
             // 
-            textBox1.Location = new Point(216, 98);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 0;
+            recordIDBox.Location = new Point(100, 80);
+            recordIDBox.Name = "recordIDBox";
+            recordIDBox.Size = new Size(250, 27);
+            recordIDBox.TabIndex = 0;
             // 
             // recordData
             // 
             recordData.BorderStyle = BorderStyle.None;
             recordData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             recordData.Dock = DockStyle.Bottom;
-            recordData.Location = new Point(0, 450);
+            recordData.Location = new Point(0, 350);
             recordData.Name = "recordData";
             recordData.RowHeadersWidth = 51;
-            recordData.Size = new Size(900, 250);
+            recordData.Size = new Size(900, 350);
             recordData.TabIndex = 2;
             // 
             // ExitButton
@@ -153,6 +169,85 @@
             ExitButton.Text = "X";
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click_1;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.SteelBlue;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(420, 298);
+            button1.Name = "button1";
+            button1.Size = new Size(180, 40);
+            button1.TabIndex = 5;
+            button1.Text = "Update prescription";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // billIDBox
+            // 
+            billIDBox.Location = new Point(450, 80);
+            billIDBox.Name = "billIDBox";
+            billIDBox.Size = new Size(250, 27);
+            billIDBox.TabIndex = 1;
+            // 
+            // medicationIDBox
+            // 
+            medicationIDBox.Location = new Point(100, 180);
+            medicationIDBox.Name = "medicationIDBox";
+            medicationIDBox.Size = new Size(250, 27);
+            medicationIDBox.TabIndex = 2;
+            // 
+            // quantityBox
+            // 
+            quantityBox.Location = new Point(450, 180);
+            quantityBox.Name = "quantityBox";
+            quantityBox.Size = new Size(250, 27);
+            quantityBox.TabIndex = 3;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.SteelBlue;
+            label2.Location = new Point(100, 54);
+            label2.Name = "label2";
+            label2.Size = new Size(167, 23);
+            label2.TabIndex = 4;
+            label2.Text = "Customer Record ID";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.SteelBlue;
+            label3.Location = new Point(450, 54);
+            label3.Name = "label3";
+            label3.Size = new Size(123, 23);
+            label3.TabIndex = 5;
+            label3.Text = "Medical Bill ID";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.SteelBlue;
+            label4.Location = new Point(100, 154);
+            label4.Name = "label4";
+            label4.Size = new Size(119, 23);
+            label4.TabIndex = 6;
+            label4.Text = "Medication ID";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.SteelBlue;
+            label5.Location = new Point(450, 154);
+            label5.Name = "label5";
+            label5.Size = new Size(78, 23);
+            label5.TabIndex = 7;
+            label5.Text = "Quantity";
             // 
             // Dentist_Prescription
             // 
@@ -184,8 +279,16 @@
         private Button updateRecordBtn;
         private Label label1;
         private Panel panel4;
-        private TextBox textBox1;
+        private TextBox recordIDBox;
         private DataGridView recordData;
         private Button ExitButton;
+        private Button button1;
+        private TextBox billIDBox;
+        private TextBox medicationIDBox;
+        private TextBox quantityBox;
+        private Label label3;
+        private Label label2;
+        private Label label5;
+        private Label label4;
     }
 }

@@ -35,5 +35,20 @@ namespace QLNhaKhoa.Admin_form
         {
             loadform(new Account());
         }
+
+        private void AccountMngrButton_Click(object sender, EventArgs e)
+        {
+            loadform(new Admin_AccManager());
+        }
+
+        private void MedicationButton_Click(object sender, EventArgs e)
+        {
+            loadform(new Admin_Medication());
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

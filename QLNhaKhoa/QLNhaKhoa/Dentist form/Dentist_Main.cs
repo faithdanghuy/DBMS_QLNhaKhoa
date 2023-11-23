@@ -19,52 +19,39 @@ namespace QLNhaKhoa.Dentist_form
         {
             InitializeComponent();
         }
-
-        public void loadform(object Form)
-        {
-            if (this.mainPanel.Controls.Count > 0)
-                this.mainPanel.Controls.RemoveAt(0);
-            Form f = (Form)Form;
-            f.TopLevel = false;
-            f.Dock = DockStyle.Fill;
-            this.mainPanel.Controls.Add(f);
-            this.mainPanel.Tag = f;
-            f.Show();
-        }
-
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void AccountButton_Click(object sender, EventArgs e)
         {
-            loadform(new Dentist_Account());
+            Helper.loadform(new Account(), this.mainPanel);
         }
 
         private void ServiceButton_Click(object sender, EventArgs e)
         {
-            loadform(new Dentist_Services());
+            Helper.loadform(new Dentist_Services(), this.mainPanel);
         }
 
         private void AppointmentButton_Click(object sender, EventArgs e)
         {
-            loadform(new Dentist_Appointment());
+            Helper.loadform(new Dentist_Appointment(), this.mainPanel);
         }
 
         private void PrecriptionButton_Click(object sender, EventArgs e)
         {
-            loadform(new Dentist_Prescription());
+            Helper.loadform(new Dentist_Prescription(), this.mainPanel);
         }
 
         private void RecordButton_Click(object sender, EventArgs e)
         {
-            loadform(new Dentist_Record());
+            Helper.loadform(new Dentist_Record(), this.mainPanel);
         }
 
         private void BillButton_Click(object sender, EventArgs e)
         {
-            loadform(new Dentist_Bill());
+            Helper.loadform(new Dentist_Certificate(), this.mainPanel);
+        }
+
+        private void ExitButton_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
