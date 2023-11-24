@@ -1,15 +1,4 @@
-﻿using QLNhaKhoa.General_form;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace QLNhaKhoa.Admin_form
+﻿namespace QLNhaKhoa.Admin_form
 {
     public partial class Admin_Main : Form
     {
@@ -18,32 +7,19 @@ namespace QLNhaKhoa.Admin_form
         {
             InitializeComponent();
         }
-
-        public void loadform(object Form)
-        {
-            if (this.mainPanel.Controls.Count > 0)
-                this.mainPanel.Controls.RemoveAt(0);
-            Form f = (Form)Form;
-            f.TopLevel = false;
-            f.Dock = DockStyle.Fill;
-            this.mainPanel.Controls.Add(f);
-            this.mainPanel.Tag = f;
-            f.Show();
-        }
-
         private void AccountButton_Click(object sender, EventArgs e)
         {
-            loadform(new Account());
+            Helper.loadform(new Account(), this.mainPanel);
         }
 
         private void AccountMngrButton_Click(object sender, EventArgs e)
         {
-            loadform(new Admin_AccManager());
+            Helper.loadform(new Admin_AccManager(), this.mainPanel);
         }
 
         private void MedicationButton_Click(object sender, EventArgs e)
         {
-            loadform(new Admin_Medication());
+            Helper.loadform(new Admin_Medication(), this.mainPanel);
         }
 
         private void ExitButton_Click(object sender, EventArgs e)

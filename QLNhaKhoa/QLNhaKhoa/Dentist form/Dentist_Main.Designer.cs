@@ -74,7 +74,7 @@
             ServiceButton.FlatStyle = FlatStyle.Flat;
             ServiceButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ServiceButton.ForeColor = Color.White;
-            ServiceButton.Location = new Point(25, 480);
+            ServiceButton.Location = new Point(25, 500);
             ServiceButton.Name = "ServiceButton";
             ServiceButton.Size = new Size(250, 40);
             ServiceButton.TabIndex = 11;
@@ -88,7 +88,7 @@
             PrecriptionButton.FlatStyle = FlatStyle.Flat;
             PrecriptionButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             PrecriptionButton.ForeColor = Color.White;
-            PrecriptionButton.Location = new Point(25, 435);
+            PrecriptionButton.Location = new Point(25, 450);
             PrecriptionButton.Name = "PrecriptionButton";
             PrecriptionButton.Size = new Size(250, 40);
             PrecriptionButton.TabIndex = 10;
@@ -102,7 +102,7 @@
             BillButton.FlatStyle = FlatStyle.Flat;
             BillButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             BillButton.ForeColor = Color.White;
-            BillButton.Location = new Point(25, 390);
+            BillButton.Location = new Point(25, 400);
             BillButton.Name = "BillButton";
             BillButton.Size = new Size(250, 40);
             BillButton.TabIndex = 9;
@@ -171,7 +171,7 @@
             RecordButton.FlatStyle = FlatStyle.Flat;
             RecordButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             RecordButton.ForeColor = Color.White;
-            RecordButton.Location = new Point(25, 345);
+            RecordButton.Location = new Point(25, 350);
             RecordButton.Name = "RecordButton";
             RecordButton.Size = new Size(250, 40);
             RecordButton.TabIndex = 3;
@@ -199,7 +199,7 @@
             AccountButton.FlatStyle = FlatStyle.Flat;
             AccountButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             AccountButton.ForeColor = Color.White;
-            AccountButton.Location = new Point(25, 255);
+            AccountButton.Location = new Point(25, 250);
             AccountButton.Name = "AccountButton";
             AccountButton.Size = new Size(250, 40);
             AccountButton.TabIndex = 1;

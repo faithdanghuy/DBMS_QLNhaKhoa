@@ -21,7 +21,7 @@ namespace QLNhaKhoa
 
         private void AppointmentButton_Click(object sender, EventArgs e)
         {
-            Appointment f = new Appointment();
+            Customer_Appointment f = new Customer_Appointment();
             f.CurrentUser = CurrentUser;
             Helper.loadform(f, this.mainPanel);
         }

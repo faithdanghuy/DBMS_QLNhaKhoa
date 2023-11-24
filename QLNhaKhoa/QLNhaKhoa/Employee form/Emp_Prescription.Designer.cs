@@ -1,6 +1,6 @@
-﻿namespace QLNhaKhoa.Dentist_form
+﻿namespace QLNhaKhoa.Employee_form
 {
-    partial class Dentist_Prescription
+    partial class Emp_Prescription
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            panel2 = new Panel();
             panel3 = new Panel();
-            button1 = new Button();
             addRecordBtn = new Button();
             updateRecordBtn = new Button();
             label1 = new Label();
@@ -51,27 +48,9 @@
             ((System.ComponentModel.ISupportInitialize)recordData).BeginInit();
             SuspendLayout();
             // 
-            // panel1
-            // 
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(900, 700);
-            panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.White;
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(900, 700);
-            panel2.TabIndex = 6;
-            // 
             // panel3
             // 
             panel3.BackColor = Color.White;
-            panel3.Controls.Add(button1);
             panel3.Controls.Add(addRecordBtn);
             panel3.Controls.Add(updateRecordBtn);
             panel3.Controls.Add(label1);
@@ -82,21 +61,7 @@
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
             panel3.Size = new Size(900, 700);
-            panel3.TabIndex = 7;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.SteelBlue;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(420, 298);
-            button1.Name = "button1";
-            button1.Size = new Size(180, 40);
-            button1.TabIndex = 5;
-            button1.Text = "Update prescription";
-            button1.UseVisualStyleBackColor = false;
+            panel3.TabIndex = 8;
             // 
             // addRecordBtn
             // 
@@ -105,11 +70,11 @@
             addRecordBtn.FlatStyle = FlatStyle.Flat;
             addRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             addRecordBtn.ForeColor = Color.White;
-            addRecordBtn.Location = new Point(234, 298);
+            addRecordBtn.Location = new Point(156, 298);
             addRecordBtn.Name = "addRecordBtn";
-            addRecordBtn.Size = new Size(180, 40);
+            addRecordBtn.Size = new Size(100, 40);
             addRecordBtn.TabIndex = 4;
-            addRecordBtn.Text = "Delete prescription";
+            addRecordBtn.Text = "Next";
             addRecordBtn.UseVisualStyleBackColor = false;
             // 
             // updateRecordBtn
@@ -121,9 +86,9 @@
             updateRecordBtn.ForeColor = Color.White;
             updateRecordBtn.Location = new Point(50, 298);
             updateRecordBtn.Name = "updateRecordBtn";
-            updateRecordBtn.Size = new Size(180, 40);
+            updateRecordBtn.Size = new Size(100, 40);
             updateRecordBtn.TabIndex = 3;
-            updateRecordBtn.Text = "Add prescription";
+            updateRecordBtn.Text = "Previous";
             updateRecordBtn.UseVisualStyleBackColor = false;
             // 
             // label1
@@ -203,6 +168,7 @@
             quantityBox.Location = new Point(450, 180);
             quantityBox.Name = "quantityBox";
             quantityBox.PlaceholderText = "Quantity";
+            quantityBox.ReadOnly = true;
             quantityBox.Size = new Size(250, 27);
             quantityBox.TabIndex = 3;
             // 
@@ -212,6 +178,7 @@
             medicationIDBox.Location = new Point(100, 180);
             medicationIDBox.Name = "medicationIDBox";
             medicationIDBox.PlaceholderText = "Medication ID";
+            medicationIDBox.ReadOnly = true;
             medicationIDBox.Size = new Size(250, 27);
             medicationIDBox.TabIndex = 2;
             // 
@@ -221,6 +188,7 @@
             billIDBox.Location = new Point(450, 80);
             billIDBox.Name = "billIDBox";
             billIDBox.PlaceholderText = "Medical Bill ID";
+            billIDBox.ReadOnly = true;
             billIDBox.Size = new Size(250, 27);
             billIDBox.TabIndex = 1;
             // 
@@ -230,6 +198,7 @@
             recordIDBox.Location = new Point(100, 80);
             recordIDBox.Name = "recordIDBox";
             recordIDBox.PlaceholderText = "Customer Record ID";
+            recordIDBox.ReadOnly = true;
             recordIDBox.Size = new Size(250, 27);
             recordIDBox.TabIndex = 0;
             // 
@@ -255,21 +224,17 @@
             ExitButton.TabIndex = 1;
             ExitButton.Text = "X";
             ExitButton.UseVisualStyleBackColor = true;
-            ExitButton.Click += ExitButton_Click_1;
             // 
-            // Dentist_Prescription
+            // Emp_Prescription
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
             ClientSize = new Size(900, 700);
             ControlBox = false;
             Controls.Add(panel3);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Dentist_Prescription";
-            Text = "Dentist_Precription";
+            Name = "Emp_Prescription";
+            Text = "Emp_Prescription";
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel4.ResumeLayout(false);
@@ -280,23 +245,20 @@
 
         #endregion
 
-        private Panel panel1;
-        private Panel panel2;
         private Panel panel3;
         private Button addRecordBtn;
         private Button updateRecordBtn;
         private Label label1;
         private Panel panel4;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private Label label2;
+        private TextBox quantityBox;
+        private TextBox medicationIDBox;
+        private TextBox billIDBox;
         private TextBox recordIDBox;
         private DataGridView recordData;
         private Button ExitButton;
-        private Button button1;
-        private TextBox billIDBox;
-        private TextBox medicationIDBox;
-        private TextBox quantityBox;
-        private Label label3;
-        private Label label2;
-        private Label label5;
-        private Label label4;
     }
 }

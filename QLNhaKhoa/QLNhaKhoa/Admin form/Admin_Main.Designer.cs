@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             LeftPanel = new Panel();
-            BillButton = new Button();
             credit = new Label();
             CustomerID = new Label();
             label5 = new Label();
@@ -48,7 +47,6 @@
             // LeftPanel
             // 
             LeftPanel.BackColor = Color.SteelBlue;
-            LeftPanel.Controls.Add(BillButton);
             LeftPanel.Controls.Add(credit);
             LeftPanel.Controls.Add(CustomerID);
             LeftPanel.Controls.Add(label5);
@@ -62,19 +60,6 @@
             LeftPanel.Name = "LeftPanel";
             LeftPanel.Size = new Size(300, 700);
             LeftPanel.TabIndex = 3;
-            // 
-            // BillButton
-            // 
-            BillButton.FlatAppearance.BorderSize = 0;
-            BillButton.FlatStyle = FlatStyle.Flat;
-            BillButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BillButton.ForeColor = Color.White;
-            BillButton.Location = new Point(25, 500);
-            BillButton.Name = "BillButton";
-            BillButton.Size = new Size(250, 40);
-            BillButton.TabIndex = 9;
-            BillButton.Text = "Permissions";
-            BillButton.UseVisualStyleBackColor = true;
             // 
             // credit
             // 
@@ -136,7 +121,7 @@
             MedicationButton.FlatStyle = FlatStyle.Flat;
             MedicationButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MedicationButton.ForeColor = Color.White;
-            MedicationButton.Location = new Point(25, 425);
+            MedicationButton.Location = new Point(25, 485);
             MedicationButton.Name = "MedicationButton";
             MedicationButton.Size = new Size(250, 40);
             MedicationButton.TabIndex = 3;
@@ -150,7 +135,7 @@
             AccountMngrButton.FlatStyle = FlatStyle.Flat;
             AccountMngrButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             AccountMngrButton.ForeColor = Color.White;
-            AccountMngrButton.Location = new Point(25, 350);
+            AccountMngrButton.Location = new Point(25, 375);
             AccountMngrButton.Name = "AccountMngrButton";
             AccountMngrButton.Size = new Size(250, 40);
             AccountMngrButton.TabIndex = 2;
@@ -217,7 +202,6 @@
         #endregion
 
         private Panel LeftPanel;
-        private Button BillButton;
         private Label credit;
         private Label CustomerID;
         private Label label5;

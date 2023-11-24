@@ -30,6 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer_Record));
             RightPanel = new Panel();
+            bdayBox = new DateTimePicker();
+            phoneBox = new TextBox();
+            addressBox = new TextBox();
+            customerNameBox = new TextBox();
+            customerIDBox = new TextBox();
+            dentistNameBox = new TextBox();
+            dentistIDBox = new TextBox();
             pictureBox1 = new PictureBox();
             label7 = new Label();
             label6 = new Label();
@@ -39,13 +46,6 @@
             label1 = new Label();
             nameLabel = new Label();
             ExitButton = new Button();
-            dentistIDBox = new TextBox();
-            dentistNameBox = new TextBox();
-            customerIDBox = new TextBox();
-            customerNameBox = new TextBox();
-            addressBox = new TextBox();
-            phoneBox = new TextBox();
-            bdayBox = new DateTimePicker();
             RightPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -74,6 +74,80 @@
             RightPanel.Name = "RightPanel";
             RightPanel.Size = new Size(900, 700);
             RightPanel.TabIndex = 3;
+            // 
+            // bdayBox
+            // 
+            bdayBox.CustomFormat = "dd/MM/yyyy";
+            bdayBox.Enabled = false;
+            bdayBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bdayBox.Format = DateTimePickerFormat.Custom;
+            bdayBox.Location = new Point(509, 441);
+            bdayBox.MaxDate = new DateTime(2023, 11, 24, 0, 0, 0, 0);
+            bdayBox.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
+            bdayBox.Name = "bdayBox";
+            bdayBox.Size = new Size(200, 27);
+            bdayBox.TabIndex = 28;
+            bdayBox.Value = new DateTime(2023, 11, 24, 0, 0, 0, 0);
+            // 
+            // phoneBox
+            // 
+            phoneBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            phoneBox.Location = new Point(209, 441);
+            phoneBox.Name = "phoneBox";
+            phoneBox.PlaceholderText = "Dentist ID";
+            phoneBox.ReadOnly = true;
+            phoneBox.Size = new Size(250, 27);
+            phoneBox.TabIndex = 27;
+            // 
+            // addressBox
+            // 
+            addressBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            addressBox.Location = new Point(209, 516);
+            addressBox.Name = "addressBox";
+            addressBox.PlaceholderText = "Address";
+            addressBox.ReadOnly = true;
+            addressBox.Size = new Size(500, 27);
+            addressBox.TabIndex = 26;
+            // 
+            // customerNameBox
+            // 
+            customerNameBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customerNameBox.Location = new Point(359, 361);
+            customerNameBox.Name = "customerNameBox";
+            customerNameBox.PlaceholderText = "Customer Name";
+            customerNameBox.ReadOnly = true;
+            customerNameBox.Size = new Size(350, 27);
+            customerNameBox.TabIndex = 25;
+            // 
+            // customerIDBox
+            // 
+            customerIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customerIDBox.Location = new Point(209, 361);
+            customerIDBox.Name = "customerIDBox";
+            customerIDBox.PlaceholderText = "Customer ID";
+            customerIDBox.ReadOnly = true;
+            customerIDBox.Size = new Size(100, 27);
+            customerIDBox.TabIndex = 24;
+            // 
+            // dentistNameBox
+            // 
+            dentistNameBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dentistNameBox.Location = new Point(359, 286);
+            dentistNameBox.Name = "dentistNameBox";
+            dentistNameBox.PlaceholderText = "Dentist Name";
+            dentistNameBox.ReadOnly = true;
+            dentistNameBox.Size = new Size(350, 27);
+            dentistNameBox.TabIndex = 23;
+            // 
+            // dentistIDBox
+            // 
+            dentistIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dentistIDBox.Location = new Point(209, 286);
+            dentistIDBox.Name = "dentistIDBox";
+            dentistIDBox.PlaceholderText = "Dentist ID";
+            dentistIDBox.ReadOnly = true;
+            dentistIDBox.Size = new Size(100, 27);
+            dentistIDBox.TabIndex = 22;
             // 
             // pictureBox1
             // 
@@ -174,70 +248,6 @@
             ExitButton.Text = "X";
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
-            // 
-            // dentistIDBox
-            // 
-            dentistIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dentistIDBox.Location = new Point(209, 286);
-            dentistIDBox.Name = "dentistIDBox";
-            dentistIDBox.PlaceholderText = "Dentist ID";
-            dentistIDBox.Size = new Size(100, 27);
-            dentistIDBox.TabIndex = 22;
-            // 
-            // dentistNameBox
-            // 
-            dentistNameBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dentistNameBox.Location = new Point(359, 286);
-            dentistNameBox.Name = "dentistNameBox";
-            dentistNameBox.PlaceholderText = "Dentist Name";
-            dentistNameBox.Size = new Size(350, 27);
-            dentistNameBox.TabIndex = 23;
-            // 
-            // customerIDBox
-            // 
-            customerIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customerIDBox.Location = new Point(209, 361);
-            customerIDBox.Name = "customerIDBox";
-            customerIDBox.PlaceholderText = "Customer ID";
-            customerIDBox.Size = new Size(100, 27);
-            customerIDBox.TabIndex = 24;
-            // 
-            // customerNameBox
-            // 
-            customerNameBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customerNameBox.Location = new Point(359, 361);
-            customerNameBox.Name = "customerNameBox";
-            customerNameBox.PlaceholderText = "Customer Name";
-            customerNameBox.Size = new Size(350, 27);
-            customerNameBox.TabIndex = 25;
-            // 
-            // addressBox
-            // 
-            addressBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            addressBox.Location = new Point(209, 516);
-            addressBox.Name = "addressBox";
-            addressBox.PlaceholderText = "Address";
-            addressBox.Size = new Size(500, 27);
-            addressBox.TabIndex = 26;
-            // 
-            // phoneBox
-            // 
-            phoneBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            phoneBox.Location = new Point(209, 441);
-            phoneBox.Name = "phoneBox";
-            phoneBox.PlaceholderText = "Dentist ID";
-            phoneBox.Size = new Size(250, 27);
-            phoneBox.TabIndex = 27;
-            // 
-            // bdayBox
-            // 
-            bdayBox.CustomFormat = "dd/MM/yyyy";
-            bdayBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            bdayBox.Format = DateTimePickerFormat.Custom;
-            bdayBox.Location = new Point(509, 441);
-            bdayBox.Name = "bdayBox";
-            bdayBox.Size = new Size(200, 27);
-            bdayBox.TabIndex = 28;
             // 
             // Customer_Record
             // 

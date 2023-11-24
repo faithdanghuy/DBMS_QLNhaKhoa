@@ -19,13 +19,15 @@ namespace QLNhaKhoa
         {
             SqlConnection sqlCon = new SqlConnection(Helper.strCon);
             sqlCon.Open();
-            SqlCommand cmd = new SqlCommand("SELECT KH.HOTEN, KH.NGAYSINH, KH.DIACHI, KH.SODT, NV.MANHANVIEN, NV.HOTEN AS TENNHASI FROM KHACHHANG KH JOIN HOSOBENHAN HSBA ON KH.MAKHACHHANG = HSBA.MAKHACHHANG\r\nJOIN NHANVIEN NV ON HSBA.MANHASI = NV.MANHANVIEN WHERE NV.LOAINHANVIEN = 1 AND KH.MAKHACHHANG = '" + CurrentUser + "'", sqlCon);
+            SqlCommand cmd = new SqlCommand("SELECT KH.HOTEN, KH.NGAYSINH, KH.DIACHI, KH.SODT, NV.MANHANVIEN, NV.HOTEN AS TENNHASI " +
+                                            "FROM KHACHHANG KH JOIN HOSOBENHAN HSBA ON KH.MAKHACHHANG = HSBA.MAKHACHHANG JOIN NHANVIEN NV ON HSBA.MANHASI = NV.MANHANVIEN " +
+                                            "WHERE NV.LOAINHANVIEN = 1 AND KH.MAKHACHHANG = '" + CurrentUser + "'", sqlCon);
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
                 if (reader.Read())
                 {
                     customerIDBox.Text = CurrentUser;
-                    dentistNameBox.Text = reader["HOTEN"].ToString();
+                    customerNameBox.Text = reader["HOTEN"].ToString();
                     bdayBox.Text = reader["NGAYSINH"].ToString();
                     addressBox.Text = reader["DIACHI"].ToString();
                     phoneBox.Text = reader["SODT"].ToString();

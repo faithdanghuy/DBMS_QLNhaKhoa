@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace QLNhaKhoa.Employee_form
 {
-    public partial class Emp_Bill : Form
+    public partial class Emp_Medication : Form
     {
-        public Emp_Bill()
+        public Emp_Medication()
         {
             InitializeComponent();
-        }
-
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

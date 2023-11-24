@@ -1,6 +1,6 @@
 ﻿namespace QLNhaKhoa.General_form
 {
-    partial class Appointment
+    partial class Customer_Appointment
     {
         /// <summary>
         /// Required designer variable.

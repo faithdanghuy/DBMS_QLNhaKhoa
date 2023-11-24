@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QLNhaKhoa.Employee_form
 {
-    public partial class Emp_Bill : Form
+    public partial class Emp_Certificate : Form
     {
-        public Emp_Bill()
+        public Emp_Certificate()
         {
             InitializeComponent();
         }

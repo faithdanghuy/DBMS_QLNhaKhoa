@@ -22,21 +22,45 @@ namespace QLNhaKhoa.Employee_form
         {
             Application.Exit();
         }
-        public void loadform(object Form)
-        {
-            if (this.mainPanel.Controls.Count > 0)
-                this.mainPanel.Controls.RemoveAt(0);
-            Form f = (Form)Form;
-            f.TopLevel = false;
-            f.Dock = DockStyle.Fill;
-            this.mainPanel.Controls.Add(f);
-            this.mainPanel.Tag = f;
-            f.Show();
-        }
 
         private void AccountButton_Click(object sender, EventArgs e)
         {
-            loadform(new Account());
+            Helper.loadform(new Account(), this.mainPanel);
+        }
+
+        private void BillButton_Click(object sender, EventArgs e)
+        {
+            Helper.loadform(new Emp_Bill(), this.mainPanel);
+        }
+
+        private void MedRecdButton_Click(object sender, EventArgs e)
+        {
+            Helper.loadform(new Emp_Record(), this.mainPanel);
+        }
+
+        private void MedCertButton_Click(object sender, EventArgs e)
+        {
+            Helper.loadform(new Emp_Certificate(), this.mainPanel);
+        }
+
+        private void CusSerButton_Click(object sender, EventArgs e)
+        {
+            Helper.loadform(new Emp_Services(), this.mainPanel);
+        }
+
+        private void PrescriptionButton_Click(object sender, EventArgs e)
+        {
+            Helper.loadform(new Emp_Prescription(), this.mainPanel);
+        }
+
+        private void MedicationButton_Click(object sender, EventArgs e)
+        {
+            Helper.loadform(new Emp_Medication(), this.mainPanel);
+        }
+
+        private void AppointmentButton_Click(object sender, EventArgs e)
+        {
+            Helper.loadform(new Emp_Appointment(), this.mainPanel);
         }
     }
 }

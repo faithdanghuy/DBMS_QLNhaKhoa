@@ -1,6 +1,6 @@
 ﻿namespace QLNhaKhoa.Employee_form
 {
-    partial class Emp_Bill
+    partial class Emp_Certificate
     {
         /// <summary>
         /// Required designer variable.
@@ -59,7 +59,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(900, 700);
-            panel1.TabIndex = 7;
+            panel1.TabIndex = 6;
             // 
             // label1
             // 
@@ -67,11 +67,11 @@
             label1.BackColor = Color.White;
             label1.Font = new Font("Tw Cen MT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.SteelBlue;
-            label1.Location = new Point(371, 20);
+            label1.Location = new Point(326, 20);
             label1.Name = "label1";
-            label1.Size = new Size(157, 35);
+            label1.Size = new Size(248, 35);
             label1.TabIndex = 12;
-            label1.Text = "Medical Bill";
+            label1.Text = "Medical Certificate";
             // 
             // panel2
             // 
@@ -124,6 +124,7 @@
             // dateTimePicker1
             // 
             dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            dateTimePicker1.Enabled = false;
             dateTimePicker1.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.Location = new Point(100, 180);
@@ -137,15 +138,18 @@
             textBox2.Location = new Point(450, 180);
             textBox2.Name = "textBox2";
             textBox2.PlaceholderText = "Customer Record ID";
+            textBox2.ReadOnly = true;
             textBox2.Size = new Size(250, 27);
             textBox2.TabIndex = 1;
             // 
             // textBox1
             // 
+            textBox1.Enabled = false;
             textBox1.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox1.Location = new Point(275, 80);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "Certificate ID";
+            textBox1.ReadOnly = true;
             textBox1.Size = new Size(250, 27);
             textBox1.TabIndex = 0;
             // 
@@ -201,7 +205,7 @@
             appointmentData.Size = new Size(900, 350);
             appointmentData.TabIndex = 0;
             // 
-            // Emp_Bill
+            // Emp_Certificate
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -209,8 +213,8 @@
             ControlBox = false;
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Emp_Bill";
-            Text = "Emp_Bill";
+            Name = "Emp_Certificate";
+            Text = "Emp_Certificate";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
@@ -222,7 +226,10 @@
         #endregion
 
         private Panel panel1;
-        private Label label1;
+        private Button addRecordBtn;
+        private Button ExitButton;
+        private Button updateRecordBtn;
+        private DataGridView appointmentData;
         private Panel panel2;
         private Label label4;
         private Label label3;
@@ -230,9 +237,6 @@
         private DateTimePicker dateTimePicker1;
         private TextBox textBox2;
         private TextBox textBox1;
-        private Button addRecordBtn;
-        private Button ExitButton;
-        private Button updateRecordBtn;
-        private DataGridView appointmentData;
+        private Label label1;
     }
 }
