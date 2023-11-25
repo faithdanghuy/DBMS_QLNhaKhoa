@@ -8,7 +8,10 @@ USE [Nhom3_QLNhaKhoa]
 GO
 
 DECLARE @ERR INT
-EXEC @ERR = USP_NHANVIEN_UPD 'AD001', N'Trần Hoàng Thư', N'468, Lê Hồng Phong, phường 1, quận 2, Thành phố Hồ', '123456', 2, '123'
+
+EXEC @ERR = USP_NHANVIEN_UPD 'AD001', N'Trần Hoàng Thư',
+    N'468, Lê Hồng Phong, phường 1, quận 2, Thành phố Hồ',
+    '123456', 2, '123'
 
 IF @ERR != 0 PRINT('UPDATE NHANVIEN FAILED!')
-ELSE PRINT('UPDATE NHANVIEN SUCCESSFUL!')   
+ELSE PRINT('UPDATE NHANVIEN SUCCESSFUL!')
