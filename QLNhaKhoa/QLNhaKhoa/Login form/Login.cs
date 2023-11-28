@@ -38,11 +38,11 @@ namespace QLNhaKhoa
         {
             if (txtID.Text == "")
             {
-                MessageBox.Show("Enter your ID");
+                MessageBox.Show("Vui lòng nhập ID");
             }
             else if (txtPassword.Text == "")
             {
-                MessageBox.Show("Enter you password");
+                MessageBox.Show("Vui lòng nhập mật khẩu");
             }
             else
             {
@@ -100,7 +100,6 @@ namespace QLNhaKhoa
                 }
             }
         }
-
         private void txtID_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Down)
@@ -108,7 +107,6 @@ namespace QLNhaKhoa
                 txtPassword.Focus();
             }
         }
-
         private void txtPassword_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Down)

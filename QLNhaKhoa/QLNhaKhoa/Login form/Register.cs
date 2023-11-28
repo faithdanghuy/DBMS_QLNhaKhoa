@@ -23,6 +23,10 @@ namespace QLNhaKhoa
         {
             Application.Exit();
         }
+        private void minimizeButton_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
         private void loginSwap_Click(object sender, EventArgs e)
         {
             new Login().Show();
@@ -41,41 +45,114 @@ namespace QLNhaKhoa
         }
         private void registerButton_Click(object sender, EventArgs e)
         {
-            try
+            if (txtName.Text == "")
             {
-                SqlConnection sqlCon = new SqlConnection(Helper.strCon);
-                sqlCon.Open();
-                SqlCommand cmd = new SqlCommand("USP_KHACHHANG_INS", sqlCon);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.Add(new SqlParameter("@HOTEN", txtName.Text));
-                cmd.Parameters.AddWithValue("@NGAYSINH", txtBday.Text);
-                cmd.Parameters.Add(new SqlParameter("@DIACHI", txtAddress.Text));
-                cmd.Parameters.Add(new SqlParameter("@SODT", txtPhone.Text));
-                cmd.Parameters.Add(new SqlParameter("@MATKHAU", txtPassword.Text));
-
-                cmd.Parameters.Add("@MAKHACHHANG", SqlDbType.Int).Direction = ParameterDirection.Output;
-                int i = cmd.ExecuteNonQuery();
-                string userID = (string)cmd.Parameters["@MAKHACHHANG"].Value;
-                sqlCon.Close();
-                if (i > 0)
+                MessageBox.Show("Vui lòng nhập tên");
+            }
+            else if (txtBday.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập ngày sinh");
+            }
+            else if (txtAddress.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập địa chỉ");
+            }
+            else if (txtPhone.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập số điện thoại");
+            }
+            else if (txtPassword.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập mật khẩu");
+            }
+            else
+            {
+                try
                 {
-                    MessageBox.Show("Tạo tài khoản thành công! Mã khách hàng của bạn là " + userID);
+                    SqlConnection sqlCon = new SqlConnection(Helper.strCon);
+                    sqlCon.Open();
+                    SqlCommand cmd = new SqlCommand("USP_KHACHHANG_INS", sqlCon);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add(new SqlParameter("@HOTEN", txtName.Text));
+                    cmd.Parameters.Add(new SqlParameter("@NGAYSINH", txtBday.Text));
+                    cmd.Parameters.Add(new SqlParameter("@DIACHI", txtAddress.Text));
+                    cmd.Parameters.Add(new SqlParameter("@SODT", txtPhone.Text));
+                    cmd.Parameters.Add(new SqlParameter("@MATKHAU", txtPassword.Text));
+
+                    cmd.Parameters.Add("@MAKHACHHANG", SqlDbType.VarChar, 10).Direction = ParameterDirection.Output;
+                    int i = cmd.ExecuteNonQuery();
+                    string userID = (string)cmd.Parameters["@MAKHACHHANG"].Value;
+                    sqlCon.Close();
+                    if (i > 0)
+                    {
+                        MessageBox.Show("Tạo tài khoản thành công! Mã khách hàng của bạn là " + userID);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tạo tài khoản thất bại!");
+                    }
                 }
-                else
+                catch (Exception)
                 {
                     MessageBox.Show("Tạo tài khoản thất bại!");
                 }
             }
-            catch (Exception ex)
+        }
+        private void txtName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Down)
             {
-                MessageBox.Show("Tạo tài khoản thất bại!" + ex);
+                txtBday.Focus();
             }
         }
-
-        private void minimizeButton_Click(object sender, EventArgs e)
+        private void txtBday_KeyDown(object sender, KeyEventArgs e)
         {
-            WindowState = FormWindowState.Minimized;
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Down)
+            {
+                txtAddress.Focus();
+            }
+            else if (e.KeyCode == Keys.Up)
+            {
+                txtName.Focus();
+            }
+        }
+        private void txtAddress_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Down)
+            {
+                txtPhone.Focus();
+            }
+            else if (e.KeyCode == Keys.Up)
+            {
+                txtBday.Focus();
+            }
+        }
+        private void txtPhone_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Down)
+            {
+                txtPassword.Focus();
+            }
+            else if (e.KeyCode == Keys.Up)
+            {
+                txtAddress.Focus();
+            }
+        }
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+                registerButton.Focus();
+            }
+            else if (e.KeyCode == Keys.Enter)
+            {
+                registerButton.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Up)
+            {
+                txtPhone.Focus();
+            }
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -30,37 +31,16 @@ namespace QLNhaKhoa
                 e.Handled = true;
             }
         }
-        public void updateProfile()
-        {
-            SqlConnection sqlCon = new SqlConnection(Helper.strCon);
-            sqlCon.Open();
-            SqlCommand cmd = new SqlCommand("USP_KHACHHANG_UPD", sqlCon);
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            DateTime bday = DateTime.ParseExact(bdayBox.Text, "yyyy-MM-dd", null);
-
-            cmd.Parameters.Add(new SqlParameter("@MAKHACHHANG", CurrentUser));
-            cmd.Parameters.Add(new SqlParameter("@HOTEN", nameBox.Text));
-            cmd.Parameters.Add(new SqlParameter("@NGAYSINH", bday));
-            cmd.Parameters.Add(new SqlParameter("@DIACHI", addressBox.Text));
-            cmd.Parameters.Add(new SqlParameter("@SODT", phoneBox.Text));
-            cmd.Parameters.Add(new SqlParameter("@MATKHAU", passwordBox.Text));
-            int i = cmd.ExecuteNonQuery();
-            sqlCon.Close();
-            if (i > 0)
-            {
-                MessageBox.Show("Cập nhật dữ liệu thành công!");
-            }
-        }
-        private void updateButton_Click(object sender, EventArgs e)
-        {
-            updateProfile();
-        }
         private void Account_Load(object sender, EventArgs e)
         {
+            string query = "select HOTEN,NGAYSINH,DIACHI,SODT from NHANVIEN where MANHANVIEN='" + CurrentUser + "'";
+            if (CurrentUser.StartsWith("KH"))
+            {
+                query = "select HOTEN,NGAYSINH,DIACHI,SODT from KHACHHANG where MAKHACHHANG='" + CurrentUser + "'";
+            }
             SqlConnection sqlCon = new SqlConnection(Helper.strCon);
             sqlCon.Open();
-            SqlCommand cmd = new SqlCommand("select HOTEN,NGAYSINH,DIACHI,SODT from KHACHHANG where MAKHACHHANG='" + CurrentUser + "'", sqlCon);
+            SqlCommand cmd = new SqlCommand(query, sqlCon);
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
                 if (reader.Read())
@@ -77,6 +57,57 @@ namespace QLNhaKhoa
                     MessageBox.Show("Không có dữ liệu!");
                 }
             }
+        }
+        public void updateProfile(string curUser)
+        {
+            string procedure = "USP_NHANVIEN_UPD";
+            string parameter1 = "@MANHANVIEN";
+
+            if (curUser.StartsWith("KH"))
+            {
+                procedure = "USP_KHACHHANG_UPD";
+                parameter1 = "@MAKHACHHANG";
+            }
+
+            SqlConnection sqlCon = new SqlConnection(Helper.strCon);
+            sqlCon.Open();
+            SqlCommand cmd = new SqlCommand(procedure, sqlCon);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add(new SqlParameter(parameter1, CurrentUser));
+            cmd.Parameters.Add(new SqlParameter("@HOTEN", nameBox.Text));
+            cmd.Parameters.Add(new SqlParameter("@NGAYSINH", bdayBox.Text));
+            cmd.Parameters.Add(new SqlParameter("@DIACHI", addressBox.Text));
+            cmd.Parameters.Add(new SqlParameter("@SODT", phoneBox.Text));
+            cmd.Parameters.Add(new SqlParameter("@MATKHAU", passwordBox.Text));
+
+            if (curUser.StartsWith("NS"))
+            {
+                cmd.Parameters.Add(new SqlParameter("@LOAINHANVIEN", 1));
+            }
+            else if (curUser.StartsWith("NV"))
+            {
+                cmd.Parameters.Add(new SqlParameter("@LOAINHANVIEN", 0));
+            }
+            else if (curUser.StartsWith("AD"))
+            {
+                cmd.Parameters.Add(new SqlParameter("@LOAINHANVIEN", 2));
+            }
+
+            int i = cmd.ExecuteNonQuery();
+            sqlCon.Close();
+            if (i > 0)
+            {
+                MessageBox.Show("Cập nhật dữ liệu thành công!");
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật dữ liệu thất bại!");
+            }
+        }
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            updateProfile(CurrentUser);
         }
     }
 }

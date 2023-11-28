@@ -159,9 +159,13 @@ namespace QLNhaKhoa
             txtBday.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtBday.Format = DateTimePickerFormat.Custom;
             txtBday.Location = new Point(86, 168);
+            txtBday.MaxDate = new DateTime(2023, 11, 28, 0, 0, 0, 0);
+            txtBday.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             txtBday.Name = "txtBday";
             txtBday.Size = new Size(314, 27);
             txtBday.TabIndex = 19;
+            txtBday.Value = new DateTime(2023, 11, 28, 0, 0, 0, 0);
+            txtBday.KeyDown += txtBday_KeyDown;
             // 
             // txtPassword
             // 
@@ -172,10 +176,11 @@ namespace QLNhaKhoa
             txtPassword.MinimumSize = new Size(314, 25);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
-            txtPassword.PlaceholderText = "Password";
+            txtPassword.PlaceholderText = "Password (max 20)";
             txtPassword.Size = new Size(314, 25);
             txtPassword.TabIndex = 18;
             txtPassword.UseSystemPasswordChar = true;
+            txtPassword.KeyDown += txtPassword_KeyDown;
             // 
             // txtPhone
             // 
@@ -188,6 +193,7 @@ namespace QLNhaKhoa
             txtPhone.PlaceholderText = "Phone number";
             txtPhone.Size = new Size(314, 25);
             txtPhone.TabIndex = 17;
+            txtPhone.KeyDown += txtPhone_KeyDown;
             txtPhone.KeyPress += txtPhone_KeyPress;
             // 
             // txtAddress
@@ -201,18 +207,20 @@ namespace QLNhaKhoa
             txtAddress.PlaceholderText = "Address";
             txtAddress.Size = new Size(314, 25);
             txtAddress.TabIndex = 16;
+            txtAddress.KeyDown += txtAddress_KeyDown;
             // 
             // txtName
             // 
             txtName.BorderStyle = BorderStyle.None;
             txtName.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtName.Location = new Point(86, 95);
-            txtName.MaxLength = 25;
+            txtName.MaxLength = 50;
             txtName.MinimumSize = new Size(314, 25);
             txtName.Name = "txtName";
             txtName.PlaceholderText = "Name";
             txtName.Size = new Size(314, 25);
             txtName.TabIndex = 14;
+            txtName.KeyDown += txtName_KeyDown;
             // 
             // div5
             // 
