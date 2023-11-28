@@ -12,9 +12,15 @@ namespace QLNhaKhoa.Admin_form
 {
     public partial class Admin_AccManager : Form
     {
+        public string CurrentAdmin { get; set; } = string.Empty;
         public Admin_AccManager()
         {
             InitializeComponent();
+        }
+        private void Admin_AccManager_Load(object sender, EventArgs e)
+        {
+            string acc_query = "select * from NHANVIEN";
+            accountData.DataSource = Helper.getData(acc_query).Tables[0];
         }
     }
 }

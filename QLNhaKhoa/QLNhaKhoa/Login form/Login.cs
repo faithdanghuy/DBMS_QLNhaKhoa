@@ -22,18 +22,15 @@ namespace QLNhaKhoa
             this.ActiveControl = txtID;
             txtID.Focus();
         }
-
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
         private void registerSwap_Click(object sender, EventArgs e)
         {
             new Register().Show();
             this.Hide();
         }
-
         private void loginButton_Click(object sender, EventArgs e)
         {
             if (txtID.Text == "")
@@ -89,6 +86,7 @@ namespace QLNhaKhoa
                     {
                         Admin_Main f = new Admin_Main();
                         f.CurrentAdmin = txtID.Text;
+                        f.CurrentPass = txtPassword.Text;
                         f.Show();
                         this.Hide();
                         sqlCon.Close();

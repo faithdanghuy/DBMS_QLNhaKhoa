@@ -52,6 +52,7 @@
             panel1.Controls.Add(makeAppointBtn);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(appointmentData);
+            panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(900, 700);
@@ -84,6 +85,7 @@
             makeAppointBtn.TabIndex = 1;
             makeAppointBtn.Text = "Make an appointment";
             makeAppointBtn.UseVisualStyleBackColor = false;
+            makeAppointBtn.Click += makeAppointBtn_Click;
             // 
             // panel2
             // 
@@ -113,7 +115,7 @@
             // 
             // appointDate
             // 
-            appointDate.CustomFormat = "yyyy/MM/dd";
+            appointDate.CustomFormat = "yyyy-MM-dd";
             appointDate.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             appointDate.Format = DateTimePickerFormat.Custom;
             appointDate.Location = new Point(400, 62);
@@ -151,19 +153,25 @@
             label1.Name = "label1";
             label1.Size = new Size(132, 23);
             label1.TabIndex = 2;
-            label1.Text = "Time (8h - 15h)";
+            label1.Text = "Time (8h - 17h)";
             // 
             // appointTime
             // 
             appointTime.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             appointTime.Location = new Point(150, 62);
+            appointTime.MaxLength = 5;
             appointTime.Name = "appointTime";
             appointTime.PlaceholderText = "example: 8h30";
             appointTime.Size = new Size(200, 27);
             appointTime.TabIndex = 0;
+            appointTime.KeyPress += appointTime_KeyPress;
             // 
             // appointmentData
             // 
+            appointmentData.AllowUserToResizeColumns = false;
+            appointmentData.AllowUserToResizeRows = false;
+            appointmentData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            appointmentData.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             appointmentData.BorderStyle = BorderStyle.None;
             appointmentData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             appointmentData.Dock = DockStyle.Bottom;
@@ -172,7 +180,7 @@
             appointmentData.RowHeadersWidth = 51;
             appointmentData.Size = new Size(900, 350);
             appointmentData.TabIndex = 0;
-            appointmentData.CellContentClick += appointmentData_CellContentClick;
+            appointmentData.CellClick += appointmentData_CellClick;
             // 
             // serviceTitle
             // 
@@ -218,7 +226,7 @@
         private ComboBox cboDentists;
         private Label label1;
         private TextBox appointTime;
-        private DataGridView appointmentData;
         private Label serviceTitle;
+        public DataGridView appointmentData;
     }
 }

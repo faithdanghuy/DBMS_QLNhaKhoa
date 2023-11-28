@@ -28,94 +28,98 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panel1 = new Panel();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            searchMedButton = new Button();
+            updateMedButton = new Button();
+            deleteMedButton = new Button();
             label1 = new Label();
             panel2 = new Panel();
             label9 = new Label();
-            textBox6 = new TextBox();
+            empIDBox = new TextBox();
             label8 = new Label();
-            textBox5 = new TextBox();
+            prescribeBox = new TextBox();
             label7 = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            expDateBox = new DateTimePicker();
             label6 = new Label();
             label5 = new Label();
-            textBox2 = new TextBox();
-            comboBox1 = new ComboBox();
-            textBox4 = new TextBox();
+            priceBox = new TextBox();
+            cboUnit = new ComboBox();
+            medNameBox = new TextBox();
             label4 = new Label();
-            textBox3 = new TextBox();
+            instockBox = new TextBox();
             label3 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
-            ExitButton = new Button();
-            updateRecordBtn = new Button();
-            appointmentData = new DataGridView();
+            medIDBox = new TextBox();
+            addMedButton = new Button();
+            medData = new DataGridView();
+            empIDError = new ErrorProvider(components);
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)appointmentData).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)medData).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)empIDError).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(searchMedButton);
+            panel1.Controls.Add(updateMedButton);
+            panel1.Controls.Add(deleteMedButton);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(panel2);
-            panel1.Controls.Add(ExitButton);
-            panel1.Controls.Add(updateRecordBtn);
-            panel1.Controls.Add(appointmentData);
+            panel1.Controls.Add(addMedButton);
+            panel1.Controls.Add(medData);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(900, 700);
             panel1.TabIndex = 7;
             // 
-            // button3
+            // searchMedButton
             // 
-            button3.BackColor = Color.SteelBlue;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(543, 298);
-            button3.Name = "button3";
-            button3.Size = new Size(175, 40);
-            button3.TabIndex = 14;
-            button3.Text = "Search medication";
-            button3.UseVisualStyleBackColor = false;
+            searchMedButton.BackColor = Color.SteelBlue;
+            searchMedButton.FlatAppearance.BorderSize = 0;
+            searchMedButton.FlatStyle = FlatStyle.Flat;
+            searchMedButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            searchMedButton.ForeColor = Color.White;
+            searchMedButton.Location = new Point(543, 298);
+            searchMedButton.Name = "searchMedButton";
+            searchMedButton.Size = new Size(175, 40);
+            searchMedButton.TabIndex = 14;
+            searchMedButton.Text = "Search medication";
+            searchMedButton.UseVisualStyleBackColor = false;
+            searchMedButton.Click += searchMedButton_Click;
             // 
-            // button2
+            // updateMedButton
             // 
-            button2.BackColor = Color.SteelBlue;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(362, 298);
-            button2.Name = "button2";
-            button2.Size = new Size(175, 40);
-            button2.TabIndex = 13;
-            button2.Text = "Update medication";
-            button2.UseVisualStyleBackColor = false;
+            updateMedButton.BackColor = Color.SteelBlue;
+            updateMedButton.FlatAppearance.BorderSize = 0;
+            updateMedButton.FlatStyle = FlatStyle.Flat;
+            updateMedButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            updateMedButton.ForeColor = Color.White;
+            updateMedButton.Location = new Point(362, 298);
+            updateMedButton.Name = "updateMedButton";
+            updateMedButton.Size = new Size(175, 40);
+            updateMedButton.TabIndex = 13;
+            updateMedButton.Text = "Update medication";
+            updateMedButton.UseVisualStyleBackColor = false;
+            updateMedButton.Click += updateMedButton_Click;
             // 
-            // button1
+            // deleteMedButton
             // 
-            button1.BackColor = Color.SteelBlue;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(206, 298);
-            button1.Name = "button1";
-            button1.Size = new Size(150, 40);
-            button1.TabIndex = 12;
-            button1.Text = "Delete medicine";
-            button1.UseVisualStyleBackColor = false;
+            deleteMedButton.BackColor = Color.SteelBlue;
+            deleteMedButton.FlatAppearance.BorderSize = 0;
+            deleteMedButton.FlatStyle = FlatStyle.Flat;
+            deleteMedButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            deleteMedButton.ForeColor = Color.White;
+            deleteMedButton.Location = new Point(206, 298);
+            deleteMedButton.Name = "deleteMedButton";
+            deleteMedButton.Size = new Size(150, 40);
+            deleteMedButton.TabIndex = 12;
+            deleteMedButton.Text = "Delete medicine";
+            deleteMedButton.UseVisualStyleBackColor = false;
+            deleteMedButton.Click += deleteMedButton_Click;
             // 
             // label1
             // 
@@ -134,21 +138,21 @@
             panel2.BackColor = Color.White;
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(label9);
-            panel2.Controls.Add(textBox6);
+            panel2.Controls.Add(empIDBox);
             panel2.Controls.Add(label8);
-            panel2.Controls.Add(textBox5);
+            panel2.Controls.Add(prescribeBox);
             panel2.Controls.Add(label7);
-            panel2.Controls.Add(dateTimePicker1);
+            panel2.Controls.Add(expDateBox);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label5);
-            panel2.Controls.Add(textBox2);
-            panel2.Controls.Add(comboBox1);
-            panel2.Controls.Add(textBox4);
+            panel2.Controls.Add(priceBox);
+            panel2.Controls.Add(cboUnit);
+            panel2.Controls.Add(medNameBox);
             panel2.Controls.Add(label4);
-            panel2.Controls.Add(textBox3);
+            panel2.Controls.Add(instockBox);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(medIDBox);
             panel2.Location = new Point(50, 35);
             panel2.Name = "panel2";
             panel2.Size = new Size(800, 250);
@@ -165,14 +169,14 @@
             label9.TabIndex = 17;
             label9.Text = "Emp ID";
             // 
-            // textBox6
+            // empIDBox
             // 
-            textBox6.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox6.Location = new Point(188, 42);
-            textBox6.Name = "textBox6";
-            textBox6.PlaceholderText = "Emp ID";
-            textBox6.Size = new Size(100, 27);
-            textBox6.TabIndex = 16;
+            empIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            empIDBox.Location = new Point(190, 42);
+            empIDBox.Name = "empIDBox";
+            empIDBox.PlaceholderText = "Emp ID";
+            empIDBox.Size = new Size(85, 27);
+            empIDBox.TabIndex = 16;
             // 
             // label8
             // 
@@ -185,14 +189,14 @@
             label8.TabIndex = 15;
             label8.Text = "Prescirbe";
             // 
-            // textBox5
+            // prescribeBox
             // 
-            textBox5.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox5.Location = new Point(300, 202);
-            textBox5.Name = "textBox5";
-            textBox5.PlaceholderText = "Prescribe";
-            textBox5.Size = new Size(425, 27);
-            textBox5.TabIndex = 14;
+            prescribeBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            prescribeBox.Location = new Point(300, 202);
+            prescribeBox.Name = "prescribeBox";
+            prescribeBox.PlaceholderText = "Prescribe";
+            prescribeBox.Size = new Size(425, 27);
+            prescribeBox.TabIndex = 14;
             // 
             // label7
             // 
@@ -205,14 +209,14 @@
             label7.TabIndex = 13;
             label7.Text = "Expiration Date";
             // 
-            // dateTimePicker1
+            // expDateBox
             // 
-            dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(75, 202);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 27);
-            dateTimePicker1.TabIndex = 12;
+            expDateBox.CustomFormat = "yyyy-MM-dd";
+            expDateBox.Format = DateTimePickerFormat.Custom;
+            expDateBox.Location = new Point(75, 202);
+            expDateBox.Name = "expDateBox";
+            expDateBox.Size = new Size(200, 27);
+            expDateBox.TabIndex = 12;
             // 
             // label6
             // 
@@ -236,33 +240,34 @@
             label5.TabIndex = 10;
             label5.Text = "Med Name";
             // 
-            // textBox2
+            // priceBox
             // 
-            textBox2.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(525, 121);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Price";
-            textBox2.Size = new Size(200, 27);
-            textBox2.TabIndex = 9;
+            priceBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            priceBox.Location = new Point(525, 121);
+            priceBox.Name = "priceBox";
+            priceBox.PlaceholderText = "Price";
+            priceBox.Size = new Size(200, 27);
+            priceBox.TabIndex = 9;
+            priceBox.KeyPress += priceBox_KeyPress;
             // 
-            // comboBox1
+            // cboUnit
             // 
-            comboBox1.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Viên", "Hộp", "Gói" });
-            comboBox1.Location = new Point(300, 42);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(200, 27);
-            comboBox1.TabIndex = 8;
+            cboUnit.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboUnit.FormattingEnabled = true;
+            cboUnit.Items.AddRange(new object[] { "Viên", "Hộp", "Gói" });
+            cboUnit.Location = new Point(300, 42);
+            cboUnit.Name = "cboUnit";
+            cboUnit.Size = new Size(200, 27);
+            cboUnit.TabIndex = 8;
             // 
-            // textBox4
+            // medNameBox
             // 
-            textBox4.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.Location = new Point(75, 121);
-            textBox4.Name = "textBox4";
-            textBox4.PlaceholderText = "Med Name";
-            textBox4.Size = new Size(425, 27);
-            textBox4.TabIndex = 7;
+            medNameBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            medNameBox.Location = new Point(75, 121);
+            medNameBox.Name = "medNameBox";
+            medNameBox.PlaceholderText = "Med Name";
+            medNameBox.Size = new Size(425, 27);
+            medNameBox.TabIndex = 7;
             // 
             // label4
             // 
@@ -275,14 +280,15 @@
             label4.TabIndex = 6;
             label4.Text = "In stock";
             // 
-            // textBox3
+            // instockBox
             // 
-            textBox3.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(525, 42);
-            textBox3.Name = "textBox3";
-            textBox3.PlaceholderText = "In stock";
-            textBox3.Size = new Size(200, 27);
-            textBox3.TabIndex = 5;
+            instockBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            instockBox.Location = new Point(525, 42);
+            instockBox.Name = "instockBox";
+            instockBox.PlaceholderText = "In stock";
+            instockBox.Size = new Size(200, 27);
+            instockBox.TabIndex = 5;
+            instockBox.KeyPress += instockBox_KeyPress;
             // 
             // label3
             // 
@@ -306,52 +312,51 @@
             label2.TabIndex = 3;
             label2.Text = "Med ID";
             // 
-            // textBox1
+            // medIDBox
             // 
-            textBox1.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(75, 42);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Med ID";
-            textBox1.Size = new Size(100, 27);
-            textBox1.TabIndex = 0;
+            medIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            medIDBox.Location = new Point(75, 42);
+            medIDBox.Name = "medIDBox";
+            medIDBox.PlaceholderText = "Med ID";
+            medIDBox.ReadOnly = true;
+            medIDBox.Size = new Size(90, 27);
+            medIDBox.TabIndex = 0;
             // 
-            // ExitButton
+            // addMedButton
             // 
-            ExitButton.FlatAppearance.BorderSize = 0;
-            ExitButton.FlatStyle = FlatStyle.Flat;
-            ExitButton.Font = new Font("VNI-Lithos", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ExitButton.Location = new Point(860, 0);
-            ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(40, 40);
-            ExitButton.TabIndex = 3;
-            ExitButton.Text = "X";
-            ExitButton.UseVisualStyleBackColor = true;
-            ExitButton.Click += ExitButton_Click;
+            addMedButton.BackColor = Color.SteelBlue;
+            addMedButton.FlatAppearance.BorderSize = 0;
+            addMedButton.FlatStyle = FlatStyle.Flat;
+            addMedButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            addMedButton.ForeColor = Color.White;
+            addMedButton.Location = new Point(50, 298);
+            addMedButton.Name = "addMedButton";
+            addMedButton.Size = new Size(150, 40);
+            addMedButton.TabIndex = 9;
+            addMedButton.Text = "Add medicine";
+            addMedButton.UseVisualStyleBackColor = false;
+            addMedButton.Click += addMedButton_Click;
             // 
-            // updateRecordBtn
+            // medData
             // 
-            updateRecordBtn.BackColor = Color.SteelBlue;
-            updateRecordBtn.FlatAppearance.BorderSize = 0;
-            updateRecordBtn.FlatStyle = FlatStyle.Flat;
-            updateRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            updateRecordBtn.ForeColor = Color.White;
-            updateRecordBtn.Location = new Point(50, 298);
-            updateRecordBtn.Name = "updateRecordBtn";
-            updateRecordBtn.Size = new Size(150, 40);
-            updateRecordBtn.TabIndex = 9;
-            updateRecordBtn.Text = "Add medicine";
-            updateRecordBtn.UseVisualStyleBackColor = false;
+            medData.AllowUserToDeleteRows = false;
+            medData.AllowUserToResizeColumns = false;
+            medData.AllowUserToResizeRows = false;
+            medData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            medData.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            medData.BorderStyle = BorderStyle.None;
+            medData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            medData.Dock = DockStyle.Bottom;
+            medData.Location = new Point(0, 350);
+            medData.Name = "medData";
+            medData.RowHeadersWidth = 51;
+            medData.Size = new Size(900, 350);
+            medData.TabIndex = 0;
+            medData.CellClick += medData_CellClick;
             // 
-            // appointmentData
+            // empIDError
             // 
-            appointmentData.BorderStyle = BorderStyle.None;
-            appointmentData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            appointmentData.Dock = DockStyle.Bottom;
-            appointmentData.Location = new Point(0, 350);
-            appointmentData.Name = "appointmentData";
-            appointmentData.RowHeadersWidth = 51;
-            appointmentData.Size = new Size(900, 350);
-            appointmentData.TabIndex = 0;
+            empIDError.ContainerControl = this;
             // 
             // Admin_Medication
             // 
@@ -363,40 +368,42 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Admin_Medication";
             Text = "Admin_Medication";
+            Load += Admin_Medication_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)appointmentData).EndInit();
+            ((System.ComponentModel.ISupportInitialize)medData).EndInit();
+            ((System.ComponentModel.ISupportInitialize)empIDError).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel1;
-        private Button button1;
+        private Button deleteMedButton;
         private Label label1;
         private Panel panel2;
         private Label label3;
         private Label label2;
-        private TextBox textBox1;
-        private Button ExitButton;
-        private Button updateRecordBtn;
-        private DataGridView appointmentData;
-        private Button button2;
-        private Button button3;
+        private TextBox medIDBox;
+        private Button addMedButton;
+        private DataGridView medData;
+        private Button updateMedButton;
+        private Button searchMedButton;
         private Label label4;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private ComboBox comboBox1;
+        private TextBox instockBox;
+        private TextBox medNameBox;
+        private ComboBox cboUnit;
         private Label label6;
         private Label label5;
-        private TextBox textBox2;
-        private TextBox textBox5;
+        private TextBox priceBox;
+        private TextBox prescribeBox;
         private Label label7;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker expDateBox;
         private Label label8;
         private Label label9;
-        private TextBox textBox6;
+        private TextBox empIDBox;
+        private ErrorProvider empIDError;
     }
 }

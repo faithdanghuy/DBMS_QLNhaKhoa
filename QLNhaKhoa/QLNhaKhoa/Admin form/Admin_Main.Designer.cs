@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin_Main));
             LeftPanel = new Panel();
             credit = new Label();
-            CustomerID = new Label();
-            label5 = new Label();
+            AdminID = new Label();
+            AdminName = new Label();
             IDLabel = new Label();
             HomepageIcon = new PictureBox();
             MedicationButton = new Button();
@@ -39,17 +40,17 @@
             AccountButton = new Button();
             mainPanel = new Panel();
             ExitButton = new Button();
+            minimizeButton = new Button();
             LeftPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)HomepageIcon).BeginInit();
-            mainPanel.SuspendLayout();
             SuspendLayout();
             // 
             // LeftPanel
             // 
             LeftPanel.BackColor = Color.SteelBlue;
             LeftPanel.Controls.Add(credit);
-            LeftPanel.Controls.Add(CustomerID);
-            LeftPanel.Controls.Add(label5);
+            LeftPanel.Controls.Add(AdminID);
+            LeftPanel.Controls.Add(AdminName);
             LeftPanel.Controls.Add(IDLabel);
             LeftPanel.Controls.Add(HomepageIcon);
             LeftPanel.Controls.Add(MedicationButton);
@@ -58,7 +59,7 @@
             LeftPanel.Dock = DockStyle.Left;
             LeftPanel.Location = new Point(0, 0);
             LeftPanel.Name = "LeftPanel";
-            LeftPanel.Size = new Size(300, 700);
+            LeftPanel.Size = new Size(300, 740);
             LeftPanel.TabIndex = 3;
             // 
             // credit
@@ -66,33 +67,33 @@
             credit.AutoSize = true;
             credit.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             credit.ForeColor = Color.White;
-            credit.Location = new Point(101, 677);
+            credit.Location = new Point(101, 717);
             credit.Name = "credit";
             credit.Size = new Size(199, 23);
             credit.TabIndex = 8;
             credit.Text = "Developed by Group 3";
             // 
-            // CustomerID
+            // AdminID
             // 
-            CustomerID.AutoSize = true;
-            CustomerID.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CustomerID.ForeColor = Color.White;
-            CustomerID.Location = new Point(84, 0);
-            CustomerID.Name = "CustomerID";
-            CustomerID.Size = new Size(65, 23);
-            CustomerID.TabIndex = 7;
-            CustomerID.Text = "AB123";
+            AdminID.AutoSize = true;
+            AdminID.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AdminID.ForeColor = Color.White;
+            AdminID.Location = new Point(84, 0);
+            AdminID.Name = "AdminID";
+            AdminID.Size = new Size(65, 23);
+            AdminID.TabIndex = 7;
+            AdminID.Text = "AB123";
             // 
-            // label5
+            // AdminName
             // 
-            label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(70, 210);
-            label5.Name = "label5";
-            label5.Size = new Size(160, 28);
-            label5.TabIndex = 6;
-            label5.Text = "<Admin Name>";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
+            AdminName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            AdminName.ForeColor = Color.White;
+            AdminName.Location = new Point(0, 210);
+            AdminName.Name = "AdminName";
+            AdminName.Size = new Size(300, 28);
+            AdminName.TabIndex = 6;
+            AdminName.Text = "<Admin Name>";
+            AdminName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // IDLabel
             // 
@@ -160,9 +161,7 @@
             // mainPanel
             // 
             mainPanel.BackColor = Color.White;
-            mainPanel.Controls.Add(ExitButton);
-            mainPanel.Dock = DockStyle.Fill;
-            mainPanel.Location = new Point(300, 0);
+            mainPanel.Location = new Point(300, 40);
             mainPanel.Name = "mainPanel";
             mainPanel.Size = new Size(900, 700);
             mainPanel.TabIndex = 4;
@@ -172,7 +171,7 @@
             ExitButton.FlatAppearance.BorderSize = 0;
             ExitButton.FlatStyle = FlatStyle.Flat;
             ExitButton.Font = new Font("VNI-Lithos", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ExitButton.Location = new Point(860, 0);
+            ExitButton.Location = new Point(1160, 0);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(40, 40);
             ExitButton.TabIndex = 3;
@@ -180,22 +179,39 @@
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
             // 
+            // minimizeButton
+            // 
+            minimizeButton.FlatAppearance.BorderSize = 0;
+            minimizeButton.FlatStyle = FlatStyle.Flat;
+            minimizeButton.Font = new Font("VNI-Lithos", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            minimizeButton.Location = new Point(1120, 0);
+            minimizeButton.Name = "minimizeButton";
+            minimizeButton.Size = new Size(40, 40);
+            minimizeButton.TabIndex = 14;
+            minimizeButton.Text = "-";
+            minimizeButton.UseVisualStyleBackColor = true;
+            minimizeButton.Click += minimizeButton_Click;
+            // 
             // Admin_Main
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1200, 700);
+            BackColor = Color.White;
+            ClientSize = new Size(1200, 740);
             ControlBox = false;
+            Controls.Add(minimizeButton);
+            Controls.Add(ExitButton);
             Controls.Add(mainPanel);
             Controls.Add(LeftPanel);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Admin_Main";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Admin_Main";
+            Load += Admin_Main_Load;
             LeftPanel.ResumeLayout(false);
             LeftPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)HomepageIcon).EndInit();
-            mainPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -203,8 +219,8 @@
 
         private Panel LeftPanel;
         private Label credit;
-        private Label CustomerID;
-        private Label label5;
+        private Label AdminID;
+        private Label AdminName;
         private Label IDLabel;
         private PictureBox HomepageIcon;
         private Button MedicationButton;
@@ -212,5 +228,6 @@
         private Button AccountButton;
         private Panel mainPanel;
         private Button ExitButton;
+        private Button minimizeButton;
     }
 }
