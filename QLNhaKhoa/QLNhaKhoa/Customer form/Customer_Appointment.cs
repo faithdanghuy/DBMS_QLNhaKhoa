@@ -7,10 +7,6 @@
         {
             InitializeComponent();
         }
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
         private void Appointment_Load(object sender, EventArgs e)
         {
             string appointment_query = "select * from LICHHEN where MAKHACHHANG='" + CurrentUser + "'";
@@ -21,6 +17,11 @@
             cboDentists.DataSource = Helper.getData(dentist_query).Tables[0];
             cboDentists.DisplayMember = "HOTEN";
             cboDentists.ValueMember = "MANHANVIEN";
+        }
+
+        private void appointmentData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

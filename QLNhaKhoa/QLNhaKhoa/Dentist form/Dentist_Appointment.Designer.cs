@@ -39,11 +39,10 @@
             label2 = new Label();
             dateBox = new DateTimePicker();
             timeBox = new TextBox();
-            recordData = new DataGridView();
-            ExitButton = new Button();
+            appointmentData = new DataGridView();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)recordData).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)appointmentData).BeginInit();
             SuspendLayout();
             // 
             // panel3
@@ -54,8 +53,7 @@
             panel3.Controls.Add(updateRecordBtn);
             panel3.Controls.Add(label1);
             panel3.Controls.Add(panel4);
-            panel3.Controls.Add(recordData);
-            panel3.Controls.Add(ExitButton);
+            panel3.Controls.Add(appointmentData);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
@@ -168,29 +166,16 @@
             timeBox.Size = new Size(250, 27);
             timeBox.TabIndex = 0;
             // 
-            // recordData
+            // appointmentData
             // 
-            recordData.BorderStyle = BorderStyle.None;
-            recordData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            recordData.Dock = DockStyle.Bottom;
-            recordData.Location = new Point(0, 350);
-            recordData.Name = "recordData";
-            recordData.RowHeadersWidth = 51;
-            recordData.Size = new Size(900, 350);
-            recordData.TabIndex = 2;
-            // 
-            // ExitButton
-            // 
-            ExitButton.FlatAppearance.BorderSize = 0;
-            ExitButton.FlatStyle = FlatStyle.Flat;
-            ExitButton.Font = new Font("VNI-Lithos", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ExitButton.Location = new Point(860, 0);
-            ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(40, 40);
-            ExitButton.TabIndex = 1;
-            ExitButton.Text = "X";
-            ExitButton.UseVisualStyleBackColor = true;
-            ExitButton.Click += ExitButton_Click;
+            appointmentData.BorderStyle = BorderStyle.None;
+            appointmentData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            appointmentData.Dock = DockStyle.Bottom;
+            appointmentData.Location = new Point(0, 350);
+            appointmentData.Name = "appointmentData";
+            appointmentData.RowHeadersWidth = 51;
+            appointmentData.Size = new Size(900, 350);
+            appointmentData.TabIndex = 2;
             // 
             // Dentist_Appointment
             // 
@@ -203,11 +188,12 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Dentist_Appointment";
             Text = "Dentist_Appointment";
+            Load += Dentist_Appointment_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)recordData).EndInit();
+            ((System.ComponentModel.ISupportInitialize)appointmentData).EndInit();
             ResumeLayout(false);
         }
 
@@ -219,8 +205,7 @@
         private Label label1;
         private Panel panel4;
         private TextBox timeBox;
-        private DataGridView recordData;
-        private Button ExitButton;
+        private DataGridView appointmentData;
         private DateTimePicker dateBox;
         private Label label2;
         private Label label3;

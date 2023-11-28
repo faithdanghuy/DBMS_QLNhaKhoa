@@ -19,21 +19,32 @@ namespace QLNhaKhoa
         {
             InitializeComponent();
         }
-
-        private void ExitButton_Click(object sender, EventArgs e)
+        private void phoneBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Application.Exit();
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && (((TextBox)sender).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
         public void updateProfile()
         {
             SqlConnection sqlCon = new SqlConnection(Helper.strCon);
             sqlCon.Open();
             SqlCommand cmd = new SqlCommand("USP_KHACHHANG_UPD", sqlCon);
-            cmd.Parameters.AddWithValue("@MAKHACHHANG", CurrentUser);
-            cmd.Parameters.AddWithValue("@NGAYSINH", bdayBox.Text);
-            cmd.Parameters.AddWithValue("@DIACHI", addressBox.Text);
-            cmd.Parameters.AddWithValue("@SODT", phoneBox.Text);
-            cmd.Parameters.AddWithValue("@MATKHAU", CurrentPass);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            DateTime bday = DateTime.ParseExact(bdayBox.Text, "yyyy-MM-dd", null);
+
+            cmd.Parameters.Add(new SqlParameter("@MAKHACHHANG", CurrentUser));
+            cmd.Parameters.Add(new SqlParameter("@HOTEN", nameBox.Text));
+            cmd.Parameters.Add(new SqlParameter("@NGAYSINH", bday));
+            cmd.Parameters.Add(new SqlParameter("@DIACHI", addressBox.Text));
+            cmd.Parameters.Add(new SqlParameter("@SODT", phoneBox.Text));
+            cmd.Parameters.Add(new SqlParameter("@MATKHAU", passwordBox.Text));
             int i = cmd.ExecuteNonQuery();
             sqlCon.Close();
             if (i > 0)
@@ -54,10 +65,11 @@ namespace QLNhaKhoa
             {
                 if (reader.Read())
                 {
-                    nameBox.Text = reader["HOTEN"].ToString();
                     bdayBox.Text = reader["NGAYSINH"].ToString();
+                    nameBox.Text = reader["HOTEN"].ToString();
                     addressBox.Text = reader["DIACHI"].ToString();
                     phoneBox.Text = reader["SODT"].ToString();
+                    passwordBox.Text = CurrentPass;
                     sqlCon.Close();
                 }
                 else

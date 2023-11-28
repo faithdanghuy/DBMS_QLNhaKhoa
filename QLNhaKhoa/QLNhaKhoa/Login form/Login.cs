@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using QLNhaKhoa.Employee_form;
+using QLNhaKhoa.Dentist_form;
+using QLNhaKhoa.Admin_form;
 
 namespace QLNhaKhoa
 {
@@ -45,70 +48,19 @@ namespace QLNhaKhoa
             {
                 try
                 {
-                    /*int userType = 3;
-                    SqlConnection sqlCon = new SqlConnection(ConnectionString.strCon);
+                    SqlConnection sqlCon = new SqlConnection(Helper.strCon);
                     sqlCon.Open();
                     SqlCommand cmd = new SqlCommand("USP_MISC_LOGIN", sqlCon);
                     cmd.CommandType = CommandType.StoredProcedure;
+
                     cmd.Parameters.Add(new SqlParameter("@MAUSER", txtID.Text));
                     cmd.Parameters.Add(new SqlParameter("@MATKHAU", txtPassword.Text));
-                    cmd.Parameters.Add(new SqlParameter("@LOAIUSER", userType));
-                    using (SqlDataReader r = cmd.ExecuteReader())
-                    {
-                        if (r.Read())
-                        {
-                            if(r.GetInt16(0) == -1)
-                            {
-                                Customer_Main f = new Customer_Main();
-                                f.CurrentUser = txtID.Text;
-                                f.Show();
-                                this.Hide();
-                                sqlCon.Close();
-                            }
 
-                            else if (r.GetInt16(0) == 0)
-                            {
-                                Employee_form.Emp_Main f = new Employee_form.Emp_Main();
-                                f.CurrentEmp = txtID.Text;
-                                f.Show();
-                                this.Hide();
-                                sqlCon.Close();
-                            }
+                    cmd.Parameters.Add("@LOAIUSER", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.ExecuteNonQuery();
+                    int user_type = (int)cmd.Parameters["@LOAIUSER"].Value;
 
-                            else if (r.GetInt16(0) == 1)
-                            {
-                                Dentist_form.Dentist_Main f = new Dentist_form.Dentist_Main();
-                                f.CurrentDentist = txtID.Text;
-                                f.Show();
-                                this.Hide();
-                                sqlCon.Close();
-                            }
-
-                            else if (r.GetInt16(0) == 0)
-                            {
-                                Admin_form.Admin_Main f = new Admin_form.Admin_Main();
-                                f.CurrentAdmin = txtID.Text;
-                                f.Show();
-                                this.Hide();
-                                sqlCon.Close();
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Username or password is invalid!");
-                        }
-                    }*/
-
-                    SqlConnection sqlCon = new SqlConnection(Helper.strCon);
-                    sqlCon.Open();
-                    SqlCommand cmd = new SqlCommand("select MAKHACHHANG,MATKHAU from KHACHHANG where MAKHACHHANG = @username and MATKHAU = @password", sqlCon);
-                    SqlCommand cmd2 = new SqlCommand("select MANHANVIEN,MATKHAU from NHANVIEN where MANHANVIEN = @username and MATKHAU = @password", sqlCon);
-                    cmd.Parameters.AddWithValue("@username", txtID.Text);
-                    cmd.Parameters.AddWithValue("@password", txtPassword.Text);
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    if (dt.Rows.Count > 0)
+                    if (user_type == -1)
                     {
                         Customer_Main f = new Customer_Main();
                         f.CurrentUser = txtID.Text;
@@ -117,21 +69,41 @@ namespace QLNhaKhoa
                         this.Hide();
                         sqlCon.Close();
                     }
+                    else if (user_type == 0)
+                    {
+                        Emp_Main f = new Emp_Main();
+                        f.CurrentEmp = txtID.Text;
+                        f.Show();
+                        this.Hide();
+                        sqlCon.Close();
+                    }
+                    else if (user_type == 1)
+                    {
+                        Dentist_Main f = new Dentist_Main();
+                        f.CurrentDentist = txtID.Text;
+                        f.Show();
+                        this.Hide();
+                        sqlCon.Close();
+                    }
                     else
                     {
-                        MessageBox.Show("Username or password is invalid!");
+                        Admin_Main f = new Admin_Main();
+                        f.CurrentAdmin = txtID.Text;
+                        f.Show();
+                        this.Hide();
+                        sqlCon.Close();
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    MessageBox.Show("" + ex);
+                    MessageBox.Show("ID hoặc mật khẩu sai!");
                 }
             }
         }
 
         private void txtID_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter || e.KeyCode == Keys.Down)
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Down)
             {
                 txtPassword.Focus();
             }
@@ -151,6 +123,10 @@ namespace QLNhaKhoa
             {
                 txtID.Focus();
             }
+        }
+        private void minimizeButton_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }

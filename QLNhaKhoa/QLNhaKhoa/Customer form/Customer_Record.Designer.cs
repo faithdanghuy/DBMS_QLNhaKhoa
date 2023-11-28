@@ -45,7 +45,6 @@
             label3 = new Label();
             label1 = new Label();
             nameLabel = new Label();
-            ExitButton = new Button();
             RightPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -68,7 +67,6 @@
             RightPanel.Controls.Add(label3);
             RightPanel.Controls.Add(label1);
             RightPanel.Controls.Add(nameLabel);
-            RightPanel.Controls.Add(ExitButton);
             RightPanel.Dock = DockStyle.Fill;
             RightPanel.Location = new Point(0, 0);
             RightPanel.Name = "RightPanel";
@@ -236,19 +234,6 @@
             nameLabel.TabIndex = 7;
             nameLabel.Text = "Dentist ID:";
             // 
-            // ExitButton
-            // 
-            ExitButton.FlatAppearance.BorderSize = 0;
-            ExitButton.FlatStyle = FlatStyle.Flat;
-            ExitButton.Font = new Font("VNI-Lithos", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ExitButton.Location = new Point(860, 0);
-            ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(40, 40);
-            ExitButton.TabIndex = 2;
-            ExitButton.Text = "X";
-            ExitButton.UseVisualStyleBackColor = true;
-            ExitButton.Click += ExitButton_Click;
-            // 
             // Customer_Record
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -274,7 +259,6 @@
         private Label label3;
         private Label label1;
         private Label nameLabel;
-        private Button ExitButton;
         private Label label4;
         private Label label6;
         private Label label7;

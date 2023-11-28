@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            ExitButton = new Button();
+            label5 = new Label();
+            passwordBox = new TextBox();
             updateButton = new Button();
             pictureBox1 = new PictureBox();
             label4 = new Label();
@@ -47,7 +48,8 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(ExitButton);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(passwordBox);
             panel1.Controls.Add(updateButton);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label4);
@@ -64,18 +66,26 @@
             panel1.Size = new Size(900, 700);
             panel1.TabIndex = 1;
             // 
-            // ExitButton
+            // label5
             // 
-            ExitButton.FlatAppearance.BorderSize = 0;
-            ExitButton.FlatStyle = FlatStyle.Flat;
-            ExitButton.Font = new Font("VNI-Lithos", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ExitButton.Location = new Point(860, 0);
-            ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(40, 40);
-            ExitButton.TabIndex = 17;
-            ExitButton.Text = "X";
-            ExitButton.UseVisualStyleBackColor = true;
-            ExitButton.Click += ExitButton_Click;
+            label5.AutoSize = true;
+            label5.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.SteelBlue;
+            label5.Location = new Point(550, 335);
+            label5.Name = "label5";
+            label5.Size = new Size(86, 23);
+            label5.TabIndex = 18;
+            label5.Text = "Password";
+            // 
+            // passwordBox
+            // 
+            passwordBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            passwordBox.Location = new Point(550, 361);
+            passwordBox.Name = "passwordBox";
+            passwordBox.PlaceholderText = "Password";
+            passwordBox.Size = new Size(150, 27);
+            passwordBox.TabIndex = 17;
+            passwordBox.UseSystemPasswordChar = true;
             // 
             // updateButton
             // 
@@ -108,7 +118,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.SteelBlue;
-            label4.Location = new Point(500, 335);
+            label4.Location = new Point(375, 335);
             label4.Name = "label4";
             label4.Size = new Size(113, 23);
             label4.TabIndex = 14;
@@ -149,12 +159,12 @@
             // 
             // bdayBox
             // 
-            bdayBox.CustomFormat = "yyyy/MM/dd";
+            bdayBox.CustomFormat = "yyyy-MM-dd";
             bdayBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            bdayBox.Format = DateTimePickerFormat.Short;
-            bdayBox.Location = new Point(500, 361);
+            bdayBox.Format = DateTimePickerFormat.Custom;
+            bdayBox.Location = new Point(375, 361);
             bdayBox.Name = "bdayBox";
-            bdayBox.Size = new Size(200, 27);
+            bdayBox.Size = new Size(150, 27);
             bdayBox.TabIndex = 3;
             // 
             // nameBox
@@ -170,10 +180,12 @@
             // 
             phoneBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             phoneBox.Location = new Point(200, 361);
+            phoneBox.MaxLength = 11;
             phoneBox.Name = "phoneBox";
-            phoneBox.PlaceholderText = "Phone";
-            phoneBox.Size = new Size(200, 27);
+            phoneBox.PlaceholderText = "Phone number";
+            phoneBox.Size = new Size(150, 27);
             phoneBox.TabIndex = 1;
+            phoneBox.KeyPress += phoneBox_KeyPress;
             // 
             // addressBox
             // 
@@ -204,7 +216,6 @@
         #endregion
 
         private Panel panel1;
-        private Button ExitButton;
         private Button updateButton;
         private PictureBox pictureBox1;
         private Label label4;
@@ -215,5 +226,7 @@
         private TextBox nameBox;
         private TextBox phoneBox;
         private TextBox addressBox;
+        private Label label5;
+        private TextBox passwordBox;
     }
 }

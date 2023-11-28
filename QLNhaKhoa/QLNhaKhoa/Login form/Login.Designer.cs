@@ -34,6 +34,7 @@
             label1 = new Label();
             Logo = new PictureBox();
             RightPanel = new Panel();
+            minimizeButton = new Button();
             txtPassword = new TextBox();
             txtID = new TextBox();
             registerSwap = new Button();
@@ -97,6 +98,7 @@
             // 
             // RightPanel
             // 
+            RightPanel.Controls.Add(minimizeButton);
             RightPanel.Controls.Add(txtPassword);
             RightPanel.Controls.Add(txtID);
             RightPanel.Controls.Add(registerSwap);
@@ -113,12 +115,25 @@
             RightPanel.Size = new Size(450, 550);
             RightPanel.TabIndex = 1;
             // 
+            // minimizeButton
+            // 
+            minimizeButton.FlatAppearance.BorderSize = 0;
+            minimizeButton.FlatStyle = FlatStyle.Flat;
+            minimizeButton.Font = new Font("VNI-Lithos", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            minimizeButton.Location = new Point(370, 0);
+            minimizeButton.Name = "minimizeButton";
+            minimizeButton.Size = new Size(40, 40);
+            minimizeButton.TabIndex = 12;
+            minimizeButton.Text = "-";
+            minimizeButton.UseVisualStyleBackColor = true;
+            minimizeButton.Click += minimizeButton_Click;
+            // 
             // txtPassword
             // 
             txtPassword.BorderStyle = BorderStyle.None;
             txtPassword.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtPassword.Location = new Point(86, 291);
-            txtPassword.MaxLength = 31;
+            txtPassword.MaxLength = 50;
             txtPassword.MinimumSize = new Size(314, 25);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
@@ -133,7 +148,7 @@
             txtID.BorderStyle = BorderStyle.None;
             txtID.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtID.Location = new Point(86, 192);
-            txtID.MaxLength = 5;
+            txtID.MaxLength = 10;
             txtID.MinimumSize = new Size(314, 25);
             txtID.Name = "txtID";
             txtID.PlaceholderText = "Enter your ID";
@@ -196,7 +211,7 @@
             loginButton.BackColor = Color.SteelBlue;
             loginButton.FlatAppearance.BorderSize = 0;
             loginButton.FlatStyle = FlatStyle.Flat;
-            loginButton.Font = new Font("Tw Cen MT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            loginButton.Font = new Font("Tw Cen MT", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             loginButton.ForeColor = Color.White;
             loginButton.Location = new Point(50, 370);
             loginButton.Name = "loginButton";
@@ -272,5 +287,6 @@
         private TextBox txtID;
         private TextBox txtPassword;
         private Label credit;
+        private Button minimizeButton;
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            ExitButton = new Button();
             button2 = new Button();
             makeAppointBtn = new Button();
             panel2 = new Panel();
@@ -49,29 +48,14 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(ExitButton);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(makeAppointBtn);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(appointmentData);
-            panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(900, 700);
             panel1.TabIndex = 3;
-            // 
-            // ExitButton
-            // 
-            ExitButton.FlatAppearance.BorderSize = 0;
-            ExitButton.FlatStyle = FlatStyle.Flat;
-            ExitButton.Font = new Font("VNI-Lithos", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ExitButton.Location = new Point(860, 0);
-            ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(40, 40);
-            ExitButton.TabIndex = 3;
-            ExitButton.Text = "X";
-            ExitButton.UseVisualStyleBackColor = true;
-            ExitButton.Click += ExitButton_Click;
             // 
             // button2
             // 
@@ -188,6 +172,7 @@
             appointmentData.RowHeadersWidth = 51;
             appointmentData.Size = new Size(900, 350);
             appointmentData.TabIndex = 0;
+            appointmentData.CellContentClick += appointmentData_CellContentClick;
             // 
             // serviceTitle
             // 
@@ -201,7 +186,7 @@
             serviceTitle.TabIndex = 6;
             serviceTitle.Text = "Appointment";
             // 
-            // Appointment
+            // Customer_Appointment
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -210,7 +195,7 @@
             Controls.Add(serviceTitle);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Appointment";
+            Name = "Customer_Appointment";
             Text = "Appointment";
             Load += Appointment_Load;
             panel1.ResumeLayout(false);
@@ -224,7 +209,6 @@
         #endregion
 
         private Panel panel1;
-        private Button ExitButton;
         private Button button2;
         private Button makeAppointBtn;
         private Panel panel2;

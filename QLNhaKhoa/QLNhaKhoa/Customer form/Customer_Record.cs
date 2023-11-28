@@ -9,12 +9,6 @@ namespace QLNhaKhoa
         {
             InitializeComponent();
         }
-
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void Customer_Record_Load(object sender, EventArgs e)
         {
             SqlConnection sqlCon = new SqlConnection(Helper.strCon);

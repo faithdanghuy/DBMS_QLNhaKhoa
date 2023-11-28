@@ -37,7 +37,8 @@ namespace QLNhaKhoa
             Title = new Label();
             Logo = new PictureBox();
             RightPanel = new Panel();
-            dateTimePicker1 = new DateTimePicker();
+            minimizeButton = new Button();
+            txtBday = new DateTimePicker();
             txtPassword = new TextBox();
             txtPhone = new TextBox();
             txtAddress = new TextBox();
@@ -53,7 +54,7 @@ namespace QLNhaKhoa
             birthdayIcon = new PictureBox();
             nameIcon = new PictureBox();
             loginSwap = new Button();
-            RegisterButton = new Button();
+            registerButton = new Button();
             label1 = new Label();
             ExitButton = new Button();
             LeftPanel.SuspendLayout();
@@ -113,7 +114,8 @@ namespace QLNhaKhoa
             // RightPanel
             // 
             RightPanel.BackColor = Color.White;
-            RightPanel.Controls.Add(dateTimePicker1);
+            RightPanel.Controls.Add(minimizeButton);
+            RightPanel.Controls.Add(txtBday);
             RightPanel.Controls.Add(txtPassword);
             RightPanel.Controls.Add(txtPhone);
             RightPanel.Controls.Add(txtAddress);
@@ -129,7 +131,7 @@ namespace QLNhaKhoa
             RightPanel.Controls.Add(birthdayIcon);
             RightPanel.Controls.Add(nameIcon);
             RightPanel.Controls.Add(loginSwap);
-            RightPanel.Controls.Add(RegisterButton);
+            RightPanel.Controls.Add(registerButton);
             RightPanel.Controls.Add(label1);
             RightPanel.Controls.Add(ExitButton);
             RightPanel.Dock = DockStyle.Fill;
@@ -138,22 +140,35 @@ namespace QLNhaKhoa
             RightPanel.Size = new Size(450, 550);
             RightPanel.TabIndex = 1;
             // 
-            // dateTimePicker1
+            // minimizeButton
             // 
-            dateTimePicker1.CustomFormat = "yyyy/MM/dd";
-            dateTimePicker1.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(86, 168);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(314, 27);
-            dateTimePicker1.TabIndex = 19;
+            minimizeButton.FlatAppearance.BorderSize = 0;
+            minimizeButton.FlatStyle = FlatStyle.Flat;
+            minimizeButton.Font = new Font("VNI-Lithos", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            minimizeButton.Location = new Point(370, 0);
+            minimizeButton.Name = "minimizeButton";
+            minimizeButton.Size = new Size(40, 40);
+            minimizeButton.TabIndex = 20;
+            minimizeButton.Text = "-";
+            minimizeButton.UseVisualStyleBackColor = true;
+            minimizeButton.Click += minimizeButton_Click;
+            // 
+            // txtBday
+            // 
+            txtBday.CustomFormat = "yyyy-MM-dd";
+            txtBday.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtBday.Format = DateTimePickerFormat.Custom;
+            txtBday.Location = new Point(86, 168);
+            txtBday.Name = "txtBday";
+            txtBday.Size = new Size(314, 27);
+            txtBday.TabIndex = 19;
             // 
             // txtPassword
             // 
             txtPassword.BorderStyle = BorderStyle.None;
             txtPassword.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtPassword.Location = new Point(86, 395);
-            txtPassword.MaxLength = 31;
+            txtPassword.MaxLength = 20;
             txtPassword.MinimumSize = new Size(314, 25);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
@@ -180,6 +195,7 @@ namespace QLNhaKhoa
             txtAddress.BorderStyle = BorderStyle.None;
             txtAddress.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtAddress.Location = new Point(86, 245);
+            txtAddress.MaxLength = 100;
             txtAddress.MinimumSize = new Size(314, 25);
             txtAddress.Name = "txtAddress";
             txtAddress.PlaceholderText = "Address";
@@ -191,6 +207,7 @@ namespace QLNhaKhoa
             txtName.BorderStyle = BorderStyle.None;
             txtName.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtName.Location = new Point(86, 95);
+            txtName.MaxLength = 25;
             txtName.MinimumSize = new Size(314, 25);
             txtName.Name = "txtName";
             txtName.PlaceholderText = "Name";
@@ -302,19 +319,20 @@ namespace QLNhaKhoa
             loginSwap.UseVisualStyleBackColor = false;
             loginSwap.Click += loginSwap_Click;
             // 
-            // RegisterButton
+            // registerButton
             // 
-            RegisterButton.BackColor = Color.SteelBlue;
-            RegisterButton.FlatAppearance.BorderSize = 0;
-            RegisterButton.FlatStyle = FlatStyle.Flat;
-            RegisterButton.Font = new Font("Tw Cen MT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            RegisterButton.ForeColor = Color.White;
-            RegisterButton.Location = new Point(50, 450);
-            RegisterButton.Name = "RegisterButton";
-            RegisterButton.Size = new Size(350, 50);
-            RegisterButton.TabIndex = 2;
-            RegisterButton.Text = "Register";
-            RegisterButton.UseVisualStyleBackColor = false;
+            registerButton.BackColor = Color.SteelBlue;
+            registerButton.FlatAppearance.BorderSize = 0;
+            registerButton.FlatStyle = FlatStyle.Flat;
+            registerButton.Font = new Font("Tw Cen MT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            registerButton.ForeColor = Color.White;
+            registerButton.Location = new Point(50, 450);
+            registerButton.Name = "registerButton";
+            registerButton.Size = new Size(350, 50);
+            registerButton.TabIndex = 2;
+            registerButton.Text = "Register";
+            registerButton.UseVisualStyleBackColor = false;
+            registerButton.Click += registerButton_Click;
             // 
             // label1
             // 
@@ -373,7 +391,7 @@ namespace QLNhaKhoa
         private PictureBox Logo;
         private Label Title;
         private Label label1;
-        private Button RegisterButton;
+        private Button registerButton;
         private Button loginSwap;
         private PictureBox nameIcon;
         private PictureBox addressIcon;
@@ -389,7 +407,8 @@ namespace QLNhaKhoa
         private TextBox txtAddress;
         private TextBox txtPhone;
         private TextBox txtPassword;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker txtBday;
         private Label credit;
+        private Button minimizeButton;
     }
 }
