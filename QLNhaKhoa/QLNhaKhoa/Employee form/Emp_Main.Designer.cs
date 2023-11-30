@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Emp_Main));
             LeftPanel = new Panel();
             AppointmentButton = new Button();
             BillButton = new Button();
@@ -283,6 +284,7 @@
             Controls.Add(mainPanel);
             Controls.Add(LeftPanel);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Emp_Main";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Emp_Main";

@@ -29,18 +29,20 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            addRecordBtn = new Button();
-            updateRecordBtn = new Button();
+            searchIDBox = new TextBox();
+            searchButton = new Button();
+            nextButton = new Button();
+            prevButton = new Button();
             label1 = new Label();
             panel2 = new Panel();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            customerIDBox = new TextBox();
+            dentistIDBox = new TextBox();
+            recordIDBox = new TextBox();
             recordData = new DataGridView();
-            ExitButton = new Button();
+            refreshButton = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)recordData).BeginInit();
@@ -49,45 +51,74 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(addRecordBtn);
-            panel1.Controls.Add(updateRecordBtn);
+            panel1.Controls.Add(refreshButton);
+            panel1.Controls.Add(searchIDBox);
+            panel1.Controls.Add(searchButton);
+            panel1.Controls.Add(nextButton);
+            panel1.Controls.Add(prevButton);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(recordData);
-            panel1.Controls.Add(ExitButton);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(900, 700);
             panel1.TabIndex = 1;
             // 
-            // addRecordBtn
+            // searchIDBox
             // 
-            addRecordBtn.BackColor = Color.SteelBlue;
-            addRecordBtn.FlatAppearance.BorderSize = 0;
-            addRecordBtn.FlatStyle = FlatStyle.Flat;
-            addRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            addRecordBtn.ForeColor = Color.White;
-            addRecordBtn.Location = new Point(156, 298);
-            addRecordBtn.Name = "addRecordBtn";
-            addRecordBtn.Size = new Size(100, 40);
-            addRecordBtn.TabIndex = 4;
-            addRecordBtn.Text = "Next";
-            addRecordBtn.UseVisualStyleBackColor = false;
+            searchIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            searchIDBox.Location = new Point(569, 310);
+            searchIDBox.MaxLength = 10;
+            searchIDBox.Name = "searchIDBox";
+            searchIDBox.PlaceholderText = "Enter record ID to search";
+            searchIDBox.Size = new Size(200, 27);
+            searchIDBox.TabIndex = 6;
             // 
-            // updateRecordBtn
+            // searchButton
             // 
-            updateRecordBtn.BackColor = Color.SteelBlue;
-            updateRecordBtn.FlatAppearance.BorderSize = 0;
-            updateRecordBtn.FlatStyle = FlatStyle.Flat;
-            updateRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            updateRecordBtn.ForeColor = Color.White;
-            updateRecordBtn.Location = new Point(50, 298);
-            updateRecordBtn.Name = "updateRecordBtn";
-            updateRecordBtn.Size = new Size(100, 40);
-            updateRecordBtn.TabIndex = 3;
-            updateRecordBtn.Text = "Previous";
-            updateRecordBtn.UseVisualStyleBackColor = false;
+            searchButton.BackColor = Color.SteelBlue;
+            searchButton.FlatAppearance.BorderSize = 0;
+            searchButton.FlatStyle = FlatStyle.Flat;
+            searchButton.Font = new Font("Tw Cen MT", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            searchButton.ForeColor = Color.White;
+            searchButton.Location = new Point(775, 310);
+            searchButton.Name = "searchButton";
+            searchButton.Size = new Size(75, 27);
+            searchButton.TabIndex = 6;
+            searchButton.Text = "Search";
+            searchButton.UseVisualStyleBackColor = false;
+            searchButton.Click += searchButton_Click;
+            // 
+            // nextButton
+            // 
+            nextButton.BackColor = Color.SteelBlue;
+            nextButton.FlatAppearance.BorderSize = 0;
+            nextButton.FlatStyle = FlatStyle.Flat;
+            nextButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            nextButton.ForeColor = Color.White;
+            nextButton.Location = new Point(156, 298);
+            nextButton.Name = "nextButton";
+            nextButton.Size = new Size(100, 40);
+            nextButton.TabIndex = 4;
+            nextButton.Text = "Next";
+            nextButton.UseVisualStyleBackColor = false;
+            nextButton.Click += nextButton_Click;
+            // 
+            // prevButton
+            // 
+            prevButton.BackColor = Color.SteelBlue;
+            prevButton.FlatAppearance.BorderSize = 0;
+            prevButton.FlatStyle = FlatStyle.Flat;
+            prevButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            prevButton.ForeColor = Color.White;
+            prevButton.Location = new Point(50, 298);
+            prevButton.Name = "prevButton";
+            prevButton.Size = new Size(100, 40);
+            prevButton.TabIndex = 3;
+            prevButton.Text = "Previous";
+            prevButton.UseVisualStyleBackColor = false;
+            prevButton.Click += prevButton_Click;
             // 
             // label1
             // 
@@ -106,9 +137,9 @@
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
-            panel2.Controls.Add(textBox3);
-            panel2.Controls.Add(textBox2);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(customerIDBox);
+            panel2.Controls.Add(dentistIDBox);
+            panel2.Controls.Add(recordIDBox);
             panel2.Location = new Point(50, 35);
             panel2.Name = "panel2";
             panel2.Size = new Size(800, 250);
@@ -147,38 +178,43 @@
             label2.TabIndex = 3;
             label2.Text = "Customer ID";
             // 
-            // textBox3
+            // customerIDBox
             // 
-            textBox3.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(100, 180);
-            textBox3.Name = "textBox3";
-            textBox3.PlaceholderText = "Customer ID";
-            textBox3.ReadOnly = true;
-            textBox3.Size = new Size(250, 27);
-            textBox3.TabIndex = 2;
+            customerIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customerIDBox.Location = new Point(100, 180);
+            customerIDBox.Name = "customerIDBox";
+            customerIDBox.PlaceholderText = "Customer ID";
+            customerIDBox.ReadOnly = true;
+            customerIDBox.Size = new Size(250, 27);
+            customerIDBox.TabIndex = 2;
             // 
-            // textBox2
+            // dentistIDBox
             // 
-            textBox2.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(450, 180);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Dentist ID";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(250, 27);
-            textBox2.TabIndex = 1;
+            dentistIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dentistIDBox.Location = new Point(450, 180);
+            dentistIDBox.Name = "dentistIDBox";
+            dentistIDBox.PlaceholderText = "Dentist ID";
+            dentistIDBox.ReadOnly = true;
+            dentistIDBox.Size = new Size(250, 27);
+            dentistIDBox.TabIndex = 1;
             // 
-            // textBox1
+            // recordIDBox
             // 
-            textBox1.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(275, 80);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Record ID";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(250, 27);
-            textBox1.TabIndex = 0;
+            recordIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            recordIDBox.Location = new Point(275, 80);
+            recordIDBox.Name = "recordIDBox";
+            recordIDBox.PlaceholderText = "Record ID";
+            recordIDBox.ReadOnly = true;
+            recordIDBox.Size = new Size(250, 27);
+            recordIDBox.TabIndex = 0;
             // 
             // recordData
             // 
+            recordData.AllowUserToAddRows = false;
+            recordData.AllowUserToDeleteRows = false;
+            recordData.AllowUserToResizeColumns = false;
+            recordData.AllowUserToResizeRows = false;
+            recordData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             recordData.BorderStyle = BorderStyle.None;
             recordData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             recordData.Dock = DockStyle.Bottom;
@@ -187,19 +223,22 @@
             recordData.RowHeadersWidth = 51;
             recordData.Size = new Size(900, 350);
             recordData.TabIndex = 2;
+            recordData.CellClick += recordData_CellClick;
             // 
-            // ExitButton
+            // refreshButton
             // 
-            ExitButton.FlatAppearance.BorderSize = 0;
-            ExitButton.FlatStyle = FlatStyle.Flat;
-            ExitButton.Font = new Font("VNI-Lithos", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ExitButton.Location = new Point(860, 0);
-            ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(40, 40);
-            ExitButton.TabIndex = 1;
-            ExitButton.Text = "X";
-            ExitButton.UseVisualStyleBackColor = true;
-            ExitButton.Click += ExitButton_Click;
+            refreshButton.BackColor = Color.SteelBlue;
+            refreshButton.FlatAppearance.BorderSize = 0;
+            refreshButton.FlatStyle = FlatStyle.Flat;
+            refreshButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            refreshButton.ForeColor = Color.White;
+            refreshButton.Location = new Point(262, 298);
+            refreshButton.Name = "refreshButton";
+            refreshButton.Size = new Size(100, 40);
+            refreshButton.TabIndex = 7;
+            refreshButton.Text = "Refresh";
+            refreshButton.UseVisualStyleBackColor = false;
+            refreshButton.Click += refreshButton_Click;
             // 
             // Emp_Record
             // 
@@ -212,6 +251,7 @@
             Name = "Emp_Record";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Emp_Record";
+            Load += Emp_Record_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
@@ -223,17 +263,19 @@
         #endregion
 
         private Panel panel1;
-        private Button addRecordBtn;
-        private Button updateRecordBtn;
+        private Button nextButton;
+        private Button prevButton;
         private Label label1;
         private Panel panel2;
         private Label label4;
         private Label label3;
         private Label label2;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox customerIDBox;
+        private TextBox dentistIDBox;
+        private TextBox recordIDBox;
         private DataGridView recordData;
-        private Button ExitButton;
+        private Button searchButton;
+        private TextBox searchIDBox;
+        private Button refreshButton;
     }
 }

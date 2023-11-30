@@ -31,11 +31,14 @@ namespace QLNhaKhoa.Employee_form
         {
             Account f = new Account();
             f.CurrentUser = CurrentEmp;
+            f.CurrentPass = CurrentPass;
             Helper.loadform(f, this.mainPanel);
         }
         private void BillButton_Click(object sender, EventArgs e)
         {
-            Helper.loadform(new Emp_Bill(), this.mainPanel);
+            Emp_Bill f = new Emp_Bill();
+            f.CurrentEmp = CurrentEmp;
+            Helper.loadform(f), this.mainPanel);
         }
         private void MedRecdButton_Click(object sender, EventArgs e)
         {

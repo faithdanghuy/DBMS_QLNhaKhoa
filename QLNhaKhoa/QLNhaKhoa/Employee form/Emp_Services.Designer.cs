@@ -29,18 +29,20 @@
         private void InitializeComponent()
         {
             panel3 = new Panel();
+            searchIDBox = new TextBox();
+            searchButton = new Button();
+            refreshButton = new Button();
             addRecordBtn = new Button();
             updateRecordBtn = new Button();
             label1 = new Label();
             panel4 = new Panel();
-            textBox1 = new TextBox();
+            serviceNameBox = new TextBox();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             priceBox = new TextBox();
             servicesIDBox = new TextBox();
             serviceData = new DataGridView();
-            ExitButton = new Button();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)serviceData).BeginInit();
@@ -49,17 +51,59 @@
             // panel3
             // 
             panel3.BackColor = Color.White;
+            panel3.Controls.Add(searchIDBox);
+            panel3.Controls.Add(searchButton);
+            panel3.Controls.Add(refreshButton);
             panel3.Controls.Add(addRecordBtn);
             panel3.Controls.Add(updateRecordBtn);
             panel3.Controls.Add(label1);
             panel3.Controls.Add(panel4);
             panel3.Controls.Add(serviceData);
-            panel3.Controls.Add(ExitButton);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
             panel3.Size = new Size(900, 700);
             panel3.TabIndex = 9;
+            // 
+            // searchIDBox
+            // 
+            searchIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            searchIDBox.Location = new Point(569, 311);
+            searchIDBox.MaxLength = 10;
+            searchIDBox.Name = "searchIDBox";
+            searchIDBox.PlaceholderText = "Enter service ID to search";
+            searchIDBox.Size = new Size(200, 27);
+            searchIDBox.TabIndex = 16;
+            // 
+            // searchButton
+            // 
+            searchButton.BackColor = Color.SteelBlue;
+            searchButton.FlatAppearance.BorderSize = 0;
+            searchButton.FlatStyle = FlatStyle.Flat;
+            searchButton.Font = new Font("Tw Cen MT", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            searchButton.ForeColor = Color.White;
+            searchButton.Location = new Point(775, 311);
+            searchButton.Name = "searchButton";
+            searchButton.Size = new Size(75, 27);
+            searchButton.TabIndex = 17;
+            searchButton.Text = "Search";
+            searchButton.UseVisualStyleBackColor = false;
+            searchButton.Click += searchButton_Click;
+            // 
+            // refreshButton
+            // 
+            refreshButton.BackColor = Color.SteelBlue;
+            refreshButton.FlatAppearance.BorderSize = 0;
+            refreshButton.FlatStyle = FlatStyle.Flat;
+            refreshButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            refreshButton.ForeColor = Color.White;
+            refreshButton.Location = new Point(262, 298);
+            refreshButton.Name = "refreshButton";
+            refreshButton.Size = new Size(100, 40);
+            refreshButton.TabIndex = 14;
+            refreshButton.Text = "Refresh";
+            refreshButton.UseVisualStyleBackColor = false;
+            refreshButton.Click += refreshButton_Click;
             // 
             // addRecordBtn
             // 
@@ -103,7 +147,7 @@
             // panel4
             // 
             panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(textBox1);
+            panel4.Controls.Add(serviceNameBox);
             panel4.Controls.Add(label4);
             panel4.Controls.Add(label3);
             panel4.Controls.Add(label2);
@@ -114,17 +158,16 @@
             panel4.Size = new Size(800, 250);
             panel4.TabIndex = 0;
             // 
-            // textBox1
+            // serviceNameBox
             // 
-            textBox1.Enabled = false;
-            textBox1.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(100, 180);
-            textBox1.MaxLength = 5;
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Service Name";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(600, 27);
-            textBox1.TabIndex = 6;
+            serviceNameBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            serviceNameBox.Location = new Point(100, 180);
+            serviceNameBox.MaxLength = 5;
+            serviceNameBox.Name = "serviceNameBox";
+            serviceNameBox.PlaceholderText = "Service Name";
+            serviceNameBox.ReadOnly = true;
+            serviceNameBox.Size = new Size(600, 27);
+            serviceNameBox.TabIndex = 6;
             // 
             // label4
             // 
@@ -171,7 +214,6 @@
             // 
             // servicesIDBox
             // 
-            servicesIDBox.Enabled = false;
             servicesIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             servicesIDBox.Location = new Point(100, 80);
             servicesIDBox.MaxLength = 5;
@@ -183,6 +225,11 @@
             // 
             // serviceData
             // 
+            serviceData.AllowUserToAddRows = false;
+            serviceData.AllowUserToDeleteRows = false;
+            serviceData.AllowUserToResizeColumns = false;
+            serviceData.AllowUserToResizeRows = false;
+            serviceData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             serviceData.BorderStyle = BorderStyle.None;
             serviceData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             serviceData.Dock = DockStyle.Bottom;
@@ -191,19 +238,7 @@
             serviceData.RowHeadersWidth = 51;
             serviceData.Size = new Size(900, 350);
             serviceData.TabIndex = 2;
-            // 
-            // ExitButton
-            // 
-            ExitButton.FlatAppearance.BorderSize = 0;
-            ExitButton.FlatStyle = FlatStyle.Flat;
-            ExitButton.Font = new Font("VNI-Lithos", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ExitButton.Location = new Point(860, 0);
-            ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(40, 40);
-            ExitButton.TabIndex = 1;
-            ExitButton.Text = "X";
-            ExitButton.UseVisualStyleBackColor = true;
-            ExitButton.Click += ExitButton_Click;
+            serviceData.CellClick += serviceData_CellClick;
             // 
             // Emp_Services
             // 
@@ -215,6 +250,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Emp_Services";
             Text = "Emp_Services";
+            Load += Emp_Services_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel4.ResumeLayout(false);
@@ -236,7 +272,9 @@
         private TextBox priceBox;
         private TextBox servicesIDBox;
         private DataGridView serviceData;
-        private Button ExitButton;
-        private TextBox textBox1;
+        private TextBox serviceNameBox;
+        private Button refreshButton;
+        private TextBox searchIDBox;
+        private Button searchButton;
     }
 }
