@@ -29,87 +29,98 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            addRecordBtn = new Button();
-            ExitButton = new Button();
-            updateRecordBtn = new Button();
-            appointmentData = new DataGridView();
+            nextButton = new Button();
+            previousButton = new Button();
+            addCertButton = new Button();
+            certificateData = new DataGridView();
             label1 = new Label();
             panel2 = new Panel();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            examDateBox = new DateTimePicker();
+            recordIDBox = new TextBox();
+            certificateIDBox = new TextBox();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)appointmentData).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)certificateData).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(addRecordBtn);
-            panel1.Controls.Add(ExitButton);
-            panel1.Controls.Add(updateRecordBtn);
-            panel1.Controls.Add(appointmentData);
+            panel1.Controls.Add(nextButton);
+            panel1.Controls.Add(previousButton);
+            panel1.Controls.Add(addCertButton);
+            panel1.Controls.Add(certificateData);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(900, 700);
             panel1.TabIndex = 5;
             // 
-            // addRecordBtn
+            // nextButton
             // 
-            addRecordBtn.BackColor = Color.SteelBlue;
-            addRecordBtn.FlatAppearance.BorderSize = 0;
-            addRecordBtn.FlatStyle = FlatStyle.Flat;
-            addRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            addRecordBtn.ForeColor = Color.White;
-            addRecordBtn.Location = new Point(156, 298);
-            addRecordBtn.Name = "addRecordBtn";
-            addRecordBtn.Size = new Size(150, 40);
-            addRecordBtn.TabIndex = 10;
-            addRecordBtn.Text = "Update bill";
-            addRecordBtn.UseVisualStyleBackColor = false;
+            nextButton.BackColor = Color.SteelBlue;
+            nextButton.FlatAppearance.BorderSize = 0;
+            nextButton.FlatStyle = FlatStyle.Flat;
+            nextButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            nextButton.ForeColor = Color.White;
+            nextButton.Location = new Point(262, 298);
+            nextButton.Name = "nextButton";
+            nextButton.Size = new Size(100, 40);
+            nextButton.TabIndex = 11;
+            nextButton.Text = "Next";
+            nextButton.UseVisualStyleBackColor = false;
+            nextButton.Click += nextButton_Click;
             // 
-            // ExitButton
+            // previousButton
             // 
-            ExitButton.FlatAppearance.BorderSize = 0;
-            ExitButton.FlatStyle = FlatStyle.Flat;
-            ExitButton.Font = new Font("VNI-Lithos", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ExitButton.Location = new Point(860, 0);
-            ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(40, 40);
-            ExitButton.TabIndex = 3;
-            ExitButton.Text = "X";
-            ExitButton.UseVisualStyleBackColor = true;
-            ExitButton.Click += ExitButton_Click;
+            previousButton.BackColor = Color.SteelBlue;
+            previousButton.FlatAppearance.BorderSize = 0;
+            previousButton.FlatStyle = FlatStyle.Flat;
+            previousButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            previousButton.ForeColor = Color.White;
+            previousButton.Location = new Point(156, 298);
+            previousButton.Name = "previousButton";
+            previousButton.Size = new Size(100, 40);
+            previousButton.TabIndex = 10;
+            previousButton.Text = "Previous";
+            previousButton.UseVisualStyleBackColor = false;
+            previousButton.Click += previousButton_Click;
             // 
-            // updateRecordBtn
+            // addCertButton
             // 
-            updateRecordBtn.BackColor = Color.SteelBlue;
-            updateRecordBtn.FlatAppearance.BorderSize = 0;
-            updateRecordBtn.FlatStyle = FlatStyle.Flat;
-            updateRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            updateRecordBtn.ForeColor = Color.White;
-            updateRecordBtn.Location = new Point(50, 298);
-            updateRecordBtn.Name = "updateRecordBtn";
-            updateRecordBtn.Size = new Size(100, 40);
-            updateRecordBtn.TabIndex = 9;
-            updateRecordBtn.Text = "Add bill";
-            updateRecordBtn.UseVisualStyleBackColor = false;
+            addCertButton.BackColor = Color.SteelBlue;
+            addCertButton.FlatAppearance.BorderSize = 0;
+            addCertButton.FlatStyle = FlatStyle.Flat;
+            addCertButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            addCertButton.ForeColor = Color.White;
+            addCertButton.Location = new Point(50, 298);
+            addCertButton.Name = "addCertButton";
+            addCertButton.Size = new Size(100, 40);
+            addCertButton.TabIndex = 9;
+            addCertButton.Text = "Add";
+            addCertButton.UseVisualStyleBackColor = false;
+            addCertButton.Click += addCertButton_Click;
             // 
-            // appointmentData
+            // certificateData
             // 
-            appointmentData.BorderStyle = BorderStyle.None;
-            appointmentData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            appointmentData.Dock = DockStyle.Bottom;
-            appointmentData.Location = new Point(0, 350);
-            appointmentData.Name = "appointmentData";
-            appointmentData.RowHeadersWidth = 51;
-            appointmentData.Size = new Size(900, 350);
-            appointmentData.TabIndex = 0;
+            certificateData.AllowUserToAddRows = false;
+            certificateData.AllowUserToDeleteRows = false;
+            certificateData.AllowUserToResizeColumns = false;
+            certificateData.AllowUserToResizeRows = false;
+            certificateData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            certificateData.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            certificateData.BorderStyle = BorderStyle.None;
+            certificateData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            certificateData.Dock = DockStyle.Bottom;
+            certificateData.Location = new Point(0, 350);
+            certificateData.Name = "certificateData";
+            certificateData.RowHeadersWidth = 51;
+            certificateData.Size = new Size(900, 350);
+            certificateData.TabIndex = 0;
+            certificateData.CellClick += certificateData_CellClick;
             // 
             // label1
             // 
@@ -130,9 +141,9 @@
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
-            panel2.Controls.Add(dateTimePicker1);
-            panel2.Controls.Add(textBox2);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(examDateBox);
+            panel2.Controls.Add(recordIDBox);
+            panel2.Controls.Add(certificateIDBox);
             panel2.Location = new Point(50, 35);
             panel2.Name = "panel2";
             panel2.Size = new Size(800, 250);
@@ -171,34 +182,35 @@
             label2.TabIndex = 3;
             label2.Text = "Certificate ID";
             // 
-            // dateTimePicker1
+            // examDateBox
             // 
-            dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            dateTimePicker1.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(100, 180);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(250, 27);
-            dateTimePicker1.TabIndex = 2;
+            examDateBox.CustomFormat = "yyyy-MM-dd";
+            examDateBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            examDateBox.Format = DateTimePickerFormat.Custom;
+            examDateBox.Location = new Point(100, 180);
+            examDateBox.Name = "examDateBox";
+            examDateBox.Size = new Size(250, 27);
+            examDateBox.TabIndex = 2;
             // 
-            // textBox2
+            // recordIDBox
             // 
-            textBox2.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(450, 180);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Customer Record ID";
-            textBox2.Size = new Size(250, 27);
-            textBox2.TabIndex = 1;
+            recordIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            recordIDBox.Location = new Point(450, 180);
+            recordIDBox.Name = "recordIDBox";
+            recordIDBox.PlaceholderText = "Customer Record ID";
+            recordIDBox.Size = new Size(250, 27);
+            recordIDBox.TabIndex = 1;
             // 
-            // textBox1
+            // certificateIDBox
             // 
-            textBox1.Enabled = false;
-            textBox1.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(275, 80);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Certificate ID";
-            textBox1.Size = new Size(250, 27);
-            textBox1.TabIndex = 0;
+            certificateIDBox.Enabled = false;
+            certificateIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            certificateIDBox.Location = new Point(275, 80);
+            certificateIDBox.Name = "certificateIDBox";
+            certificateIDBox.PlaceholderText = "Certificate ID";
+            certificateIDBox.ReadOnly = true;
+            certificateIDBox.Size = new Size(250, 27);
+            certificateIDBox.TabIndex = 0;
             // 
             // Dentist_Certificate
             // 
@@ -212,8 +224,9 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Dentist_Certificate";
             Text = "Dentist_Bill";
+            Load += Dentist_Certificate_Load;
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)appointmentData).EndInit();
+            ((System.ComponentModel.ISupportInitialize)certificateData).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -223,17 +236,17 @@
         #endregion
 
         private Panel panel1;
-        private Button ExitButton;
-        private DataGridView appointmentData;
-        private Button addRecordBtn;
-        private Button updateRecordBtn;
+        private DataGridView certificateData;
+        private Button previousButton;
+        private Button addCertButton;
         private Label label1;
         private Panel panel2;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private DateTimePicker dateTimePicker1;
+        private TextBox certificateIDBox;
+        private TextBox recordIDBox;
+        private DateTimePicker examDateBox;
         private Label label3;
         private Label label2;
         private Label label4;
+        private Button nextButton;
     }
 }

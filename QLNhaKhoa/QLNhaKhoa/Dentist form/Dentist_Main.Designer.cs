@@ -32,7 +32,7 @@
             LeftPanel = new Panel();
             ServiceButton = new Button();
             PrecriptionButton = new Button();
-            BillButton = new Button();
+            certificateButton = new Button();
             credit = new Label();
             DentistID = new Label();
             dentistName = new Label();
@@ -53,7 +53,7 @@
             LeftPanel.BackColor = Color.SteelBlue;
             LeftPanel.Controls.Add(ServiceButton);
             LeftPanel.Controls.Add(PrecriptionButton);
-            LeftPanel.Controls.Add(BillButton);
+            LeftPanel.Controls.Add(certificateButton);
             LeftPanel.Controls.Add(credit);
             LeftPanel.Controls.Add(DentistID);
             LeftPanel.Controls.Add(dentistName);
@@ -96,19 +96,19 @@
             PrecriptionButton.UseVisualStyleBackColor = true;
             PrecriptionButton.Click += PrecriptionButton_Click;
             // 
-            // BillButton
+            // certificateButton
             // 
-            BillButton.FlatAppearance.BorderSize = 0;
-            BillButton.FlatStyle = FlatStyle.Flat;
-            BillButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BillButton.ForeColor = Color.White;
-            BillButton.Location = new Point(25, 430);
-            BillButton.Name = "BillButton";
-            BillButton.Size = new Size(250, 40);
-            BillButton.TabIndex = 9;
-            BillButton.Text = "Medical ceritificate";
-            BillButton.UseVisualStyleBackColor = true;
-            BillButton.Click += BillButton_Click;
+            certificateButton.FlatAppearance.BorderSize = 0;
+            certificateButton.FlatStyle = FlatStyle.Flat;
+            certificateButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            certificateButton.ForeColor = Color.White;
+            certificateButton.Location = new Point(25, 430);
+            certificateButton.Name = "certificateButton";
+            certificateButton.Size = new Size(250, 40);
+            certificateButton.TabIndex = 9;
+            certificateButton.Text = "Medical ceritificate";
+            certificateButton.UseVisualStyleBackColor = true;
+            certificateButton.Click += certificateButton_Click;
             // 
             // credit
             // 
@@ -224,7 +224,7 @@
             ExitButton.TabIndex = 2;
             ExitButton.Text = "X";
             ExitButton.UseVisualStyleBackColor = true;
-            ExitButton.Click += ExitButton_Click_1;
+            ExitButton.Click += ExitButton_Click;
             // 
             // minimizeButton
             // 
@@ -275,7 +275,7 @@
         private Button AccountButton;
         private Button ServiceButton;
         private Button PrecriptionButton;
-        private Button BillButton;
+        private Button certificateButton;
         private Panel mainPanel;
         private Button ExitButton;
         private Button minimizeButton;

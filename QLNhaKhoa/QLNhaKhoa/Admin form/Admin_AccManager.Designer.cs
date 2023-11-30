@@ -32,15 +32,14 @@
             button4 = new Button();
             button3 = new Button();
             button2 = new Button();
-            button1 = new Button();
+            deleteAccButton = new Button();
             label1 = new Label();
             panel2 = new Panel();
             label3 = new Label();
             label2 = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            ExitButton = new Button();
-            updateRecordBtn = new Button();
+            passwordBox = new TextBox();
+            IDBox = new TextBox();
+            createAccButton = new Button();
             accountData = new DataGridView();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -53,11 +52,10 @@
             panel1.Controls.Add(button4);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(deleteAccButton);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(panel2);
-            panel1.Controls.Add(ExitButton);
-            panel1.Controls.Add(updateRecordBtn);
+            panel1.Controls.Add(createAccButton);
             panel1.Controls.Add(accountData);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
@@ -107,19 +105,19 @@
             button2.Text = "Update account";
             button2.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // deleteAccButton
             // 
-            button1.BackColor = Color.SteelBlue;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(206, 298);
-            button1.Name = "button1";
-            button1.Size = new Size(150, 40);
-            button1.TabIndex = 12;
-            button1.Text = "Delete account";
-            button1.UseVisualStyleBackColor = false;
+            deleteAccButton.BackColor = Color.SteelBlue;
+            deleteAccButton.FlatAppearance.BorderSize = 0;
+            deleteAccButton.FlatStyle = FlatStyle.Flat;
+            deleteAccButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            deleteAccButton.ForeColor = Color.White;
+            deleteAccButton.Location = new Point(206, 298);
+            deleteAccButton.Name = "deleteAccButton";
+            deleteAccButton.Size = new Size(150, 40);
+            deleteAccButton.TabIndex = 12;
+            deleteAccButton.Text = "Delete account";
+            deleteAccButton.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -139,8 +137,8 @@
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
-            panel2.Controls.Add(textBox2);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(passwordBox);
+            panel2.Controls.Add(IDBox);
             panel2.Location = new Point(50, 35);
             panel2.Name = "panel2";
             panel2.Size = new Size(800, 250);
@@ -168,50 +166,37 @@
             label2.TabIndex = 3;
             label2.Text = "Account ID";
             // 
-            // textBox2
+            // passwordBox
             // 
-            textBox2.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(450, 120);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Password";
-            textBox2.Size = new Size(250, 27);
-            textBox2.TabIndex = 1;
+            passwordBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            passwordBox.Location = new Point(450, 120);
+            passwordBox.Name = "passwordBox";
+            passwordBox.PlaceholderText = "Password";
+            passwordBox.Size = new Size(250, 27);
+            passwordBox.TabIndex = 1;
             // 
-            // textBox1
+            // IDBox
             // 
-            textBox1.Enabled = false;
-            textBox1.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(100, 120);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Account ID";
-            textBox1.Size = new Size(250, 27);
-            textBox1.TabIndex = 0;
+            IDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            IDBox.Location = new Point(100, 120);
+            IDBox.Name = "IDBox";
+            IDBox.PlaceholderText = "Account ID";
+            IDBox.Size = new Size(250, 27);
+            IDBox.TabIndex = 0;
             // 
-            // ExitButton
+            // createAccButton
             // 
-            ExitButton.FlatAppearance.BorderSize = 0;
-            ExitButton.FlatStyle = FlatStyle.Flat;
-            ExitButton.Font = new Font("VNI-Lithos", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ExitButton.Location = new Point(860, 0);
-            ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(40, 40);
-            ExitButton.TabIndex = 3;
-            ExitButton.Text = "X";
-            ExitButton.UseVisualStyleBackColor = true;
-            // 
-            // updateRecordBtn
-            // 
-            updateRecordBtn.BackColor = Color.SteelBlue;
-            updateRecordBtn.FlatAppearance.BorderSize = 0;
-            updateRecordBtn.FlatStyle = FlatStyle.Flat;
-            updateRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            updateRecordBtn.ForeColor = Color.White;
-            updateRecordBtn.Location = new Point(50, 298);
-            updateRecordBtn.Name = "updateRecordBtn";
-            updateRecordBtn.Size = new Size(150, 40);
-            updateRecordBtn.TabIndex = 9;
-            updateRecordBtn.Text = "Create account";
-            updateRecordBtn.UseVisualStyleBackColor = false;
+            createAccButton.BackColor = Color.SteelBlue;
+            createAccButton.FlatAppearance.BorderSize = 0;
+            createAccButton.FlatStyle = FlatStyle.Flat;
+            createAccButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            createAccButton.ForeColor = Color.White;
+            createAccButton.Location = new Point(50, 298);
+            createAccButton.Name = "createAccButton";
+            createAccButton.Size = new Size(150, 40);
+            createAccButton.TabIndex = 9;
+            createAccButton.Text = "Create account";
+            createAccButton.UseVisualStyleBackColor = false;
             // 
             // accountData
             // 
@@ -223,6 +208,7 @@
             accountData.RowHeadersWidth = 51;
             accountData.Size = new Size(900, 350);
             accountData.TabIndex = 0;
+            accountData.CellClick += accountData_CellClick;
             // 
             // Admin_AccManager
             // 
@@ -246,16 +232,15 @@
         #endregion
 
         private Panel panel1;
-        private Button ExitButton;
-        private Button updateRecordBtn;
+        private Button createAccButton;
         private DataGridView accountData;
         private Panel panel2;
         private Label label3;
         private Label label2;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox passwordBox;
+        private TextBox IDBox;
         private Label label1;
-        private Button button1;
+        private Button deleteAccButton;
         private Button button2;
         private Button button4;
         private Button button3;

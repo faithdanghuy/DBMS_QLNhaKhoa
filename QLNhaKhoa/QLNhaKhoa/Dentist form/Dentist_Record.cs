@@ -18,27 +18,10 @@ namespace QLNhaKhoa.Dentist_form
         {
             InitializeComponent();
         }
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-        DataSet getData(string query)
-        {
-            SqlConnection sqlCon = new SqlConnection(Helper.strCon);
-            sqlCon.Open();
-            DataSet dt = new DataSet();
-            SqlDataAdapter ap = new SqlDataAdapter(query, sqlCon);
-            ap.Fill(dt);
-            sqlCon.Close();
-            return dt;
-        }
         private void Dentist_Record_Load(object sender, EventArgs e)
         {
-            string appointment_query = "select * from HOSOBENHAN where MANHASI='" + CurrentDentist + "'";
-
-            recordData.DataSource = getData(appointment_query).Tables[0];
-            recordData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
+            string record_query = "select * from HOSOBENHAN where MANHASI='" + CurrentDentist + "'";
+            recordData.DataSource = Helper.getData(record_query).Tables[0];
         }
     }
 }

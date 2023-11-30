@@ -332,7 +332,7 @@ namespace QLNhaKhoa
             registerButton.BackColor = Color.SteelBlue;
             registerButton.FlatAppearance.BorderSize = 0;
             registerButton.FlatStyle = FlatStyle.Flat;
-            registerButton.Font = new Font("Tw Cen MT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            registerButton.Font = new Font("Tw Cen MT", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             registerButton.ForeColor = Color.White;
             registerButton.Location = new Point(50, 450);
             registerButton.Name = "registerButton";

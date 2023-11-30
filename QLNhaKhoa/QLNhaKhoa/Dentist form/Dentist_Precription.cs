@@ -12,13 +12,10 @@ namespace QLNhaKhoa.Dentist_form
 {
     public partial class Dentist_Prescription : Form
     {
+        public string CurrentDentist { get; set; } = string.Empty;
         public Dentist_Prescription()
         {
             InitializeComponent();
-        }
-        private void ExitButton_Click_1(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

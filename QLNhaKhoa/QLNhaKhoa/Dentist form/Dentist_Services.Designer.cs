@@ -41,7 +41,6 @@
             priceBox = new TextBox();
             servicesIDBox = new TextBox();
             serviceData = new DataGridView();
-            ExitButton = new Button();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)serviceData).BeginInit();
@@ -56,7 +55,6 @@
             panel3.Controls.Add(label1);
             panel3.Controls.Add(panel4);
             panel3.Controls.Add(serviceData);
-            panel3.Controls.Add(ExitButton);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
@@ -203,19 +201,6 @@
             serviceData.Size = new Size(900, 350);
             serviceData.TabIndex = 2;
             // 
-            // ExitButton
-            // 
-            ExitButton.FlatAppearance.BorderSize = 0;
-            ExitButton.FlatStyle = FlatStyle.Flat;
-            ExitButton.Font = new Font("VNI-Lithos", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ExitButton.Location = new Point(860, 0);
-            ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(40, 40);
-            ExitButton.TabIndex = 1;
-            ExitButton.Text = "X";
-            ExitButton.UseVisualStyleBackColor = true;
-            ExitButton.Click += ExitButton_Click;
-            // 
             // Dentist_Services
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -245,7 +230,6 @@
         private Panel panel4;
         private TextBox servicesIDBox;
         private DataGridView serviceData;
-        private Button ExitButton;
         private TextBox priceBox;
         private Label label4;
         private Label label3;

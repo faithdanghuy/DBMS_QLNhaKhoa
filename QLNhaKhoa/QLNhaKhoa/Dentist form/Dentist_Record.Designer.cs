@@ -41,7 +41,6 @@
             textBox2 = new TextBox();
             textBox1 = new TextBox();
             recordData = new DataGridView();
-            ExitButton = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)recordData).BeginInit();
@@ -56,7 +55,6 @@
             panel1.Controls.Add(label1);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(recordData);
-            panel1.Controls.Add(ExitButton);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -192,6 +190,12 @@
             // 
             // recordData
             // 
+            recordData.AllowUserToAddRows = false;
+            recordData.AllowUserToDeleteRows = false;
+            recordData.AllowUserToResizeColumns = false;
+            recordData.AllowUserToResizeRows = false;
+            recordData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            recordData.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             recordData.BorderStyle = BorderStyle.None;
             recordData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             recordData.Dock = DockStyle.Bottom;
@@ -200,19 +204,6 @@
             recordData.RowHeadersWidth = 51;
             recordData.Size = new Size(900, 350);
             recordData.TabIndex = 2;
-            // 
-            // ExitButton
-            // 
-            ExitButton.FlatAppearance.BorderSize = 0;
-            ExitButton.FlatStyle = FlatStyle.Flat;
-            ExitButton.Font = new Font("VNI-Lithos", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ExitButton.Location = new Point(860, 0);
-            ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(40, 40);
-            ExitButton.TabIndex = 1;
-            ExitButton.Text = "X";
-            ExitButton.UseVisualStyleBackColor = true;
-            ExitButton.Click += ExitButton_Click;
             // 
             // Dentist_Record
             // 
@@ -236,7 +227,6 @@
         #endregion
 
         private Panel panel1;
-        private Button ExitButton;
         private DataGridView recordData;
         private Panel panel2;
         private Label label1;
