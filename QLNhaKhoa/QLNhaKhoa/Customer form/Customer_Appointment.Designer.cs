@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            button2 = new Button();
+            updateAppButton = new Button();
             makeAppointBtn = new Button();
             panel2 = new Panel();
+            appointTime = new DateTimePicker();
             label3 = new Label();
             appointDate = new DateTimePicker();
             label2 = new Label();
             cboDentists = new ComboBox();
             label1 = new Label();
-            appointTime = new TextBox();
             appointmentData = new DataGridView();
             serviceTitle = new Label();
             panel1.SuspendLayout();
@@ -48,7 +48,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(button2);
+            panel1.Controls.Add(updateAppButton);
             panel1.Controls.Add(makeAppointBtn);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(appointmentData);
@@ -58,19 +58,20 @@
             panel1.Size = new Size(900, 700);
             panel1.TabIndex = 3;
             // 
-            // button2
+            // updateAppButton
             // 
-            button2.BackColor = Color.SteelBlue;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(50, 300);
-            button2.Name = "button2";
-            button2.Size = new Size(200, 40);
-            button2.TabIndex = 4;
-            button2.Text = "Update appointment";
-            button2.UseVisualStyleBackColor = false;
+            updateAppButton.BackColor = Color.SteelBlue;
+            updateAppButton.FlatAppearance.BorderSize = 0;
+            updateAppButton.FlatStyle = FlatStyle.Flat;
+            updateAppButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            updateAppButton.ForeColor = Color.White;
+            updateAppButton.Location = new Point(50, 300);
+            updateAppButton.Name = "updateAppButton";
+            updateAppButton.Size = new Size(200, 40);
+            updateAppButton.TabIndex = 4;
+            updateAppButton.Text = "Update appointment";
+            updateAppButton.UseVisualStyleBackColor = false;
+            updateAppButton.Click += updateAppButton_Click;
             // 
             // makeAppointBtn
             // 
@@ -91,16 +92,27 @@
             // 
             panel2.BackColor = Color.Transparent;
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(appointTime);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(appointDate);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(cboDentists);
             panel2.Controls.Add(label1);
-            panel2.Controls.Add(appointTime);
             panel2.Location = new Point(50, 40);
             panel2.Name = "panel2";
             panel2.Size = new Size(800, 250);
             panel2.TabIndex = 3;
+            // 
+            // appointTime
+            // 
+            appointTime.CustomFormat = "HH:mm";
+            appointTime.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            appointTime.Format = DateTimePickerFormat.Custom;
+            appointTime.Location = new Point(150, 62);
+            appointTime.Name = "appointTime";
+            appointTime.ShowUpDown = true;
+            appointTime.Size = new Size(200, 27);
+            appointTime.TabIndex = 7;
             // 
             // label3
             // 
@@ -155,17 +167,6 @@
             label1.TabIndex = 2;
             label1.Text = "Time (8h - 17h)";
             // 
-            // appointTime
-            // 
-            appointTime.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            appointTime.Location = new Point(150, 62);
-            appointTime.MaxLength = 5;
-            appointTime.Name = "appointTime";
-            appointTime.PlaceholderText = "example: 8h30";
-            appointTime.Size = new Size(200, 27);
-            appointTime.TabIndex = 0;
-            appointTime.KeyPress += appointTime_KeyPress;
-            // 
             // appointmentData
             // 
             appointmentData.AllowUserToResizeColumns = false;
@@ -217,7 +218,7 @@
         #endregion
 
         private Panel panel1;
-        private Button button2;
+        private Button updateAppButton;
         private Button makeAppointBtn;
         private Panel panel2;
         private Label label3;
@@ -225,8 +226,8 @@
         private Label label2;
         private ComboBox cboDentists;
         private Label label1;
-        private TextBox appointTime;
         private Label serviceTitle;
         public DataGridView appointmentData;
+        private DateTimePicker appointTime;
     }
 }

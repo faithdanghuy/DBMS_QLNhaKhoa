@@ -10,16 +10,27 @@ namespace QLNhaKhoa.Dentist_form
         {
             InitializeComponent();
         }
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        private void minimizeButton_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
         private void AccountButton_Click(object sender, EventArgs e)
         {
             Account f = new Account();
             f.CurrentUser = CurrentDentist;
+            f.CurrentPass = CurrentPass;
             Helper.loadform(f, this.mainPanel);
         }
 
         private void ServiceButton_Click(object sender, EventArgs e)
         {
-            Helper.loadform(new Dentist_Services(), this.mainPanel);
+            Dentist_Services f = new Dentist_Services();
+            f.CurrentDentist = CurrentDentist;
+            Helper.loadform(f, this.mainPanel);
         }
 
         private void AppointmentButton_Click(object sender, EventArgs e)
@@ -31,29 +42,23 @@ namespace QLNhaKhoa.Dentist_form
 
         private void PrecriptionButton_Click(object sender, EventArgs e)
         {
-            Helper.loadform(new Dentist_Prescription(), this.mainPanel);
+            Dentist_Prescription f = new Dentist_Prescription();
+            f.CurrentDentist = CurrentDentist;
+            Helper.loadform(f, this.mainPanel);
         }
 
         private void RecordButton_Click(object sender, EventArgs e)
         {
-            Helper.loadform(new Dentist_Record(), this.mainPanel);
+            Dentist_Record f = new Dentist_Record();
+            f.CurrentDentist = CurrentDentist;
+            Helper.loadform(f, this.mainPanel);
         }
-
-        private void BillButton_Click(object sender, EventArgs e)
+        private void certificateButton_Click(object sender, EventArgs e)
         {
-            Helper.loadform(new Dentist_Certificate(), this.mainPanel);
+            Dentist_Certificate f = new Dentist_Certificate();
+            f.CurrentDentist = CurrentDentist;
+            Helper.loadform(f, this.mainPanel);
         }
-
-        private void ExitButton_Click_1(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void minimizeButton_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
         private void Dentist_Main_Load(object sender, EventArgs e)
         {
             DentistID.Text = CurrentDentist;

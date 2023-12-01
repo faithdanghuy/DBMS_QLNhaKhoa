@@ -212,6 +212,7 @@
             // expDateBox
             // 
             expDateBox.CustomFormat = "yyyy-MM-dd";
+            expDateBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             expDateBox.Format = DateTimePickerFormat.Custom;
             expDateBox.Location = new Point(75, 202);
             expDateBox.Name = "expDateBox";
@@ -339,6 +340,7 @@
             // 
             // medData
             // 
+            medData.AllowUserToAddRows = false;
             medData.AllowUserToDeleteRows = false;
             medData.AllowUserToResizeColumns = false;
             medData.AllowUserToResizeRows = false;

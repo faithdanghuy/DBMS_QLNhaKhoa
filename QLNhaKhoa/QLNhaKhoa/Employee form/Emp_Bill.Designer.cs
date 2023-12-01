@@ -29,37 +29,85 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            searchIDBox = new TextBox();
+            searchButton = new Button();
+            refreshButton = new Button();
             label1 = new Label();
             panel2 = new Panel();
+            label6 = new Label();
+            certificateIDBox = new TextBox();
+            label5 = new Label();
+            totalBox = new TextBox();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            dateBox = new DateTimePicker();
+            recordIDBox = new TextBox();
+            billIDBox = new TextBox();
             addRecordBtn = new Button();
-            ExitButton = new Button();
-            updateRecordBtn = new Button();
-            appointmentData = new DataGridView();
+            addBillButton = new Button();
+            billData = new DataGridView();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)appointmentData).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)billData).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(searchIDBox);
+            panel1.Controls.Add(searchButton);
+            panel1.Controls.Add(refreshButton);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(addRecordBtn);
-            panel1.Controls.Add(ExitButton);
-            panel1.Controls.Add(updateRecordBtn);
-            panel1.Controls.Add(appointmentData);
+            panel1.Controls.Add(addBillButton);
+            panel1.Controls.Add(billData);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(900, 700);
             panel1.TabIndex = 7;
+            // 
+            // searchIDBox
+            // 
+            searchIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            searchIDBox.Location = new Point(569, 311);
+            searchIDBox.MaxLength = 10;
+            searchIDBox.Name = "searchIDBox";
+            searchIDBox.PlaceholderText = "Enter bill ID to search";
+            searchIDBox.Size = new Size(200, 27);
+            searchIDBox.TabIndex = 18;
+            // 
+            // searchButton
+            // 
+            searchButton.BackColor = Color.SteelBlue;
+            searchButton.FlatAppearance.BorderSize = 0;
+            searchButton.FlatStyle = FlatStyle.Flat;
+            searchButton.Font = new Font("Tw Cen MT", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            searchButton.ForeColor = Color.White;
+            searchButton.Location = new Point(775, 311);
+            searchButton.Name = "searchButton";
+            searchButton.Size = new Size(75, 27);
+            searchButton.TabIndex = 19;
+            searchButton.Text = "Search";
+            searchButton.UseVisualStyleBackColor = false;
+            searchButton.Click += searchButton_Click;
+            // 
+            // refreshButton
+            // 
+            refreshButton.BackColor = Color.SteelBlue;
+            refreshButton.FlatAppearance.BorderSize = 0;
+            refreshButton.FlatStyle = FlatStyle.Flat;
+            refreshButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            refreshButton.ForeColor = Color.White;
+            refreshButton.Location = new Point(262, 298);
+            refreshButton.Name = "refreshButton";
+            refreshButton.Size = new Size(100, 40);
+            refreshButton.TabIndex = 15;
+            refreshButton.Text = "Refresh";
+            refreshButton.UseVisualStyleBackColor = false;
+            refreshButton.Click += refreshButton_Click;
             // 
             // label1
             // 
@@ -77,16 +125,60 @@
             // 
             panel2.BackColor = Color.White;
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(label6);
+            panel2.Controls.Add(certificateIDBox);
+            panel2.Controls.Add(label5);
+            panel2.Controls.Add(totalBox);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
-            panel2.Controls.Add(dateTimePicker1);
-            panel2.Controls.Add(textBox2);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(dateBox);
+            panel2.Controls.Add(recordIDBox);
+            panel2.Controls.Add(billIDBox);
             panel2.Location = new Point(50, 35);
             panel2.Name = "panel2";
             panel2.Size = new Size(800, 250);
             panel2.TabIndex = 11;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.SteelBlue;
+            label6.Location = new Point(325, 54);
+            label6.Name = "label6";
+            label6.Size = new Size(115, 23);
+            label6.TabIndex = 9;
+            label6.Text = "Certificate ID";
+            // 
+            // certificateIDBox
+            // 
+            certificateIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            certificateIDBox.Location = new Point(325, 80);
+            certificateIDBox.Name = "certificateIDBox";
+            certificateIDBox.PlaceholderText = "Certificate ID";
+            certificateIDBox.Size = new Size(150, 27);
+            certificateIDBox.TabIndex = 8;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.SteelBlue;
+            label5.Location = new Point(550, 54);
+            label5.Name = "label5";
+            label5.Size = new Size(49, 23);
+            label5.TabIndex = 7;
+            label5.Text = "Total";
+            // 
+            // totalBox
+            // 
+            totalBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            totalBox.Location = new Point(550, 80);
+            totalBox.Name = "totalBox";
+            totalBox.PlaceholderText = "Total";
+            totalBox.Size = new Size(150, 27);
+            totalBox.TabIndex = 6;
             // 
             // label4
             // 
@@ -95,9 +187,9 @@
             label4.ForeColor = Color.SteelBlue;
             label4.Location = new Point(100, 154);
             label4.Name = "label4";
-            label4.Size = new Size(173, 23);
+            label4.Size = new Size(48, 23);
             label4.TabIndex = 5;
-            label4.Text = "Date of examination";
+            label4.Text = "Date";
             // 
             // label3
             // 
@@ -115,39 +207,40 @@
             label2.AutoSize = true;
             label2.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.SteelBlue;
-            label2.Location = new Point(275, 54);
+            label2.Location = new Point(100, 54);
             label2.Name = "label2";
-            label2.Size = new Size(115, 23);
+            label2.Size = new Size(54, 23);
             label2.TabIndex = 3;
-            label2.Text = "Certificate ID";
+            label2.Text = "Bill ID";
             // 
-            // dateTimePicker1
+            // dateBox
             // 
-            dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            dateTimePicker1.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(100, 180);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(250, 27);
-            dateTimePicker1.TabIndex = 2;
+            dateBox.CustomFormat = "yyyy-MM-dd";
+            dateBox.Enabled = false;
+            dateBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateBox.Format = DateTimePickerFormat.Custom;
+            dateBox.Location = new Point(100, 180);
+            dateBox.Name = "dateBox";
+            dateBox.Size = new Size(250, 27);
+            dateBox.TabIndex = 2;
             // 
-            // textBox2
+            // recordIDBox
             // 
-            textBox2.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(450, 180);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Customer Record ID";
-            textBox2.Size = new Size(250, 27);
-            textBox2.TabIndex = 1;
+            recordIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            recordIDBox.Location = new Point(450, 180);
+            recordIDBox.Name = "recordIDBox";
+            recordIDBox.PlaceholderText = "Customer Record ID";
+            recordIDBox.Size = new Size(250, 27);
+            recordIDBox.TabIndex = 1;
             // 
-            // textBox1
+            // billIDBox
             // 
-            textBox1.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(275, 80);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Certificate ID";
-            textBox1.Size = new Size(250, 27);
-            textBox1.TabIndex = 0;
+            billIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            billIDBox.Location = new Point(100, 80);
+            billIDBox.Name = "billIDBox";
+            billIDBox.PlaceholderText = "Bill ID";
+            billIDBox.Size = new Size(150, 27);
+            billIDBox.TabIndex = 0;
             // 
             // addRecordBtn
             // 
@@ -160,46 +253,40 @@
             addRecordBtn.Name = "addRecordBtn";
             addRecordBtn.Size = new Size(100, 40);
             addRecordBtn.TabIndex = 10;
-            addRecordBtn.Text = "Next";
+            addRecordBtn.Text = "Update";
             addRecordBtn.UseVisualStyleBackColor = false;
             // 
-            // ExitButton
+            // addBillButton
             // 
-            ExitButton.FlatAppearance.BorderSize = 0;
-            ExitButton.FlatStyle = FlatStyle.Flat;
-            ExitButton.Font = new Font("VNI-Lithos", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ExitButton.Location = new Point(860, 0);
-            ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(40, 40);
-            ExitButton.TabIndex = 3;
-            ExitButton.Text = "X";
-            ExitButton.UseVisualStyleBackColor = true;
-            ExitButton.Click += ExitButton_Click;
+            addBillButton.BackColor = Color.SteelBlue;
+            addBillButton.FlatAppearance.BorderSize = 0;
+            addBillButton.FlatStyle = FlatStyle.Flat;
+            addBillButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            addBillButton.ForeColor = Color.White;
+            addBillButton.Location = new Point(50, 298);
+            addBillButton.Name = "addBillButton";
+            addBillButton.Size = new Size(100, 40);
+            addBillButton.TabIndex = 9;
+            addBillButton.Text = "Add";
+            addBillButton.UseVisualStyleBackColor = false;
+            addBillButton.Click += addBillButton_Click;
             // 
-            // updateRecordBtn
+            // billData
             // 
-            updateRecordBtn.BackColor = Color.SteelBlue;
-            updateRecordBtn.FlatAppearance.BorderSize = 0;
-            updateRecordBtn.FlatStyle = FlatStyle.Flat;
-            updateRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            updateRecordBtn.ForeColor = Color.White;
-            updateRecordBtn.Location = new Point(50, 298);
-            updateRecordBtn.Name = "updateRecordBtn";
-            updateRecordBtn.Size = new Size(100, 40);
-            updateRecordBtn.TabIndex = 9;
-            updateRecordBtn.Text = "Previous";
-            updateRecordBtn.UseVisualStyleBackColor = false;
-            // 
-            // appointmentData
-            // 
-            appointmentData.BorderStyle = BorderStyle.None;
-            appointmentData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            appointmentData.Dock = DockStyle.Bottom;
-            appointmentData.Location = new Point(0, 350);
-            appointmentData.Name = "appointmentData";
-            appointmentData.RowHeadersWidth = 51;
-            appointmentData.Size = new Size(900, 350);
-            appointmentData.TabIndex = 0;
+            billData.AllowUserToAddRows = false;
+            billData.AllowUserToDeleteRows = false;
+            billData.AllowUserToResizeColumns = false;
+            billData.AllowUserToResizeRows = false;
+            billData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            billData.BorderStyle = BorderStyle.None;
+            billData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            billData.Dock = DockStyle.Bottom;
+            billData.Location = new Point(0, 350);
+            billData.Name = "billData";
+            billData.RowHeadersWidth = 51;
+            billData.Size = new Size(900, 350);
+            billData.TabIndex = 0;
+            billData.CellClick += billData_CellClick;
             // 
             // Emp_Bill
             // 
@@ -211,11 +298,12 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Emp_Bill";
             Text = "Emp_Bill";
+            Load += Emp_Bill_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)appointmentData).EndInit();
+            ((System.ComponentModel.ISupportInitialize)billData).EndInit();
             ResumeLayout(false);
         }
 
@@ -227,12 +315,18 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private DateTimePicker dateTimePicker1;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private DateTimePicker dateBox;
+        private TextBox recordIDBox;
+        private TextBox billIDBox;
         private Button addRecordBtn;
-        private Button ExitButton;
-        private Button updateRecordBtn;
-        private DataGridView appointmentData;
+        private Button addBillButton;
+        private DataGridView billData;
+        private Label label5;
+        private TextBox totalBox;
+        private Label label6;
+        private TextBox certificateIDBox;
+        private Button refreshButton;
+        private TextBox searchIDBox;
+        private Button searchButton;
     }
 }

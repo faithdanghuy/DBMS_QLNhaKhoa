@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace QLNhaKhoa
 {
@@ -26,6 +27,10 @@ namespace QLNhaKhoa
             mainPanel.Controls.Add(f);
             mainPanel.Tag = f;
             f.Show();
+        }
+        public static void refreshData(string query, DataGridView d)
+        {
+            d.DataSource = getData(query).Tables[0];
         }
     }
 }

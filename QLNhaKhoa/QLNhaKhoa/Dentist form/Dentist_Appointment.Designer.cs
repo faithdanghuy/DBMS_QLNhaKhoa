@@ -30,15 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dentist_Appointment));
             panel3 = new Panel();
-            button1 = new Button();
-            addRecordBtn = new Button();
+            updateButton = new Button();
+            deleteButton = new Button();
             updateRecordBtn = new Button();
             label1 = new Label();
             panel4 = new Panel();
+            timeBox = new DateTimePicker();
             label3 = new Label();
             label2 = new Label();
             dateBox = new DateTimePicker();
-            timeBox = new TextBox();
             appointmentData = new DataGridView();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
@@ -48,8 +48,8 @@
             // panel3
             // 
             panel3.BackColor = Color.White;
-            panel3.Controls.Add(button1);
-            panel3.Controls.Add(addRecordBtn);
+            panel3.Controls.Add(updateButton);
+            panel3.Controls.Add(deleteButton);
             panel3.Controls.Add(updateRecordBtn);
             panel3.Controls.Add(label1);
             panel3.Controls.Add(panel4);
@@ -60,33 +60,34 @@
             panel3.Size = new Size(900, 700);
             panel3.TabIndex = 9;
             // 
-            // button1
+            // updateButton
             // 
-            button1.BackColor = Color.SteelBlue;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(382, 298);
-            button1.Name = "button1";
-            button1.Size = new Size(120, 40);
-            button1.TabIndex = 5;
-            button1.Text = "Update";
-            button1.UseVisualStyleBackColor = false;
+            updateButton.BackColor = Color.SteelBlue;
+            updateButton.FlatAppearance.BorderSize = 0;
+            updateButton.FlatStyle = FlatStyle.Flat;
+            updateButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            updateButton.ForeColor = Color.White;
+            updateButton.Location = new Point(382, 298);
+            updateButton.Name = "updateButton";
+            updateButton.Size = new Size(120, 40);
+            updateButton.TabIndex = 5;
+            updateButton.Text = "Update";
+            updateButton.UseVisualStyleBackColor = false;
+            updateButton.Click += updateButton_Click;
             // 
-            // addRecordBtn
+            // deleteButton
             // 
-            addRecordBtn.BackColor = Color.SteelBlue;
-            addRecordBtn.FlatAppearance.BorderSize = 0;
-            addRecordBtn.FlatStyle = FlatStyle.Flat;
-            addRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            addRecordBtn.ForeColor = Color.White;
-            addRecordBtn.Location = new Point(256, 298);
-            addRecordBtn.Name = "addRecordBtn";
-            addRecordBtn.Size = new Size(120, 40);
-            addRecordBtn.TabIndex = 4;
-            addRecordBtn.Text = "Delete";
-            addRecordBtn.UseVisualStyleBackColor = false;
+            deleteButton.BackColor = Color.SteelBlue;
+            deleteButton.FlatAppearance.BorderSize = 0;
+            deleteButton.FlatStyle = FlatStyle.Flat;
+            deleteButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            deleteButton.ForeColor = Color.White;
+            deleteButton.Location = new Point(256, 298);
+            deleteButton.Name = "deleteButton";
+            deleteButton.Size = new Size(120, 40);
+            deleteButton.TabIndex = 4;
+            deleteButton.Text = "Delete";
+            deleteButton.UseVisualStyleBackColor = false;
             // 
             // updateRecordBtn
             // 
@@ -116,14 +117,24 @@
             // panel4
             // 
             panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(timeBox);
             panel4.Controls.Add(label3);
             panel4.Controls.Add(label2);
             panel4.Controls.Add(dateBox);
-            panel4.Controls.Add(timeBox);
             panel4.Location = new Point(50, 35);
             panel4.Name = "panel4";
             panel4.Size = new Size(800, 250);
             panel4.TabIndex = 0;
+            // 
+            // timeBox
+            // 
+            timeBox.CustomFormat = "HH:mm ";
+            timeBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            timeBox.Format = DateTimePickerFormat.Custom;
+            timeBox.Location = new Point(100, 112);
+            timeBox.Name = "timeBox";
+            timeBox.Size = new Size(250, 27);
+            timeBox.TabIndex = 5;
             // 
             // label3
             // 
@@ -149,7 +160,7 @@
             // 
             // dateBox
             // 
-            dateBox.CustomFormat = "dd/MM/yyyy";
+            dateBox.CustomFormat = "yyyy-MM-dd";
             dateBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dateBox.Format = DateTimePickerFormat.Custom;
             dateBox.Location = new Point(450, 112);
@@ -157,17 +168,14 @@
             dateBox.Size = new Size(250, 27);
             dateBox.TabIndex = 2;
             // 
-            // timeBox
-            // 
-            timeBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            timeBox.Location = new Point(100, 112);
-            timeBox.Name = "timeBox";
-            timeBox.PlaceholderText = "Example: 8h30";
-            timeBox.Size = new Size(250, 27);
-            timeBox.TabIndex = 0;
-            // 
             // appointmentData
             // 
+            appointmentData.AllowUserToAddRows = false;
+            appointmentData.AllowUserToDeleteRows = false;
+            appointmentData.AllowUserToResizeColumns = false;
+            appointmentData.AllowUserToResizeRows = false;
+            appointmentData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            appointmentData.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             appointmentData.BorderStyle = BorderStyle.None;
             appointmentData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             appointmentData.Dock = DockStyle.Bottom;
@@ -176,6 +184,7 @@
             appointmentData.RowHeadersWidth = 51;
             appointmentData.Size = new Size(900, 350);
             appointmentData.TabIndex = 2;
+            appointmentData.CellClick += appointmentData_CellClick;
             // 
             // Dentist_Appointment
             // 
@@ -200,15 +209,15 @@
         #endregion
 
         private Panel panel3;
-        private Button addRecordBtn;
+        private Button deleteButton;
         private Button updateRecordBtn;
         private Label label1;
         private Panel panel4;
-        private TextBox timeBox;
         private DataGridView appointmentData;
         private DateTimePicker dateBox;
         private Label label2;
         private Label label3;
-        private Button button1;
+        private Button updateButton;
+        private DateTimePicker timeBox;
     }
 }

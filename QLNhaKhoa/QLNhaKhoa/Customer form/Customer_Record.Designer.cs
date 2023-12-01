@@ -75,7 +75,7 @@
             // 
             // bdayBox
             // 
-            bdayBox.CustomFormat = "dd/MM/yyyy";
+            bdayBox.CustomFormat = "yyyy-MM-dd";
             bdayBox.Enabled = false;
             bdayBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             bdayBox.Format = DateTimePickerFormat.Custom;

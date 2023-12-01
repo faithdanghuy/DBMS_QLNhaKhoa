@@ -19,8 +19,16 @@ namespace QLNhaKhoa.Admin_form
         }
         private void Admin_AccManager_Load(object sender, EventArgs e)
         {
-            string acc_query = "select * from NHANVIEN";
-            accountData.DataSource = Helper.getData(acc_query).Tables[0];
+            accountData.DataSource = Helper.getData("select * from NHANVIEN").Tables[0];
+        }
+        private void accountData_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                DataGridViewRow dgvr = accountData.Rows[e.RowIndex];
+                IDBox.Text = dgvr.Cells["MANHANVIEN"].Value.ToString();
+                passwordBox.Text = dgvr.Cells["MATKHAU"].Value.ToString();
+            }
         }
     }
 }

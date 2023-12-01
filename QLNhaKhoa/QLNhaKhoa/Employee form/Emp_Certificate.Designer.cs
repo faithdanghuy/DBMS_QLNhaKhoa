@@ -29,37 +29,85 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            searchIDBox = new TextBox();
+            searchButton = new Button();
+            refreshButton = new Button();
             label1 = new Label();
             panel2 = new Panel();
+            label6 = new Label();
+            label5 = new Label();
+            medTotalBox = new TextBox();
+            serviceTotalBox = new TextBox();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            examDateBox = new DateTimePicker();
+            recordIDBox = new TextBox();
+            certificateIDBox = new TextBox();
             addRecordBtn = new Button();
-            ExitButton = new Button();
             updateRecordBtn = new Button();
-            appointmentData = new DataGridView();
+            certificateData = new DataGridView();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)appointmentData).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)certificateData).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(searchIDBox);
+            panel1.Controls.Add(searchButton);
+            panel1.Controls.Add(refreshButton);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(addRecordBtn);
-            panel1.Controls.Add(ExitButton);
             panel1.Controls.Add(updateRecordBtn);
-            panel1.Controls.Add(appointmentData);
+            panel1.Controls.Add(certificateData);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(900, 700);
             panel1.TabIndex = 6;
+            // 
+            // searchIDBox
+            // 
+            searchIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            searchIDBox.Location = new Point(569, 311);
+            searchIDBox.MaxLength = 10;
+            searchIDBox.Name = "searchIDBox";
+            searchIDBox.PlaceholderText = "Enter certificate ID to search";
+            searchIDBox.Size = new Size(200, 27);
+            searchIDBox.TabIndex = 14;
+            // 
+            // searchButton
+            // 
+            searchButton.BackColor = Color.SteelBlue;
+            searchButton.FlatAppearance.BorderSize = 0;
+            searchButton.FlatStyle = FlatStyle.Flat;
+            searchButton.Font = new Font("Tw Cen MT", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            searchButton.ForeColor = Color.White;
+            searchButton.Location = new Point(775, 311);
+            searchButton.Name = "searchButton";
+            searchButton.Size = new Size(75, 27);
+            searchButton.TabIndex = 15;
+            searchButton.Text = "Search";
+            searchButton.UseVisualStyleBackColor = false;
+            searchButton.Click += searchButton_Click;
+            // 
+            // refreshButton
+            // 
+            refreshButton.BackColor = Color.SteelBlue;
+            refreshButton.FlatAppearance.BorderSize = 0;
+            refreshButton.FlatStyle = FlatStyle.Flat;
+            refreshButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            refreshButton.ForeColor = Color.White;
+            refreshButton.Location = new Point(262, 298);
+            refreshButton.Name = "refreshButton";
+            refreshButton.Size = new Size(100, 40);
+            refreshButton.TabIndex = 13;
+            refreshButton.Text = "Refresh";
+            refreshButton.UseVisualStyleBackColor = false;
+            refreshButton.Click += refreshButton_Click;
             // 
             // label1
             // 
@@ -77,16 +125,62 @@
             // 
             panel2.BackColor = Color.White;
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(label6);
+            panel2.Controls.Add(label5);
+            panel2.Controls.Add(medTotalBox);
+            panel2.Controls.Add(serviceTotalBox);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
-            panel2.Controls.Add(dateTimePicker1);
-            panel2.Controls.Add(textBox2);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(examDateBox);
+            panel2.Controls.Add(recordIDBox);
+            panel2.Controls.Add(certificateIDBox);
             panel2.Location = new Point(50, 35);
             panel2.Name = "panel2";
             panel2.Size = new Size(800, 250);
             panel2.TabIndex = 11;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.SteelBlue;
+            label6.Location = new Point(550, 154);
+            label6.Name = "label6";
+            label6.Size = new Size(116, 23);
+            label6.TabIndex = 9;
+            label6.Text = "Services total";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.SteelBlue;
+            label5.Location = new Point(325, 154);
+            label5.Name = "label5";
+            label5.Size = new Size(87, 23);
+            label5.TabIndex = 8;
+            label5.Text = "Med total";
+            // 
+            // medTotalBox
+            // 
+            medTotalBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            medTotalBox.Location = new Point(325, 180);
+            medTotalBox.Name = "medTotalBox";
+            medTotalBox.PlaceholderText = "Med total";
+            medTotalBox.ReadOnly = true;
+            medTotalBox.Size = new Size(150, 27);
+            medTotalBox.TabIndex = 7;
+            // 
+            // serviceTotalBox
+            // 
+            serviceTotalBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            serviceTotalBox.Location = new Point(550, 180);
+            serviceTotalBox.Name = "serviceTotalBox";
+            serviceTotalBox.PlaceholderText = "Services total";
+            serviceTotalBox.ReadOnly = true;
+            serviceTotalBox.Size = new Size(150, 27);
+            serviceTotalBox.TabIndex = 6;
             // 
             // label4
             // 
@@ -104,7 +198,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.SteelBlue;
-            label3.Location = new Point(450, 154);
+            label3.Location = new Point(450, 54);
             label3.Name = "label3";
             label3.Size = new Size(167, 23);
             label3.TabIndex = 4;
@@ -115,43 +209,42 @@
             label2.AutoSize = true;
             label2.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.SteelBlue;
-            label2.Location = new Point(275, 54);
+            label2.Location = new Point(100, 54);
             label2.Name = "label2";
             label2.Size = new Size(115, 23);
             label2.TabIndex = 3;
             label2.Text = "Certificate ID";
             // 
-            // dateTimePicker1
+            // examDateBox
             // 
-            dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            dateTimePicker1.Enabled = false;
-            dateTimePicker1.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(100, 180);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(250, 27);
-            dateTimePicker1.TabIndex = 2;
+            examDateBox.CustomFormat = "yyyy-MM-dd";
+            examDateBox.Enabled = false;
+            examDateBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            examDateBox.Format = DateTimePickerFormat.Custom;
+            examDateBox.Location = new Point(100, 180);
+            examDateBox.Name = "examDateBox";
+            examDateBox.Size = new Size(150, 27);
+            examDateBox.TabIndex = 2;
             // 
-            // textBox2
+            // recordIDBox
             // 
-            textBox2.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(450, 180);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Customer Record ID";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(250, 27);
-            textBox2.TabIndex = 1;
+            recordIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            recordIDBox.Location = new Point(450, 80);
+            recordIDBox.Name = "recordIDBox";
+            recordIDBox.PlaceholderText = "Customer Record ID";
+            recordIDBox.ReadOnly = true;
+            recordIDBox.Size = new Size(250, 27);
+            recordIDBox.TabIndex = 1;
             // 
-            // textBox1
+            // certificateIDBox
             // 
-            textBox1.Enabled = false;
-            textBox1.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(275, 80);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Certificate ID";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(250, 27);
-            textBox1.TabIndex = 0;
+            certificateIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            certificateIDBox.Location = new Point(100, 80);
+            certificateIDBox.Name = "certificateIDBox";
+            certificateIDBox.PlaceholderText = "Certificate ID";
+            certificateIDBox.ReadOnly = true;
+            certificateIDBox.Size = new Size(250, 27);
+            certificateIDBox.TabIndex = 0;
             // 
             // addRecordBtn
             // 
@@ -167,19 +260,6 @@
             addRecordBtn.Text = "Next";
             addRecordBtn.UseVisualStyleBackColor = false;
             // 
-            // ExitButton
-            // 
-            ExitButton.FlatAppearance.BorderSize = 0;
-            ExitButton.FlatStyle = FlatStyle.Flat;
-            ExitButton.Font = new Font("VNI-Lithos", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ExitButton.Location = new Point(860, 0);
-            ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(40, 40);
-            ExitButton.TabIndex = 3;
-            ExitButton.Text = "X";
-            ExitButton.UseVisualStyleBackColor = true;
-            ExitButton.Click += ExitButton_Click;
-            // 
             // updateRecordBtn
             // 
             updateRecordBtn.BackColor = Color.SteelBlue;
@@ -194,16 +274,22 @@
             updateRecordBtn.Text = "Previous";
             updateRecordBtn.UseVisualStyleBackColor = false;
             // 
-            // appointmentData
+            // certificateData
             // 
-            appointmentData.BorderStyle = BorderStyle.None;
-            appointmentData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            appointmentData.Dock = DockStyle.Bottom;
-            appointmentData.Location = new Point(0, 350);
-            appointmentData.Name = "appointmentData";
-            appointmentData.RowHeadersWidth = 51;
-            appointmentData.Size = new Size(900, 350);
-            appointmentData.TabIndex = 0;
+            certificateData.AllowUserToAddRows = false;
+            certificateData.AllowUserToDeleteRows = false;
+            certificateData.AllowUserToResizeColumns = false;
+            certificateData.AllowUserToResizeRows = false;
+            certificateData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            certificateData.BorderStyle = BorderStyle.None;
+            certificateData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            certificateData.Dock = DockStyle.Bottom;
+            certificateData.Location = new Point(0, 350);
+            certificateData.Name = "certificateData";
+            certificateData.RowHeadersWidth = 51;
+            certificateData.Size = new Size(900, 350);
+            certificateData.TabIndex = 0;
+            certificateData.CellClick += certificateData_CellClick;
             // 
             // Emp_Certificate
             // 
@@ -215,11 +301,12 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Emp_Certificate";
             Text = "Emp_Certificate";
+            Load += Emp_Certificate_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)appointmentData).EndInit();
+            ((System.ComponentModel.ISupportInitialize)certificateData).EndInit();
             ResumeLayout(false);
         }
 
@@ -227,16 +314,22 @@
 
         private Panel panel1;
         private Button addRecordBtn;
-        private Button ExitButton;
         private Button updateRecordBtn;
-        private DataGridView appointmentData;
+        private DataGridView certificateData;
         private Panel panel2;
         private Label label4;
         private Label label3;
         private Label label2;
-        private DateTimePicker dateTimePicker1;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private DateTimePicker examDateBox;
+        private TextBox recordIDBox;
+        private TextBox certificateIDBox;
         private Label label1;
+        private TextBox serviceTotalBox;
+        private TextBox medTotalBox;
+        private Label label6;
+        private Label label5;
+        private Button refreshButton;
+        private TextBox searchIDBox;
+        private Button searchButton;
     }
 }
