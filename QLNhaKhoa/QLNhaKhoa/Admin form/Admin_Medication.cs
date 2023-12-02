@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace QLNhaKhoa.Admin_form
 {
@@ -90,6 +81,7 @@ namespace QLNhaKhoa.Admin_form
                 {
                     MessageBox.Show("Thêm dữ liệu thuốc thất bại!");
                 }
+                Helper.refreshData("select * from THUOC where MANVQUANLY='" + CurrentAdmin + "'", medData);
             }
             catch (Exception ex)
             {
@@ -114,6 +106,7 @@ namespace QLNhaKhoa.Admin_form
                 {
                     MessageBox.Show("Xóa dữ liệu thuốc thất bại!");
                 }
+                Helper.refreshData("select * from THUOC where MANVQUANLY='" + CurrentAdmin + "'", medData);
                 sqlCon.Close();
             }
             else { }
@@ -147,34 +140,20 @@ namespace QLNhaKhoa.Admin_form
                 {
                     MessageBox.Show("Cập nhật dữ liệu thuốc thất bại!");
                 }
+                Helper.refreshData("select * from THUOC where MANVQUANLY='" + CurrentAdmin + "'", medData);
             }
-            catch(Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Cập nhật dữ liệu thuốc thất bại!");
+                MessageBox.Show("Cập nhật dữ liệu thuốc thất bại! " + ex);
             }
         }
-        private void searchMedButton_Click(object sender, EventArgs e)
+        private void searchButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                SqlConnection sqlCon = new SqlConnection(Helper.strCon);
-                sqlCon.Open();
-                SqlCommand cmd = new SqlCommand("USP_THUOC_SEARCH", sqlCon);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.Add(new SqlParameter("@MATHUOC", medIDBox.Text));
-                cmd.Parameters.Add(new SqlParameter("@TENTHUOC", medNameBox.Text));
-                cmd.Parameters.Add(new SqlParameter("@DONVITINH", cboUnit.Text));
-                cmd.Parameters.Add(new SqlParameter("@CHIDINH", prescribeBox.Text));
-                cmd.Parameters.Add(new SqlParameter("@SOLUONGTONKHO", instockBox.Text));
-                cmd.Parameters.Add(new SqlParameter("@NGAYHETHAN", expDateBox.Text));
-                cmd.Parameters.Add(new SqlParameter("@GIATIEN", priceBox.Text));
-                cmd.Parameters.Add(new SqlParameter("@MANVQUANLY", empIDBox.Text));
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Thuốc không tồn tại!");
-            }
+            (medData.DataSource as DataTable).DefaultView.RowFilter = String.Format("TENTHUOC like '%" + searchIDBox.Text + "%'");
+        }
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            Helper.refreshData("select * from THUOC where MANVQUANLY='" + CurrentAdmin + "'", medData);
         }
     }
 }

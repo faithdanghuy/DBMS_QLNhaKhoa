@@ -44,7 +44,6 @@
             dateBox = new DateTimePicker();
             recordIDBox = new TextBox();
             billIDBox = new TextBox();
-            addRecordBtn = new Button();
             addBillButton = new Button();
             billData = new DataGridView();
             panel1.SuspendLayout();
@@ -60,7 +59,6 @@
             panel1.Controls.Add(refreshButton);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(panel2);
-            panel1.Controls.Add(addRecordBtn);
             panel1.Controls.Add(addBillButton);
             panel1.Controls.Add(billData);
             panel1.Dock = DockStyle.Fill;
@@ -101,7 +99,7 @@
             refreshButton.FlatStyle = FlatStyle.Flat;
             refreshButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             refreshButton.ForeColor = Color.White;
-            refreshButton.Location = new Point(262, 298);
+            refreshButton.Location = new Point(156, 298);
             refreshButton.Name = "refreshButton";
             refreshButton.Size = new Size(100, 40);
             refreshButton.TabIndex = 15;
@@ -242,20 +240,6 @@
             billIDBox.Size = new Size(150, 27);
             billIDBox.TabIndex = 0;
             // 
-            // addRecordBtn
-            // 
-            addRecordBtn.BackColor = Color.SteelBlue;
-            addRecordBtn.FlatAppearance.BorderSize = 0;
-            addRecordBtn.FlatStyle = FlatStyle.Flat;
-            addRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            addRecordBtn.ForeColor = Color.White;
-            addRecordBtn.Location = new Point(156, 298);
-            addRecordBtn.Name = "addRecordBtn";
-            addRecordBtn.Size = new Size(100, 40);
-            addRecordBtn.TabIndex = 10;
-            addRecordBtn.Text = "Update";
-            addRecordBtn.UseVisualStyleBackColor = false;
-            // 
             // addBillButton
             // 
             addBillButton.BackColor = Color.SteelBlue;
@@ -318,7 +302,6 @@
         private DateTimePicker dateBox;
         private TextBox recordIDBox;
         private TextBox billIDBox;
-        private Button addRecordBtn;
         private Button addBillButton;
         private DataGridView billData;
         private Label label5;

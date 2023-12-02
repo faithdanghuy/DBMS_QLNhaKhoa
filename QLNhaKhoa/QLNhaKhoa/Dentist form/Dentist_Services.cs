@@ -24,11 +24,10 @@ namespace QLNhaKhoa.Dentist_form
             string service_query = "select MADICHVU, TENDICHVU from DICHVUKHAM";
 
             serviceData.DataSource = Helper.getData(appointment_query).Tables[0];
-            serviceData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            cboService.DataSource = Helper.getData(service_query).Tables[0];
             cboService.DisplayMember = "TENDICHVU";
             cboService.ValueMember = "MADICHVU";
+            cboService.DataSource = Helper.getData(service_query).Tables[0];
         }
     }
 }

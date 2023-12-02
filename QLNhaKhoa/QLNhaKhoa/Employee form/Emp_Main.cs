@@ -38,7 +38,7 @@ namespace QLNhaKhoa.Employee_form
         {
             Emp_Bill f = new Emp_Bill();
             f.CurrentEmp = CurrentEmp;
-            Helper.loadform(f), this.mainPanel);
+            Helper.loadform(f, this.mainPanel);
         }
         private void MedRecdButton_Click(object sender, EventArgs e)
         {

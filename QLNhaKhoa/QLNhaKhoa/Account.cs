@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLNhaKhoa
@@ -58,56 +50,57 @@ namespace QLNhaKhoa
                 }
             }
         }
-        public void updateProfile(string curUser)
-        {
-            string procedure = "USP_NHANVIEN_UPD";
-            string parameter1 = "@MANHANVIEN";
-
-            if (curUser.StartsWith("KH"))
-            {
-                procedure = "USP_KHACHHANG_UPD";
-                parameter1 = "@MAKHACHHANG";
-            }
-
-            SqlConnection sqlCon = new SqlConnection(Helper.strCon);
-            sqlCon.Open();
-            SqlCommand cmd = new SqlCommand(procedure, sqlCon);
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.Add(new SqlParameter(parameter1, CurrentUser));
-            cmd.Parameters.Add(new SqlParameter("@HOTEN", nameBox.Text));
-            cmd.Parameters.Add(new SqlParameter("@NGAYSINH", bdayBox.Text));
-            cmd.Parameters.Add(new SqlParameter("@DIACHI", addressBox.Text));
-            cmd.Parameters.Add(new SqlParameter("@SODT", phoneBox.Text));
-            cmd.Parameters.Add(new SqlParameter("@MATKHAU", passwordBox.Text));
-
-            if (curUser.StartsWith("NS"))
-            {
-                cmd.Parameters.Add(new SqlParameter("@LOAINHANVIEN", 1));
-            }
-            else if (curUser.StartsWith("NV"))
-            {
-                cmd.Parameters.Add(new SqlParameter("@LOAINHANVIEN", 0));
-            }
-            else if (curUser.StartsWith("AD"))
-            {
-                cmd.Parameters.Add(new SqlParameter("@LOAINHANVIEN", 2));
-            }
-
-            int i = cmd.ExecuteNonQuery();
-            sqlCon.Close();
-            if (i > 0)
-            {
-                MessageBox.Show("Cập nhật dữ liệu thành công!");
-            }
-            else
-            {
-                MessageBox.Show("Cập nhật dữ liệu thất bại!");
-            }
-        }
         private void updateButton_Click(object sender, EventArgs e)
         {
-            updateProfile(CurrentUser);
+            string procedure = "USP_NHANVIEN_UPD";
+            string parameter = "@MANHANVIEN";
+
+            if (CurrentUser.Trim().StartsWith("KH"))
+            {
+                procedure = "USP_KHACHHANG_UPD";
+                parameter = "@MAKHACHHANG";
+            }
+            try
+            {
+                SqlConnection sqlCon = new SqlConnection(Helper.strCon);
+                sqlCon.Open();
+                SqlCommand cmd = new SqlCommand(procedure, sqlCon);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter(parameter, CurrentUser));
+                cmd.Parameters.Add(new SqlParameter("@HOTEN", nameBox.Text));
+                cmd.Parameters.Add(new SqlParameter("@NGAYSINH", bdayBox.Text));
+                cmd.Parameters.Add(new SqlParameter("@DIACHI", addressBox.Text));
+                cmd.Parameters.Add(new SqlParameter("@SODT", phoneBox.Text));
+                cmd.Parameters.Add(new SqlParameter("@MATKHAU", passwordBox.Text));
+
+                if (CurrentUser.Trim().StartsWith("NV"))
+                {
+                    cmd.Parameters.Add(new SqlParameter("@LOAINHANVIEN", 0));
+                }
+                else if (CurrentUser.Trim().StartsWith("NS"))
+                {
+                    cmd.Parameters.Add(new SqlParameter("@LOAINHANVIEN", 1));
+                }
+                else if (CurrentUser.Trim().StartsWith("AD"))
+                {
+                    cmd.Parameters.Add(new SqlParameter("@LOAINHANVIEN", 2));
+                }
+                int i = cmd.ExecuteNonQuery();
+                sqlCon.Close();
+                if (i > 0)
+                {
+                    MessageBox.Show("Cập nhật dữ liệu thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật dữ liệu thất bại!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cập nhật dữ liệu thất bại! " + ex.Message);
+            }
         }
     }
 }

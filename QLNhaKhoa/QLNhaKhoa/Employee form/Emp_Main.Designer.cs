@@ -287,7 +287,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Emp_Main";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Emp_Main";
+            Text = "Employee Dashboard";
             Load += Emp_Main_Load;
             LeftPanel.ResumeLayout(false);
             LeftPanel.PerformLayout();

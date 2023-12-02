@@ -68,11 +68,11 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(362, 298);
+            button1.Location = new Point(156, 300);
             button1.Name = "button1";
-            button1.Size = new Size(150, 40);
+            button1.Size = new Size(100, 40);
             button1.TabIndex = 5;
-            button1.Text = "Update record";
+            button1.Text = "Update";
             button1.UseVisualStyleBackColor = false;
             // 
             // addRecordBtn
@@ -82,11 +82,11 @@
             addRecordBtn.FlatStyle = FlatStyle.Flat;
             addRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             addRecordBtn.ForeColor = Color.White;
-            addRecordBtn.Location = new Point(206, 298);
+            addRecordBtn.Location = new Point(262, 300);
             addRecordBtn.Name = "addRecordBtn";
-            addRecordBtn.Size = new Size(150, 40);
+            addRecordBtn.Size = new Size(100, 40);
             addRecordBtn.TabIndex = 4;
-            addRecordBtn.Text = "Delete record";
+            addRecordBtn.Text = "Delete";
             addRecordBtn.UseVisualStyleBackColor = false;
             // 
             // updateRecordBtn
@@ -96,11 +96,11 @@
             updateRecordBtn.FlatStyle = FlatStyle.Flat;
             updateRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             updateRecordBtn.ForeColor = Color.White;
-            updateRecordBtn.Location = new Point(50, 298);
+            updateRecordBtn.Location = new Point(50, 300);
             updateRecordBtn.Name = "updateRecordBtn";
-            updateRecordBtn.Size = new Size(150, 40);
+            updateRecordBtn.Size = new Size(100, 40);
             updateRecordBtn.TabIndex = 3;
-            updateRecordBtn.Text = "Add record";
+            updateRecordBtn.Text = "Add";
             updateRecordBtn.UseVisualStyleBackColor = false;
             // 
             // label1
@@ -108,7 +108,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Tw Cen MT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.SteelBlue;
-            label1.Location = new Point(289, 20);
+            label1.Location = new Point(289, 25);
             label1.Name = "label1";
             label1.Size = new Size(322, 35);
             label1.TabIndex = 0;
@@ -123,7 +123,7 @@
             panel2.Controls.Add(textBox3);
             panel2.Controls.Add(textBox2);
             panel2.Controls.Add(textBox1);
-            panel2.Location = new Point(50, 35);
+            panel2.Location = new Point(50, 40);
             panel2.Name = "panel2";
             panel2.Size = new Size(800, 250);
             panel2.TabIndex = 0;

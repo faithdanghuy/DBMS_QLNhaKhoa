@@ -17,5 +17,17 @@ namespace QLNhaKhoa.Dentist_form
         {
             InitializeComponent();
         }
+        private void Dentist_Prescription_Load(object sender, EventArgs e)
+        {
+            string prescription_query = "select * from TOATHUOC";
+            prescriptionData.DataSource = Helper.getData(prescription_query).Tables[0];
+        }
+        private void prescriptionData_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+
+            }
+        }
     }
 }

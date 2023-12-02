@@ -62,6 +62,7 @@ namespace QLNhaKhoa.Employee_form
                 if (i > 0)
                 {
                     MessageBox.Show("Lập hóa đơn thành công!");
+                    Helper.refreshData("select * from HOADON", billData);
                 }
                 else
                 {

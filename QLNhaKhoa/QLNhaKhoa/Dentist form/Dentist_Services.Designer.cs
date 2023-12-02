@@ -68,11 +68,11 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(382, 298);
+            button1.Location = new Point(156, 300);
             button1.Name = "button1";
-            button1.Size = new Size(160, 40);
+            button1.Size = new Size(100, 40);
             button1.TabIndex = 5;
-            button1.Text = "Update service";
+            button1.Text = "Update";
             button1.UseVisualStyleBackColor = false;
             // 
             // addRecordBtn
@@ -82,11 +82,11 @@
             addRecordBtn.FlatStyle = FlatStyle.Flat;
             addRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             addRecordBtn.ForeColor = Color.White;
-            addRecordBtn.Location = new Point(216, 298);
+            addRecordBtn.Location = new Point(262, 300);
             addRecordBtn.Name = "addRecordBtn";
-            addRecordBtn.Size = new Size(160, 40);
+            addRecordBtn.Size = new Size(100, 40);
             addRecordBtn.TabIndex = 4;
-            addRecordBtn.Text = "Delete service";
+            addRecordBtn.Text = "Delete";
             addRecordBtn.UseVisualStyleBackColor = false;
             // 
             // updateRecordBtn
@@ -96,11 +96,11 @@
             updateRecordBtn.FlatStyle = FlatStyle.Flat;
             updateRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             updateRecordBtn.ForeColor = Color.White;
-            updateRecordBtn.Location = new Point(50, 298);
+            updateRecordBtn.Location = new Point(50, 300);
             updateRecordBtn.Name = "updateRecordBtn";
-            updateRecordBtn.Size = new Size(160, 40);
+            updateRecordBtn.Size = new Size(100, 40);
             updateRecordBtn.TabIndex = 3;
-            updateRecordBtn.Text = "Add service";
+            updateRecordBtn.Text = "Add";
             updateRecordBtn.UseVisualStyleBackColor = false;
             // 
             // label1
@@ -108,7 +108,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Tw Cen MT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.SteelBlue;
-            label1.Location = new Point(351, 20);
+            label1.Location = new Point(351, 25);
             label1.Name = "label1";
             label1.Size = new Size(198, 35);
             label1.TabIndex = 0;
@@ -123,7 +123,7 @@
             panel4.Controls.Add(label2);
             panel4.Controls.Add(priceBox);
             panel4.Controls.Add(servicesIDBox);
-            panel4.Location = new Point(50, 35);
+            panel4.Location = new Point(50, 40);
             panel4.Name = "panel4";
             panel4.Size = new Size(800, 250);
             panel4.TabIndex = 0;
@@ -192,6 +192,10 @@
             // 
             // serviceData
             // 
+            serviceData.AllowUserToDeleteRows = false;
+            serviceData.AllowUserToResizeColumns = false;
+            serviceData.AllowUserToResizeRows = false;
+            serviceData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             serviceData.BorderStyle = BorderStyle.None;
             serviceData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             serviceData.Dock = DockStyle.Bottom;

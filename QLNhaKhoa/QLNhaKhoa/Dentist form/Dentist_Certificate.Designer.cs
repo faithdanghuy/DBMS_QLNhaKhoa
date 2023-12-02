@@ -66,7 +66,7 @@
             nextButton.FlatStyle = FlatStyle.Flat;
             nextButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             nextButton.ForeColor = Color.White;
-            nextButton.Location = new Point(262, 298);
+            nextButton.Location = new Point(262, 300);
             nextButton.Name = "nextButton";
             nextButton.Size = new Size(100, 40);
             nextButton.TabIndex = 11;
@@ -81,7 +81,7 @@
             previousButton.FlatStyle = FlatStyle.Flat;
             previousButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             previousButton.ForeColor = Color.White;
-            previousButton.Location = new Point(156, 298);
+            previousButton.Location = new Point(156, 300);
             previousButton.Name = "previousButton";
             previousButton.Size = new Size(100, 40);
             previousButton.TabIndex = 10;
@@ -96,7 +96,7 @@
             addCertButton.FlatStyle = FlatStyle.Flat;
             addCertButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             addCertButton.ForeColor = Color.White;
-            addCertButton.Location = new Point(50, 298);
+            addCertButton.Location = new Point(50, 300);
             addCertButton.Name = "addCertButton";
             addCertButton.Size = new Size(100, 40);
             addCertButton.TabIndex = 9;
@@ -111,7 +111,6 @@
             certificateData.AllowUserToResizeColumns = false;
             certificateData.AllowUserToResizeRows = false;
             certificateData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            certificateData.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             certificateData.BorderStyle = BorderStyle.None;
             certificateData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             certificateData.Dock = DockStyle.Bottom;
@@ -128,7 +127,7 @@
             label1.BackColor = Color.White;
             label1.Font = new Font("Tw Cen MT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.SteelBlue;
-            label1.Location = new Point(326, 20);
+            label1.Location = new Point(326, 25);
             label1.Name = "label1";
             label1.Size = new Size(248, 35);
             label1.TabIndex = 6;
@@ -144,7 +143,7 @@
             panel2.Controls.Add(examDateBox);
             panel2.Controls.Add(recordIDBox);
             panel2.Controls.Add(certificateIDBox);
-            panel2.Location = new Point(50, 35);
+            panel2.Location = new Point(50, 40);
             panel2.Name = "panel2";
             panel2.Size = new Size(800, 250);
             panel2.TabIndex = 7;

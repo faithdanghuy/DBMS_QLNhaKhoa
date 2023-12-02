@@ -32,6 +32,8 @@
             updateAppButton = new Button();
             makeAppointBtn = new Button();
             panel2 = new Panel();
+            label5 = new Label();
+            appIDBox = new TextBox();
             appointTime = new DateTimePicker();
             label3 = new Label();
             appointDate = new DateTimePicker();
@@ -40,6 +42,8 @@
             label1 = new Label();
             appointmentData = new DataGridView();
             serviceTitle = new Label();
+            empIDBox = new TextBox();
+            label4 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)appointmentData).BeginInit();
@@ -65,11 +69,11 @@
             updateAppButton.FlatStyle = FlatStyle.Flat;
             updateAppButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             updateAppButton.ForeColor = Color.White;
-            updateAppButton.Location = new Point(50, 300);
+            updateAppButton.Location = new Point(256, 300);
             updateAppButton.Name = "updateAppButton";
-            updateAppButton.Size = new Size(200, 40);
+            updateAppButton.Size = new Size(100, 40);
             updateAppButton.TabIndex = 4;
-            updateAppButton.Text = "Update appointment";
+            updateAppButton.Text = "Update";
             updateAppButton.UseVisualStyleBackColor = false;
             updateAppButton.Click += updateAppButton_Click;
             // 
@@ -80,7 +84,7 @@
             makeAppointBtn.FlatStyle = FlatStyle.Flat;
             makeAppointBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             makeAppointBtn.ForeColor = Color.White;
-            makeAppointBtn.Location = new Point(256, 300);
+            makeAppointBtn.Location = new Point(50, 300);
             makeAppointBtn.Name = "makeAppointBtn";
             makeAppointBtn.Size = new Size(200, 40);
             makeAppointBtn.TabIndex = 1;
@@ -92,6 +96,10 @@
             // 
             panel2.BackColor = Color.Transparent;
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(label4);
+            panel2.Controls.Add(empIDBox);
+            panel2.Controls.Add(label5);
+            panel2.Controls.Add(appIDBox);
             panel2.Controls.Add(appointTime);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(appointDate);
@@ -103,15 +111,37 @@
             panel2.Size = new Size(800, 250);
             panel2.TabIndex = 3;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.SteelBlue;
+            label5.Location = new Point(150, 145);
+            label5.Name = "label5";
+            label5.Size = new Size(131, 23);
+            label5.TabIndex = 11;
+            label5.Text = "Appointment ID";
+            // 
+            // appIDBox
+            // 
+            appIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            appIDBox.Location = new Point(150, 170);
+            appIDBox.Name = "appIDBox";
+            appIDBox.PlaceholderText = "Appointment ID";
+            appIDBox.ReadOnly = true;
+            appIDBox.Size = new Size(125, 27);
+            appIDBox.TabIndex = 10;
+            // 
             // appointTime
             // 
             appointTime.CustomFormat = "HH:mm";
             appointTime.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             appointTime.Format = DateTimePickerFormat.Custom;
             appointTime.Location = new Point(150, 62);
+            appointTime.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             appointTime.Name = "appointTime";
             appointTime.ShowUpDown = true;
-            appointTime.Size = new Size(200, 27);
+            appointTime.Size = new Size(150, 27);
             appointTime.TabIndex = 7;
             // 
             // label3
@@ -119,7 +149,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.SteelBlue;
-            label3.Location = new Point(400, 36);
+            label3.Location = new Point(326, 36);
             label3.Name = "label3";
             label3.Size = new Size(48, 23);
             label3.TabIndex = 6;
@@ -130,9 +160,9 @@
             appointDate.CustomFormat = "yyyy-MM-dd";
             appointDate.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             appointDate.Format = DateTimePickerFormat.Custom;
-            appointDate.Location = new Point(400, 62);
+            appointDate.Location = new Point(326, 62);
             appointDate.Name = "appointDate";
-            appointDate.Size = new Size(250, 27);
+            appointDate.Size = new Size(150, 27);
             appointDate.TabIndex = 5;
             // 
             // label2
@@ -140,7 +170,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.SteelBlue;
-            label2.Location = new Point(150, 142);
+            label2.Location = new Point(300, 144);
             label2.Name = "label2";
             label2.Size = new Size(62, 23);
             label2.TabIndex = 4;
@@ -150,10 +180,10 @@
             // 
             cboDentists.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cboDentists.FormattingEnabled = true;
-            cboDentists.Location = new Point(150, 168);
-            cboDentists.MinimumSize = new Size(450, 0);
+            cboDentists.Location = new Point(300, 170);
+            cboDentists.MinimumSize = new Size(350, 0);
             cboDentists.Name = "cboDentists";
-            cboDentists.Size = new Size(500, 27);
+            cboDentists.Size = new Size(350, 27);
             cboDentists.TabIndex = 3;
             // 
             // label1
@@ -169,6 +199,8 @@
             // 
             // appointmentData
             // 
+            appointmentData.AllowUserToAddRows = false;
+            appointmentData.AllowUserToDeleteRows = false;
             appointmentData.AllowUserToResizeColumns = false;
             appointmentData.AllowUserToResizeRows = false;
             appointmentData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -194,6 +226,27 @@
             serviceTitle.Size = new Size(166, 35);
             serviceTitle.TabIndex = 6;
             serviceTitle.Text = "Appointment";
+            // 
+            // empIDBox
+            // 
+            empIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            empIDBox.Location = new Point(500, 62);
+            empIDBox.Name = "empIDBox";
+            empIDBox.PlaceholderText = "Employee ID";
+            empIDBox.ReadOnly = true;
+            empIDBox.Size = new Size(150, 27);
+            empIDBox.TabIndex = 12;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.SteelBlue;
+            label4.Location = new Point(500, 36);
+            label4.Name = "label4";
+            label4.Size = new Size(109, 23);
+            label4.TabIndex = 13;
+            label4.Text = "Employee ID";
             // 
             // Customer_Appointment
             // 
@@ -229,5 +282,9 @@
         private Label serviceTitle;
         public DataGridView appointmentData;
         private DateTimePicker appointTime;
+        private Label label5;
+        private TextBox appIDBox;
+        private TextBox empIDBox;
+        private Label label4;
     }
 }

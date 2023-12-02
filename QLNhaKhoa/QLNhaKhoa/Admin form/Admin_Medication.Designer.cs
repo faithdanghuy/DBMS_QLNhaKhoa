@@ -30,7 +30,9 @@
         {
             components = new System.ComponentModel.Container();
             panel1 = new Panel();
-            searchMedButton = new Button();
+            refreshButton = new Button();
+            searchIDBox = new TextBox();
+            searchButton = new Button();
             updateMedButton = new Button();
             deleteMedButton = new Button();
             label1 = new Label();
@@ -63,7 +65,9 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(searchMedButton);
+            panel1.Controls.Add(refreshButton);
+            panel1.Controls.Add(searchIDBox);
+            panel1.Controls.Add(searchButton);
             panel1.Controls.Add(updateMedButton);
             panel1.Controls.Add(deleteMedButton);
             panel1.Controls.Add(label1);
@@ -76,20 +80,45 @@
             panel1.Size = new Size(900, 700);
             panel1.TabIndex = 7;
             // 
-            // searchMedButton
+            // refreshButton
             // 
-            searchMedButton.BackColor = Color.SteelBlue;
-            searchMedButton.FlatAppearance.BorderSize = 0;
-            searchMedButton.FlatStyle = FlatStyle.Flat;
-            searchMedButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            searchMedButton.ForeColor = Color.White;
-            searchMedButton.Location = new Point(543, 298);
-            searchMedButton.Name = "searchMedButton";
-            searchMedButton.Size = new Size(175, 40);
-            searchMedButton.TabIndex = 14;
-            searchMedButton.Text = "Search medication";
-            searchMedButton.UseVisualStyleBackColor = false;
-            searchMedButton.Click += searchMedButton_Click;
+            refreshButton.BackColor = Color.SteelBlue;
+            refreshButton.FlatAppearance.BorderSize = 0;
+            refreshButton.FlatStyle = FlatStyle.Flat;
+            refreshButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            refreshButton.ForeColor = Color.White;
+            refreshButton.Location = new Point(368, 300);
+            refreshButton.Name = "refreshButton";
+            refreshButton.Size = new Size(100, 40);
+            refreshButton.TabIndex = 18;
+            refreshButton.Text = "Refresh";
+            refreshButton.UseVisualStyleBackColor = false;
+            refreshButton.Click += refreshButton_Click;
+            // 
+            // searchIDBox
+            // 
+            searchIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            searchIDBox.Location = new Point(569, 311);
+            searchIDBox.MaxLength = 100;
+            searchIDBox.Name = "searchIDBox";
+            searchIDBox.PlaceholderText = "Enter med ID to search";
+            searchIDBox.Size = new Size(200, 27);
+            searchIDBox.TabIndex = 16;
+            // 
+            // searchButton
+            // 
+            searchButton.BackColor = Color.SteelBlue;
+            searchButton.FlatAppearance.BorderSize = 0;
+            searchButton.FlatStyle = FlatStyle.Flat;
+            searchButton.Font = new Font("Tw Cen MT", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            searchButton.ForeColor = Color.White;
+            searchButton.Location = new Point(775, 311);
+            searchButton.Name = "searchButton";
+            searchButton.Size = new Size(75, 27);
+            searchButton.TabIndex = 17;
+            searchButton.Text = "Search";
+            searchButton.UseVisualStyleBackColor = false;
+            searchButton.Click += searchButton_Click;
             // 
             // updateMedButton
             // 
@@ -98,11 +127,11 @@
             updateMedButton.FlatStyle = FlatStyle.Flat;
             updateMedButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             updateMedButton.ForeColor = Color.White;
-            updateMedButton.Location = new Point(362, 298);
+            updateMedButton.Location = new Point(156, 300);
             updateMedButton.Name = "updateMedButton";
-            updateMedButton.Size = new Size(175, 40);
+            updateMedButton.Size = new Size(100, 40);
             updateMedButton.TabIndex = 13;
-            updateMedButton.Text = "Update medication";
+            updateMedButton.Text = "Update";
             updateMedButton.UseVisualStyleBackColor = false;
             updateMedButton.Click += updateMedButton_Click;
             // 
@@ -113,11 +142,11 @@
             deleteMedButton.FlatStyle = FlatStyle.Flat;
             deleteMedButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             deleteMedButton.ForeColor = Color.White;
-            deleteMedButton.Location = new Point(206, 298);
+            deleteMedButton.Location = new Point(262, 300);
             deleteMedButton.Name = "deleteMedButton";
-            deleteMedButton.Size = new Size(150, 40);
+            deleteMedButton.Size = new Size(100, 40);
             deleteMedButton.TabIndex = 12;
-            deleteMedButton.Text = "Delete medicine";
+            deleteMedButton.Text = "Delete";
             deleteMedButton.UseVisualStyleBackColor = false;
             deleteMedButton.Click += deleteMedButton_Click;
             // 
@@ -127,7 +156,7 @@
             label1.BackColor = Color.White;
             label1.Font = new Font("Tw Cen MT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.SteelBlue;
-            label1.Location = new Point(375, 15);
+            label1.Location = new Point(375, 25);
             label1.Name = "label1";
             label1.Size = new Size(149, 35);
             label1.TabIndex = 7;
@@ -153,7 +182,7 @@
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(medIDBox);
-            panel2.Location = new Point(50, 35);
+            panel2.Location = new Point(50, 40);
             panel2.Name = "panel2";
             panel2.Size = new Size(800, 250);
             panel2.TabIndex = 11;
@@ -185,16 +214,16 @@
             label8.ForeColor = Color.SteelBlue;
             label8.Location = new Point(300, 176);
             label8.Name = "label8";
-            label8.Size = new Size(84, 23);
+            label8.Size = new Size(102, 23);
             label8.TabIndex = 15;
-            label8.Text = "Prescirbe";
+            label8.Text = "Prescription";
             // 
             // prescribeBox
             // 
             prescribeBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             prescribeBox.Location = new Point(300, 202);
             prescribeBox.Name = "prescribeBox";
-            prescribeBox.PlaceholderText = "Prescribe";
+            prescribeBox.PlaceholderText = "Prescription";
             prescribeBox.Size = new Size(425, 27);
             prescribeBox.TabIndex = 14;
             // 
@@ -330,11 +359,11 @@
             addMedButton.FlatStyle = FlatStyle.Flat;
             addMedButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             addMedButton.ForeColor = Color.White;
-            addMedButton.Location = new Point(50, 298);
+            addMedButton.Location = new Point(50, 300);
             addMedButton.Name = "addMedButton";
-            addMedButton.Size = new Size(150, 40);
+            addMedButton.Size = new Size(100, 40);
             addMedButton.TabIndex = 9;
-            addMedButton.Text = "Add medicine";
+            addMedButton.Text = "Add";
             addMedButton.UseVisualStyleBackColor = false;
             addMedButton.Click += addMedButton_Click;
             // 
@@ -392,7 +421,6 @@
         private Button addMedButton;
         private DataGridView medData;
         private Button updateMedButton;
-        private Button searchMedButton;
         private Label label4;
         private TextBox instockBox;
         private TextBox medNameBox;
@@ -407,5 +435,8 @@
         private Label label9;
         private TextBox empIDBox;
         private ErrorProvider empIDError;
+        private TextBox searchIDBox;
+        private Button searchButton;
+        private Button refreshButton;
     }
 }

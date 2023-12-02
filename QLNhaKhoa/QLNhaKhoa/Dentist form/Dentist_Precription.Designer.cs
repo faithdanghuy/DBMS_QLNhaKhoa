@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            panel2 = new Panel();
-            panel3 = new Panel();
+            panel = new Panel();
             button1 = new Button();
             addRecordBtn = new Button();
             updateRecordBtn = new Button();
@@ -44,43 +42,26 @@
             medicationIDBox = new TextBox();
             billIDBox = new TextBox();
             recordIDBox = new TextBox();
-            recordData = new DataGridView();
-            panel3.SuspendLayout();
+            prescriptionData = new DataGridView();
+            panel.SuspendLayout();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)recordData).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)prescriptionData).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // panel
             // 
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(900, 700);
-            panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.White;
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(900, 700);
-            panel2.TabIndex = 6;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.White;
-            panel3.Controls.Add(button1);
-            panel3.Controls.Add(addRecordBtn);
-            panel3.Controls.Add(updateRecordBtn);
-            panel3.Controls.Add(label1);
-            panel3.Controls.Add(panel4);
-            panel3.Controls.Add(recordData);
-            panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(0, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(900, 700);
-            panel3.TabIndex = 7;
+            panel.BackColor = Color.White;
+            panel.Controls.Add(button1);
+            panel.Controls.Add(addRecordBtn);
+            panel.Controls.Add(updateRecordBtn);
+            panel.Controls.Add(label1);
+            panel.Controls.Add(panel4);
+            panel.Controls.Add(prescriptionData);
+            panel.Dock = DockStyle.Fill;
+            panel.Location = new Point(0, 0);
+            panel.Name = "panel";
+            panel.Size = new Size(900, 700);
+            panel.TabIndex = 7;
             // 
             // button1
             // 
@@ -89,11 +70,11 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(420, 298);
+            button1.Location = new Point(156, 300);
             button1.Name = "button1";
-            button1.Size = new Size(180, 40);
+            button1.Size = new Size(100, 40);
             button1.TabIndex = 5;
-            button1.Text = "Update prescription";
+            button1.Text = "Update";
             button1.UseVisualStyleBackColor = false;
             // 
             // addRecordBtn
@@ -103,11 +84,11 @@
             addRecordBtn.FlatStyle = FlatStyle.Flat;
             addRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             addRecordBtn.ForeColor = Color.White;
-            addRecordBtn.Location = new Point(234, 298);
+            addRecordBtn.Location = new Point(262, 300);
             addRecordBtn.Name = "addRecordBtn";
-            addRecordBtn.Size = new Size(180, 40);
+            addRecordBtn.Size = new Size(100, 40);
             addRecordBtn.TabIndex = 4;
-            addRecordBtn.Text = "Delete prescription";
+            addRecordBtn.Text = "Delete";
             addRecordBtn.UseVisualStyleBackColor = false;
             // 
             // updateRecordBtn
@@ -117,11 +98,11 @@
             updateRecordBtn.FlatStyle = FlatStyle.Flat;
             updateRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             updateRecordBtn.ForeColor = Color.White;
-            updateRecordBtn.Location = new Point(50, 298);
+            updateRecordBtn.Location = new Point(50, 300);
             updateRecordBtn.Name = "updateRecordBtn";
-            updateRecordBtn.Size = new Size(180, 40);
+            updateRecordBtn.Size = new Size(100, 40);
             updateRecordBtn.TabIndex = 3;
-            updateRecordBtn.Text = "Add prescription";
+            updateRecordBtn.Text = "Add";
             updateRecordBtn.UseVisualStyleBackColor = false;
             // 
             // label1
@@ -129,7 +110,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Tw Cen MT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.SteelBlue;
-            label1.Location = new Point(314, 20);
+            label1.Location = new Point(314, 25);
             label1.Name = "label1";
             label1.Size = new Size(271, 35);
             label1.TabIndex = 0;
@@ -146,7 +127,7 @@
             panel4.Controls.Add(medicationIDBox);
             panel4.Controls.Add(billIDBox);
             panel4.Controls.Add(recordIDBox);
-            panel4.Location = new Point(50, 35);
+            panel4.Location = new Point(50, 40);
             panel4.Name = "panel4";
             panel4.Size = new Size(800, 250);
             panel4.TabIndex = 0;
@@ -231,16 +212,21 @@
             recordIDBox.Size = new Size(250, 27);
             recordIDBox.TabIndex = 0;
             // 
-            // recordData
+            // prescriptionData
             // 
-            recordData.BorderStyle = BorderStyle.None;
-            recordData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            recordData.Dock = DockStyle.Bottom;
-            recordData.Location = new Point(0, 350);
-            recordData.Name = "recordData";
-            recordData.RowHeadersWidth = 51;
-            recordData.Size = new Size(900, 350);
-            recordData.TabIndex = 2;
+            prescriptionData.AllowUserToDeleteRows = false;
+            prescriptionData.AllowUserToResizeColumns = false;
+            prescriptionData.AllowUserToResizeRows = false;
+            prescriptionData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            prescriptionData.BorderStyle = BorderStyle.None;
+            prescriptionData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            prescriptionData.Dock = DockStyle.Bottom;
+            prescriptionData.Location = new Point(0, 350);
+            prescriptionData.Name = "prescriptionData";
+            prescriptionData.RowHeadersWidth = 51;
+            prescriptionData.Size = new Size(900, 350);
+            prescriptionData.TabIndex = 2;
+            prescriptionData.CellClick += prescriptionData_CellClick;
             // 
             // Dentist_Prescription
             // 
@@ -249,31 +235,27 @@
             BackColor = Color.White;
             ClientSize = new Size(900, 700);
             ControlBox = false;
-            Controls.Add(panel3);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
+            Controls.Add(panel);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Dentist_Prescription";
             Text = "Dentist_Precription";
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            Load += Dentist_Prescription_Load;
+            panel.ResumeLayout(false);
+            panel.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)recordData).EndInit();
+            ((System.ComponentModel.ISupportInitialize)prescriptionData).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel panel1;
-        private Panel panel2;
-        private Panel panel3;
+        private Panel panel;
         private Button addRecordBtn;
         private Button updateRecordBtn;
         private Label label1;
         private Panel panel4;
         private TextBox recordIDBox;
-        private DataGridView recordData;
+        private DataGridView prescriptionData;
         private Button button1;
         private TextBox billIDBox;
         private TextBox medicationIDBox;

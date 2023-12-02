@@ -1,8 +1,5 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
-using System.Windows.Forms;
-using System.Xml.Linq;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace QLNhaKhoa.General_form
 {
@@ -12,17 +9,6 @@ namespace QLNhaKhoa.General_form
         public Customer_Appointment()
         {
             InitializeComponent();
-        }
-        private void appointTime_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 'h' && e.KeyChar != '\b')
-            {
-                e.Handled = true;
-            }
-            if (appointTime.Text.Length == 0 && e.KeyChar == 'h')
-            {
-                e.Handled = true;
-            }
         }
         private void Appointment_Load(object sender, EventArgs e)
         {
@@ -50,6 +36,8 @@ namespace QLNhaKhoa.General_form
                     int minutes = time - hour * 60;
                     appointTime.Text = hour + ":" + minutes;
                     appointDate.Text = dgvr.Cells["NGAY"].Value.ToString();
+                    appIDBox.Text = dgvr.Cells["MALICHHEN"].Value.ToString();
+                    empIDBox.Text = dgvr.Cells["MANVDATLICH"].Value.ToString();
 
                     SqlCommand cmd = new SqlCommand("select HOTEN from NHANVIEN where MANHANVIEN='" + dgvr.Cells["MANHASI"].Value.ToString() + "'", sqlCon);
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -119,12 +107,14 @@ namespace QLNhaKhoa.General_form
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 var item = (DataRowView)cboDentists.SelectedItem;
-                cmd.Parameters.Add(new SqlParameter("@MALICHHEN", appointDate.Text));
+                cmd.Parameters.Add(new SqlParameter("@MALICHHEN", appIDBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@NGAY", appointDate.Text));
                 cmd.Parameters.Add(new SqlParameter("@GIO", time));
                 cmd.Parameters.Add(new SqlParameter("@MAKHACHHANG", CurrentUser));
                 cmd.Parameters.Add(new SqlParameter("@MANHASI", item["MANHANVIEN"].ToString()));
+                cmd.Parameters.Add(new SqlParameter("@MANVDATLICH", empIDBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@NGUOIUPDATE", CurrentUser));
+
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)
                 {

@@ -36,6 +36,10 @@
             makeAppButton = new Button();
             label1 = new Label();
             panel4 = new Panel();
+            label5 = new Label();
+            label4 = new Label();
+            cboCustomer = new ComboBox();
+            cboDentist = new ComboBox();
             timeBox = new DateTimePicker();
             label3 = new Label();
             label2 = new Label();
@@ -146,6 +150,10 @@
             // panel4
             // 
             panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(label5);
+            panel4.Controls.Add(label4);
+            panel4.Controls.Add(cboCustomer);
+            panel4.Controls.Add(cboDentist);
             panel4.Controls.Add(timeBox);
             panel4.Controls.Add(label3);
             panel4.Controls.Add(label2);
@@ -155,13 +163,54 @@
             panel4.Size = new Size(800, 250);
             panel4.TabIndex = 0;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.SteelBlue;
+            label5.Location = new Point(450, 139);
+            label5.Name = "label5";
+            label5.Size = new Size(83, 23);
+            label5.TabIndex = 9;
+            label5.Text = "Customer";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.SteelBlue;
+            label4.Location = new Point(100, 139);
+            label4.Name = "label4";
+            label4.Size = new Size(62, 23);
+            label4.TabIndex = 8;
+            label4.Text = "Dentist";
+            // 
+            // cboCustomer
+            // 
+            cboCustomer.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboCustomer.FormattingEnabled = true;
+            cboCustomer.Location = new Point(450, 165);
+            cboCustomer.Name = "cboCustomer";
+            cboCustomer.Size = new Size(250, 27);
+            cboCustomer.TabIndex = 7;
+            // 
+            // cboDentist
+            // 
+            cboDentist.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboDentist.FormattingEnabled = true;
+            cboDentist.Location = new Point(100, 165);
+            cboDentist.Name = "cboDentist";
+            cboDentist.Size = new Size(250, 27);
+            cboDentist.TabIndex = 6;
+            // 
             // timeBox
             // 
-            timeBox.CustomFormat = "hh:mm";
+            timeBox.CustomFormat = "HH:mm";
             timeBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             timeBox.Format = DateTimePickerFormat.Custom;
-            timeBox.Location = new Point(100, 112);
+            timeBox.Location = new Point(100, 76);
             timeBox.Name = "timeBox";
+            timeBox.ShowUpDown = true;
             timeBox.Size = new Size(250, 27);
             timeBox.TabIndex = 5;
             // 
@@ -170,7 +219,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.SteelBlue;
-            label3.Location = new Point(450, 86);
+            label3.Location = new Point(450, 50);
             label3.Name = "label3";
             label3.Size = new Size(48, 23);
             label3.TabIndex = 4;
@@ -181,7 +230,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.SteelBlue;
-            label2.Location = new Point(100, 86);
+            label2.Location = new Point(100, 50);
             label2.Name = "label2";
             label2.Size = new Size(46, 23);
             label2.TabIndex = 3;
@@ -192,7 +241,7 @@
             dateBox.CustomFormat = "yyyy-MM-dd";
             dateBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dateBox.Format = DateTimePickerFormat.Custom;
-            dateBox.Location = new Point(450, 112);
+            dateBox.Location = new Point(450, 76);
             dateBox.Name = "dateBox";
             dateBox.Size = new Size(250, 27);
             dateBox.TabIndex = 2;
@@ -246,5 +295,9 @@
         private TextBox searchIDBox;
         private Button searchButton;
         private DateTimePicker timeBox;
+        private ComboBox cboCustomer;
+        private ComboBox cboDentist;
+        private Label label5;
+        private Label label4;
     }
 }
