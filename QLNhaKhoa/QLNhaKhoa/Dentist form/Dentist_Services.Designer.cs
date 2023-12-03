@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             panel3 = new Panel();
-            button1 = new Button();
-            addRecordBtn = new Button();
+            refreshButton = new Button();
+            updateServiceButton = new Button();
+            deleteServiceButton = new Button();
             addServicesButton = new Button();
             label1 = new Label();
             panel4 = new Panel();
@@ -55,8 +56,9 @@
             // panel3
             // 
             panel3.BackColor = Color.White;
-            panel3.Controls.Add(button1);
-            panel3.Controls.Add(addRecordBtn);
+            panel3.Controls.Add(refreshButton);
+            panel3.Controls.Add(updateServiceButton);
+            panel3.Controls.Add(deleteServiceButton);
             panel3.Controls.Add(addServicesButton);
             panel3.Controls.Add(label1);
             panel3.Controls.Add(panel4);
@@ -67,33 +69,50 @@
             panel3.Size = new Size(900, 700);
             panel3.TabIndex = 8;
             // 
-            // button1
+            // refreshButton
             // 
-            button1.BackColor = Color.SteelBlue;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(156, 300);
-            button1.Name = "button1";
-            button1.Size = new Size(100, 40);
-            button1.TabIndex = 5;
-            button1.Text = "Update";
-            button1.UseVisualStyleBackColor = false;
+            refreshButton.BackColor = Color.SteelBlue;
+            refreshButton.FlatAppearance.BorderSize = 0;
+            refreshButton.FlatStyle = FlatStyle.Flat;
+            refreshButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            refreshButton.ForeColor = Color.White;
+            refreshButton.Location = new Point(368, 300);
+            refreshButton.Name = "refreshButton";
+            refreshButton.Size = new Size(100, 40);
+            refreshButton.TabIndex = 6;
+            refreshButton.Text = "Refresh";
+            refreshButton.UseVisualStyleBackColor = false;
+            refreshButton.Click += refreshButton_Click;
             // 
-            // addRecordBtn
+            // updateServiceButton
             // 
-            addRecordBtn.BackColor = Color.SteelBlue;
-            addRecordBtn.FlatAppearance.BorderSize = 0;
-            addRecordBtn.FlatStyle = FlatStyle.Flat;
-            addRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            addRecordBtn.ForeColor = Color.White;
-            addRecordBtn.Location = new Point(262, 300);
-            addRecordBtn.Name = "addRecordBtn";
-            addRecordBtn.Size = new Size(100, 40);
-            addRecordBtn.TabIndex = 4;
-            addRecordBtn.Text = "Delete";
-            addRecordBtn.UseVisualStyleBackColor = false;
+            updateServiceButton.BackColor = Color.SteelBlue;
+            updateServiceButton.FlatAppearance.BorderSize = 0;
+            updateServiceButton.FlatStyle = FlatStyle.Flat;
+            updateServiceButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            updateServiceButton.ForeColor = Color.White;
+            updateServiceButton.Location = new Point(156, 300);
+            updateServiceButton.Name = "updateServiceButton";
+            updateServiceButton.Size = new Size(100, 40);
+            updateServiceButton.TabIndex = 5;
+            updateServiceButton.Text = "Update";
+            updateServiceButton.UseVisualStyleBackColor = false;
+            updateServiceButton.Click += updateServiceButton_Click;
+            // 
+            // deleteServiceButton
+            // 
+            deleteServiceButton.BackColor = Color.SteelBlue;
+            deleteServiceButton.FlatAppearance.BorderSize = 0;
+            deleteServiceButton.FlatStyle = FlatStyle.Flat;
+            deleteServiceButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            deleteServiceButton.ForeColor = Color.White;
+            deleteServiceButton.Location = new Point(262, 300);
+            deleteServiceButton.Name = "deleteServiceButton";
+            deleteServiceButton.Size = new Size(100, 40);
+            deleteServiceButton.TabIndex = 4;
+            deleteServiceButton.Text = "Delete";
+            deleteServiceButton.UseVisualStyleBackColor = false;
+            deleteServiceButton.Click += deleteServiceButton_Click;
             // 
             // addServicesButton
             // 
@@ -172,7 +191,6 @@
             // 
             // noteBox
             // 
-            noteBox.Enabled = false;
             noteBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             noteBox.Location = new Point(100, 200);
             noteBox.MaxLength = 5;
@@ -257,12 +275,12 @@
             // 
             // servicesIDBox
             // 
-            servicesIDBox.Enabled = false;
             servicesIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             servicesIDBox.Location = new Point(100, 40);
             servicesIDBox.MaxLength = 5;
             servicesIDBox.Name = "servicesIDBox";
             servicesIDBox.PlaceholderText = "Service ID";
+            servicesIDBox.ReadOnly = true;
             servicesIDBox.Size = new Size(200, 27);
             servicesIDBox.TabIndex = 0;
             // 
@@ -305,7 +323,7 @@
         #endregion
 
         private Panel panel3;
-        private Button addRecordBtn;
+        private Button deleteServiceButton;
         private Button addServicesButton;
         private Label label1;
         private Panel panel4;
@@ -315,7 +333,7 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private Button button1;
+        private Button updateServiceButton;
         private ComboBox cboService;
         private Label label5;
         private Label label6;
@@ -323,5 +341,6 @@
         private TextBox noteBox;
         private ComboBox cboRecord;
         private ComboBox cboCertificate;
+        private Button refreshButton;
     }
 }

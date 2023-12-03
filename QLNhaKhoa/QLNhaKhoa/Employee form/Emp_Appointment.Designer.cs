@@ -36,14 +36,16 @@
             makeAppButton = new Button();
             label1 = new Label();
             panel4 = new Panel();
+            label6 = new Label();
+            appIDBox = new TextBox();
             label5 = new Label();
             label4 = new Label();
             cboCustomer = new ComboBox();
-            cboDentist = new ComboBox();
-            timeBox = new DateTimePicker();
+            cboDentists = new ComboBox();
+            appointTime = new DateTimePicker();
             label3 = new Label();
             label2 = new Label();
-            dateBox = new DateTimePicker();
+            appointDate = new DateTimePicker();
             appointmentData = new DataGridView();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
@@ -120,6 +122,7 @@
             updateAppButton.TabIndex = 5;
             updateAppButton.Text = "Update";
             updateAppButton.UseVisualStyleBackColor = false;
+            updateAppButton.Click += updateAppButton_Click;
             // 
             // makeAppButton
             // 
@@ -150,25 +153,48 @@
             // panel4
             // 
             panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(label6);
+            panel4.Controls.Add(appIDBox);
             panel4.Controls.Add(label5);
             panel4.Controls.Add(label4);
             panel4.Controls.Add(cboCustomer);
-            panel4.Controls.Add(cboDentist);
-            panel4.Controls.Add(timeBox);
+            panel4.Controls.Add(cboDentists);
+            panel4.Controls.Add(appointTime);
             panel4.Controls.Add(label3);
             panel4.Controls.Add(label2);
-            panel4.Controls.Add(dateBox);
+            panel4.Controls.Add(appointDate);
             panel4.Location = new Point(50, 40);
             panel4.Name = "panel4";
             panel4.Size = new Size(800, 250);
             panel4.TabIndex = 0;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.SteelBlue;
+            label6.Location = new Point(100, 50);
+            label6.Name = "label6";
+            label6.Size = new Size(131, 23);
+            label6.TabIndex = 11;
+            label6.Text = "Appointment ID";
+            // 
+            // appIDBox
+            // 
+            appIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            appIDBox.Location = new Point(100, 78);
+            appIDBox.Name = "appIDBox";
+            appIDBox.PlaceholderText = "Appointment ID";
+            appIDBox.ReadOnly = true;
+            appIDBox.Size = new Size(125, 27);
+            appIDBox.TabIndex = 10;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.SteelBlue;
-            label5.Location = new Point(450, 139);
+            label5.Location = new Point(425, 139);
             label5.Name = "label5";
             label5.Size = new Size(83, 23);
             label5.TabIndex = 9;
@@ -189,37 +215,37 @@
             // 
             cboCustomer.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cboCustomer.FormattingEnabled = true;
-            cboCustomer.Location = new Point(450, 165);
+            cboCustomer.Location = new Point(425, 165);
             cboCustomer.Name = "cboCustomer";
-            cboCustomer.Size = new Size(250, 27);
+            cboCustomer.Size = new Size(275, 27);
             cboCustomer.TabIndex = 7;
             // 
-            // cboDentist
+            // cboDentists
             // 
-            cboDentist.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cboDentist.FormattingEnabled = true;
-            cboDentist.Location = new Point(100, 165);
-            cboDentist.Name = "cboDentist";
-            cboDentist.Size = new Size(250, 27);
-            cboDentist.TabIndex = 6;
+            cboDentists.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboDentists.FormattingEnabled = true;
+            cboDentists.Location = new Point(100, 165);
+            cboDentists.Name = "cboDentists";
+            cboDentists.Size = new Size(275, 27);
+            cboDentists.TabIndex = 6;
             // 
-            // timeBox
+            // appointTime
             // 
-            timeBox.CustomFormat = "HH:mm";
-            timeBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            timeBox.Format = DateTimePickerFormat.Custom;
-            timeBox.Location = new Point(100, 76);
-            timeBox.Name = "timeBox";
-            timeBox.ShowUpDown = true;
-            timeBox.Size = new Size(250, 27);
-            timeBox.TabIndex = 5;
+            appointTime.CustomFormat = "HH:mm";
+            appointTime.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            appointTime.Format = DateTimePickerFormat.Custom;
+            appointTime.Location = new Point(263, 76);
+            appointTime.Name = "appointTime";
+            appointTime.ShowUpDown = true;
+            appointTime.Size = new Size(200, 27);
+            appointTime.TabIndex = 5;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.SteelBlue;
-            label3.Location = new Point(450, 50);
+            label3.Location = new Point(500, 50);
             label3.Name = "label3";
             label3.Size = new Size(48, 23);
             label3.TabIndex = 4;
@@ -230,24 +256,25 @@
             label2.AutoSize = true;
             label2.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.SteelBlue;
-            label2.Location = new Point(100, 50);
+            label2.Location = new Point(263, 50);
             label2.Name = "label2";
             label2.Size = new Size(132, 23);
             label2.TabIndex = 3;
             label2.Text = "Time (8h - 17h)";
             // 
-            // dateBox
+            // appointDate
             // 
-            dateBox.CustomFormat = "yyyy-MM-dd";
-            dateBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateBox.Format = DateTimePickerFormat.Custom;
-            dateBox.Location = new Point(450, 76);
-            dateBox.Name = "dateBox";
-            dateBox.Size = new Size(250, 27);
-            dateBox.TabIndex = 2;
+            appointDate.CustomFormat = "yyyy-MM-dd";
+            appointDate.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            appointDate.Format = DateTimePickerFormat.Custom;
+            appointDate.Location = new Point(500, 76);
+            appointDate.Name = "appointDate";
+            appointDate.Size = new Size(200, 27);
+            appointDate.TabIndex = 2;
             // 
             // appointmentData
             // 
+            appointmentData.AllowUserToAddRows = false;
             appointmentData.AllowUserToDeleteRows = false;
             appointmentData.AllowUserToResizeColumns = false;
             appointmentData.AllowUserToResizeRows = false;
@@ -260,6 +287,7 @@
             appointmentData.RowHeadersWidth = 51;
             appointmentData.Size = new Size(900, 350);
             appointmentData.TabIndex = 2;
+            appointmentData.CellClick += appointmentData_CellClick;
             // 
             // Emp_Appointment
             // 
@@ -289,15 +317,17 @@
         private Panel panel4;
         private Label label3;
         private Label label2;
-        private DateTimePicker dateBox;
+        private DateTimePicker appointDate;
         private DataGridView appointmentData;
         private Button refreshButton;
         private TextBox searchIDBox;
         private Button searchButton;
-        private DateTimePicker timeBox;
+        private DateTimePicker appointTime;
         private ComboBox cboCustomer;
-        private ComboBox cboDentist;
+        private ComboBox cboDentists;
         private Label label5;
         private Label label4;
+        private TextBox appIDBox;
+        private Label label6;
     }
 }

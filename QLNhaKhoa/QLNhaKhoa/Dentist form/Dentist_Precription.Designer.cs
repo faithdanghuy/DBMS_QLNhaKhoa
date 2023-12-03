@@ -29,19 +29,20 @@
         private void InitializeComponent()
         {
             panel = new Panel();
-            button1 = new Button();
-            addRecordBtn = new Button();
-            updateRecordBtn = new Button();
+            refreshButton = new Button();
+            updatePreButton = new Button();
+            deletePreButton = new Button();
+            addPreButton = new Button();
             label1 = new Label();
             panel4 = new Panel();
+            cboMedication = new ComboBox();
+            cboCertificate = new ComboBox();
+            cboRecord = new ComboBox();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             quantityBox = new TextBox();
-            medicationIDBox = new TextBox();
-            billIDBox = new TextBox();
-            recordIDBox = new TextBox();
             prescriptionData = new DataGridView();
             panel.SuspendLayout();
             panel4.SuspendLayout();
@@ -51,9 +52,10 @@
             // panel
             // 
             panel.BackColor = Color.White;
-            panel.Controls.Add(button1);
-            panel.Controls.Add(addRecordBtn);
-            panel.Controls.Add(updateRecordBtn);
+            panel.Controls.Add(refreshButton);
+            panel.Controls.Add(updatePreButton);
+            panel.Controls.Add(deletePreButton);
+            panel.Controls.Add(addPreButton);
             panel.Controls.Add(label1);
             panel.Controls.Add(panel4);
             panel.Controls.Add(prescriptionData);
@@ -63,47 +65,65 @@
             panel.Size = new Size(900, 700);
             panel.TabIndex = 7;
             // 
-            // button1
+            // refreshButton
             // 
-            button1.BackColor = Color.SteelBlue;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(156, 300);
-            button1.Name = "button1";
-            button1.Size = new Size(100, 40);
-            button1.TabIndex = 5;
-            button1.Text = "Update";
-            button1.UseVisualStyleBackColor = false;
+            refreshButton.BackColor = Color.SteelBlue;
+            refreshButton.FlatAppearance.BorderSize = 0;
+            refreshButton.FlatStyle = FlatStyle.Flat;
+            refreshButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            refreshButton.ForeColor = Color.White;
+            refreshButton.Location = new Point(368, 300);
+            refreshButton.Name = "refreshButton";
+            refreshButton.Size = new Size(100, 40);
+            refreshButton.TabIndex = 6;
+            refreshButton.Text = "Refresh";
+            refreshButton.UseVisualStyleBackColor = false;
+            refreshButton.Click += refreshButton_Click;
             // 
-            // addRecordBtn
+            // updatePreButton
             // 
-            addRecordBtn.BackColor = Color.SteelBlue;
-            addRecordBtn.FlatAppearance.BorderSize = 0;
-            addRecordBtn.FlatStyle = FlatStyle.Flat;
-            addRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            addRecordBtn.ForeColor = Color.White;
-            addRecordBtn.Location = new Point(262, 300);
-            addRecordBtn.Name = "addRecordBtn";
-            addRecordBtn.Size = new Size(100, 40);
-            addRecordBtn.TabIndex = 4;
-            addRecordBtn.Text = "Delete";
-            addRecordBtn.UseVisualStyleBackColor = false;
+            updatePreButton.BackColor = Color.SteelBlue;
+            updatePreButton.FlatAppearance.BorderSize = 0;
+            updatePreButton.FlatStyle = FlatStyle.Flat;
+            updatePreButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            updatePreButton.ForeColor = Color.White;
+            updatePreButton.Location = new Point(156, 300);
+            updatePreButton.Name = "updatePreButton";
+            updatePreButton.Size = new Size(100, 40);
+            updatePreButton.TabIndex = 5;
+            updatePreButton.Text = "Update";
+            updatePreButton.UseVisualStyleBackColor = false;
+            updatePreButton.Click += updatePreButton_Click;
             // 
-            // updateRecordBtn
+            // deletePreButton
             // 
-            updateRecordBtn.BackColor = Color.SteelBlue;
-            updateRecordBtn.FlatAppearance.BorderSize = 0;
-            updateRecordBtn.FlatStyle = FlatStyle.Flat;
-            updateRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            updateRecordBtn.ForeColor = Color.White;
-            updateRecordBtn.Location = new Point(50, 300);
-            updateRecordBtn.Name = "updateRecordBtn";
-            updateRecordBtn.Size = new Size(100, 40);
-            updateRecordBtn.TabIndex = 3;
-            updateRecordBtn.Text = "Add";
-            updateRecordBtn.UseVisualStyleBackColor = false;
+            deletePreButton.BackColor = Color.SteelBlue;
+            deletePreButton.FlatAppearance.BorderSize = 0;
+            deletePreButton.FlatStyle = FlatStyle.Flat;
+            deletePreButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            deletePreButton.ForeColor = Color.White;
+            deletePreButton.Location = new Point(262, 300);
+            deletePreButton.Name = "deletePreButton";
+            deletePreButton.Size = new Size(100, 40);
+            deletePreButton.TabIndex = 4;
+            deletePreButton.Text = "Delete";
+            deletePreButton.UseVisualStyleBackColor = false;
+            deletePreButton.Click += deletePreButton_Click;
+            // 
+            // addPreButton
+            // 
+            addPreButton.BackColor = Color.SteelBlue;
+            addPreButton.FlatAppearance.BorderSize = 0;
+            addPreButton.FlatStyle = FlatStyle.Flat;
+            addPreButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            addPreButton.ForeColor = Color.White;
+            addPreButton.Location = new Point(50, 300);
+            addPreButton.Name = "addPreButton";
+            addPreButton.Size = new Size(100, 40);
+            addPreButton.TabIndex = 3;
+            addPreButton.Text = "Add";
+            addPreButton.UseVisualStyleBackColor = false;
+            addPreButton.Click += addPreButton_Click;
             // 
             // label1
             // 
@@ -119,18 +139,45 @@
             // panel4
             // 
             panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(cboMedication);
+            panel4.Controls.Add(cboCertificate);
+            panel4.Controls.Add(cboRecord);
             panel4.Controls.Add(label5);
             panel4.Controls.Add(label4);
             panel4.Controls.Add(label3);
             panel4.Controls.Add(label2);
             panel4.Controls.Add(quantityBox);
-            panel4.Controls.Add(medicationIDBox);
-            panel4.Controls.Add(billIDBox);
-            panel4.Controls.Add(recordIDBox);
             panel4.Location = new Point(50, 40);
             panel4.Name = "panel4";
             panel4.Size = new Size(800, 250);
             panel4.TabIndex = 0;
+            // 
+            // cboMedication
+            // 
+            cboMedication.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboMedication.FormattingEnabled = true;
+            cboMedication.Location = new Point(100, 180);
+            cboMedication.Name = "cboMedication";
+            cboMedication.Size = new Size(250, 27);
+            cboMedication.TabIndex = 10;
+            // 
+            // cboCertificate
+            // 
+            cboCertificate.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboCertificate.FormattingEnabled = true;
+            cboCertificate.Location = new Point(450, 80);
+            cboCertificate.Name = "cboCertificate";
+            cboCertificate.Size = new Size(250, 27);
+            cboCertificate.TabIndex = 9;
+            // 
+            // cboRecord
+            // 
+            cboRecord.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboRecord.FormattingEnabled = true;
+            cboRecord.Location = new Point(100, 80);
+            cboRecord.Name = "cboRecord";
+            cboRecord.Size = new Size(250, 27);
+            cboRecord.TabIndex = 8;
             // 
             // label5
             // 
@@ -150,9 +197,9 @@
             label4.ForeColor = Color.SteelBlue;
             label4.Location = new Point(100, 154);
             label4.Name = "label4";
-            label4.Size = new Size(119, 23);
+            label4.Size = new Size(97, 23);
             label4.TabIndex = 6;
-            label4.Text = "Medication ID";
+            label4.Text = "Medication";
             // 
             // label3
             // 
@@ -161,9 +208,9 @@
             label3.ForeColor = Color.SteelBlue;
             label3.Location = new Point(450, 54);
             label3.Name = "label3";
-            label3.Size = new Size(123, 23);
+            label3.Size = new Size(115, 23);
             label3.TabIndex = 5;
-            label3.Text = "Medical Bill ID";
+            label3.Text = "Certificate ID";
             // 
             // label2
             // 
@@ -172,9 +219,9 @@
             label2.ForeColor = Color.SteelBlue;
             label2.Location = new Point(100, 54);
             label2.Name = "label2";
-            label2.Size = new Size(167, 23);
+            label2.Size = new Size(142, 23);
             label2.TabIndex = 4;
-            label2.Text = "Customer Record ID";
+            label2.Text = "Customer record";
             // 
             // quantityBox
             // 
@@ -184,33 +231,6 @@
             quantityBox.PlaceholderText = "Quantity";
             quantityBox.Size = new Size(250, 27);
             quantityBox.TabIndex = 3;
-            // 
-            // medicationIDBox
-            // 
-            medicationIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            medicationIDBox.Location = new Point(100, 180);
-            medicationIDBox.Name = "medicationIDBox";
-            medicationIDBox.PlaceholderText = "Medication ID";
-            medicationIDBox.Size = new Size(250, 27);
-            medicationIDBox.TabIndex = 2;
-            // 
-            // billIDBox
-            // 
-            billIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            billIDBox.Location = new Point(450, 80);
-            billIDBox.Name = "billIDBox";
-            billIDBox.PlaceholderText = "Medical Bill ID";
-            billIDBox.Size = new Size(250, 27);
-            billIDBox.TabIndex = 1;
-            // 
-            // recordIDBox
-            // 
-            recordIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            recordIDBox.Location = new Point(100, 80);
-            recordIDBox.Name = "recordIDBox";
-            recordIDBox.PlaceholderText = "Customer Record ID";
-            recordIDBox.Size = new Size(250, 27);
-            recordIDBox.TabIndex = 0;
             // 
             // prescriptionData
             // 
@@ -250,19 +270,20 @@
 
         #endregion
         private Panel panel;
-        private Button addRecordBtn;
-        private Button updateRecordBtn;
+        private Button deletePreButton;
+        private Button addPreButton;
         private Label label1;
         private Panel panel4;
-        private TextBox recordIDBox;
         private DataGridView prescriptionData;
-        private Button button1;
-        private TextBox billIDBox;
-        private TextBox medicationIDBox;
+        private Button updatePreButton;
         private TextBox quantityBox;
         private Label label3;
         private Label label2;
         private Label label5;
         private Label label4;
+        private ComboBox cboRecord;
+        private ComboBox cboCertificate;
+        private ComboBox cboMedication;
+        private Button refreshButton;
     }
 }

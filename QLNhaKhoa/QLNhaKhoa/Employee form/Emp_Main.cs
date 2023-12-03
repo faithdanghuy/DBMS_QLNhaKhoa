@@ -53,7 +53,9 @@ namespace QLNhaKhoa.Employee_form
         }
         private void AppointmentButton_Click(object sender, EventArgs e)
         {
-            Helper.loadform(new Emp_Appointment(), this.mainPanel);
+            Emp_Appointment f = new Emp_Appointment();
+            f.CurrentEmp = CurrentEmp;
+            Helper.loadform(f, this.mainPanel);
         }
         private void Emp_Main_Load(object sender, EventArgs e)
         {
