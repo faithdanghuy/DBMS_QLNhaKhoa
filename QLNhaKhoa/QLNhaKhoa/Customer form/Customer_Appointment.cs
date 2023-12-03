@@ -10,6 +10,10 @@ namespace QLNhaKhoa.General_form
         {
             InitializeComponent();
         }
+        private void refresh()
+        {
+            Helper.refreshData("select * from LICHHEN where MAKHACHHANG='" + CurrentUser + "'", appointmentData);
+        }
         private void Appointment_Load(object sender, EventArgs e)
         {
             string appointment_query = "select * from LICHHEN where MAKHACHHANG='" + CurrentUser + "'";
@@ -48,6 +52,7 @@ namespace QLNhaKhoa.General_form
                         }
                     }
                 }
+                sqlCon.Close();
             }
         }
         private void makeAppointBtn_Click(object sender, EventArgs e)
@@ -73,6 +78,7 @@ namespace QLNhaKhoa.General_form
                     cmd.Parameters.Add(new SqlParameter("@MAKHACHHANG", CurrentUser));
                     cmd.Parameters.Add(new SqlParameter("@MANHASI", item["MANHANVIEN"].ToString()));
                     cmd.Parameters.Add("@MALICHHEN", SqlDbType.VarChar, 10).Direction = ParameterDirection.Output;
+
                     int i = cmd.ExecuteNonQuery();
                     if (i > 0)
                     {
@@ -82,6 +88,7 @@ namespace QLNhaKhoa.General_form
                     {
                         MessageBox.Show("Đặt lịch hẹn thất bại!");
                     }
+                    refresh();
                     sqlCon.Close();
                 }
                 catch (Exception ex)
@@ -112,7 +119,14 @@ namespace QLNhaKhoa.General_form
                 cmd.Parameters.Add(new SqlParameter("@GIO", time));
                 cmd.Parameters.Add(new SqlParameter("@MAKHACHHANG", CurrentUser));
                 cmd.Parameters.Add(new SqlParameter("@MANHASI", item["MANHANVIEN"].ToString()));
-                cmd.Parameters.Add(new SqlParameter("@MANVDATLICH", empIDBox.Text));
+                if (!string.IsNullOrEmpty(empIDBox.Text))
+                {
+                    cmd.Parameters.Add(new SqlParameter("@MANVDATLICH", empIDBox.Text));
+                }
+                else
+                {
+                    cmd.Parameters.Add(new SqlParameter("@MANVDATLICH", DBNull.Value));
+                }
                 cmd.Parameters.Add(new SqlParameter("@NGUOIUPDATE", CurrentUser));
 
                 int i = cmd.ExecuteNonQuery();
@@ -124,12 +138,17 @@ namespace QLNhaKhoa.General_form
                 {
                     MessageBox.Show("Đặt lịch hẹn thất bại!");
                 }
+                refresh();
                 sqlCon.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Cập nhật lịch hẹn thất bại! " + ex.Message);
             }
+        }
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            refresh();
         }
     }
 }

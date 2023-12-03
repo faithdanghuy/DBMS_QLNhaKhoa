@@ -10,6 +10,7 @@ namespace QLNhaKhoa.Admin_form
         {
             InitializeComponent();
         }
+
         private void AccountButton_Click(object sender, EventArgs e)
         {
             Account f = new Account();
@@ -17,27 +18,32 @@ namespace QLNhaKhoa.Admin_form
             f.CurrentPass = CurrentPass;
             Helper.loadform(f, this.mainPanel);
         }
+
         private void AccountMngrButton_Click(object sender, EventArgs e)
         {
             Admin_AccManager f = new Admin_AccManager();
             f.CurrentAdmin = CurrentAdmin;
             Helper.loadform(f, this.mainPanel);
         }
+
         private void MedicationButton_Click(object sender, EventArgs e)
         {
             Admin_Medication f = new Admin_Medication();
             f.CurrentAdmin = CurrentAdmin;
             Helper.loadform(f, this.mainPanel);
         }
+
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
         private void minimizeButton_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
-        private void Admin_Main_Load(object sender, EventArgs e)
+
+        public void Admin_Main_Load(object sender, EventArgs e)
         {
             AdminID.Text = CurrentAdmin;
             SqlConnection sqlCon = new SqlConnection(Helper.strCon);

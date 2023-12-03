@@ -44,8 +44,6 @@
             examDateBox = new DateTimePicker();
             recordIDBox = new TextBox();
             certificateIDBox = new TextBox();
-            addRecordBtn = new Button();
-            updateRecordBtn = new Button();
             certificateData = new DataGridView();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -60,8 +58,6 @@
             panel1.Controls.Add(refreshButton);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(panel2);
-            panel1.Controls.Add(addRecordBtn);
-            panel1.Controls.Add(updateRecordBtn);
             panel1.Controls.Add(certificateData);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
@@ -101,9 +97,9 @@
             refreshButton.FlatStyle = FlatStyle.Flat;
             refreshButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             refreshButton.ForeColor = Color.White;
-            refreshButton.Location = new Point(262, 298);
+            refreshButton.Location = new Point(50, 300);
             refreshButton.Name = "refreshButton";
-            refreshButton.Size = new Size(100, 40);
+            refreshButton.Size = new Size(200, 40);
             refreshButton.TabIndex = 13;
             refreshButton.Text = "Refresh";
             refreshButton.UseVisualStyleBackColor = false;
@@ -115,7 +111,7 @@
             label1.BackColor = Color.White;
             label1.Font = new Font("Tw Cen MT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.SteelBlue;
-            label1.Location = new Point(326, 20);
+            label1.Location = new Point(326, 25);
             label1.Name = "label1";
             label1.Size = new Size(248, 35);
             label1.TabIndex = 12;
@@ -135,7 +131,7 @@
             panel2.Controls.Add(examDateBox);
             panel2.Controls.Add(recordIDBox);
             panel2.Controls.Add(certificateIDBox);
-            panel2.Location = new Point(50, 35);
+            panel2.Location = new Point(50, 40);
             panel2.Name = "panel2";
             panel2.Size = new Size(800, 250);
             panel2.TabIndex = 11;
@@ -246,34 +242,6 @@
             certificateIDBox.Size = new Size(250, 27);
             certificateIDBox.TabIndex = 0;
             // 
-            // addRecordBtn
-            // 
-            addRecordBtn.BackColor = Color.SteelBlue;
-            addRecordBtn.FlatAppearance.BorderSize = 0;
-            addRecordBtn.FlatStyle = FlatStyle.Flat;
-            addRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            addRecordBtn.ForeColor = Color.White;
-            addRecordBtn.Location = new Point(156, 298);
-            addRecordBtn.Name = "addRecordBtn";
-            addRecordBtn.Size = new Size(100, 40);
-            addRecordBtn.TabIndex = 10;
-            addRecordBtn.Text = "Next";
-            addRecordBtn.UseVisualStyleBackColor = false;
-            // 
-            // updateRecordBtn
-            // 
-            updateRecordBtn.BackColor = Color.SteelBlue;
-            updateRecordBtn.FlatAppearance.BorderSize = 0;
-            updateRecordBtn.FlatStyle = FlatStyle.Flat;
-            updateRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            updateRecordBtn.ForeColor = Color.White;
-            updateRecordBtn.Location = new Point(50, 298);
-            updateRecordBtn.Name = "updateRecordBtn";
-            updateRecordBtn.Size = new Size(100, 40);
-            updateRecordBtn.TabIndex = 9;
-            updateRecordBtn.Text = "Previous";
-            updateRecordBtn.UseVisualStyleBackColor = false;
-            // 
             // certificateData
             // 
             certificateData.AllowUserToAddRows = false;
@@ -285,6 +253,7 @@
             certificateData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             certificateData.Dock = DockStyle.Bottom;
             certificateData.Location = new Point(0, 350);
+            certificateData.MultiSelect = false;
             certificateData.Name = "certificateData";
             certificateData.RowHeadersWidth = 51;
             certificateData.Size = new Size(900, 350);
@@ -313,8 +282,6 @@
         #endregion
 
         private Panel panel1;
-        private Button addRecordBtn;
-        private Button updateRecordBtn;
         private DataGridView certificateData;
         private Panel panel2;
         private Label label4;

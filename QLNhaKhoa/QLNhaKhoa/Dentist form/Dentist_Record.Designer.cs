@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            button1 = new Button();
-            addRecordBtn = new Button();
-            updateRecordBtn = new Button();
+            refreshButton = new Button();
+            deleteRecordButton = new Button();
+            addRecordButton = new Button();
             label1 = new Label();
             panel2 = new Panel();
+            cboCustomer = new ComboBox();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            dentistNameBox = new TextBox();
+            recordIDBox = new TextBox();
             recordData = new DataGridView();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -49,9 +49,9 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(addRecordBtn);
-            panel1.Controls.Add(updateRecordBtn);
+            panel1.Controls.Add(refreshButton);
+            panel1.Controls.Add(deleteRecordButton);
+            panel1.Controls.Add(addRecordButton);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(recordData);
@@ -61,47 +61,49 @@
             panel1.Size = new Size(900, 700);
             panel1.TabIndex = 0;
             // 
-            // button1
+            // refreshButton
             // 
-            button1.BackColor = Color.SteelBlue;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(156, 300);
-            button1.Name = "button1";
-            button1.Size = new Size(100, 40);
-            button1.TabIndex = 5;
-            button1.Text = "Update";
-            button1.UseVisualStyleBackColor = false;
+            refreshButton.BackColor = Color.SteelBlue;
+            refreshButton.FlatAppearance.BorderSize = 0;
+            refreshButton.FlatStyle = FlatStyle.Flat;
+            refreshButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            refreshButton.ForeColor = Color.White;
+            refreshButton.Location = new Point(262, 300);
+            refreshButton.Name = "refreshButton";
+            refreshButton.Size = new Size(100, 40);
+            refreshButton.TabIndex = 6;
+            refreshButton.Text = "Refresh";
+            refreshButton.UseVisualStyleBackColor = false;
             // 
-            // addRecordBtn
+            // deleteRecordButton
             // 
-            addRecordBtn.BackColor = Color.SteelBlue;
-            addRecordBtn.FlatAppearance.BorderSize = 0;
-            addRecordBtn.FlatStyle = FlatStyle.Flat;
-            addRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            addRecordBtn.ForeColor = Color.White;
-            addRecordBtn.Location = new Point(262, 300);
-            addRecordBtn.Name = "addRecordBtn";
-            addRecordBtn.Size = new Size(100, 40);
-            addRecordBtn.TabIndex = 4;
-            addRecordBtn.Text = "Delete";
-            addRecordBtn.UseVisualStyleBackColor = false;
+            deleteRecordButton.BackColor = Color.SteelBlue;
+            deleteRecordButton.FlatAppearance.BorderSize = 0;
+            deleteRecordButton.FlatStyle = FlatStyle.Flat;
+            deleteRecordButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            deleteRecordButton.ForeColor = Color.White;
+            deleteRecordButton.Location = new Point(156, 300);
+            deleteRecordButton.Name = "deleteRecordButton";
+            deleteRecordButton.Size = new Size(100, 40);
+            deleteRecordButton.TabIndex = 4;
+            deleteRecordButton.Text = "Delete";
+            deleteRecordButton.UseVisualStyleBackColor = false;
+            deleteRecordButton.Click += deleteRecordButton_Click;
             // 
-            // updateRecordBtn
+            // addRecordButton
             // 
-            updateRecordBtn.BackColor = Color.SteelBlue;
-            updateRecordBtn.FlatAppearance.BorderSize = 0;
-            updateRecordBtn.FlatStyle = FlatStyle.Flat;
-            updateRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            updateRecordBtn.ForeColor = Color.White;
-            updateRecordBtn.Location = new Point(50, 300);
-            updateRecordBtn.Name = "updateRecordBtn";
-            updateRecordBtn.Size = new Size(100, 40);
-            updateRecordBtn.TabIndex = 3;
-            updateRecordBtn.Text = "Add";
-            updateRecordBtn.UseVisualStyleBackColor = false;
+            addRecordButton.BackColor = Color.SteelBlue;
+            addRecordButton.FlatAppearance.BorderSize = 0;
+            addRecordButton.FlatStyle = FlatStyle.Flat;
+            addRecordButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            addRecordButton.ForeColor = Color.White;
+            addRecordButton.Location = new Point(50, 300);
+            addRecordButton.Name = "addRecordButton";
+            addRecordButton.Size = new Size(100, 40);
+            addRecordButton.TabIndex = 3;
+            addRecordButton.Text = "Add";
+            addRecordButton.UseVisualStyleBackColor = false;
+            addRecordButton.Click += addRecordButton_Click;
             // 
             // label1
             // 
@@ -117,16 +119,25 @@
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(cboCustomer);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
-            panel2.Controls.Add(textBox3);
-            panel2.Controls.Add(textBox2);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(dentistNameBox);
+            panel2.Controls.Add(recordIDBox);
             panel2.Location = new Point(50, 40);
             panel2.Name = "panel2";
             panel2.Size = new Size(800, 250);
             panel2.TabIndex = 0;
+            // 
+            // cboCustomer
+            // 
+            cboCustomer.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboCustomer.FormattingEnabled = true;
+            cboCustomer.Location = new Point(100, 180);
+            cboCustomer.Name = "cboCustomer";
+            cboCustomer.Size = new Size(250, 27);
+            cboCustomer.TabIndex = 6;
             // 
             // label4
             // 
@@ -146,9 +157,9 @@
             label3.ForeColor = Color.SteelBlue;
             label3.Location = new Point(450, 154);
             label3.Name = "label3";
-            label3.Size = new Size(84, 23);
+            label3.Size = new Size(62, 23);
             label3.TabIndex = 4;
-            label3.Text = "Dentist ID";
+            label3.Text = "Dentist";
             // 
             // label2
             // 
@@ -161,32 +172,25 @@
             label2.TabIndex = 3;
             label2.Text = "Customer ID";
             // 
-            // textBox3
+            // dentistNameBox
             // 
-            textBox3.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(100, 180);
-            textBox3.Name = "textBox3";
-            textBox3.PlaceholderText = "Customer ID";
-            textBox3.Size = new Size(250, 27);
-            textBox3.TabIndex = 2;
+            dentistNameBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dentistNameBox.Location = new Point(450, 180);
+            dentistNameBox.Name = "dentistNameBox";
+            dentistNameBox.PlaceholderText = "Dentist";
+            dentistNameBox.ReadOnly = true;
+            dentistNameBox.Size = new Size(250, 27);
+            dentistNameBox.TabIndex = 1;
             // 
-            // textBox2
+            // recordIDBox
             // 
-            textBox2.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(450, 180);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Dentist ID";
-            textBox2.Size = new Size(250, 27);
-            textBox2.TabIndex = 1;
-            // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(275, 80);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Record ID";
-            textBox1.Size = new Size(250, 27);
-            textBox1.TabIndex = 0;
+            recordIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            recordIDBox.Location = new Point(275, 80);
+            recordIDBox.Name = "recordIDBox";
+            recordIDBox.PlaceholderText = "Record ID";
+            recordIDBox.ReadOnly = true;
+            recordIDBox.Size = new Size(250, 27);
+            recordIDBox.TabIndex = 0;
             // 
             // recordData
             // 
@@ -204,6 +208,7 @@
             recordData.RowHeadersWidth = 51;
             recordData.Size = new Size(900, 350);
             recordData.TabIndex = 2;
+            recordData.CellClick += recordData_CellClick;
             // 
             // Dentist_Record
             // 
@@ -230,14 +235,14 @@
         private DataGridView recordData;
         private Panel panel2;
         private Label label1;
-        private Button updateRecordBtn;
-        private Button addRecordBtn;
-        private TextBox textBox1;
-        private Button button1;
+        private Button addRecordButton;
+        private Button deleteRecordButton;
+        private TextBox recordIDBox;
         private Label label2;
-        private TextBox textBox3;
-        private TextBox textBox2;
+        private TextBox dentistNameBox;
         private Label label3;
         private Label label4;
+        private Button refreshButton;
+        private ComboBox cboCustomer;
     }
 }

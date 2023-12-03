@@ -10,6 +10,7 @@ namespace QLNhaKhoa.Admin_form
         {
             InitializeComponent();
         }
+
         private void instockBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -21,6 +22,7 @@ namespace QLNhaKhoa.Admin_form
                 e.Handled = true;
             }
         }
+
         private void priceBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -32,26 +34,51 @@ namespace QLNhaKhoa.Admin_form
                 e.Handled = true;
             }
         }
+
+        private void refresh()
+        {
+            Helper.refreshData("select * from THUOC where MANVQUANLY='" + CurrentAdmin + "'", medData);
+        }
+
         private void Admin_Medication_Load(object sender, EventArgs e)
         {
             string med_query = "select * from THUOC where MANVQUANLY='" + CurrentAdmin + "'";
+            string admin_query = "select HOTEN, MANHANVIEN from NHANVIEN where LOAINHANVIEN = 2";
             medData.DataSource = Helper.getData(med_query).Tables[0];
+
+            cboEmp.DisplayMember = "HOTEN";
+            cboEmp.ValueMember = "MANHANVIEN";
+            cboEmp.DataSource = Helper.getData(admin_query).Tables[0];
         }
+
         private void medData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
                 DataGridViewRow dgvr = medData.Rows[e.RowIndex];
+                SqlConnection sqlCon = new SqlConnection(Helper.strCon);
+                sqlCon.Open();
+
                 medIDBox.Text = dgvr.Cells["MATHUOC"].Value.ToString();
-                empIDBox.Text = dgvr.Cells["MANVQUANLY"].Value.ToString();
                 cboUnit.Text = dgvr.Cells["DONVITINH"].Value.ToString();
                 instockBox.Text = dgvr.Cells["SOLUONGTONKHO"].Value.ToString();
                 medNameBox.Text = dgvr.Cells["TENTHUOC"].Value.ToString();
                 priceBox.Text = dgvr.Cells["GIATIEN"].Value.ToString();
                 expDateBox.Text = dgvr.Cells["NGAYHETHAN"].Value.ToString();
                 prescribeBox.Text = dgvr.Cells["CHIDINH"].Value.ToString();
+
+                SqlCommand cmd = new SqlCommand("select HOTEN from NHANVIEN where MANHANVIEN='" + dgvr.Cells["MANVQUANLY"].Value.ToString() + "'", sqlCon);
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        cboEmp.Text = reader.GetString(0);
+                    }
+                }
+                sqlCon.Close();
             }
         }
+
         private void addMedButton_Click(object sender, EventArgs e)
         {
             try
@@ -61,18 +88,18 @@ namespace QLNhaKhoa.Admin_form
                 SqlCommand cmd = new SqlCommand("USP_THUOC_INS", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
 
+                var item = (DataRowView)cboEmp.SelectedItem;
                 cmd.Parameters.Add(new SqlParameter("@TENTHUOC", medNameBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@DONVITINH", cboUnit.Text));
                 cmd.Parameters.Add(new SqlParameter("@CHIDINH", prescribeBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@SOLUONGTONKHO", instockBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@NGAYHETHAN", expDateBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@GIATIEN", priceBox.Text));
-                cmd.Parameters.Add(new SqlParameter("@MANVQUANLY", empIDBox.Text));
+                cmd.Parameters.Add(new SqlParameter("@MANVQUANLY", item["MANHANVIEN"].ToString()));
 
                 cmd.Parameters.Add("@MATHUOC", SqlDbType.VarChar, 10).Direction = ParameterDirection.Output;
 
                 int i = cmd.ExecuteNonQuery();
-                sqlCon.Close();
                 if (i > 0)
                 {
                     MessageBox.Show("Thêm dữ liệu thuốc thành công!");
@@ -81,14 +108,16 @@ namespace QLNhaKhoa.Admin_form
                 {
                     MessageBox.Show("Thêm dữ liệu thuốc thất bại!");
                 }
-                Helper.refreshData("select * from THUOC where MANVQUANLY='" + CurrentAdmin + "'", medData);
+                refresh();
+                sqlCon.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Thêm dữ liệu thuốc thất bại! " + ex);
+                MessageBox.Show("Thêm dữ liệu thuốc thất bại! " + ex.Message);
             }
 
         }
+
         private void deleteMedButton_Click(object sender, EventArgs e)
         {
             var res = MessageBox.Show("Bạn có chắc là muốn xóa loại thuốc này?", "Warning", MessageBoxButtons.YesNoCancel);
@@ -106,11 +135,12 @@ namespace QLNhaKhoa.Admin_form
                 {
                     MessageBox.Show("Xóa dữ liệu thuốc thất bại!");
                 }
-                Helper.refreshData("select * from THUOC where MANVQUANLY='" + CurrentAdmin + "'", medData);
+                refresh();
                 sqlCon.Close();
             }
             else { }
         }
+
         private void updateMedButton_Click(object sender, EventArgs e)
         {
             try
@@ -120,6 +150,7 @@ namespace QLNhaKhoa.Admin_form
                 SqlCommand cmd = new SqlCommand("USP_THUOC_UPD", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
 
+                var item = (DataRowView)cboEmp.SelectedItem;
                 cmd.Parameters.Add(new SqlParameter("@MATHUOC", medIDBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@TENTHUOC", medNameBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@DONVITINH", cboUnit.Text));
@@ -127,11 +158,10 @@ namespace QLNhaKhoa.Admin_form
                 cmd.Parameters.Add(new SqlParameter("@SOLUONGTONKHO", instockBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@NGAYHETHAN", expDateBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@GIATIEN", priceBox.Text));
-                cmd.Parameters.Add(new SqlParameter("@MANVQUANLY", empIDBox.Text));
+                cmd.Parameters.Add(new SqlParameter("@MANVQUANLY", item["MANHANVIEN"].ToString()));
                 cmd.Parameters.Add(new SqlParameter("@NGUOIUPDATE", CurrentAdmin));
 
                 int i = cmd.ExecuteNonQuery();
-                sqlCon.Close();
                 if (i > 0)
                 {
                     MessageBox.Show("Cập nhật dữ liệu thuốc thành công!");
@@ -140,20 +170,23 @@ namespace QLNhaKhoa.Admin_form
                 {
                     MessageBox.Show("Cập nhật dữ liệu thuốc thất bại!");
                 }
-                Helper.refreshData("select * from THUOC where MANVQUANLY='" + CurrentAdmin + "'", medData);
+                refresh();
+                sqlCon.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Cập nhật dữ liệu thuốc thất bại! " + ex);
+                MessageBox.Show("Cập nhật dữ liệu thuốc thất bại! " + ex.Message);
             }
         }
+
         private void searchButton_Click(object sender, EventArgs e)
         {
             (medData.DataSource as DataTable).DefaultView.RowFilter = String.Format("TENTHUOC like '%" + searchIDBox.Text + "%'");
         }
+
         private void refreshButton_Click(object sender, EventArgs e)
         {
-            Helper.refreshData("select * from THUOC where MANVQUANLY='" + CurrentAdmin + "'", medData);
+            refresh();
         }
     }
 }

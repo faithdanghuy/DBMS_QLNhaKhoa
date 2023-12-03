@@ -34,15 +34,15 @@
             refreshButton = new Button();
             label1 = new Label();
             panel2 = new Panel();
+            cboRecord = new ComboBox();
+            cboCertificate = new ComboBox();
             label6 = new Label();
-            certificateIDBox = new TextBox();
             label5 = new Label();
             totalBox = new TextBox();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             dateBox = new DateTimePicker();
-            recordIDBox = new TextBox();
             billIDBox = new TextBox();
             addBillButton = new Button();
             billData = new DataGridView();
@@ -123,20 +123,38 @@
             // 
             panel2.BackColor = Color.White;
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(cboRecord);
+            panel2.Controls.Add(cboCertificate);
             panel2.Controls.Add(label6);
-            panel2.Controls.Add(certificateIDBox);
             panel2.Controls.Add(label5);
             panel2.Controls.Add(totalBox);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(dateBox);
-            panel2.Controls.Add(recordIDBox);
             panel2.Controls.Add(billIDBox);
             panel2.Location = new Point(50, 35);
             panel2.Name = "panel2";
             panel2.Size = new Size(800, 250);
             panel2.TabIndex = 11;
+            // 
+            // cboRecord
+            // 
+            cboRecord.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboRecord.FormattingEnabled = true;
+            cboRecord.Location = new Point(450, 182);
+            cboRecord.Name = "cboRecord";
+            cboRecord.Size = new Size(250, 27);
+            cboRecord.TabIndex = 11;
+            // 
+            // cboCertificate
+            // 
+            cboCertificate.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboCertificate.FormattingEnabled = true;
+            cboCertificate.Location = new Point(325, 80);
+            cboCertificate.Name = "cboCertificate";
+            cboCertificate.Size = new Size(150, 27);
+            cboCertificate.TabIndex = 10;
             // 
             // label6
             // 
@@ -145,18 +163,9 @@
             label6.ForeColor = Color.SteelBlue;
             label6.Location = new Point(325, 54);
             label6.Name = "label6";
-            label6.Size = new Size(115, 23);
+            label6.Size = new Size(172, 23);
             label6.TabIndex = 9;
-            label6.Text = "Certificate ID";
-            // 
-            // certificateIDBox
-            // 
-            certificateIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            certificateIDBox.Location = new Point(325, 80);
-            certificateIDBox.Name = "certificateIDBox";
-            certificateIDBox.PlaceholderText = "Certificate ID";
-            certificateIDBox.Size = new Size(150, 27);
-            certificateIDBox.TabIndex = 8;
+            label6.Text = "Customer Certificate";
             // 
             // label5
             // 
@@ -175,6 +184,7 @@
             totalBox.Location = new Point(550, 80);
             totalBox.Name = "totalBox";
             totalBox.PlaceholderText = "Total";
+            totalBox.ReadOnly = true;
             totalBox.Size = new Size(150, 27);
             totalBox.TabIndex = 6;
             // 
@@ -196,9 +206,9 @@
             label3.ForeColor = Color.SteelBlue;
             label3.Location = new Point(450, 154);
             label3.Name = "label3";
-            label3.Size = new Size(167, 23);
+            label3.Size = new Size(145, 23);
             label3.TabIndex = 4;
-            label3.Text = "Customer Record ID";
+            label3.Text = "Customer Record";
             // 
             // label2
             // 
@@ -214,7 +224,6 @@
             // dateBox
             // 
             dateBox.CustomFormat = "yyyy-MM-dd";
-            dateBox.Enabled = false;
             dateBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dateBox.Format = DateTimePickerFormat.Custom;
             dateBox.Location = new Point(100, 180);
@@ -222,21 +231,13 @@
             dateBox.Size = new Size(250, 27);
             dateBox.TabIndex = 2;
             // 
-            // recordIDBox
-            // 
-            recordIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            recordIDBox.Location = new Point(450, 180);
-            recordIDBox.Name = "recordIDBox";
-            recordIDBox.PlaceholderText = "Customer Record ID";
-            recordIDBox.Size = new Size(250, 27);
-            recordIDBox.TabIndex = 1;
-            // 
             // billIDBox
             // 
             billIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             billIDBox.Location = new Point(100, 80);
             billIDBox.Name = "billIDBox";
             billIDBox.PlaceholderText = "Bill ID";
+            billIDBox.ReadOnly = true;
             billIDBox.Size = new Size(150, 27);
             billIDBox.TabIndex = 0;
             // 
@@ -300,16 +301,16 @@
         private Label label3;
         private Label label2;
         private DateTimePicker dateBox;
-        private TextBox recordIDBox;
         private TextBox billIDBox;
         private Button addBillButton;
         private DataGridView billData;
         private Label label5;
         private TextBox totalBox;
         private Label label6;
-        private TextBox certificateIDBox;
         private Button refreshButton;
         private TextBox searchIDBox;
         private Button searchButton;
+        private ComboBox cboCertificate;
+        private ComboBox cboRecord;
     }
 }

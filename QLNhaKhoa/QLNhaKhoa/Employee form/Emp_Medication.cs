@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Data;
 
 namespace QLNhaKhoa.Employee_form
 {
@@ -16,10 +8,12 @@ namespace QLNhaKhoa.Employee_form
         {
             InitializeComponent();
         }
+
         private void Emp_Medication_Load(object sender, EventArgs e)
         {
             medData.DataSource = Helper.getData("select * from THUOC").Tables[0];
         }
+
         private void medData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
@@ -35,10 +29,12 @@ namespace QLNhaKhoa.Employee_form
                 empIDBox.Text = dgvr.Cells["MANVQUANLY"].Value.ToString();
             }
         }
+
         private void refreshButton_Click(object sender, EventArgs e)
         {
             Helper.refreshData("select * from THUOC", medData);
         }
+
         private void searchButton_Click(object sender, EventArgs e)
         {
             (medData.DataSource as DataTable).DefaultView.RowFilter = String.Format("MATHUOC like '%" + searchIDBox.Text + "%'");

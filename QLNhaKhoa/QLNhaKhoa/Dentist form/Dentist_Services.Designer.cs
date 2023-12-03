@@ -31,9 +31,15 @@
             panel3 = new Panel();
             button1 = new Button();
             addRecordBtn = new Button();
-            updateRecordBtn = new Button();
+            addServicesButton = new Button();
             label1 = new Label();
             panel4 = new Panel();
+            cboCertificate = new ComboBox();
+            cboRecord = new ComboBox();
+            label7 = new Label();
+            noteBox = new TextBox();
+            label6 = new Label();
+            label5 = new Label();
             cboService = new ComboBox();
             label4 = new Label();
             label3 = new Label();
@@ -51,7 +57,7 @@
             panel3.BackColor = Color.White;
             panel3.Controls.Add(button1);
             panel3.Controls.Add(addRecordBtn);
-            panel3.Controls.Add(updateRecordBtn);
+            panel3.Controls.Add(addServicesButton);
             panel3.Controls.Add(label1);
             panel3.Controls.Add(panel4);
             panel3.Controls.Add(serviceData);
@@ -89,19 +95,20 @@
             addRecordBtn.Text = "Delete";
             addRecordBtn.UseVisualStyleBackColor = false;
             // 
-            // updateRecordBtn
+            // addServicesButton
             // 
-            updateRecordBtn.BackColor = Color.SteelBlue;
-            updateRecordBtn.FlatAppearance.BorderSize = 0;
-            updateRecordBtn.FlatStyle = FlatStyle.Flat;
-            updateRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            updateRecordBtn.ForeColor = Color.White;
-            updateRecordBtn.Location = new Point(50, 300);
-            updateRecordBtn.Name = "updateRecordBtn";
-            updateRecordBtn.Size = new Size(100, 40);
-            updateRecordBtn.TabIndex = 3;
-            updateRecordBtn.Text = "Add";
-            updateRecordBtn.UseVisualStyleBackColor = false;
+            addServicesButton.BackColor = Color.SteelBlue;
+            addServicesButton.FlatAppearance.BorderSize = 0;
+            addServicesButton.FlatStyle = FlatStyle.Flat;
+            addServicesButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            addServicesButton.ForeColor = Color.White;
+            addServicesButton.Location = new Point(50, 300);
+            addServicesButton.Name = "addServicesButton";
+            addServicesButton.Size = new Size(100, 40);
+            addServicesButton.TabIndex = 3;
+            addServicesButton.Text = "Add";
+            addServicesButton.UseVisualStyleBackColor = false;
+            addServicesButton.Click += addServicesButton_Click;
             // 
             // label1
             // 
@@ -117,6 +124,12 @@
             // panel4
             // 
             panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(cboCertificate);
+            panel4.Controls.Add(cboRecord);
+            panel4.Controls.Add(label7);
+            panel4.Controls.Add(noteBox);
+            panel4.Controls.Add(label6);
+            panel4.Controls.Add(label5);
             panel4.Controls.Add(cboService);
             panel4.Controls.Add(label4);
             panel4.Controls.Add(label3);
@@ -128,13 +141,75 @@
             panel4.Size = new Size(800, 250);
             panel4.TabIndex = 0;
             // 
+            // cboCertificate
+            // 
+            cboCertificate.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboCertificate.FormattingEnabled = true;
+            cboCertificate.Location = new Point(550, 40);
+            cboCertificate.Name = "cboCertificate";
+            cboCertificate.Size = new Size(150, 27);
+            cboCertificate.TabIndex = 14;
+            // 
+            // cboRecord
+            // 
+            cboRecord.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboRecord.FormattingEnabled = true;
+            cboRecord.Location = new Point(350, 40);
+            cboRecord.Name = "cboRecord";
+            cboRecord.Size = new Size(150, 27);
+            cboRecord.TabIndex = 13;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.SteelBlue;
+            label7.Location = new Point(100, 174);
+            label7.Name = "label7";
+            label7.Size = new Size(48, 23);
+            label7.TabIndex = 12;
+            label7.Text = "Note";
+            // 
+            // noteBox
+            // 
+            noteBox.Enabled = false;
+            noteBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            noteBox.Location = new Point(100, 200);
+            noteBox.MaxLength = 5;
+            noteBox.Name = "noteBox";
+            noteBox.PlaceholderText = "Note";
+            noteBox.Size = new Size(600, 27);
+            noteBox.TabIndex = 11;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.SteelBlue;
+            label6.Location = new Point(550, 14);
+            label6.Name = "label6";
+            label6.Size = new Size(115, 23);
+            label6.TabIndex = 10;
+            label6.Text = "Certificate ID";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.SteelBlue;
+            label5.Location = new Point(350, 14);
+            label5.Name = "label5";
+            label5.Size = new Size(88, 23);
+            label5.TabIndex = 8;
+            label5.Text = "Record ID";
+            // 
             // cboService
             // 
             cboService.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cboService.FormattingEnabled = true;
-            cboService.Location = new Point(100, 180);
+            cboService.Location = new Point(100, 120);
             cboService.Name = "cboService";
-            cboService.Size = new Size(600, 27);
+            cboService.Size = new Size(400, 27);
             cboService.TabIndex = 6;
             // 
             // label4
@@ -142,7 +217,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.SteelBlue;
-            label4.Location = new Point(100, 154);
+            label4.Location = new Point(100, 94);
             label4.Name = "label4";
             label4.Size = new Size(121, 23);
             label4.TabIndex = 5;
@@ -153,7 +228,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.SteelBlue;
-            label3.Location = new Point(450, 54);
+            label3.Location = new Point(550, 94);
             label3.Name = "label3";
             label3.Size = new Size(49, 23);
             label3.TabIndex = 4;
@@ -164,7 +239,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.SteelBlue;
-            label2.Location = new Point(100, 54);
+            label2.Location = new Point(100, 14);
             label2.Name = "label2";
             label2.Size = new Size(90, 23);
             label2.TabIndex = 3;
@@ -173,21 +248,22 @@
             // priceBox
             // 
             priceBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            priceBox.Location = new Point(450, 80);
+            priceBox.Location = new Point(550, 120);
             priceBox.Name = "priceBox";
             priceBox.PlaceholderText = "Price";
-            priceBox.Size = new Size(250, 27);
+            priceBox.ReadOnly = true;
+            priceBox.Size = new Size(150, 27);
             priceBox.TabIndex = 1;
             // 
             // servicesIDBox
             // 
             servicesIDBox.Enabled = false;
             servicesIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            servicesIDBox.Location = new Point(100, 80);
+            servicesIDBox.Location = new Point(100, 40);
             servicesIDBox.MaxLength = 5;
             servicesIDBox.Name = "servicesIDBox";
             servicesIDBox.PlaceholderText = "Service ID";
-            servicesIDBox.Size = new Size(250, 27);
+            servicesIDBox.Size = new Size(200, 27);
             servicesIDBox.TabIndex = 0;
             // 
             // serviceData
@@ -204,6 +280,7 @@
             serviceData.RowHeadersWidth = 51;
             serviceData.Size = new Size(900, 350);
             serviceData.TabIndex = 2;
+            serviceData.CellClick += serviceData_CellClick;
             // 
             // Dentist_Services
             // 
@@ -229,7 +306,7 @@
 
         private Panel panel3;
         private Button addRecordBtn;
-        private Button updateRecordBtn;
+        private Button addServicesButton;
         private Label label1;
         private Panel panel4;
         private TextBox servicesIDBox;
@@ -240,5 +317,11 @@
         private Label label2;
         private Button button1;
         private ComboBox cboService;
+        private Label label5;
+        private Label label6;
+        private Label label7;
+        private TextBox noteBox;
+        private ComboBox cboRecord;
+        private ComboBox cboCertificate;
     }
 }

@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            refreshButton = new Button();
             searchIDBox = new TextBox();
             searchButton = new Button();
-            nextButton = new Button();
-            prevButton = new Button();
             label1 = new Label();
             panel2 = new Panel();
             label4 = new Label();
@@ -42,7 +41,6 @@
             dentistIDBox = new TextBox();
             recordIDBox = new TextBox();
             recordData = new DataGridView();
-            refreshButton = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)recordData).BeginInit();
@@ -54,8 +52,6 @@
             panel1.Controls.Add(refreshButton);
             panel1.Controls.Add(searchIDBox);
             panel1.Controls.Add(searchButton);
-            panel1.Controls.Add(nextButton);
-            panel1.Controls.Add(prevButton);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(recordData);
@@ -64,6 +60,21 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(900, 700);
             panel1.TabIndex = 1;
+            // 
+            // refreshButton
+            // 
+            refreshButton.BackColor = Color.SteelBlue;
+            refreshButton.FlatAppearance.BorderSize = 0;
+            refreshButton.FlatStyle = FlatStyle.Flat;
+            refreshButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            refreshButton.ForeColor = Color.White;
+            refreshButton.Location = new Point(50, 300);
+            refreshButton.Name = "refreshButton";
+            refreshButton.Size = new Size(200, 40);
+            refreshButton.TabIndex = 7;
+            refreshButton.Text = "Refresh";
+            refreshButton.UseVisualStyleBackColor = false;
+            refreshButton.Click += refreshButton_Click;
             // 
             // searchIDBox
             // 
@@ -90,42 +101,12 @@
             searchButton.UseVisualStyleBackColor = false;
             searchButton.Click += searchButton_Click;
             // 
-            // nextButton
-            // 
-            nextButton.BackColor = Color.SteelBlue;
-            nextButton.FlatAppearance.BorderSize = 0;
-            nextButton.FlatStyle = FlatStyle.Flat;
-            nextButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            nextButton.ForeColor = Color.White;
-            nextButton.Location = new Point(156, 298);
-            nextButton.Name = "nextButton";
-            nextButton.Size = new Size(100, 40);
-            nextButton.TabIndex = 4;
-            nextButton.Text = "Next";
-            nextButton.UseVisualStyleBackColor = false;
-            nextButton.Click += nextButton_Click;
-            // 
-            // prevButton
-            // 
-            prevButton.BackColor = Color.SteelBlue;
-            prevButton.FlatAppearance.BorderSize = 0;
-            prevButton.FlatStyle = FlatStyle.Flat;
-            prevButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            prevButton.ForeColor = Color.White;
-            prevButton.Location = new Point(50, 298);
-            prevButton.Name = "prevButton";
-            prevButton.Size = new Size(100, 40);
-            prevButton.TabIndex = 3;
-            prevButton.Text = "Previous";
-            prevButton.UseVisualStyleBackColor = false;
-            prevButton.Click += prevButton_Click;
-            // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Tw Cen MT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.SteelBlue;
-            label1.Location = new Point(289, 20);
+            label1.Location = new Point(289, 25);
             label1.Name = "label1";
             label1.Size = new Size(322, 35);
             label1.TabIndex = 0;
@@ -140,7 +121,7 @@
             panel2.Controls.Add(customerIDBox);
             panel2.Controls.Add(dentistIDBox);
             panel2.Controls.Add(recordIDBox);
-            panel2.Location = new Point(50, 35);
+            panel2.Location = new Point(50, 40);
             panel2.Name = "panel2";
             panel2.Size = new Size(800, 250);
             panel2.TabIndex = 0;
@@ -225,21 +206,6 @@
             recordData.TabIndex = 2;
             recordData.CellClick += recordData_CellClick;
             // 
-            // refreshButton
-            // 
-            refreshButton.BackColor = Color.SteelBlue;
-            refreshButton.FlatAppearance.BorderSize = 0;
-            refreshButton.FlatStyle = FlatStyle.Flat;
-            refreshButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            refreshButton.ForeColor = Color.White;
-            refreshButton.Location = new Point(262, 298);
-            refreshButton.Name = "refreshButton";
-            refreshButton.Size = new Size(100, 40);
-            refreshButton.TabIndex = 7;
-            refreshButton.Text = "Refresh";
-            refreshButton.UseVisualStyleBackColor = false;
-            refreshButton.Click += refreshButton_Click;
-            // 
             // Emp_Record
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -263,8 +229,6 @@
         #endregion
 
         private Panel panel1;
-        private Button nextButton;
-        private Button prevButton;
         private Label label1;
         private Panel panel2;
         private Label label4;

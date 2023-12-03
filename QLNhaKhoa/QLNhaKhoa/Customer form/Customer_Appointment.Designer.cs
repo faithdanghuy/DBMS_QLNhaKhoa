@@ -32,6 +32,8 @@
             updateAppButton = new Button();
             makeAppointBtn = new Button();
             panel2 = new Panel();
+            label4 = new Label();
+            empIDBox = new TextBox();
             label5 = new Label();
             appIDBox = new TextBox();
             appointTime = new DateTimePicker();
@@ -42,8 +44,7 @@
             label1 = new Label();
             appointmentData = new DataGridView();
             serviceTitle = new Label();
-            empIDBox = new TextBox();
-            label4 = new Label();
+            refreshButton = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)appointmentData).BeginInit();
@@ -52,6 +53,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(refreshButton);
             panel1.Controls.Add(updateAppButton);
             panel1.Controls.Add(makeAppointBtn);
             panel1.Controls.Add(panel2);
@@ -111,6 +113,27 @@
             panel2.Size = new Size(800, 250);
             panel2.TabIndex = 3;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.SteelBlue;
+            label4.Location = new Point(500, 36);
+            label4.Name = "label4";
+            label4.Size = new Size(109, 23);
+            label4.TabIndex = 13;
+            label4.Text = "Employee ID";
+            // 
+            // empIDBox
+            // 
+            empIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            empIDBox.Location = new Point(500, 62);
+            empIDBox.Name = "empIDBox";
+            empIDBox.PlaceholderText = "Employee ID";
+            empIDBox.ReadOnly = true;
+            empIDBox.Size = new Size(150, 27);
+            empIDBox.TabIndex = 12;
+            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -161,6 +184,7 @@
             appointDate.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             appointDate.Format = DateTimePickerFormat.Custom;
             appointDate.Location = new Point(326, 62);
+            appointDate.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             appointDate.Name = "appointDate";
             appointDate.Size = new Size(150, 27);
             appointDate.TabIndex = 5;
@@ -227,26 +251,20 @@
             serviceTitle.TabIndex = 6;
             serviceTitle.Text = "Appointment";
             // 
-            // empIDBox
+            // refreshButton
             // 
-            empIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            empIDBox.Location = new Point(500, 62);
-            empIDBox.Name = "empIDBox";
-            empIDBox.PlaceholderText = "Employee ID";
-            empIDBox.ReadOnly = true;
-            empIDBox.Size = new Size(150, 27);
-            empIDBox.TabIndex = 12;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.SteelBlue;
-            label4.Location = new Point(500, 36);
-            label4.Name = "label4";
-            label4.Size = new Size(109, 23);
-            label4.TabIndex = 13;
-            label4.Text = "Employee ID";
+            refreshButton.BackColor = Color.SteelBlue;
+            refreshButton.FlatAppearance.BorderSize = 0;
+            refreshButton.FlatStyle = FlatStyle.Flat;
+            refreshButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            refreshButton.ForeColor = Color.White;
+            refreshButton.Location = new Point(362, 300);
+            refreshButton.Name = "refreshButton";
+            refreshButton.Size = new Size(100, 40);
+            refreshButton.TabIndex = 5;
+            refreshButton.Text = "Refresh";
+            refreshButton.UseVisualStyleBackColor = false;
+            refreshButton.Click += refreshButton_Click;
             // 
             // Customer_Appointment
             // 
@@ -286,5 +304,6 @@
         private TextBox appIDBox;
         private TextBox empIDBox;
         private Label label4;
+        private Button refreshButton;
     }
 }

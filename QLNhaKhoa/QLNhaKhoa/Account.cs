@@ -12,6 +12,7 @@ namespace QLNhaKhoa
         {
             InitializeComponent();
         }
+
         private void phoneBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -23,6 +24,7 @@ namespace QLNhaKhoa
                 e.Handled = true;
             }
         }
+
         private void Account_Load(object sender, EventArgs e)
         {
             string query = "select HOTEN,NGAYSINH,DIACHI,SODT from NHANVIEN where MANHANVIEN='" + CurrentUser + "'";
@@ -42,6 +44,7 @@ namespace QLNhaKhoa
                     addressBox.Text = reader["DIACHI"].ToString();
                     phoneBox.Text = reader["SODT"].ToString();
                     passwordBox.Text = CurrentPass;
+                    IDBox.Text = CurrentUser;
                     sqlCon.Close();
                 }
                 else
@@ -50,15 +53,26 @@ namespace QLNhaKhoa
                 }
             }
         }
+
         private void updateButton_Click(object sender, EventArgs e)
         {
             string procedure = "USP_NHANVIEN_UPD";
             string parameter = "@MANHANVIEN";
+            string CurrentUserTrim = CurrentUser.Trim();
+            int empType = 0;
 
-            if (CurrentUser.Trim().StartsWith("KH"))
+            if (CurrentUserTrim.StartsWith("KH"))
             {
                 procedure = "USP_KHACHHANG_UPD";
                 parameter = "@MAKHACHHANG";
+            }
+            if (CurrentUserTrim.StartsWith("NS"))
+            {
+                empType = 1;
+            }
+            else if (CurrentUserTrim.StartsWith("NS"))
+            {
+                empType = 2;
             }
             try
             {
@@ -73,18 +87,9 @@ namespace QLNhaKhoa
                 cmd.Parameters.Add(new SqlParameter("@DIACHI", addressBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@SODT", phoneBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@MATKHAU", passwordBox.Text));
-
-                if (CurrentUser.Trim().StartsWith("NV"))
+                if (!CurrentUserTrim.StartsWith("KH"))
                 {
-                    cmd.Parameters.Add(new SqlParameter("@LOAINHANVIEN", 0));
-                }
-                else if (CurrentUser.Trim().StartsWith("NS"))
-                {
-                    cmd.Parameters.Add(new SqlParameter("@LOAINHANVIEN", 1));
-                }
-                else if (CurrentUser.Trim().StartsWith("AD"))
-                {
-                    cmd.Parameters.Add(new SqlParameter("@LOAINHANVIEN", 2));
+                    cmd.Parameters.Add(new SqlParameter("@LOAINHANVIEN", empType));
                 }
                 int i = cmd.ExecuteNonQuery();
                 sqlCon.Close();

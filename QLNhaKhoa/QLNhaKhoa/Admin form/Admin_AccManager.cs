@@ -11,10 +11,12 @@ namespace QLNhaKhoa.Admin_form
         {
             InitializeComponent();
         }
+
         private void Admin_AccManager_Load(object sender, EventArgs e)
         {
             accountData.DataSource = Helper.getData(query).Tables[0];
         }
+
         private void accountData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
@@ -41,6 +43,7 @@ namespace QLNhaKhoa.Admin_form
                 }
             }
         }
+
         private void createAccButton_Click(object sender, EventArgs e)
         {
             try
@@ -127,6 +130,7 @@ namespace QLNhaKhoa.Admin_form
                 MessageBox.Show("Cập nhật tài khoản thất bại! " + ex);
             }
         }
+
         private void phoneBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -138,6 +142,7 @@ namespace QLNhaKhoa.Admin_form
                 e.Handled = true;
             }
         }
+
         private void deleteAccButton_Click(object sender, EventArgs e)
         {
             var res = MessageBox.Show("Bạn có chắc là muốn xóa tài khoản này?", "Warning", MessageBoxButtons.YesNoCancel);

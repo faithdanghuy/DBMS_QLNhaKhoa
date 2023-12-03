@@ -11,6 +11,7 @@ namespace QLNhaKhoa
         {
             InitializeComponent();
         }
+
         private void AccountButton_Click(object sender, EventArgs e)
         {
             Account f = new Account();
@@ -18,26 +19,31 @@ namespace QLNhaKhoa
             f.CurrentPass = CurrentPass;
             Helper.loadform(f, this.mainPanel);
         }
+
         private void AppointmentButton_Click(object sender, EventArgs e)
         {
             Customer_Appointment f = new Customer_Appointment();
             f.CurrentUser = CurrentUser;
             Helper.loadform(f, this.mainPanel);
         }
+
         private void RecordButton_Click(object sender, EventArgs e)
         {
             Customer_Record f = new Customer_Record();
             f.CurrentUser = CurrentUser;
             Helper.loadform(f, this.mainPanel);
         }
+
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
         private void minimizeButton_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
+
         private void Customer_Main_Load(object sender, EventArgs e)
         {
             CustomerID.Text = CurrentUser;

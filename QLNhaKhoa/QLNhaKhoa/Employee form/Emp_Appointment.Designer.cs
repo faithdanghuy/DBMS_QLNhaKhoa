@@ -99,7 +99,7 @@
             refreshButton.FlatStyle = FlatStyle.Flat;
             refreshButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             refreshButton.ForeColor = Color.White;
-            refreshButton.Location = new Point(362, 298);
+            refreshButton.Location = new Point(362, 300);
             refreshButton.Name = "refreshButton";
             refreshButton.Size = new Size(100, 40);
             refreshButton.TabIndex = 15;
@@ -114,7 +114,7 @@
             updateAppButton.FlatStyle = FlatStyle.Flat;
             updateAppButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             updateAppButton.ForeColor = Color.White;
-            updateAppButton.Location = new Point(256, 298);
+            updateAppButton.Location = new Point(256, 300);
             updateAppButton.Name = "updateAppButton";
             updateAppButton.Size = new Size(100, 40);
             updateAppButton.TabIndex = 5;
@@ -128,7 +128,7 @@
             makeAppButton.FlatStyle = FlatStyle.Flat;
             makeAppButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             makeAppButton.ForeColor = Color.White;
-            makeAppButton.Location = new Point(50, 298);
+            makeAppButton.Location = new Point(50, 300);
             makeAppButton.Name = "makeAppButton";
             makeAppButton.Size = new Size(200, 40);
             makeAppButton.TabIndex = 3;
@@ -141,7 +141,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Tw Cen MT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.SteelBlue;
-            label1.Location = new Point(367, 20);
+            label1.Location = new Point(367, 25);
             label1.Name = "label1";
             label1.Size = new Size(166, 35);
             label1.TabIndex = 0;
@@ -158,7 +158,7 @@
             panel4.Controls.Add(label3);
             panel4.Controls.Add(label2);
             panel4.Controls.Add(dateBox);
-            panel4.Location = new Point(50, 35);
+            panel4.Location = new Point(50, 40);
             panel4.Name = "panel4";
             panel4.Size = new Size(800, 250);
             panel4.TabIndex = 0;
@@ -232,9 +232,9 @@
             label2.ForeColor = Color.SteelBlue;
             label2.Location = new Point(100, 50);
             label2.Name = "label2";
-            label2.Size = new Size(46, 23);
+            label2.Size = new Size(132, 23);
             label2.TabIndex = 3;
-            label2.Text = "Time";
+            label2.Text = "Time (8h - 17h)";
             // 
             // dateBox
             // 

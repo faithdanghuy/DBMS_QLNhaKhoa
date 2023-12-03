@@ -32,8 +32,6 @@
             searchIDBox = new TextBox();
             searchButton = new Button();
             refreshButton = new Button();
-            addRecordBtn = new Button();
-            updateRecordBtn = new Button();
             label1 = new Label();
             panel4 = new Panel();
             label6 = new Label();
@@ -58,8 +56,6 @@
             panel3.Controls.Add(searchIDBox);
             panel3.Controls.Add(searchButton);
             panel3.Controls.Add(refreshButton);
-            panel3.Controls.Add(addRecordBtn);
-            panel3.Controls.Add(updateRecordBtn);
             panel3.Controls.Add(label1);
             panel3.Controls.Add(panel4);
             panel3.Controls.Add(prescriptionData);
@@ -101,48 +97,20 @@
             refreshButton.FlatStyle = FlatStyle.Flat;
             refreshButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             refreshButton.ForeColor = Color.White;
-            refreshButton.Location = new Point(262, 298);
+            refreshButton.Location = new Point(50, 300);
             refreshButton.Name = "refreshButton";
-            refreshButton.Size = new Size(100, 40);
+            refreshButton.Size = new Size(200, 40);
             refreshButton.TabIndex = 14;
             refreshButton.Text = "Refresh";
             refreshButton.UseVisualStyleBackColor = false;
             refreshButton.Click += refreshButton_Click;
-            // 
-            // addRecordBtn
-            // 
-            addRecordBtn.BackColor = Color.SteelBlue;
-            addRecordBtn.FlatAppearance.BorderSize = 0;
-            addRecordBtn.FlatStyle = FlatStyle.Flat;
-            addRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            addRecordBtn.ForeColor = Color.White;
-            addRecordBtn.Location = new Point(156, 298);
-            addRecordBtn.Name = "addRecordBtn";
-            addRecordBtn.Size = new Size(100, 40);
-            addRecordBtn.TabIndex = 4;
-            addRecordBtn.Text = "Next";
-            addRecordBtn.UseVisualStyleBackColor = false;
-            // 
-            // updateRecordBtn
-            // 
-            updateRecordBtn.BackColor = Color.SteelBlue;
-            updateRecordBtn.FlatAppearance.BorderSize = 0;
-            updateRecordBtn.FlatStyle = FlatStyle.Flat;
-            updateRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            updateRecordBtn.ForeColor = Color.White;
-            updateRecordBtn.Location = new Point(50, 298);
-            updateRecordBtn.Name = "updateRecordBtn";
-            updateRecordBtn.Size = new Size(100, 40);
-            updateRecordBtn.TabIndex = 3;
-            updateRecordBtn.Text = "Previous";
-            updateRecordBtn.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Tw Cen MT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.SteelBlue;
-            label1.Location = new Point(314, 20);
+            label1.Location = new Point(314, 25);
             label1.Name = "label1";
             label1.Size = new Size(271, 35);
             label1.TabIndex = 0;
@@ -161,7 +129,7 @@
             panel4.Controls.Add(medicationIDBox);
             panel4.Controls.Add(certificateIDBox);
             panel4.Controls.Add(recordIDBox);
-            panel4.Location = new Point(50, 35);
+            panel4.Location = new Point(50, 40);
             panel4.Name = "panel4";
             panel4.Size = new Size(800, 250);
             panel4.TabIndex = 0;
@@ -310,8 +278,6 @@
         #endregion
 
         private Panel panel3;
-        private Button addRecordBtn;
-        private Button updateRecordBtn;
         private Label label1;
         private Panel panel4;
         private Label label5;

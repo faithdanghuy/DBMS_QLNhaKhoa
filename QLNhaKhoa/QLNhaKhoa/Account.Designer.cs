@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            label6 = new Label();
+            IDBox = new TextBox();
             label5 = new Label();
             passwordBox = new TextBox();
             updateButton = new Button();
@@ -48,6 +50,8 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(IDBox);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(passwordBox);
             panel1.Controls.Add(updateButton);
@@ -65,6 +69,28 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(900, 700);
             panel1.TabIndex = 1;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.SteelBlue;
+            label6.Location = new Point(200, 215);
+            label6.Name = "label6";
+            label6.Size = new Size(26, 23);
+            label6.TabIndex = 20;
+            label6.Text = "ID";
+            // 
+            // IDBox
+            // 
+            IDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            IDBox.Location = new Point(200, 241);
+            IDBox.MaxLength = 11;
+            IDBox.Name = "IDBox";
+            IDBox.PlaceholderText = "ID";
+            IDBox.ReadOnly = true;
+            IDBox.Size = new Size(125, 27);
+            IDBox.TabIndex = 19;
             // 
             // label5
             // 
@@ -129,7 +155,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.SteelBlue;
-            label2.Location = new Point(200, 215);
+            label2.Location = new Point(350, 215);
             label2.Name = "label2";
             label2.Size = new Size(57, 23);
             label2.TabIndex = 13;
@@ -170,10 +196,10 @@
             // nameBox
             // 
             nameBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            nameBox.Location = new Point(200, 241);
+            nameBox.Location = new Point(350, 241);
             nameBox.Name = "nameBox";
             nameBox.PlaceholderText = "Name";
-            nameBox.Size = new Size(500, 27);
+            nameBox.Size = new Size(350, 27);
             nameBox.TabIndex = 2;
             // 
             // phoneBox
@@ -228,5 +254,7 @@
         private TextBox addressBox;
         private Label label5;
         private TextBox passwordBox;
+        private Label label6;
+        private TextBox IDBox;
     }
 }

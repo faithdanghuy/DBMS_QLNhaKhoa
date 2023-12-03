@@ -30,20 +30,23 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dentist_Appointment));
             panel3 = new Panel();
+            refreshButton = new Button();
             updateButton = new Button();
             deleteButton = new Button();
-            updateRecordBtn = new Button();
+            makeAppButton = new Button();
             label1 = new Label();
             panel4 = new Panel();
+            label6 = new Label();
+            empIDBox = new TextBox();
+            label5 = new Label();
+            appIDBox = new TextBox();
             label4 = new Label();
-            cboEmployee = new ComboBox();
+            cboCustomer = new ComboBox();
             timeBox = new DateTimePicker();
             label3 = new Label();
             label2 = new Label();
             dateBox = new DateTimePicker();
             appointmentData = new DataGridView();
-            appIDBox = new TextBox();
-            label5 = new Label();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)appointmentData).BeginInit();
@@ -52,9 +55,10 @@
             // panel3
             // 
             panel3.BackColor = Color.White;
+            panel3.Controls.Add(refreshButton);
             panel3.Controls.Add(updateButton);
             panel3.Controls.Add(deleteButton);
-            panel3.Controls.Add(updateRecordBtn);
+            panel3.Controls.Add(makeAppButton);
             panel3.Controls.Add(label1);
             panel3.Controls.Add(panel4);
             panel3.Controls.Add(appointmentData);
@@ -63,6 +67,21 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(900, 700);
             panel3.TabIndex = 9;
+            // 
+            // refreshButton
+            // 
+            refreshButton.BackColor = Color.SteelBlue;
+            refreshButton.FlatAppearance.BorderSize = 0;
+            refreshButton.FlatStyle = FlatStyle.Flat;
+            refreshButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            refreshButton.ForeColor = Color.White;
+            refreshButton.Location = new Point(468, 300);
+            refreshButton.Name = "refreshButton";
+            refreshButton.Size = new Size(100, 40);
+            refreshButton.TabIndex = 6;
+            refreshButton.Text = "Refresh";
+            refreshButton.UseVisualStyleBackColor = false;
+            refreshButton.Click += refreshButton_Click;
             // 
             // updateButton
             // 
@@ -94,19 +113,20 @@
             deleteButton.UseVisualStyleBackColor = false;
             deleteButton.Click += deleteButton_Click;
             // 
-            // updateRecordBtn
+            // makeAppButton
             // 
-            updateRecordBtn.BackColor = Color.SteelBlue;
-            updateRecordBtn.FlatAppearance.BorderSize = 0;
-            updateRecordBtn.FlatStyle = FlatStyle.Flat;
-            updateRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            updateRecordBtn.ForeColor = Color.White;
-            updateRecordBtn.Location = new Point(50, 300);
-            updateRecordBtn.Name = "updateRecordBtn";
-            updateRecordBtn.Size = new Size(200, 40);
-            updateRecordBtn.TabIndex = 3;
-            updateRecordBtn.Text = "Make an appointment";
-            updateRecordBtn.UseVisualStyleBackColor = false;
+            makeAppButton.BackColor = Color.SteelBlue;
+            makeAppButton.FlatAppearance.BorderSize = 0;
+            makeAppButton.FlatStyle = FlatStyle.Flat;
+            makeAppButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            makeAppButton.ForeColor = Color.White;
+            makeAppButton.Location = new Point(50, 300);
+            makeAppButton.Name = "makeAppButton";
+            makeAppButton.Size = new Size(200, 40);
+            makeAppButton.TabIndex = 3;
+            makeAppButton.Text = "Make an appointment";
+            makeAppButton.UseVisualStyleBackColor = false;
+            makeAppButton.Click += makeAppButton_Click;
             // 
             // label1
             // 
@@ -122,10 +142,12 @@
             // panel4
             // 
             panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(label6);
+            panel4.Controls.Add(empIDBox);
             panel4.Controls.Add(label5);
             panel4.Controls.Add(appIDBox);
             panel4.Controls.Add(label4);
-            panel4.Controls.Add(cboEmployee);
+            panel4.Controls.Add(cboCustomer);
             panel4.Controls.Add(timeBox);
             panel4.Controls.Add(label3);
             panel4.Controls.Add(label2);
@@ -134,6 +156,48 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(800, 250);
             panel4.TabIndex = 0;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.SteelBlue;
+            label6.Location = new Point(500, 36);
+            label6.Name = "label6";
+            label6.Size = new Size(109, 23);
+            label6.TabIndex = 15;
+            label6.Text = "Employee ID";
+            // 
+            // empIDBox
+            // 
+            empIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            empIDBox.Location = new Point(500, 62);
+            empIDBox.Name = "empIDBox";
+            empIDBox.PlaceholderText = "Employee ID";
+            empIDBox.ReadOnly = true;
+            empIDBox.Size = new Size(150, 27);
+            empIDBox.TabIndex = 14;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.SteelBlue;
+            label5.Location = new Point(150, 145);
+            label5.Name = "label5";
+            label5.Size = new Size(131, 23);
+            label5.TabIndex = 9;
+            label5.Text = "Appointment ID";
+            // 
+            // appIDBox
+            // 
+            appIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            appIDBox.Location = new Point(150, 170);
+            appIDBox.Name = "appIDBox";
+            appIDBox.PlaceholderText = "Appointment ID";
+            appIDBox.ReadOnly = true;
+            appIDBox.Size = new Size(125, 27);
+            appIDBox.TabIndex = 8;
             // 
             // label4
             // 
@@ -146,15 +210,15 @@
             label4.TabIndex = 7;
             label4.Text = "Customer";
             // 
-            // cboEmployee
+            // cboCustomer
             // 
-            cboEmployee.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cboEmployee.FormattingEnabled = true;
-            cboEmployee.Location = new Point(300, 171);
-            cboEmployee.MinimumSize = new Size(350, 0);
-            cboEmployee.Name = "cboEmployee";
-            cboEmployee.Size = new Size(350, 27);
-            cboEmployee.TabIndex = 6;
+            cboCustomer.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboCustomer.FormattingEnabled = true;
+            cboCustomer.Location = new Point(300, 171);
+            cboCustomer.MinimumSize = new Size(350, 0);
+            cboCustomer.Name = "cboCustomer";
+            cboCustomer.Size = new Size(350, 27);
+            cboCustomer.TabIndex = 6;
             // 
             // timeBox
             // 
@@ -164,7 +228,7 @@
             timeBox.Location = new Point(150, 62);
             timeBox.Name = "timeBox";
             timeBox.ShowUpDown = true;
-            timeBox.Size = new Size(200, 27);
+            timeBox.Size = new Size(150, 27);
             timeBox.TabIndex = 5;
             // 
             // label3
@@ -194,9 +258,9 @@
             dateBox.CustomFormat = "yyyy-MM-dd";
             dateBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dateBox.Format = DateTimePickerFormat.Custom;
-            dateBox.Location = new Point(400, 62);
+            dateBox.Location = new Point(326, 62);
             dateBox.Name = "dateBox";
-            dateBox.Size = new Size(250, 27);
+            dateBox.Size = new Size(150, 27);
             dateBox.TabIndex = 2;
             // 
             // appointmentData
@@ -216,26 +280,6 @@
             appointmentData.Size = new Size(900, 350);
             appointmentData.TabIndex = 2;
             appointmentData.CellClick += appointmentData_CellClick;
-            // 
-            // appIDBox
-            // 
-            appIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            appIDBox.Location = new Point(150, 170);
-            appIDBox.Name = "appIDBox";
-            appIDBox.PlaceholderText = "Appointment ID";
-            appIDBox.Size = new Size(125, 27);
-            appIDBox.TabIndex = 8;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.SteelBlue;
-            label5.Location = new Point(150, 145);
-            label5.Name = "label5";
-            label5.Size = new Size(131, 23);
-            label5.TabIndex = 9;
-            label5.Text = "Appointment ID";
             // 
             // Dentist_Appointment
             // 
@@ -262,7 +306,7 @@
         private Panel panel3;
         private Button updateButton;
         private Button deleteButton;
-        private Button updateRecordBtn;
+        private Button makeAppButton;
         private Label label1;
         private Panel panel4;
         private DateTimePicker timeBox;
@@ -270,9 +314,12 @@
         private Label label2;
         private DateTimePicker dateBox;
         private DataGridView appointmentData;
-        private ComboBox cboEmployee;
+        private ComboBox cboCustomer;
         private Label label4;
         private Label label5;
         private TextBox appIDBox;
+        private Label label6;
+        private TextBox empIDBox;
+        private Button refreshButton;
     }
 }

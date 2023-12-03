@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Data;
 using System.Data.SqlClient;
 using QLNhaKhoa.Employee_form;
 using QLNhaKhoa.Dentist_form;
@@ -81,8 +73,8 @@ namespace QLNhaKhoa
 
                     cmd.Parameters.Add("@LOAIUSER", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.ExecuteNonQuery();
-                    int user_type = (int)cmd.Parameters["@LOAIUSER"].Value;
 
+                    int user_type = (int)cmd.Parameters["@LOAIUSER"].Value;
                     if (user_type == -1)
                     {
                         Customer_Main f = new Customer_Main();
@@ -113,13 +105,13 @@ namespace QLNhaKhoa
                         f.CurrentAdmin = txtID.Text;
                         f.CurrentPass = txtPassword.Text;
                         f.Show();
-                        this.Hide();;
+                        this.Hide(); ;
                     }
                     sqlCon.Close();
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("ID hoặc mật khẩu sai!");
+                    MessageBox.Show("ID hoặc mật khẩu sai! " + ex.Message);
                 }
             }
         }

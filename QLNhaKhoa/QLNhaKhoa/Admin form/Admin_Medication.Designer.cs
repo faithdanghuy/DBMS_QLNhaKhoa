@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             panel1 = new Panel();
             refreshButton = new Button();
             searchIDBox = new TextBox();
@@ -38,7 +37,6 @@
             label1 = new Label();
             panel2 = new Panel();
             label9 = new Label();
-            empIDBox = new TextBox();
             label8 = new Label();
             prescribeBox = new TextBox();
             label7 = new Label();
@@ -55,11 +53,10 @@
             medIDBox = new TextBox();
             addMedButton = new Button();
             medData = new DataGridView();
-            empIDError = new ErrorProvider(components);
+            cboEmp = new ComboBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)medData).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)empIDError).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -166,8 +163,8 @@
             // 
             panel2.BackColor = Color.White;
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(cboEmp);
             panel2.Controls.Add(label9);
-            panel2.Controls.Add(empIDBox);
             panel2.Controls.Add(label8);
             panel2.Controls.Add(prescribeBox);
             panel2.Controls.Add(label7);
@@ -192,20 +189,11 @@
             label9.AutoSize = true;
             label9.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.SteelBlue;
-            label9.Location = new Point(188, 16);
+            label9.Location = new Point(182, 16);
             label9.Name = "label9";
             label9.Size = new Size(65, 23);
             label9.TabIndex = 17;
             label9.Text = "Emp ID";
-            // 
-            // empIDBox
-            // 
-            empIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            empIDBox.Location = new Point(190, 42);
-            empIDBox.Name = "empIDBox";
-            empIDBox.PlaceholderText = "Emp ID";
-            empIDBox.Size = new Size(85, 27);
-            empIDBox.TabIndex = 16;
             // 
             // label8
             // 
@@ -285,9 +273,9 @@
             cboUnit.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cboUnit.FormattingEnabled = true;
             cboUnit.Items.AddRange(new object[] { "Viên", "Hộp", "Gói" });
-            cboUnit.Location = new Point(300, 42);
+            cboUnit.Location = new Point(400, 42);
             cboUnit.Name = "cboUnit";
-            cboUnit.Size = new Size(200, 27);
+            cboUnit.Size = new Size(100, 27);
             cboUnit.TabIndex = 8;
             // 
             // medNameBox
@@ -325,7 +313,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.SteelBlue;
-            label3.Location = new Point(300, 16);
+            label3.Location = new Point(400, 16);
             label3.Name = "label3";
             label3.Size = new Size(40, 23);
             label3.TabIndex = 4;
@@ -385,9 +373,14 @@
             medData.TabIndex = 0;
             medData.CellClick += medData_CellClick;
             // 
-            // empIDError
+            // cboEmp
             // 
-            empIDError.ContainerControl = this;
+            cboEmp.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboEmp.FormattingEnabled = true;
+            cboEmp.Location = new Point(182, 42);
+            cboEmp.Name = "cboEmp";
+            cboEmp.Size = new Size(200, 27);
+            cboEmp.TabIndex = 18;
             // 
             // Admin_Medication
             // 
@@ -405,7 +398,6 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)medData).EndInit();
-            ((System.ComponentModel.ISupportInitialize)empIDError).EndInit();
             ResumeLayout(false);
         }
 
@@ -433,10 +425,9 @@
         private DateTimePicker expDateBox;
         private Label label8;
         private Label label9;
-        private TextBox empIDBox;
-        private ErrorProvider empIDError;
         private TextBox searchIDBox;
         private Button searchButton;
         private Button refreshButton;
+        private ComboBox cboEmp;
     }
 }

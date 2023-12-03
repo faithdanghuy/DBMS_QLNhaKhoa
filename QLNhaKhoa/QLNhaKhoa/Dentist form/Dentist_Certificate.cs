@@ -10,11 +10,26 @@ namespace QLNhaKhoa.Dentist_form
         {
             InitializeComponent();
         }
+
         private void Dentist_Certificate_Load(object sender, EventArgs e)
         {
-            string certificate_query = "select * from GIAYKHAMBENH";
-            certificateData.DataSource = Helper.getData(certificate_query).Tables[0];
+            certificateData.DataSource = Helper.getData("select * from GIAYKHAMBENH").Tables[0];
+
+            cboRecord.DisplayMember = "MAHSBA";
+            cboRecord.ValueMember = "MAHSBA";
+            cboRecord.DataSource = Helper.getData("select MAHSBA from HOSOBENHAN").Tables[0];
         }
+
+        private void refresh()
+        {
+            Helper.refreshData("select * from GIAYKHAMBENH", certificateData);
+        }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            refresh();
+        }
+
         private void certificateData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
@@ -22,9 +37,10 @@ namespace QLNhaKhoa.Dentist_form
                 DataGridViewRow dgvr = certificateData.Rows[e.RowIndex];
                 certificateIDBox.Text = dgvr.Cells["MAGIAYKHAMBENH"].Value.ToString();
                 examDateBox.Text = dgvr.Cells["NGAYKHAM"].Value.ToString();
-                recordIDBox.Text = dgvr.Cells["MAHSBA"].Value.ToString();
+                cboRecord.Text = dgvr.Cells["MAHSBA"].Value.ToString();
             }
         }
+
         private void addCertButton_Click(object sender, EventArgs e)
         {
             try
@@ -34,7 +50,7 @@ namespace QLNhaKhoa.Dentist_form
                 SqlCommand cmd = new SqlCommand("USP_GIAYKHAMBENH_INS", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add(new SqlParameter("@MAHSBA", recordIDBox.Text));
+                cmd.Parameters.Add(new SqlParameter("@MAHSBA", cboRecord.Text));
                 cmd.Parameters.Add(new SqlParameter("@NGAYKHAM", examDateBox.Text));
 
                 cmd.Parameters.Add("@MAGIAYKHAMBENH", SqlDbType.VarChar, 10).Direction = ParameterDirection.Output;
@@ -47,26 +63,12 @@ namespace QLNhaKhoa.Dentist_form
                 {
                     MessageBox.Show("Thêm giấy khám bệnh thất bại!");
                 }
+                refresh();
+                sqlCon.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Thêm giấy khám bệnh thất bại! " + ex.Message);
-            }
-        }
-        private void previousButton_Click(object sender, EventArgs e)
-        {
-            int prev = certificateData.CurrentRow.Index - 1;
-            if (prev > 0)
-            {
-                certificateData.CurrentCell = certificateData.Rows[prev].Cells[certificateData.CurrentCell.ColumnIndex];
-            }
-        }
-        private void nextButton_Click(object sender, EventArgs e)
-        {
-            int next = certificateData.CurrentRow.Index + 1;
-            if (next < certificateData.Rows.Count)
-            {
-                certificateData.CurrentCell = certificateData.Rows[next].Cells[certificateData.CurrentCell.ColumnIndex];
             }
         }
     }

@@ -29,17 +29,16 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            nextButton = new Button();
-            previousButton = new Button();
+            refreshButton = new Button();
             addCertButton = new Button();
             certificateData = new DataGridView();
             label1 = new Label();
             panel2 = new Panel();
+            cboRecord = new ComboBox();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             examDateBox = new DateTimePicker();
-            recordIDBox = new TextBox();
             certificateIDBox = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)certificateData).BeginInit();
@@ -49,8 +48,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(nextButton);
-            panel1.Controls.Add(previousButton);
+            panel1.Controls.Add(refreshButton);
             panel1.Controls.Add(addCertButton);
             panel1.Controls.Add(certificateData);
             panel1.Dock = DockStyle.Fill;
@@ -59,35 +57,20 @@
             panel1.Size = new Size(900, 700);
             panel1.TabIndex = 5;
             // 
-            // nextButton
+            // refreshButton
             // 
-            nextButton.BackColor = Color.SteelBlue;
-            nextButton.FlatAppearance.BorderSize = 0;
-            nextButton.FlatStyle = FlatStyle.Flat;
-            nextButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            nextButton.ForeColor = Color.White;
-            nextButton.Location = new Point(262, 300);
-            nextButton.Name = "nextButton";
-            nextButton.Size = new Size(100, 40);
-            nextButton.TabIndex = 11;
-            nextButton.Text = "Next";
-            nextButton.UseVisualStyleBackColor = false;
-            nextButton.Click += nextButton_Click;
-            // 
-            // previousButton
-            // 
-            previousButton.BackColor = Color.SteelBlue;
-            previousButton.FlatAppearance.BorderSize = 0;
-            previousButton.FlatStyle = FlatStyle.Flat;
-            previousButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            previousButton.ForeColor = Color.White;
-            previousButton.Location = new Point(156, 300);
-            previousButton.Name = "previousButton";
-            previousButton.Size = new Size(100, 40);
-            previousButton.TabIndex = 10;
-            previousButton.Text = "Previous";
-            previousButton.UseVisualStyleBackColor = false;
-            previousButton.Click += previousButton_Click;
+            refreshButton.BackColor = Color.SteelBlue;
+            refreshButton.FlatAppearance.BorderSize = 0;
+            refreshButton.FlatStyle = FlatStyle.Flat;
+            refreshButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            refreshButton.ForeColor = Color.White;
+            refreshButton.Location = new Point(156, 300);
+            refreshButton.Name = "refreshButton";
+            refreshButton.Size = new Size(100, 40);
+            refreshButton.TabIndex = 10;
+            refreshButton.Text = "Refresh";
+            refreshButton.UseVisualStyleBackColor = false;
+            refreshButton.Click += refreshButton_Click;
             // 
             // addCertButton
             // 
@@ -137,16 +120,25 @@
             // 
             panel2.BackColor = Color.White;
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(cboRecord);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(examDateBox);
-            panel2.Controls.Add(recordIDBox);
             panel2.Controls.Add(certificateIDBox);
             panel2.Location = new Point(50, 40);
             panel2.Name = "panel2";
             panel2.Size = new Size(800, 250);
             panel2.TabIndex = 7;
+            // 
+            // cboRecord
+            // 
+            cboRecord.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboRecord.FormattingEnabled = true;
+            cboRecord.Location = new Point(450, 182);
+            cboRecord.Name = "cboRecord";
+            cboRecord.Size = new Size(250, 27);
+            cboRecord.TabIndex = 6;
             // 
             // label4
             // 
@@ -191,15 +183,6 @@
             examDateBox.Size = new Size(250, 27);
             examDateBox.TabIndex = 2;
             // 
-            // recordIDBox
-            // 
-            recordIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            recordIDBox.Location = new Point(450, 180);
-            recordIDBox.Name = "recordIDBox";
-            recordIDBox.PlaceholderText = "Customer Record ID";
-            recordIDBox.Size = new Size(250, 27);
-            recordIDBox.TabIndex = 1;
-            // 
             // certificateIDBox
             // 
             certificateIDBox.Enabled = false;
@@ -236,16 +219,15 @@
 
         private Panel panel1;
         private DataGridView certificateData;
-        private Button previousButton;
         private Button addCertButton;
         private Label label1;
         private Panel panel2;
         private TextBox certificateIDBox;
-        private TextBox recordIDBox;
         private DateTimePicker examDateBox;
         private Label label3;
         private Label label2;
         private Label label4;
-        private Button nextButton;
+        private Button refreshButton;
+        private ComboBox cboRecord;
     }
 }

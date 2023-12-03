@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Data;
 
 namespace QLNhaKhoa.Employee_form
 {
@@ -18,10 +10,12 @@ namespace QLNhaKhoa.Employee_form
         {
             InitializeComponent();
         }
+
         private void Emp_Prescription_Load(object sender, EventArgs e)
         {
             prescriptionData.DataSource = Helper.getData(query).Tables[0];
         }
+
         private void prescriptionData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
@@ -34,10 +28,12 @@ namespace QLNhaKhoa.Employee_form
                 certificateIDBox.Text = dgvr.Cells["MAGIAYKHAMBENH"].Value.ToString();
             }
         }
+
         private void refreshButton_Click(object sender, EventArgs e)
         {
             Helper.refreshData(query, prescriptionData);
         }
+
         private void searchButton_Click(object sender, EventArgs e)
         {
             (prescriptionData.DataSource as DataTable).DefaultView.RowFilter = String.Format("MAHSBA like '%" + searchIDBox.Text + "%'");

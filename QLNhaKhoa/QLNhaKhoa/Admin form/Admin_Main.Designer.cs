@@ -124,7 +124,7 @@
             MedicationButton.ForeColor = Color.White;
             MedicationButton.Location = new Point(25, 485);
             MedicationButton.Name = "MedicationButton";
-            MedicationButton.Size = new Size(250, 40);
+            MedicationButton.Size = new Size(250, 50);
             MedicationButton.TabIndex = 3;
             MedicationButton.Text = "Medication";
             MedicationButton.UseVisualStyleBackColor = true;
@@ -138,7 +138,7 @@
             AccountMngrButton.ForeColor = Color.White;
             AccountMngrButton.Location = new Point(25, 375);
             AccountMngrButton.Name = "AccountMngrButton";
-            AccountMngrButton.Size = new Size(250, 40);
+            AccountMngrButton.Size = new Size(250, 50);
             AccountMngrButton.TabIndex = 2;
             AccountMngrButton.Text = "Account Manager";
             AccountMngrButton.UseVisualStyleBackColor = true;
@@ -152,7 +152,7 @@
             AccountButton.ForeColor = Color.White;
             AccountButton.Location = new Point(25, 275);
             AccountButton.Name = "AccountButton";
-            AccountButton.Size = new Size(250, 40);
+            AccountButton.Size = new Size(250, 50);
             AccountButton.TabIndex = 1;
             AccountButton.Text = "Account";
             AccountButton.UseVisualStyleBackColor = true;

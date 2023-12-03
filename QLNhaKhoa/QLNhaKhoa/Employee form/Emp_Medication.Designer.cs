@@ -32,7 +32,6 @@
             searchIDBox = new TextBox();
             searchButton = new Button();
             refreshButton = new Button();
-            button1 = new Button();
             label1 = new Label();
             panel2 = new Panel();
             unitBox = new TextBox();
@@ -51,7 +50,6 @@
             label3 = new Label();
             label2 = new Label();
             medIDBox = new TextBox();
-            updateRecordBtn = new Button();
             medData = new DataGridView();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -64,10 +62,8 @@
             panel1.Controls.Add(searchIDBox);
             panel1.Controls.Add(searchButton);
             panel1.Controls.Add(refreshButton);
-            panel1.Controls.Add(button1);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(panel2);
-            panel1.Controls.Add(updateRecordBtn);
             panel1.Controls.Add(medData);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
@@ -107,27 +103,13 @@
             refreshButton.FlatStyle = FlatStyle.Flat;
             refreshButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             refreshButton.ForeColor = Color.White;
-            refreshButton.Location = new Point(262, 298);
+            refreshButton.Location = new Point(50, 300);
             refreshButton.Name = "refreshButton";
-            refreshButton.Size = new Size(100, 40);
+            refreshButton.Size = new Size(200, 40);
             refreshButton.TabIndex = 15;
             refreshButton.Text = "Refresh";
             refreshButton.UseVisualStyleBackColor = false;
             refreshButton.Click += refreshButton_Click;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.SteelBlue;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(156, 298);
-            button1.Name = "button1";
-            button1.Size = new Size(100, 40);
-            button1.TabIndex = 12;
-            button1.Text = "Next";
-            button1.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -135,7 +117,7 @@
             label1.BackColor = Color.White;
             label1.Font = new Font("Tw Cen MT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.SteelBlue;
-            label1.Location = new Point(375, 15);
+            label1.Location = new Point(375, 20);
             label1.Name = "label1";
             label1.Size = new Size(149, 35);
             label1.TabIndex = 7;
@@ -161,7 +143,7 @@
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(medIDBox);
-            panel2.Location = new Point(50, 35);
+            panel2.Location = new Point(50, 40);
             panel2.Name = "panel2";
             panel2.Size = new Size(800, 250);
             panel2.TabIndex = 11;
@@ -335,20 +317,6 @@
             medIDBox.Size = new Size(100, 27);
             medIDBox.TabIndex = 0;
             // 
-            // updateRecordBtn
-            // 
-            updateRecordBtn.BackColor = Color.SteelBlue;
-            updateRecordBtn.FlatAppearance.BorderSize = 0;
-            updateRecordBtn.FlatStyle = FlatStyle.Flat;
-            updateRecordBtn.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            updateRecordBtn.ForeColor = Color.White;
-            updateRecordBtn.Location = new Point(50, 298);
-            updateRecordBtn.Name = "updateRecordBtn";
-            updateRecordBtn.Size = new Size(100, 40);
-            updateRecordBtn.TabIndex = 9;
-            updateRecordBtn.Text = "Previous";
-            updateRecordBtn.UseVisualStyleBackColor = false;
-            // 
             // medData
             // 
             medData.AllowUserToAddRows = false;
@@ -388,7 +356,6 @@
         #endregion
 
         private Panel panel1;
-        private Button button1;
         private Label label1;
         private Panel panel2;
         private Label label9;
@@ -406,7 +373,6 @@
         private Label label3;
         private Label label2;
         private TextBox medIDBox;
-        private Button updateRecordBtn;
         private DataGridView medData;
         private TextBox unitBox;
         private Button refreshButton;
