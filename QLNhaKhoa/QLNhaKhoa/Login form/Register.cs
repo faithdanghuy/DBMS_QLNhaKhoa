@@ -11,14 +11,6 @@ namespace QLNhaKhoa
             this.ActiveControl = txtName;
             txtName.Focus();
         }
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-        private void minimizeButton_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
         private void loginSwap_Click(object sender, EventArgs e)
         {
             new Login().Show();
@@ -37,25 +29,13 @@ namespace QLNhaKhoa
         }
         private void registerButton_Click(object sender, EventArgs e)
         {
-            if (txtName.Text == "")
+            if (txtName.Text == "" ||
+                txtBday.Text == "" ||
+                txtAddress.Text == "" ||
+                txtPhone.Text == "" ||
+                txtPassword.Text == "")
             {
-                MessageBox.Show("Vui lòng nhập tên");
-            }
-            else if (txtBday.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập ngày sinh");
-            }
-            else if (txtAddress.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập địa chỉ");
-            }
-            else if (txtPhone.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập số điện thoại");
-            }
-            else if (txtPassword.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập mật khẩu");
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
             }
             else
             {

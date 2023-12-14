@@ -41,15 +41,14 @@
             label4 = new Label();
             phoneBox = new TextBox();
             addressBox = new TextBox();
-            cboEmpType = new ComboBox();
             nameBox = new TextBox();
             bdayBox = new DateTimePicker();
-            label3 = new Label();
             label2 = new Label();
-            passwordBox = new TextBox();
             IDBox = new TextBox();
             createAccButton = new Button();
             accountData = new DataGridView();
+            passwordBox = new TextBox();
+            cboEmpType = new TextBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)accountData).BeginInit();
@@ -65,6 +64,7 @@
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(createAccButton);
             panel1.Controls.Add(accountData);
+            panel1.Controls.Add(passwordBox);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -132,6 +132,7 @@
             // 
             panel2.BackColor = Color.White;
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(cboEmpType);
             panel2.Controls.Add(label8);
             panel2.Controls.Add(label7);
             panel2.Controls.Add(label6);
@@ -139,12 +140,9 @@
             panel2.Controls.Add(label4);
             panel2.Controls.Add(phoneBox);
             panel2.Controls.Add(addressBox);
-            panel2.Controls.Add(cboEmpType);
             panel2.Controls.Add(nameBox);
             panel2.Controls.Add(bdayBox);
-            panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
-            panel2.Controls.Add(passwordBox);
             panel2.Controls.Add(IDBox);
             panel2.Location = new Point(50, 35);
             panel2.Name = "panel2";
@@ -156,7 +154,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.SteelBlue;
-            label8.Location = new Point(500, 159);
+            label8.Location = new Point(300, 94);
             label8.Name = "label8";
             label8.Size = new Size(123, 23);
             label8.TabIndex = 15;
@@ -189,7 +187,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.SteelBlue;
-            label5.Location = new Point(286, 95);
+            label5.Location = new Point(225, 29);
             label5.Name = "label5";
             label5.Size = new Size(57, 23);
             label5.TabIndex = 12;
@@ -209,7 +207,7 @@
             // phoneBox
             // 
             phoneBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            phoneBox.Location = new Point(500, 185);
+            phoneBox.Location = new Point(300, 120);
             phoneBox.MaxLength = 11;
             phoneBox.Name = "phoneBox";
             phoneBox.PlaceholderText = "Phone number";
@@ -224,27 +222,17 @@
             addressBox.MaxLength = 100;
             addressBox.Name = "addressBox";
             addressBox.PlaceholderText = "Address";
-            addressBox.Size = new Size(350, 27);
+            addressBox.Size = new Size(600, 27);
             addressBox.TabIndex = 9;
-            // 
-            // cboEmpType
-            // 
-            cboEmpType.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cboEmpType.FormattingEnabled = true;
-            cboEmpType.Items.AddRange(new object[] { "Employee", "Dentist", "Admin" });
-            cboEmpType.Location = new Point(549, 120);
-            cboEmpType.Name = "cboEmpType";
-            cboEmpType.Size = new Size(151, 27);
-            cboEmpType.TabIndex = 8;
             // 
             // nameBox
             // 
             nameBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            nameBox.Location = new Point(286, 120);
+            nameBox.Location = new Point(225, 55);
             nameBox.MaxLength = 25;
             nameBox.Name = "nameBox";
             nameBox.PlaceholderText = "Name";
-            nameBox.Size = new Size(225, 27);
+            nameBox.Size = new Size(475, 27);
             nameBox.TabIndex = 7;
             // 
             // bdayBox
@@ -252,7 +240,7 @@
             bdayBox.CustomFormat = "yyyy-MM-dd";
             bdayBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             bdayBox.Format = DateTimePickerFormat.Custom;
-            bdayBox.Location = new Point(100, 121);
+            bdayBox.Location = new Point(100, 120);
             bdayBox.MaxDate = new DateTime(2023, 12, 2, 0, 0, 0, 0);
             bdayBox.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             bdayBox.Name = "bdayBox";
@@ -260,47 +248,25 @@
             bdayBox.TabIndex = 6;
             bdayBox.Value = new DateTime(2023, 12, 2, 0, 0, 0, 0);
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.SteelBlue;
-            label3.Location = new Point(450, 32);
-            label3.Name = "label3";
-            label3.Size = new Size(86, 23);
-            label3.TabIndex = 4;
-            label3.Text = "Password";
-            // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.SteelBlue;
-            label2.Location = new Point(100, 32);
+            label2.Location = new Point(100, 29);
             label2.Name = "label2";
             label2.Size = new Size(93, 23);
             label2.TabIndex = 3;
             label2.Text = "Account ID";
             // 
-            // passwordBox
-            // 
-            passwordBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            passwordBox.Location = new Point(450, 58);
-            passwordBox.MaxLength = 20;
-            passwordBox.Name = "passwordBox";
-            passwordBox.PlaceholderText = "Password";
-            passwordBox.Size = new Size(250, 27);
-            passwordBox.TabIndex = 1;
-            passwordBox.UseSystemPasswordChar = true;
-            // 
             // IDBox
             // 
             IDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            IDBox.Location = new Point(100, 58);
+            IDBox.Location = new Point(100, 55);
             IDBox.Name = "IDBox";
             IDBox.PlaceholderText = "Account ID";
             IDBox.ReadOnly = true;
-            IDBox.Size = new Size(250, 27);
+            IDBox.Size = new Size(100, 27);
             IDBox.TabIndex = 0;
             // 
             // createAccButton
@@ -320,9 +286,11 @@
             // 
             // accountData
             // 
+            accountData.AllowUserToAddRows = false;
             accountData.AllowUserToDeleteRows = false;
             accountData.AllowUserToResizeColumns = false;
             accountData.AllowUserToResizeRows = false;
+            accountData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             accountData.BorderStyle = BorderStyle.None;
             accountData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             accountData.Dock = DockStyle.Bottom;
@@ -332,6 +300,27 @@
             accountData.Size = new Size(900, 350);
             accountData.TabIndex = 0;
             accountData.CellClick += accountData_CellClick;
+            // 
+            // passwordBox
+            // 
+            passwordBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            passwordBox.Location = new Point(474, 311);
+            passwordBox.MaxLength = 20;
+            passwordBox.Name = "passwordBox";
+            passwordBox.PlaceholderText = "Password";
+            passwordBox.Size = new Size(0, 27);
+            passwordBox.TabIndex = 1;
+            passwordBox.UseSystemPasswordChar = true;
+            passwordBox.Visible = false;
+            // 
+            // cboEmpType
+            // 
+            cboEmpType.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboEmpType.Location = new Point(550, 123);
+            cboEmpType.Name = "cboEmpType";
+            cboEmpType.ReadOnly = true;
+            cboEmpType.Size = new Size(150, 27);
+            cboEmpType.TabIndex = 16;
             // 
             // Admin_AccManager
             // 
@@ -358,7 +347,6 @@
         private Button createAccButton;
         private DataGridView accountData;
         private Panel panel2;
-        private Label label3;
         private Label label2;
         private TextBox passwordBox;
         private TextBox IDBox;
@@ -367,7 +355,6 @@
         private Button updateAccButton;
         private DateTimePicker bdayBox;
         private TextBox nameBox;
-        private ComboBox cboEmpType;
         private Label label8;
         private Label label7;
         private Label label6;
@@ -376,5 +363,6 @@
         private TextBox phoneBox;
         private TextBox addressBox;
         private Button refreshButton;
+        private TextBox cboEmpType;
     }
 }

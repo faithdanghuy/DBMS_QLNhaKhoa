@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            refreshButton = new Button();
             updateAppButton = new Button();
             makeAppointBtn = new Button();
             panel2 = new Panel();
@@ -40,11 +41,10 @@
             label3 = new Label();
             appointDate = new DateTimePicker();
             label2 = new Label();
-            cboDentists = new ComboBox();
             label1 = new Label();
             appointmentData = new DataGridView();
             serviceTitle = new Label();
-            refreshButton = new Button();
+            cboDentists = new ComboBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)appointmentData).BeginInit();
@@ -63,6 +63,21 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(900, 700);
             panel1.TabIndex = 3;
+            // 
+            // refreshButton
+            // 
+            refreshButton.BackColor = Color.SteelBlue;
+            refreshButton.FlatAppearance.BorderSize = 0;
+            refreshButton.FlatStyle = FlatStyle.Flat;
+            refreshButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            refreshButton.ForeColor = Color.White;
+            refreshButton.Location = new Point(362, 300);
+            refreshButton.Name = "refreshButton";
+            refreshButton.Size = new Size(100, 40);
+            refreshButton.TabIndex = 5;
+            refreshButton.Text = "Refresh";
+            refreshButton.UseVisualStyleBackColor = false;
+            refreshButton.Click += refreshButton_Click;
             // 
             // updateAppButton
             // 
@@ -152,7 +167,7 @@
             appIDBox.Name = "appIDBox";
             appIDBox.PlaceholderText = "Appointment ID";
             appIDBox.ReadOnly = true;
-            appIDBox.Size = new Size(125, 27);
+            appIDBox.Size = new Size(150, 27);
             appIDBox.TabIndex = 10;
             // 
             // appointTime
@@ -194,21 +209,11 @@
             label2.AutoSize = true;
             label2.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.SteelBlue;
-            label2.Location = new Point(300, 144);
+            label2.Location = new Point(326, 145);
             label2.Name = "label2";
             label2.Size = new Size(62, 23);
             label2.TabIndex = 4;
             label2.Text = "Dentist";
-            // 
-            // cboDentists
-            // 
-            cboDentists.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cboDentists.FormattingEnabled = true;
-            cboDentists.Location = new Point(300, 170);
-            cboDentists.MinimumSize = new Size(350, 0);
-            cboDentists.Name = "cboDentists";
-            cboDentists.Size = new Size(350, 27);
-            cboDentists.TabIndex = 3;
             // 
             // label1
             // 
@@ -251,20 +256,14 @@
             serviceTitle.TabIndex = 6;
             serviceTitle.Text = "Appointment";
             // 
-            // refreshButton
+            // cboDentists
             // 
-            refreshButton.BackColor = Color.SteelBlue;
-            refreshButton.FlatAppearance.BorderSize = 0;
-            refreshButton.FlatStyle = FlatStyle.Flat;
-            refreshButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            refreshButton.ForeColor = Color.White;
-            refreshButton.Location = new Point(362, 300);
-            refreshButton.Name = "refreshButton";
-            refreshButton.Size = new Size(100, 40);
-            refreshButton.TabIndex = 5;
-            refreshButton.Text = "Refresh";
-            refreshButton.UseVisualStyleBackColor = false;
-            refreshButton.Click += refreshButton_Click;
+            cboDentists.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboDentists.FormattingEnabled = true;
+            cboDentists.Location = new Point(326, 170);
+            cboDentists.Name = "cboDentists";
+            cboDentists.Size = new Size(324, 27);
+            cboDentists.TabIndex = 3;
             // 
             // Customer_Appointment
             // 
@@ -295,7 +294,6 @@
         private Label label3;
         private DateTimePicker appointDate;
         private Label label2;
-        private ComboBox cboDentists;
         private Label label1;
         private Label serviceTitle;
         public DataGridView appointmentData;
@@ -305,5 +303,6 @@
         private TextBox empIDBox;
         private Label label4;
         private Button refreshButton;
+        private ComboBox cboDentists;
     }
 }

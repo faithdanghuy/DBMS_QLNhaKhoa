@@ -70,7 +70,7 @@ namespace QLNhaKhoa
             {
                 empType = 1;
             }
-            else if (CurrentUserTrim.StartsWith("NS"))
+            else if (CurrentUserTrim.StartsWith("AD"))
             {
                 empType = 2;
             }

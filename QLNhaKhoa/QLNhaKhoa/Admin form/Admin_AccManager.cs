@@ -4,9 +4,10 @@ using System.Data.SqlClient;
 namespace QLNhaKhoa.Admin_form
 {
     public partial class Admin_AccManager : Form
-    {
-        private static string query = "select * from NHANVIEN";
+    { 
+        private static string query = "select * from NHANVIEN where LOAINHANVIEN != 2";
         public string CurrentAdmin { get; set; } = string.Empty;
+        private Admin_AccForm f;
         public Admin_AccManager()
         {
             InitializeComponent();
@@ -15,6 +16,7 @@ namespace QLNhaKhoa.Admin_form
         private void Admin_AccManager_Load(object sender, EventArgs e)
         {
             accountData.DataSource = Helper.getData(query).Tables[0];
+            accountData.Columns["MATKHAU"].Visible = false;
         }
 
         private void accountData_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -46,52 +48,25 @@ namespace QLNhaKhoa.Admin_form
 
         private void createAccButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                int empType = 0;
-                SqlConnection sqlCon = new SqlConnection(Helper.strCon);
-                sqlCon.Open();
-                SqlCommand cmd = new SqlCommand("USP_NHANVIEN_INS", sqlCon);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.Add(new SqlParameter("@HOTEN", nameBox.Text));
-                cmd.Parameters.Add(new SqlParameter("@NGAYSINH", bdayBox.Text));
-                cmd.Parameters.Add(new SqlParameter("@DIACHI", addressBox.Text));
-                cmd.Parameters.Add(new SqlParameter("@SODT", phoneBox.Text));
-                if (cboEmpType.Text == "Dentist")
-                {
-                    empType = 1;
-                }
-                else if (cboEmpType.Text == "Admin")
-                {
-                    empType = 2;
-                }
-                cmd.Parameters.Add(new SqlParameter("@LOAINHANVIEN", empType));
-                cmd.Parameters.Add(new SqlParameter("@MATKHAU", passwordBox.Text));
-
-                cmd.Parameters.Add("@MANHANVIEN", SqlDbType.VarChar, 10).Direction = ParameterDirection.Output;
-                int i = cmd.ExecuteNonQuery();
-                sqlCon.Close();
-                if (i > 0)
-                {
-                    MessageBox.Show("Tạo tài khoản thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Tạo tài khoản thất bại!");
-                }
-                Helper.refreshData(query, accountData);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Tạo tài khoản thất bại! " + ex);
-            }
+            f = new Admin_AccForm();
+            f.FormClosedEvent += AdminFormClosedEvent;
+            f.Show();
         }
+
+        private void AdminFormClosedEvent(object sender, EventArgs e)
+        {
+            Helper.refreshData(query, accountData);
+        }
+
         private void updateAccButton_Click(object sender, EventArgs e)
         {
             try
             {
                 int empType = 0;
+                if (cboEmpType.Text == "Dentist")
+                {
+                    empType = 1;
+                }
                 SqlConnection sqlCon = new SqlConnection(Helper.strCon);
                 sqlCon.Open();
                 SqlCommand cmd = new SqlCommand("USP_NHANVIEN_UPD", sqlCon);
@@ -102,14 +77,6 @@ namespace QLNhaKhoa.Admin_form
                 cmd.Parameters.Add(new SqlParameter("@NGAYSINH", bdayBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@DIACHI", addressBox.Text));
                 cmd.Parameters.Add(new SqlParameter("@SODT", phoneBox.Text));
-                if (cboEmpType.Text == "Dentist")
-                {
-                    empType = 1;
-                }
-                else if (cboEmpType.Text == "Admin")
-                {
-                    empType = 2;
-                }
                 cmd.Parameters.Add(new SqlParameter("@LOAINHANVIEN", empType));
                 cmd.Parameters.Add(new SqlParameter("@MATKHAU", passwordBox.Text));
 

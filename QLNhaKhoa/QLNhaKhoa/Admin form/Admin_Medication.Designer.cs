@@ -30,12 +30,12 @@
         {
             panel1 = new Panel();
             refreshButton = new Button();
-            searchIDBox = new TextBox();
             searchButton = new Button();
             updateMedButton = new Button();
             deleteMedButton = new Button();
             label1 = new Label();
             panel2 = new Panel();
+            cboEmp = new ComboBox();
             label9 = new Label();
             label8 = new Label();
             prescribeBox = new TextBox();
@@ -53,7 +53,6 @@
             medIDBox = new TextBox();
             addMedButton = new Button();
             medData = new DataGridView();
-            cboEmp = new ComboBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)medData).BeginInit();
@@ -63,7 +62,6 @@
             // 
             panel1.BackColor = Color.White;
             panel1.Controls.Add(refreshButton);
-            panel1.Controls.Add(searchIDBox);
             panel1.Controls.Add(searchButton);
             panel1.Controls.Add(updateMedButton);
             panel1.Controls.Add(deleteMedButton);
@@ -84,7 +82,7 @@
             refreshButton.FlatStyle = FlatStyle.Flat;
             refreshButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             refreshButton.ForeColor = Color.White;
-            refreshButton.Location = new Point(368, 300);
+            refreshButton.Location = new Point(474, 300);
             refreshButton.Name = "refreshButton";
             refreshButton.Size = new Size(100, 40);
             refreshButton.TabIndex = 18;
@@ -92,26 +90,16 @@
             refreshButton.UseVisualStyleBackColor = false;
             refreshButton.Click += refreshButton_Click;
             // 
-            // searchIDBox
-            // 
-            searchIDBox.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            searchIDBox.Location = new Point(569, 311);
-            searchIDBox.MaxLength = 100;
-            searchIDBox.Name = "searchIDBox";
-            searchIDBox.PlaceholderText = "Enter med ID to search";
-            searchIDBox.Size = new Size(200, 27);
-            searchIDBox.TabIndex = 16;
-            // 
             // searchButton
             // 
             searchButton.BackColor = Color.SteelBlue;
             searchButton.FlatAppearance.BorderSize = 0;
             searchButton.FlatStyle = FlatStyle.Flat;
-            searchButton.Font = new Font("Tw Cen MT", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            searchButton.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             searchButton.ForeColor = Color.White;
-            searchButton.Location = new Point(775, 311);
+            searchButton.Location = new Point(368, 300);
             searchButton.Name = "searchButton";
-            searchButton.Size = new Size(75, 27);
+            searchButton.Size = new Size(100, 40);
             searchButton.TabIndex = 17;
             searchButton.Text = "Search";
             searchButton.UseVisualStyleBackColor = false;
@@ -183,6 +171,15 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(800, 250);
             panel2.TabIndex = 11;
+            // 
+            // cboEmp
+            // 
+            cboEmp.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cboEmp.FormattingEnabled = true;
+            cboEmp.Location = new Point(182, 42);
+            cboEmp.Name = "cboEmp";
+            cboEmp.Size = new Size(200, 27);
+            cboEmp.TabIndex = 18;
             // 
             // label9
             // 
@@ -373,15 +370,6 @@
             medData.TabIndex = 0;
             medData.CellClick += medData_CellClick;
             // 
-            // cboEmp
-            // 
-            cboEmp.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cboEmp.FormattingEnabled = true;
-            cboEmp.Location = new Point(182, 42);
-            cboEmp.Name = "cboEmp";
-            cboEmp.Size = new Size(200, 27);
-            cboEmp.TabIndex = 18;
-            // 
             // Admin_Medication
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -425,7 +413,6 @@
         private DateTimePicker expDateBox;
         private Label label8;
         private Label label9;
-        private TextBox searchIDBox;
         private Button searchButton;
         private Button refreshButton;
         private ComboBox cboEmp;

@@ -37,7 +37,6 @@ namespace QLNhaKhoa
             Title = new Label();
             Logo = new PictureBox();
             RightPanel = new Panel();
-            minimizeButton = new Button();
             txtBday = new DateTimePicker();
             txtPassword = new TextBox();
             txtPhone = new TextBox();
@@ -56,7 +55,6 @@ namespace QLNhaKhoa
             loginSwap = new Button();
             registerButton = new Button();
             label1 = new Label();
-            ExitButton = new Button();
             LeftPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Logo).BeginInit();
             RightPanel.SuspendLayout();
@@ -114,7 +112,6 @@ namespace QLNhaKhoa
             // RightPanel
             // 
             RightPanel.BackColor = Color.White;
-            RightPanel.Controls.Add(minimizeButton);
             RightPanel.Controls.Add(txtBday);
             RightPanel.Controls.Add(txtPassword);
             RightPanel.Controls.Add(txtPhone);
@@ -133,25 +130,11 @@ namespace QLNhaKhoa
             RightPanel.Controls.Add(loginSwap);
             RightPanel.Controls.Add(registerButton);
             RightPanel.Controls.Add(label1);
-            RightPanel.Controls.Add(ExitButton);
             RightPanel.Dock = DockStyle.Fill;
             RightPanel.Location = new Point(350, 0);
             RightPanel.Name = "RightPanel";
             RightPanel.Size = new Size(450, 550);
             RightPanel.TabIndex = 1;
-            // 
-            // minimizeButton
-            // 
-            minimizeButton.FlatAppearance.BorderSize = 0;
-            minimizeButton.FlatStyle = FlatStyle.Flat;
-            minimizeButton.Font = new Font("VNI-Lithos", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            minimizeButton.Location = new Point(370, 0);
-            minimizeButton.Name = "minimizeButton";
-            minimizeButton.Size = new Size(40, 40);
-            minimizeButton.TabIndex = 20;
-            minimizeButton.Text = "-";
-            minimizeButton.UseVisualStyleBackColor = true;
-            minimizeButton.Click += minimizeButton_Click;
             // 
             // txtBday
             // 
@@ -353,28 +336,14 @@ namespace QLNhaKhoa
             label1.TabIndex = 1;
             label1.Text = "REGISTER";
             // 
-            // ExitButton
-            // 
-            ExitButton.FlatAppearance.BorderSize = 0;
-            ExitButton.FlatStyle = FlatStyle.Flat;
-            ExitButton.Font = new Font("VNI-Lithos", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ExitButton.Location = new Point(410, 0);
-            ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(40, 40);
-            ExitButton.TabIndex = 0;
-            ExitButton.Text = "X";
-            ExitButton.UseVisualStyleBackColor = true;
-            ExitButton.Click += ExitButton_Click;
-            // 
             // Register
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 550);
-            ControlBox = false;
             Controls.Add(RightPanel);
             Controls.Add(LeftPanel);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Register";
             StartPosition = FormStartPosition.CenterScreen;
@@ -395,7 +364,6 @@ namespace QLNhaKhoa
 
         private Panel LeftPanel;
         private Panel RightPanel;
-        private Button ExitButton;
         private PictureBox Logo;
         private Label Title;
         private Label label1;
@@ -417,6 +385,5 @@ namespace QLNhaKhoa
         private TextBox txtPassword;
         private DateTimePicker txtBday;
         private Label credit;
-        private Button minimizeButton;
     }
 }

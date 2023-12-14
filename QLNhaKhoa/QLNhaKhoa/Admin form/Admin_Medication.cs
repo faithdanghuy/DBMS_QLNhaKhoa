@@ -1,11 +1,16 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
 namespace QLNhaKhoa.Admin_form
 {
     public partial class Admin_Medication : Form
     {
         public string CurrentAdmin { get; set; } = string.Empty;
+        public DataSet searchData;
+        private Admin_AddMed f;
+        private Admin_MedSearch fs;
+
         public Admin_Medication()
         {
             InitializeComponent();
@@ -42,9 +47,8 @@ namespace QLNhaKhoa.Admin_form
 
         private void Admin_Medication_Load(object sender, EventArgs e)
         {
-            string med_query = "select * from THUOC where MANVQUANLY='" + CurrentAdmin + "'";
             string admin_query = "select HOTEN, MANHANVIEN from NHANVIEN where LOAINHANVIEN = 2";
-            medData.DataSource = Helper.getData(med_query).Tables[0];
+            medData.DataSource = Helper.getData("select * from THUOC").Tables[0];
 
             cboEmp.DisplayMember = "HOTEN";
             cboEmp.ValueMember = "MANHANVIEN";
@@ -81,41 +85,26 @@ namespace QLNhaKhoa.Admin_form
 
         private void addMedButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                SqlConnection sqlCon = new SqlConnection(Helper.strCon);
-                sqlCon.Open();
-                SqlCommand cmd = new SqlCommand("USP_THUOC_INS", sqlCon);
-                cmd.CommandType = CommandType.StoredProcedure;
+            f = new Admin_AddMed();
+            f.FormClosedEvent += AdminFormClosedEvent;
+            f.Show();
+        }
 
-                var item = (DataRowView)cboEmp.SelectedItem;
-                cmd.Parameters.Add(new SqlParameter("@TENTHUOC", medNameBox.Text));
-                cmd.Parameters.Add(new SqlParameter("@DONVITINH", cboUnit.Text));
-                cmd.Parameters.Add(new SqlParameter("@CHIDINH", prescribeBox.Text));
-                cmd.Parameters.Add(new SqlParameter("@SOLUONGTONKHO", instockBox.Text));
-                cmd.Parameters.Add(new SqlParameter("@NGAYHETHAN", expDateBox.Text));
-                cmd.Parameters.Add(new SqlParameter("@GIATIEN", priceBox.Text));
-                cmd.Parameters.Add(new SqlParameter("@MANVQUANLY", item["MANHANVIEN"].ToString()));
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            fs = new Admin_MedSearch();
+            fs.FormClosedEvent += AdminFormClosedEventS;
+            fs.Show();
+        }
 
-                cmd.Parameters.Add("@MATHUOC", SqlDbType.VarChar, 10).Direction = ParameterDirection.Output;
+        private void AdminFormClosedEvent(object sender, EventArgs e)
+        {
+            refresh();
+        }
 
-                int i = cmd.ExecuteNonQuery();
-                if (i > 0)
-                {
-                    MessageBox.Show("Thêm dữ liệu thuốc thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Thêm dữ liệu thuốc thất bại!");
-                }
-                refresh();
-                sqlCon.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Thêm dữ liệu thuốc thất bại! " + ex.Message);
-            }
-
+        private void AdminFormClosedEventS(object sender, EventArgs e)
+        {
+            medData.DataSource = searchData.Tables[0];
         }
 
         private void deleteMedButton_Click(object sender, EventArgs e)
@@ -177,11 +166,6 @@ namespace QLNhaKhoa.Admin_form
             {
                 MessageBox.Show("Cập nhật dữ liệu thuốc thất bại! " + ex.Message);
             }
-        }
-
-        private void searchButton_Click(object sender, EventArgs e)
-        {
-            (medData.DataSource as DataTable).DefaultView.RowFilter = String.Format("TENTHUOC like '%" + searchIDBox.Text + "%'");
         }
 
         private void refreshButton_Click(object sender, EventArgs e)

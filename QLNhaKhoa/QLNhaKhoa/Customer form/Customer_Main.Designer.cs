@@ -39,8 +39,7 @@
             AppointmentButton = new Button();
             AccountButton = new Button();
             mainPanel = new Panel();
-            ExitButton = new Button();
-            minimizeButton = new Button();
+            signOutButton = new Button();
             LeftPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)HomepageIcon).BeginInit();
             SuspendLayout();
@@ -48,6 +47,7 @@
             // LeftPanel
             // 
             LeftPanel.BackColor = Color.SteelBlue;
+            LeftPanel.Controls.Add(signOutButton);
             LeftPanel.Controls.Add(credit);
             LeftPanel.Controls.Add(CustomerID);
             LeftPanel.Controls.Add(CustomerName);
@@ -59,7 +59,7 @@
             LeftPanel.Dock = DockStyle.Left;
             LeftPanel.Location = new Point(0, 0);
             LeftPanel.Name = "LeftPanel";
-            LeftPanel.Size = new Size(300, 740);
+            LeftPanel.Size = new Size(300, 700);
             LeftPanel.TabIndex = 1;
             // 
             // credit
@@ -67,7 +67,7 @@
             credit.AutoSize = true;
             credit.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             credit.ForeColor = Color.White;
-            credit.Location = new Point(101, 717);
+            credit.Location = new Point(101, 677);
             credit.Name = "credit";
             credit.Size = new Size(199, 23);
             credit.TabIndex = 8;
@@ -122,7 +122,7 @@
             RecordButton.FlatStyle = FlatStyle.Flat;
             RecordButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             RecordButton.ForeColor = Color.White;
-            RecordButton.Location = new Point(25, 475);
+            RecordButton.Location = new Point(25, 425);
             RecordButton.Name = "RecordButton";
             RecordButton.Size = new Size(250, 50);
             RecordButton.TabIndex = 3;
@@ -136,7 +136,7 @@
             AppointmentButton.FlatStyle = FlatStyle.Flat;
             AppointmentButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             AppointmentButton.ForeColor = Color.White;
-            AppointmentButton.Location = new Point(25, 375);
+            AppointmentButton.Location = new Point(25, 350);
             AppointmentButton.Name = "AppointmentButton";
             AppointmentButton.Size = new Size(250, 50);
             AppointmentButton.TabIndex = 2;
@@ -160,53 +160,38 @@
             // 
             // mainPanel
             // 
-            mainPanel.Location = new Point(300, 37);
+            mainPanel.Location = new Point(300, 0);
             mainPanel.Name = "mainPanel";
             mainPanel.Size = new Size(900, 700);
             mainPanel.TabIndex = 3;
             // 
-            // ExitButton
+            // signOutButton
             // 
-            ExitButton.FlatAppearance.BorderSize = 0;
-            ExitButton.FlatStyle = FlatStyle.Flat;
-            ExitButton.Font = new Font("VNI-Lithos", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ExitButton.Location = new Point(1160, 0);
-            ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(40, 40);
-            ExitButton.TabIndex = 9;
-            ExitButton.Text = "X";
-            ExitButton.UseVisualStyleBackColor = true;
-            ExitButton.Click += ExitButton_Click;
-            // 
-            // minimizeButton
-            // 
-            minimizeButton.FlatAppearance.BorderSize = 0;
-            minimizeButton.FlatStyle = FlatStyle.Flat;
-            minimizeButton.Font = new Font("VNI-Lithos", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            minimizeButton.Location = new Point(1120, 0);
-            minimizeButton.Name = "minimizeButton";
-            minimizeButton.Size = new Size(40, 40);
-            minimizeButton.TabIndex = 13;
-            minimizeButton.Text = "-";
-            minimizeButton.UseVisualStyleBackColor = true;
-            minimizeButton.Click += minimizeButton_Click;
+            signOutButton.FlatAppearance.BorderSize = 0;
+            signOutButton.FlatStyle = FlatStyle.Flat;
+            signOutButton.Font = new Font("Tw Cen MT", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            signOutButton.ForeColor = Color.White;
+            signOutButton.Location = new Point(25, 500);
+            signOutButton.Name = "signOutButton";
+            signOutButton.Size = new Size(250, 50);
+            signOutButton.TabIndex = 9;
+            signOutButton.Text = "Sign out";
+            signOutButton.UseVisualStyleBackColor = true;
+            signOutButton.Click += signOutButton_Click;
             // 
             // Customer_Main
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1200, 740);
-            ControlBox = false;
-            Controls.Add(minimizeButton);
-            Controls.Add(ExitButton);
+            ClientSize = new Size(1200, 700);
             Controls.Add(LeftPanel);
             Controls.Add(mainPanel);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Customer_Main";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Customer_Main";
+            Text = "Customer Dashboard";
             Load += Customer_Main_Load;
             LeftPanel.ResumeLayout(false);
             LeftPanel.PerformLayout();
@@ -226,7 +211,6 @@
         private Button AppointmentButton;
         private Button AccountButton;
         private Panel mainPanel;
-        private Button minimizeButton;
-        private Button ExitButton;
+        private Button signOutButton;
     }
 }

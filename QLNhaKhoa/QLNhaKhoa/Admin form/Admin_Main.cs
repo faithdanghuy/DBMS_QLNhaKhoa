@@ -33,16 +33,6 @@ namespace QLNhaKhoa.Admin_form
             Helper.loadform(f, this.mainPanel);
         }
 
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void minimizeButton_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
         public void Admin_Main_Load(object sender, EventArgs e)
         {
             AdminID.Text = CurrentAdmin;
@@ -57,6 +47,17 @@ namespace QLNhaKhoa.Admin_form
                     sqlCon.Close();
                 }
             }
+        }
+
+        private void signOutButton_Click(object sender, EventArgs e)
+        {
+            var res = MessageBox.Show("Bạn có muốn đăng xuất?", "Warning", MessageBoxButtons.YesNoCancel);
+            if (res == DialogResult.Yes)
+            {
+                this.Close();
+                new Login().Show();
+            }
+            else { }
         }
     }
 }

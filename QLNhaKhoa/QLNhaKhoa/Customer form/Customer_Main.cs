@@ -34,16 +34,6 @@ namespace QLNhaKhoa
             Helper.loadform(f, this.mainPanel);
         }
 
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void minimizeButton_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
         private void Customer_Main_Load(object sender, EventArgs e)
         {
             CustomerID.Text = CurrentUser;
@@ -58,6 +48,17 @@ namespace QLNhaKhoa
                     sqlCon.Close();
                 }
             }
+        }
+
+        private void signOutButton_Click(object sender, EventArgs e)
+        {
+            var res = MessageBox.Show("Bạn có muốn đăng xuất?", "Warning", MessageBoxButtons.YesNoCancel);
+            if (res == DialogResult.Yes)
+            {
+                this.Close();
+                new Login().Show();
+            }
+            else { }
         }
     }
 }

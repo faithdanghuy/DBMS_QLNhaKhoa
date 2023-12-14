@@ -34,7 +34,6 @@
             label1 = new Label();
             Logo = new PictureBox();
             RightPanel = new Panel();
-            minimizeButton = new Button();
             txtPassword = new TextBox();
             txtID = new TextBox();
             registerSwap = new Button();
@@ -44,7 +43,6 @@
             userID = new PictureBox();
             loginButton = new Button();
             label2 = new Label();
-            ExitButton = new Button();
             LeftPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Logo).BeginInit();
             RightPanel.SuspendLayout();
@@ -61,7 +59,7 @@
             LeftPanel.Dock = DockStyle.Left;
             LeftPanel.Location = new Point(0, 0);
             LeftPanel.Name = "LeftPanel";
-            LeftPanel.Size = new Size(350, 550);
+            LeftPanel.Size = new Size(350, 503);
             LeftPanel.TabIndex = 0;
             // 
             // credit
@@ -69,7 +67,7 @@
             credit.AutoSize = true;
             credit.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             credit.ForeColor = Color.White;
-            credit.Location = new Point(151, 527);
+            credit.Location = new Point(151, 480);
             credit.Name = "credit";
             credit.Size = new Size(199, 23);
             credit.TabIndex = 3;
@@ -98,7 +96,6 @@
             // 
             // RightPanel
             // 
-            RightPanel.Controls.Add(minimizeButton);
             RightPanel.Controls.Add(txtPassword);
             RightPanel.Controls.Add(txtID);
             RightPanel.Controls.Add(registerSwap);
@@ -108,31 +105,17 @@
             RightPanel.Controls.Add(userID);
             RightPanel.Controls.Add(loginButton);
             RightPanel.Controls.Add(label2);
-            RightPanel.Controls.Add(ExitButton);
             RightPanel.Dock = DockStyle.Fill;
             RightPanel.Location = new Point(350, 0);
             RightPanel.Name = "RightPanel";
-            RightPanel.Size = new Size(450, 550);
+            RightPanel.Size = new Size(432, 503);
             RightPanel.TabIndex = 1;
-            // 
-            // minimizeButton
-            // 
-            minimizeButton.FlatAppearance.BorderSize = 0;
-            minimizeButton.FlatStyle = FlatStyle.Flat;
-            minimizeButton.Font = new Font("VNI-Lithos", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            minimizeButton.Location = new Point(370, 0);
-            minimizeButton.Name = "minimizeButton";
-            minimizeButton.Size = new Size(40, 40);
-            minimizeButton.TabIndex = 12;
-            minimizeButton.Text = "-";
-            minimizeButton.UseVisualStyleBackColor = true;
-            minimizeButton.Click += minimizeButton_Click;
             // 
             // txtPassword
             // 
             txtPassword.BorderStyle = BorderStyle.None;
             txtPassword.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPassword.Location = new Point(86, 291);
+            txtPassword.Location = new Point(86, 266);
             txtPassword.MaxLength = 50;
             txtPassword.MinimumSize = new Size(314, 25);
             txtPassword.Name = "txtPassword";
@@ -147,7 +130,7 @@
             // 
             txtID.BorderStyle = BorderStyle.None;
             txtID.Font = new Font("Arial", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtID.Location = new Point(86, 192);
+            txtID.Location = new Point(86, 167);
             txtID.MaxLength = 10;
             txtID.MinimumSize = new Size(314, 25);
             txtID.Name = "txtID";
@@ -162,7 +145,7 @@
             registerSwap.FlatStyle = FlatStyle.Flat;
             registerSwap.Font = new Font("Tw Cen MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             registerSwap.ForeColor = Color.SteelBlue;
-            registerSwap.Location = new Point(178, 430);
+            registerSwap.Location = new Point(178, 405);
             registerSwap.Name = "registerSwap";
             registerSwap.Size = new Size(94, 29);
             registerSwap.TabIndex = 7;
@@ -173,7 +156,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Black;
-            panel1.Location = new Point(50, 322);
+            panel1.Location = new Point(50, 297);
             panel1.Name = "panel1";
             panel1.Size = new Size(350, 1);
             panel1.TabIndex = 6;
@@ -181,7 +164,7 @@
             // divider1
             // 
             divider1.BackColor = Color.Black;
-            divider1.Location = new Point(50, 223);
+            divider1.Location = new Point(50, 198);
             divider1.Name = "divider1";
             divider1.Size = new Size(350, 1);
             divider1.TabIndex = 5;
@@ -189,7 +172,7 @@
             // password
             // 
             password.Image = Properties.Resources._lock;
-            password.Location = new Point(50, 286);
+            password.Location = new Point(50, 261);
             password.Name = "password";
             password.Size = new Size(30, 30);
             password.SizeMode = PictureBoxSizeMode.Zoom;
@@ -199,7 +182,7 @@
             // userID
             // 
             userID.Image = Properties.Resources.ID;
-            userID.Location = new Point(50, 187);
+            userID.Location = new Point(50, 162);
             userID.Name = "userID";
             userID.Size = new Size(30, 30);
             userID.SizeMode = PictureBoxSizeMode.Zoom;
@@ -213,7 +196,7 @@
             loginButton.FlatStyle = FlatStyle.Flat;
             loginButton.Font = new Font("Tw Cen MT", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             loginButton.ForeColor = Color.White;
-            loginButton.Location = new Point(50, 370);
+            loginButton.Location = new Point(50, 345);
             loginButton.Name = "loginButton";
             loginButton.Size = new Size(350, 50);
             loginButton.TabIndex = 2;
@@ -226,35 +209,21 @@
             label2.AutoSize = true;
             label2.Font = new Font("Tw Cen MT", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.SteelBlue;
-            label2.Location = new Point(164, 100);
+            label2.Location = new Point(164, 75);
             label2.Name = "label2";
             label2.Size = new Size(122, 43);
             label2.TabIndex = 1;
             label2.Text = "LOGIN";
-            // 
-            // ExitButton
-            // 
-            ExitButton.FlatAppearance.BorderSize = 0;
-            ExitButton.FlatStyle = FlatStyle.Flat;
-            ExitButton.Font = new Font("VNI-Lithos", 11.999999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ExitButton.Location = new Point(410, 0);
-            ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(40, 40);
-            ExitButton.TabIndex = 0;
-            ExitButton.Text = "X";
-            ExitButton.UseVisualStyleBackColor = true;
-            ExitButton.Click += ExitButton_Click;
             // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(800, 550);
-            ControlBox = false;
+            ClientSize = new Size(782, 503);
             Controls.Add(RightPanel);
             Controls.Add(LeftPanel);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             KeyPreview = true;
             Name = "Login";
@@ -274,7 +243,6 @@
 
         private Panel LeftPanel;
         private Panel RightPanel;
-        private Button ExitButton;
         private PictureBox Logo;
         private Label label1;
         private Label label2;
@@ -287,6 +255,5 @@
         private TextBox txtID;
         private TextBox txtPassword;
         private Label credit;
-        private Button minimizeButton;
     }
 }

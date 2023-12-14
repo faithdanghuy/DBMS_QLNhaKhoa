@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using QLNhaKhoa.Customer_form;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace QLNhaKhoa.General_form
@@ -6,6 +7,7 @@ namespace QLNhaKhoa.General_form
     public partial class Customer_Appointment : Form
     {
         public string CurrentUser { get; set; } = string.Empty;
+        private Customer_AppForm f;
         public Customer_Appointment()
         {
             InitializeComponent();
@@ -55,48 +57,20 @@ namespace QLNhaKhoa.General_form
                 sqlCon.Close();
             }
         }
+
         private void makeAppointBtn_Click(object sender, EventArgs e)
         {
-            string[] parts = appointTime.Text.Split(":");
-            int time = int.Parse(parts[0]) * 60 + int.Parse(parts[1]);
-            if (time < 480 || time > 1020)
-            {
-                MessageBox.Show("Giờ hẹn không phù hợp! Vui lòng chọn từ 8h đến 17h");
-            }
-            else
-            {
-                try
-                {
-                    SqlConnection sqlCon = new SqlConnection(Helper.strCon);
-                    sqlCon.Open();
-                    SqlCommand cmd = new SqlCommand("USP_LICHHEN_INS", sqlCon);
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    var item = (DataRowView)cboDentists.SelectedItem;
-                    cmd.Parameters.Add(new SqlParameter("@NGAY", appointDate.Text));
-                    cmd.Parameters.Add(new SqlParameter("@GIO", time));
-                    cmd.Parameters.Add(new SqlParameter("@MAKHACHHANG", CurrentUser));
-                    cmd.Parameters.Add(new SqlParameter("@MANHASI", item["MANHANVIEN"].ToString()));
-                    cmd.Parameters.Add("@MALICHHEN", SqlDbType.VarChar, 10).Direction = ParameterDirection.Output;
-
-                    int i = cmd.ExecuteNonQuery();
-                    if (i > 0)
-                    {
-                        MessageBox.Show("Đặt lịch hẹn thành công");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Đặt lịch hẹn thất bại!");
-                    }
-                    refresh();
-                    sqlCon.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Đặt lịch hẹn thất bại! " + ex.Message);
-                }
-            }
+            f = new Customer_AppForm();
+            f.FormClosedEvent += CustomerFormClosedEvent;
+            f.CurrentUser = CurrentUser;
+            f.Show();
         }
+
+        private void CustomerFormClosedEvent(object sender, EventArgs e)
+        {
+            refresh();
+        }
+
         private void updateAppButton_Click(object sender, EventArgs e)
         {
             try

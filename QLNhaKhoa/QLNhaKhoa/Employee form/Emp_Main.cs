@@ -10,14 +10,7 @@ namespace QLNhaKhoa.Employee_form
         {
             InitializeComponent();
         }
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-        private void minimizeButton_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
+
         private void AccountButton_Click(object sender, EventArgs e)
         {
             Account f = new Account();
