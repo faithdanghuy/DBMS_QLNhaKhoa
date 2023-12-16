@@ -58,7 +58,7 @@ namespace QLNhaKhoa
         {
             string procedure = "USP_NHANVIEN_UPD";
             string parameter = "@MANHANVIEN";
-            string CurrentUserTrim = CurrentUser.Trim();
+            string CurrentUserTrim = CurrentUser.Trim().ToUpper();
             int empType = 0;
 
             if (CurrentUserTrim.StartsWith("KH"))
@@ -66,7 +66,7 @@ namespace QLNhaKhoa
                 procedure = "USP_KHACHHANG_UPD";
                 parameter = "@MAKHACHHANG";
             }
-            if (CurrentUserTrim.StartsWith("NS"))
+            else if (CurrentUserTrim.StartsWith("NS"))
             {
                 empType = 1;
             }

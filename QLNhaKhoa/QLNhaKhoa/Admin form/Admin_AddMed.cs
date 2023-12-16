@@ -61,14 +61,16 @@ namespace QLNhaKhoa.Admin_form
                     SqlCommand cmd = new SqlCommand("USP_THUOC_INS", sqlCon);
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    var item = (DataRowView)cboEmp.SelectedItem;
                     cmd.Parameters.Add(new SqlParameter("@TENTHUOC", medNameBox.Text));
                     cmd.Parameters.Add(new SqlParameter("@DONVITINH", cboUnit.Text));
                     cmd.Parameters.Add(new SqlParameter("@CHIDINH", prescriptionBox.Text));
                     cmd.Parameters.Add(new SqlParameter("@SOLUONGTONKHO", instockBox.Text));
                     cmd.Parameters.Add(new SqlParameter("@NGAYHETHAN", expDateBox.Text));
                     cmd.Parameters.Add(new SqlParameter("@GIATIEN", priceBox.Text));
-                    cmd.Parameters.Add(new SqlParameter("@MANVQUANLY", item["MANHANVIEN"].ToString()));
+
+                    var item = (DataRowView)cboEmp.SelectedItem;
+                    string? nvID = item != null ? item["MANHANVIEN"].ToString() : "NV001";
+                    cmd.Parameters.Add(new SqlParameter("@MANVQUANLY", nvID));
 
                     cmd.Parameters.Add("@MATHUOC", SqlDbType.VarChar, 10).Direction = ParameterDirection.Output;
 

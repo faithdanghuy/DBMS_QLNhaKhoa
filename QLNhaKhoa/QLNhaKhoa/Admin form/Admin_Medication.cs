@@ -7,7 +7,7 @@ namespace QLNhaKhoa.Admin_form
     public partial class Admin_Medication : Form
     {
         public string CurrentAdmin { get; set; } = string.Empty;
-        public DataSet searchData;
+        public DataTable searchData;
         private Admin_AddMed f;
         private Admin_MedSearch fs;
 
@@ -42,7 +42,7 @@ namespace QLNhaKhoa.Admin_form
 
         private void refresh()
         {
-            Helper.refreshData("select * from THUOC where MANVQUANLY='" + CurrentAdmin + "'", medData);
+            Helper.refreshData("select * from THUOC", medData);
         }
 
         private void Admin_Medication_Load(object sender, EventArgs e)
@@ -92,7 +92,7 @@ namespace QLNhaKhoa.Admin_form
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            fs = new Admin_MedSearch();
+            fs = new Admin_MedSearch(this);
             fs.FormClosedEvent += AdminFormClosedEventS;
             fs.Show();
         }
@@ -104,7 +104,7 @@ namespace QLNhaKhoa.Admin_form
 
         private void AdminFormClosedEventS(object sender, EventArgs e)
         {
-            medData.DataSource = searchData.Tables[0];
+            medData.DataSource = searchData;
         }
 
         private void deleteMedButton_Click(object sender, EventArgs e)
