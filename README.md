@@ -57,7 +57,7 @@
 
 Source code, release build, and resources pertaining to the C# WinForms app.
 
-**_CAUTION: The application will continue running in the background, even after closing the interface, in both of these circumstances._**
+**_CAUTION: The application will continue running in the background, even after closing the interface, in both of these circumstances,_**
 
 -   By executing the `QLNhaKhoa.exe` in `QLNK_Release`.
 -   By `Start Without Debugging (Ctrl + F5)` in Visual Studio.
