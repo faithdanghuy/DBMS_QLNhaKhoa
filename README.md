@@ -41,6 +41,7 @@
             <li><a href="#in-dbms">In DBMS</a></li>
             <li><a href="#in-qlnhakhoa-app">In QLNhaKhoa app</a></li>
           </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#built-with">Built With</a></li>
@@ -59,7 +60,7 @@ Source code, release build, and resources pertaining to the C# WinForms app.
 
 **_CAUTION: The application will continue running in the background, even after closing the interface, in both of these circumstances,_**
 
--   By executing the `QLNhaKhoa.exe` in `QLNK_Release`.
+-   By executing the `QLNhaKhoa.exe` in `QLNK_Release`,
 -   By `Start Without Debugging (Ctrl + F5)` in Visual Studio.
 
 **_It should be manually killed with Task Manager, by searching for `QLNhaKhoa`._**
